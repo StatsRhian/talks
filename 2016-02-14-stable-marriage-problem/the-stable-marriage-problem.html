@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Stable Marriage Problem</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Rhian Davies" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# The Stable Marriage Problem
+### Rhian Davies
+### 2018/04/15
+
+---
+
+
+
+
+# Scenario
+
+![](images/scenario.png)
+---
+
+# What is a stable marriage situation?
+
+-  A matching of men and women such that no two people of opposite sex would **both** rather have each other than their current partners.
+
+![](images/couple1.png)
+![](images/couple2.png)
+---
+#Gale – Shapley algorithm (1962)
+
+
+![](images/gale-and-shapley.jpeg)
+
+Oberwolfach
+Photo Collection
+
+- Male proposes to his preferred female
+
+--
+
+- If available she always accepts his proposal, and we consider the next male.
+
+--
+
+- If already engaged she chooses her favourite. The rejected male must now propose to his next preference.
+
+---
+
+
+# Proof that G-S algorithm gives a stable pairing.
+
+--
+
+- Suppose Bob prefers Alice to his wife Bobetta
+
+--
+
+- During G-S, Bob must have proposed to Alice before proposing to Bobetta.
+
+--
+
+- If Alice accepted his proposal, yet is not married to him at the end, she must have dumped him for someone she likes more, and therefore doesn't like Bob more than Alan.
+
+--
+
+- If Alice rejected his proposal, she was already with someone she liked more than Bob.
+
+---
+
+# Other applications
+
+- Stable roommates problem
+- Medical interns and hospitals
+
+---
+class: center, middle
+
+# Always make the first move
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
