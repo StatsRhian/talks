@@ -1,0 +1,27 @@
+---
+title: "Reproducible Research"
+author: "Rhian Davies"
+date: "2018/05/29"
+output:
+  xaringan::moon_reader:
+    css: ["default", "rladies", "rladies-fonts"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+---
+
+# Ideas
+
+* Tweeting
+* Reciepes! (Bookdown)
+* Personal website
+* Playing games
+* Mapping strava

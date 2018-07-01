@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="author" content="Rhian Davies" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
     <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
   </head>
   <body>
@@ -25,7 +24,6 @@ class: center, middle, inverse, title-slide
 
 ![](images/scenario.png)
 ---
-
 # What is a stable marriage situation?
 
 -  A matching of men and women such that no two people of opposite sex would **both** rather have each other than their current partners.
@@ -33,27 +31,20 @@ class: center, middle, inverse, title-slide
 ![](images/couple1.png)
 ![](images/couple2.png)
 ---
-#Gale – Shapley algorithm (1962)
-
-
-![](images/gale-and-shapley.jpeg)
-
-Oberwolfach
-Photo Collection
-
-- Male proposes to his preferred female
-
---
-
-- If available she always accepts his proposal, and we consider the next male.
-
---
-
-- If already engaged she chooses her favourite. The rejected male must now propose to his next preference.
+class: bottom
+background-image: url("./images/gale-and-shapley.jpeg")
+background-size: cover
 
 ---
+# Gale – Shapley algorithm (1962)
 
+- Male proposes to his preferred female.
 
+- If she is single they get engaged.
+
+- If she is already engaged she chooses her favourite. The rejected male must now propose to his next preference.
+
+---
 # Proof that G-S algorithm gives a stable pairing.
 
 --
@@ -73,6 +64,26 @@ Photo Collection
 - If Alice rejected his proposal, she was already with someone she liked more than Bob.
 
 ---
+Life isn’t a Jane Austen novel
+Gay couples
+Bisexuality
+
+Why bother!
+
+Roth used Gale and Shapely’s work to reshape the NRMP matching algorithm so that it produced matches that were more stable
+
+Helping transplant patients find a match
+
+Shapley and Roth the Nobel Prize in 2012. (David Gale passed away in 2008.)
+ 
+ Theoretical and abstract
+ Obscure and pointless?
+ Built the foundation for improving lives.
+ 
+---
+
+![](the-stable-marriage-problem_files/figure-html/table-1.png)&lt;!-- --&gt;
+---
 
 # Other applications
 
@@ -80,9 +91,18 @@ Photo Collection
 - Medical interns and hospitals
 
 ---
-class: center, middle
 
-# Always make the first move
+background-image: url("./images/proposal.gif")
+background-size: cover
+
+---
+class: center, middle
+# Thank you
+
+@trianglegirl
+
+## References
+ - Oberwolfach Photo Collection
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
@@ -100,12 +120,23 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   d.head.appendChild(s);
 })();</script>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
   }
-});
+})();
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
