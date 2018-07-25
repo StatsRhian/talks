@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The State of Big Data</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Rhian Davies" />
+    <meta name="date" content="2018-07-26" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# The State of Big Data
+### Rhian Davies
+### 2018-07-26
+
+---
+
+
+
+# What is Big Data?
+
+
+* Volume
+* Velocity
+* Variety
+--
+
+* Veracity
+--
+
+* Value
+--
+
+
+&lt;img src="images/graph-big-data-vs.webp" class = "center" width = "600"&gt;
+---
+class: center, middle
+
+![](images/wired-01.png)
+
+---
+class: center, middle
+
+![](images/wired-02.png)
+
+---
+
+# If we have *all* the data - statistical sampling is redundant!
+
+--
+* We never have *all* the data.
+* Beware of hidden biases in messy data.
+
+--
+
+![](images/street-bump.jpg)
+
+
+---
+# Who cares about what causes what! Statistical correlation tells us what we need to know.
+
+--
+
+![](images/flutrends.jpg)
+
+---
+# Statistical models are obsolete - with enough data, the numbers speak for themselves
+
+--
+
+![](images/DinoSequentialSmaller.gif)
+
+---
+class: center, inverse
+
+## Final Thoughts
+
+
+Big data is a broad term which promises much but delivers little by itself.
+
+--
+
+There are a lot of small data problems that occur in big data, and they don’t disappear because you’ve got lots of the stuff. They get worse.
+
+--
+
+With carefully built models, well thought-out statistical assumptions, awareness of bias and domain-specific knowledge, big data can be a very powerful tool.
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

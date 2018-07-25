@@ -1,0 +1,87 @@
+---
+title: "The State of Big Data"
+author: "Rhian Davies"
+date: "2018-07-26"
+output:
+  xaringan::moon_reader:
+    css: ["default", "rladies", "rladies-fonts"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# What is Big Data?
+
+
+* Volume
+* Velocity
+* Variety
+--
+
+* Veracity
+--
+
+* Value
+--
+
+
+<img src="images/graph-big-data-vs.webp" class = "center" width = "600">
+---
+class: center, middle
+
+![](images/wired-01.png)
+
+---
+class: center, middle
+
+![](images/wired-02.png)
+
+---
+
+# If we have *all* the data - statistical sampling is redundant!
+
+--
+* We never have *all* the data.
+* Beware of hidden biases in messy data.
+
+--
+
+![](images/street-bump.jpg)
+
+
+---
+# Who cares about what causes what! Statistical correlation tells us what we need to know.
+
+--
+
+![](images/flutrends.jpg)
+
+---
+# Statistical models are obsolete - with enough data, the numbers speak for themselves
+
+--
+
+![](images/DinoSequentialSmaller.gif)
+
+---
+class: center, inverse
+
+## Final Thoughts
+
+
+Big data is a broad term which promises much but delivers little by itself.
+
+--
+
+There are a lot of small data problems that occur in big data, and they don’t disappear because you’ve got lots of the stuff. They get worse.
+
+--
+
+With carefully built models, well thought-out statistical assumptions, awareness of bias and domain-specific knowledge, big data can be a very powerful tool.
+
+

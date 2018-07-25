@@ -1,0 +1,64 @@
+---
+title: "Notes and references"
+author: "Rhian Davies"
+date: "25 July 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Quick slides written for a talk entitles "The state of big data".
+
+Most of the content is taken from the excellent article by Tim Hartford [Big Data: Are we making a big mistake](http://timharford.com/2014/04/big-data-are-we-making-a-big-mistake/).
+
+# Notes for slides
+
+### What is big data?
+
+In 2001, Doug Laney defined big data can be defined in terms of the three V’s volume, variety and velocity.
+
+Volume refers to the vast amount of data collected. In 2013, IBM stated that over 90% of the world’s data was created in the last two years!
+Variety relates to the many different types of data it is possible to collect from multiple sources such as text, images, GPS location and tweets. 
+The velocity is the speed at which the data is observed.
+
+Since Doug's initial article, a fourth V was added, "Veracity" refering to the accuracy of data.
+Later "Value" was added to represent the usefulness of data. 
+
+Since then the number of V's has exploded, we now have the [42 V's of Big Data](https://www.elderresearch.com/blog/42-v-of-big-data), including Veil, Voodoo and Vulpine 😂. It has been predicted that the number of V's of Big Data will surpass 100 V's by 2021. 
+
+### Wired Articles
+
+When the first article was published (10 years ago) everyone was very excited about the potential of Big Data analytics. Statistical models were thought to become obsolete, as "with enough data, the numbers speak for themselves". In a world where we could capture *all* the data, statistical sampling techniques would become redundant.  Who cares about what causes what, because statistical correlation tells us what we need to know.
+
+This is of course Complete Bollocks. (According to David Spiegelhalter).
+
+The second article published last week, almost 10 years later, tells a very different story. I'll discuss a few thoughts about big data and statistical theory from 10 years ago and debunk them with some quick examples.
+
+### If we have *all* the data - statistical sampling is redundant!
+
+* We never have *all* the data.
+* Beware of hidden biases
+
+Sampling error is when a randomly chosen sample doesn’t reflect the underlying population purely by chance; sampling bias is when the sample isn’t randomly chosen at all. Because data sets are so messy, it can be hard to figure out what biases lurk inside them – and because they are so large, some analysts seem to have decided the sampling problem isn’t worth worrying about. It is. (E.g. Street Bump.)
+
+### Who cares about what causes what! Statistical correlation tells us what we need to know.
+
+Google Flu Trends was quick, accurate and cheap and theory-free. Google’s engineers didn’t bother to develop a hypothesis about what search terms – “flu symptoms” or “pharmacies near me” – might be correlated with the spread of the disease itself. The Google team just took their top 50 million search terms and let the algorithms do the work.
+
+Four years later, the theory-free, data-rich model got it wrong. Google’s engineers weren’t trying to figure out what caused what. They were merely finding statistical patterns in the data. They cared about correlation rather than causation. This is fine in a stable environment but not in a changing world.
+
+### Statistical models are obsolete - with enough data, the numbers speak for themselves
+
+Relying only on data summaries like means, variances, and correlations can be dangerous, because wildly different data sets can give similar results.
+
+## Final Thoughts
+
+Big data is a broad term which promises much but delivers little by itself.
+
+There are a lot of small data problems that occur in big data, and they don’t disappear because you’ve got lots of the stuff. They get worse.
+
+With carefully built models, well thought-out statistical assumptions, awareness of bias and domain-specific knowledge, big data can be a very powerful tool.
+
+
