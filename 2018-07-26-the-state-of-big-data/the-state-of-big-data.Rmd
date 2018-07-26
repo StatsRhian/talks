@@ -1,5 +1,5 @@
 ---
-title: "The State of Big Data"
+title: "Big Data and all that"
 author: "Rhian Davies"
 date: "2018-07-26"
 output:
@@ -73,12 +73,16 @@ class: center, inverse
 
 ## Final Thoughts
 
-
-Big data is a broad term which promises much but delivers little by itself.
+--
+ers little by itself.
 
 --
 
 There are a lot of small data problems that occur in big data, and they don’t disappear because you’ve got lots of the stuff. They get worse.
+
+--
+
+New developments such as Hadoop and Apache Spark allow storage and fast processing of big data.
 
 --
 
