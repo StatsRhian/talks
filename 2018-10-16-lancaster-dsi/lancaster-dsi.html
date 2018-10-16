@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DSI Lancaster</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Rhian Davies" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# DSI Lancaster
+### Rhian Davies
+### 2018/10/16
+
+---
+
+
+
+# Who am I?
+
+&lt;!-- Unilever:  Global 169,000 employees over - R&amp;D over 6000, 15 people in my group owns over 400 brands, 100 countries
+     Arctic Shores: Scale up, 30 employees across 3 offices (Man, London, Singapore) Many different people - one DS
+     Digital Rail: 2 employee across one office --&gt;
+.pull-left[
+&lt;center&gt;
+&lt;img src="images/lu.jpg" class = "center" height = "100"&gt;
+&lt;/br&gt;
+&lt;img src="images/stori.png" class = "center" height = "100"&gt;
+&lt;/br&gt;
+&lt;img src="images/unilever.png" class = "center" height = "200"&gt;
+&lt;/center&gt;]
+
+
+.pull-right[
+&lt;center&gt;
+&lt;img src="images/as.png" class = "center" height = "80"&gt;
+&lt;/br&gt;
+&lt;img src="images/drl.png" class = "center" height = "200"&gt;
+&lt;img src="images/rss.jpg" class = "center" height = "200"&gt;
+&lt;/center&gt;]
+
+---
+
+# Unilever
+&lt;!--
+* Unilever want to understand how consumers use deodorant.
+* Experimental participants are notoriously bad at filling in study diaries.
+* Unilever developed data loggers to collect user data in a less intrusive and more reliable way.
+* Can we learn how consumers use deodorant just using the logger data?--&gt;
+
+.pull-left[
+&lt;center&gt;&lt;img src ="images/rexona.png" alt="Roll on deodorant" style="width: 180px;"/&gt;&lt;/center&gt;
+]
+.pull-right[&lt;center&gt;&lt;img src="images/datalogger.jpg" alt="Data Loggers" style="width: 300px;"/&gt;&lt;/center&gt;]
+
+&lt;!--
+* Event start time, end time and duration.
+* X, y, z and sound time series for each event.
+* High frequency (20 observations per second).
+* Event class:  "Application", "Movement", "Unknown".
+* Small, quality in-lab dataset.
+* Some events were unusually long (&gt;20 seconds).
+* Only part of an event might actually be true deodorant application.
+
+--&gt;
+---
+
+## Our solution
+
+* Split events up in to "chunks" of 2 seconds.
+* Use Linear Discriminant Analysis to identify useful data features for classification.
+
+&lt;img src="images/LDA2_clear.png" style="width: 300px;"/&gt;&lt;/center&gt;
+
+---
+
+## Applying this the full UK study
+
+&lt;!-- In the plot below, each point represents a 2 second window of an event.  --&gt; 
+
+![](lancaster-dsi_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+
+Movement is generally characterised by **low feature values**, and roll-on application is characterised by **high feature values**. 
+
+---
+
+## Keep it simple!
+&lt;!-- With this insight we can identify likely non-application windows, and remove them from the dataset.
+
+Simple approach: cluster the feature set using k-means. --&gt;
+
+![](lancaster-dsi_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+
+---
+# Arctic Shores 
+![](images/src.gif)
+---
+# Arctic Shores 
+![](images/cc.gif)
+
+---
+# Arctic Shores
+![](images/ff.png)
+ * Got really good at data frame joins
+ * True interdisciplinary
+ * Yes, but...
+&lt;!-- WEIRD --&gt;
+&lt;!-- Entreprenears - more creative, determined, and self-belied, ER, manging uncertainty, sociable. --&gt;
+&lt;!-- Funny--&gt;
+---
+# Digital Rail
+
+* Simple transformations can make a huge difference
+* Helping people explore their data to make better decisions
+
+![](images/boost-boxplots.png)
+---
+class: center, middle
+
+# Thanks
+
+@trianglegirl
+
+rhian.davies@digitalrail.co.uk
+
+&lt;img src="images/rladies.svg" height = "150"&gt;
+    </textarea>
+<script src="libs\remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

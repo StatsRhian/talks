@@ -4,6 +4,7 @@ author: "Rhian Davies"
 date: "2018-07-26"
 output:
   xaringan::moon_reader:
+    chakra: libs\remark-latest.min.js
     css: ["default", "rladies", "rladies-fonts"]
     lib_dir: libs
     nature:
@@ -74,7 +75,7 @@ class: center, inverse
 ## Final Thoughts
 
 --
-ers little by itself.
+Big data is broad term which promises much but delivers little by itself.
 
 --
 

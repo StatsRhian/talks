@@ -1,0 +1,161 @@
+---
+title: "DSI Lancaster"
+author: "Rhian Davies"
+date: "2018/10/16"
+output:
+  xaringan::moon_reader:
+    chakra: libs\remark-latest.min.js
+    css: ["default", "rladies"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library("ggplot2")
+library("dplyr")
+library("lubridate")
+library("knitr")
+data <- read.csv("data/UK_Deo_Feats_Diary.csv")
+```
+
+# Who am I?
+
+<!-- Unilever:  Global 169,000 employees over - R&D over 6000, 15 people in my group owns over 400 brands, 100 countries
+     Arctic Shores: Scale up, 30 employees across 3 offices (Man, London, Singapore) Many different people - one DS
+     Digital Rail: 2 employee across one office -->
+.pull-left[
+<center>
+<img src="images/lu.jpg" class = "center" height = "100">
+</br>
+<img src="images/stori.png" class = "center" height = "100">
+</br>
+<img src="images/unilever.png" class = "center" height = "200">
+</center>]
+
+
+.pull-right[
+<center>
+<img src="images/as.png" class = "center" height = "80">
+</br>
+<img src="images/drl.png" class = "center" height = "200">
+<img src="images/rss.jpg" class = "center" height = "200">
+</center>]
+
+---
+
+# Unilever
+<!--
+* Unilever want to understand how consumers use deodorant.
+* Experimental participants are notoriously bad at filling in study diaries.
+* Unilever developed data loggers to collect user data in a less intrusive and more reliable way.
+* Can we learn how consumers use deodorant just using the logger data?-->
+
+.pull-left[
+<center><img src ="images/rexona.png" alt="Roll on deodorant" style="width: 180px;"/></center>
+]
+.pull-right[<center><img src="images/datalogger.jpg" alt="Data Loggers" style="width: 300px;"/></center>]
+
+<!--
+* Event start time, end time and duration.
+* X, y, z and sound time series for each event.
+* High frequency (20 observations per second).
+* Event class:  "Application", "Movement", "Unknown".
+* Small, quality in-lab dataset.
+* Some events were unusually long (>20 seconds).
+* Only part of an event might actually be true deodorant application.
+
+-->
+---
+
+## Our solution
+
+* Split events up in to "chunks" of 2 seconds.
+* Use Linear Discriminant Analysis to identify useful data features for classification.
+
+<img src="images/LDA2_clear.png" style="width: 300px;"/></center>
+
+---
+
+## Applying this the full UK study
+
+<!-- In the plot below, each point represents a 2 second window of an event.  --> 
+
+```{r, echo = FALSE, message= FALSE, fig.width = 6}
+data$Diary[data$Diary==2] <- 1
+data$Diary <- factor(data$Diary)
+levels(data$Diary) <- c("No", "Yes")
+
+data  %>% 
+    ggplot(aes(x = lvy, y = lvz, colour = factor(Diary))) +
+    geom_point() +
+    scale_colour_manual(values=c("skyblue1", "slateblue4"),
+                        name = "Diary entry") +
+    xlab("Log variation in Y axis") +
+    ylab("Log variation in Z axis") 
+
+```
+
+Movement is generally characterised by **low feature values**, and roll-on application is characterised by **high feature values**. 
+
+---
+
+## Keep it simple!
+<!-- With this insight we can identify likely non-application windows, and remove them from the dataset.
+
+Simple approach: cluster the feature set using k-means. -->
+
+```{r, echo = FALSE, fig.width = 6}
+k <- kmeans(data[,-6], 2)
+if(sum(k$centers[1,]> k$centers[2,])<2)
+  {k$cluster[k$cluster==1] <- "No"
+   k$cluster[k$cluster==2] <- "Yes"
+   }else{
+   k$cluster[k$cluster==1] <-  "Yes"
+   k$cluster[k$cluster==2] <-  "No"
+   }
+
+cbind(data, k$cluster)  %>% 
+    ggplot(aes(x = lvy, y = lvz, colour = factor(k$cluster))) +
+    geom_point() +
+    scale_colour_manual(values=c("skyblue1", "slateblue4"), name = "Classed as\ntrue event") +
+    xlab("Log variation in Y axis") +
+    ylab("Log variation in Z axis") 
+```
+
+---
+# Arctic Shores 
+![](images/src.gif)
+---
+# Arctic Shores 
+![](images/cc.gif)
+
+---
+# Arctic Shores
+![](images/ff.png)
+ * Got really good at data frame joins
+ * True interdisciplinary
+ * Yes, but...
+<!-- WEIRD -->
+<!-- Entreprenears - more creative, determined, and self-belied, ER, manging uncertainty, sociable. -->
+<!-- Funny-->
+---
+# Digital Rail
+
+* Simple transformations can make a huge difference
+* Helping people explore their data to make better decisions
+
+![](images/boost-boxplots.png)
+---
+class: center, middle
+
+# Thanks
+
+@trianglegirl
+
+rhian.davies@digitalrail.co.uk
+
+<img src="images/rladies.svg" height = "150">
+

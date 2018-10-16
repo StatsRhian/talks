@@ -1,0 +1,192 @@
+---
+title: "How do you stay fresh?"
+subtitle: "Feature analysis and classification of deodorant useage."
+author: "Rhian Davies - thetrianglegirl@gmail.com"
+output: ioslides_presentation
+widescreen: true
+smaller: true
+---
+
+```{r, echo = FALSE, message= FALSE, fig.width = 5}
+library("ggplot2")
+library("dplyr")
+library("lubridate")
+library("knitr")
+```
+
+
+## Solution
+
+* Split events up in to "chunks" of 2 seconds.
+* Use Linear Discriminant Analysis to identify useful data features for classification.
+
+<center><img src="../figures/LDA1_clear.png" style="width: 300px;"/><img src="../figures/LDA2_clear.png" style="width: 300px;"/></center>
+
+## Applying this the full UK study
+
+<!-- In the plot below, each point represents a 2 second window of an event.  --> 
+
+```{r, echo = FALSE, message= FALSE, fig.width = 5}
+data$Diary[data$Diary==2] <- 1
+data$Diary <- factor(data$Diary)
+levels(data$Diary) <- c("No", "Yes")
+
+data  %>% 
+    ggplot(aes(x = lvy, y = lvz, colour = factor(Diary))) +
+    geom_point() +
+    scale_colour_manual(values=c("skyblue1", "slateblue4"),
+                        name = "Diary entry") +
+    xlab("Log variation in Y axis") +
+    ylab("Log variation in Z axis") 
+
+```
+
+
+Movement is generally characterised by **low feature values**, and roll-on application is characterised by **high feature values**. 
+
+
+## Keep it simple!
+<!-- With this insight we can identify likely non-application windows, and remove them from the dataset.
+
+Simple approach: cluster the feature set using k-means. -->
+
+```{r, echo = FALSE, fig.width = 5}
+k <- kmeans(data[,-6], 2)
+if(sum(k$centers[1,]> k$centers[2,])<2)
+  {k$cluster[k$cluster==1] <- "No"
+   k$cluster[k$cluster==2] <- "Yes"
+   }else{
+   k$cluster[k$cluster==1] <-  "Yes"
+   k$cluster[k$cluster==2] <-  "No"
+   }
+
+cbind(data, k$cluster)  %>% 
+    ggplot(aes(x = lvy, y = lvz, colour = factor(k$cluster))) +
+    geom_point() +
+    scale_colour_manual(values=c("skyblue1", "slateblue4"), name = "Classed as\ntrue event") +
+    xlab("Log variation in Y axis") +
+    ylab("Log variation in Z axis") 
+
+```
+
+## Estimating activity duration
+
+<!-- Now that non-application windows have been identified, an estimate of of true application duration is made by counting the number of true application windows.-->
+
+* We re-estimated event duration, excluding any 2 second chunks identified to be false applications.
+
+```{r, echo=FALSE, warnings = FALSE}
+data <- read.csv("../derived_data/all_events_corrected.csv")
+data <- mutate(data, My_class = estDur > 0)
+```
+
+<!-- Initially the loggers observed `r dim(data)[1]` events across the 30 users. 
+ The new duration estimation suggests that `r dim(filter(data,My_class==1))[1]` of these are true application events.-->
+
+<!--Histograms for the duration of product usage for the logger event duration and the estimated true duration time. They have been split into events that correspond with a diary event (purple) and those that don't (red). -->
+
+```{r, echo=FALSE, fig.height=2.3, fig.width = 5, warning = FALSE, message = FALSE  }
+data %>%
+  #filter(duration !=0) %>%
+  ggplot(aes(x = duration)) +
+   geom_histogram(data=subset(data, diary == 0),fill = "red", alpha = 0.1) +
+    geom_histogram(data=subset(data, diary == 1),fill = "blue", alpha = 0.1) +
+  xlab("Duration taken from logger event file (in seconds)") 
+
+
+data %>%
+ # filter(estDur != 0) %>%
+  ggplot(aes(x = estDur)) +
+   geom_histogram(data=subset(data, diary == 0),fill = "red", alpha = 0.1) +
+    geom_histogram(data=subset(data, diary == 1),fill = "blue", alpha = 0.1)+
+  xlab("New estimated in-use application time  (in seconds)") + xlim(0, 125) 
+```
+
+
+* Many non-diary events now have estimated duration of 0 seconds
+* There are no longer any excessively long events. 
+* The average number of applications per day is now reasonable.
+
+<!-- Ignoring any events with an estimated duration of 0 seconds, the average number of applications per day for subjects looks quite sensible.-->
+
+```{r, echo = FALSE}
+
+#data %>%
+#  filter(estDur > 0)%>%
+#  count(subjectid, Date) %>%
+#  summarise(Avg_Num_Daily_Applications = mean(n)) %>%
+#  round() %>%
+  #ggplot(aes(x=Avg_Num_Daily_Applications)) + geom_histogram(binwidth=.5)
+ # print.data.frame()
+
+```
+
+
+## User behaviour
+<!-- Once we throw away any events with a duration of 0 seconds, we can look at user behaviour across the study. Here, each box represents a subject. The bars summarise the total number of applications made over the duration of the study and as split by hour of application.-->
+
+* Once false positive activites have been removed we can look at user behaviour.
+
+```{r, echo = F, fig.width=10, fig.height = 2}
+###Separate Date_Time into Date and Time
+data <-
+  data %>%
+  mutate(Date = substr(eventtimes, 1, 10)) %>%
+  mutate(Hour_Start = as.numeric(substr(eventtimes, 12,13))) %>%
+  mutate(Day_of_Week = wday(dmy(Date), label = T))
+
+
+data %>%
+  filter(My_class == 1) %>%
+  count(Hour_Start, Day_of_Week) %>%
+  #ggplot(aes(x=factor(Hour_Start),y=n)) +
+  ggplot(aes(x=Hour_Start,y=n)) +
+  geom_bar(stat="identity") + 
+  theme(axis.text=element_text(size=10)) +
+  facet_wrap(~ Day_of_Week, nrow = 1) +
+  scale_x_continuous(breaks=c(4, 8, 12, 16,20,24)) +
+  scale_y_continuous(breaks=c(2, 4,6,8,10)) +
+  ylab("")+
+  xlab("Time of application")
+
+#data %>%
+#  filter(My_class == 1) %>%
+#  count(Hour_Start, subjectid) %>%
+  #ggplot(aes(x=factor(Hour_Start),y=n)) +
+#  ggplot(aes(x=Hour_Start,y=n)) +
+#  geom_bar(stat="identity") + 
+#  theme(axis.text=element_text(size=10)) +
+#  facet_wrap(~ subjectid) +
+#  scale_x_continuous(breaks=c(4, 8, 12, 16,20,24)) +
+#  scale_y_continuous(breaks=c(2, 4,6,8,10)) +
+#  ylab("")+
+#  xlab("Hour of application")
+```
+
+
+* The bars summarise the total number of applications made over the duration of the study split by hour of application and day of week.
+
+<!-- similar plot, but this time split across day of week.-->
+
+```{r, echo = FALSE, fig.width=10, fig.height=8}
+
+#data %>%
+#  filter(My_class == 1) %>%
+#  count(Day_of_Week, subjectid) %>%
+#  ggplot(aes(x = factor(Day_of_Week), y = n)) +
+#  geom_bar(stat = "identity") + 
+#  theme(axis.text = element_text(size = 8),axis.text.x = element_text(angle = 90, hjust = 0, vjust = 0)) +
+#  facet_wrap(~ subjectid)+
+#  scale_y_continuous(breaks=c(2, 4, 6, 8, 10)) +
+#  xlab("Day of Week")+
+#  ylab("")
+```
+
+
+## Conclusion
+
+* We showed that logger data was reliable as a data collection method.
+* A simple but useful analysis was developed to help identify true deodorant activities.
+* We found that it was difficult to distinguish between rotational and up-and-down motion even under lab settings.
+
+
