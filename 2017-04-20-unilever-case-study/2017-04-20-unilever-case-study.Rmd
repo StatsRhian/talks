@@ -12,15 +12,39 @@ library("ggplot2")
 library("dplyr")
 library("lubridate")
 library("knitr")
+data <- read.csv("derived_data/UK_Deo_Feats_Diary.csv")
 ```
 
+## The Challenge
+
+* Unilever want to understand how consumers use deodorant.
+* Experimental participants are notoriously bad at filling in study diaries.
+* Unilever developed data loggers to collect user data in a less intrusive and more reliable way.
+* Can we learn how consumers use deodorant just using the logger data?
+<center><img src="images/rexona.png" alt="Roll on deodorant" style="width: 180px;"/></center>
+
+
+## The data loggers
+
+* Event start time, end time and duration.
+* X, y, z and sound time series for each event.
+* High frequency (20 observations per second).
+* Event class:  "Application", "Movement", "Unknown".
+
+<center><img src="images/datalogger.jpg" alt="Roll on deodorant" style="width: 300px;"/></center>
+
+## Initial results and problems
+
+* Small, quality in-lab dataset.
+* Some events were unusually long (>20 seconds).
+* Only part of an event might actually be true deodorant application.
 
 ## Solution
 
 * Split events up in to "chunks" of 2 seconds.
 * Use Linear Discriminant Analysis to identify useful data features for classification.
 
-<center><img src="../figures/LDA1_clear.png" style="width: 300px;"/><img src="../figures/LDA2_clear.png" style="width: 300px;"/></center>
+<center><img src="images/LDA1_clear.png" style="width: 300px;"/><img src="images/LDA2_clear.png" style="width: 300px;"/></center>
 
 ## Applying this the full UK study
 
@@ -76,7 +100,7 @@ cbind(data, k$cluster)  %>%
 * We re-estimated event duration, excluding any 2 second chunks identified to be false applications.
 
 ```{r, echo=FALSE, warnings = FALSE}
-data <- read.csv("../derived_data/all_events_corrected.csv")
+data <- read.csv("derived_data/all_events_corrected.csv")
 data <- mutate(data, My_class = estDur > 0)
 ```
 
