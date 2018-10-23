@@ -1,0 +1,143 @@
+---
+title: "Faster, Safer, Better \n  \n Revolutionising the Platform Train Interface"
+author: "Rhian Davies, Digital Rail"
+date: "2018/10/23"
+output:
+  xaringan::moon_reader:
+    chakra: libs/remark-latest.min.js
+    css: ["default", "drl.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+class: center, middle
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+<!-- Who we are - what we do -->
+
+![](images/drl.png)
+![](images/infolab.jpg)
+
+---
+class: center, middle
+
+![](images/research-groups.png)
+
+---
+<!-- Faster, safer, better - Can we use computer vision? -->
+![](images/rssb-call.png)
+---
+class: center, middle
+<!-- Faster - reduce dwell time-->
+![](images/busy-carriage.png)
+---
+
+class: center, middle
+
+![](images/raib-dog.png)
+---
+class: center, middle
+
+![](images/raib-page.png)
+
+---
+class: middle, center
+# Faster
+# Safer 
+# Better
+
+<!-- 
+* Use CV to make boarding faster, safer, better
+* Reduce dwell time
+* Alert staff to dangerous situations
+* Need to be *real-time*
+* Use existing infrastructure Old stock --->
+
+---
+class: center, middle
+![](images/bgs.png)
+
+<!-- In both cases, we need to identify the people and where they are in the image. Once we know this we can then do the ga or busyness calcuations.
+
+First step is background subtraction 
+
+Train the algorithm to estimate what the background looks like
+Assume that everything else is foreground
+Simple, naive, but works well. 
+Edge flow - improves the estimates.
+
+Yellow line  detection
+
+
+-->
+
+---
+
+class: center, middle
+![](images/busy-manc.png)
+
+---
+class: center, middle
+![](images/busy0.png)
+---
+class: center, middle
+![](images/busy1.png)
+
+---
+class: center, middle
+
+<!-- Shows the safety. Alerts staff if someone is on or over the line for a prolonged period of time-->
+![](images/pti-video.gif)
+
+[Youtube](https://www.youtube.com/watch?v=NKW54OzxoHI&feature=youtu.be)
+
+---
+
+class: center, middle
+
+<!-- Shows the safety. Alerts staff if someone is on or over the line for a prolonged period of time-->
+![](images/cab.jpg)
+
+---
+
+<!--* Spots dangerous scenarios quickly and automomously
+* Alert staff to inform decision making
+* Estimate busyness of each carraiage
+* Works on platforms too
+* Uses Existing infra-structure
+* Real-time
+* Computationally efficient
+* Patent application-->
+
+![](images/patent.png)
+
+---
+class: middle, center
+![](images/demo-day2.jpeg)
+
+
+<!-- What's next?s
+
+* Test, test, test
+* Pilot programme on a real track
+* Human factors -->
+
+
+---
+class: center, middle
+
+# Thanks
+
+![](images/drl.png)
+
+@digitalrailltd / @trianglegirl
+
+rhian.davies@digitalrail.co.uk
+
+
+

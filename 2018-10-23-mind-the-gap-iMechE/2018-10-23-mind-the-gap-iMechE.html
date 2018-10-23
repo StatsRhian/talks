@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="author" content="Rhian Davies, Digital Rail" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="drl.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# <p>Faster, Safer, Better</p>
+<p>Revolutionising the Platform Train Interface</p>
+### Rhian Davies, Digital Rail
+### 2018/10/23
+
+---
+
+class: center, middle
+
+
+&lt;!-- Who we are - what we do --&gt;
+
+![](images/drl.png)
+![](images/infolab.jpg)
+
+---
+class: center, middle
+
+![](images/research-groups.png)
+
+---
+&lt;!-- Faster, safer, better - Can we use computer vision? --&gt;
+![](images/rssb-call.png)
+---
+class: center, middle
+&lt;!-- Faster - reduce dwell time--&gt;
+![](images/busy-carriage.png)
+---
+
+class: center, middle
+
+![](images/raib-dog.png)
+---
+class: center, middle
+
+![](images/raib-page.png)
+
+---
+class: middle, center
+# Faster
+# Safer 
+# Better
+
+&lt;!-- 
+* Use CV to make boarding faster, safer, better
+* Reduce dwell time
+* Alert staff to dangerous situations
+* Need to be *real-time*
+* Use existing infrastructure Old stock ---&gt;
+
+---
+class: center, middle
+![](images/bgs.png)
+
+&lt;!-- In both cases, we need to identify the people and where they are in the image. Once we know this we can then do the ga or busyness calcuations.
+
+First step is background subtraction 
+
+Train the algorithm to estimate what the background looks like
+Assume that everything else is foreground
+Simple, naive, but works well. 
+Edge flow - improves the estimates.
+
+Yellow line  detection
+
+
+--&gt;
+
+---
+
+class: center, middle
+![](images/busy-manc.png)
+
+---
+class: center, middle
+![](images/busy0.png)
+---
+class: center, middle
+![](images/busy1.png)
+
+---
+class: center, middle
+
+&lt;!-- Shows the safety. Alerts staff if someone is on or over the line for a prolonged period of time--&gt;
+![](images/pti-video.gif)
+
+[Youtube](https://www.youtube.com/watch?v=NKW54OzxoHI&amp;feature=youtu.be)
+
+---
+
+class: center, middle
+
+&lt;!-- Shows the safety. Alerts staff if someone is on or over the line for a prolonged period of time--&gt;
+![](images/cab.jpg)
+
+---
+
+&lt;!--* Spots dangerous scenarios quickly and automomously
+* Alert staff to inform decision making
+* Estimate busyness of each carraiage
+* Works on platforms too
+* Uses Existing infra-structure
+* Real-time
+* Computationally efficient
+* Patent application--&gt;
+
+![](images/patent.png)
+
+---
+class: middle, center
+![](images/demo-day2.jpeg)
+
+
+&lt;!-- What's next?s
+
+* Test, test, test
+* Pilot programme on a real track
+* Human factors --&gt;
+
+
+---
+class: center, middle
+
+# Thanks
+
+![](images/drl.png)
+
+@digitalrailltd / @trianglegirl
+
+rhian.davies@digitalrail.co.uk
+    </textarea>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
