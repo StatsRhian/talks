@@ -2,7 +2,7 @@
 
 A place to store and link to presentations I have done.
 
-* [2018-10-23 Faster, Safer, Better: IMechE](https://trianglegirl.github.io/presentations/2018-10-23-mind-the-gap-IMechE/2018-10-23-mind-the-gap-IMechE.html#1)
+* [2018-10-23 Faster, Safer, Better: IMechE](https://trianglegirl.github.io/presentations/2018-10-23-mind-the-gap-iMechE/2018-10-23-mind-the-gap-iMechE.html#1)
 
 * [2018-10-16 Lancaster DSI](https://trianglegirl.github.io/presentations/2018-10-16-lancaster-dsi/2018-10-16-lancaster-dsi.html#1)
 
