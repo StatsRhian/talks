@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="author" content="Rhian Davies" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
     <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
   </head>
   <body>
@@ -19,17 +20,20 @@ class: center, middle, inverse, title-slide
 
 
 
-
-# Scenario
+class: center, middle
+&lt;!-- The Scenario --&gt; 
 
 ![](images/scenario.png)
 ---
-# What is a stable marriage situation?
+# "Stable marriage"
 
 -  A matching of men and women such that no two people of opposite sex would **both** rather have each other than their current partners.
 
+&lt;center&gt;
 ![](images/couple1.png)
 ![](images/couple2.png)
+
+
 ---
 class: bottom
 background-image: url("./images/gale-and-shapley.jpeg")
@@ -45,8 +49,12 @@ background-size: cover
 - If she is already engaged she chooses her favourite. The rejected male must now propose to his next preference.
 
 ---
-# Proof that G-S algorithm gives a stable pairing.
 
+![Demo]()
+
+---
+
+# Proof 
 --
 
 - Suppose Bob prefers Alice to his wife Bobetta
@@ -64,11 +72,18 @@ background-size: cover
 - If Alice rejected his proposal, she was already with someone she liked more than Bob.
 
 ---
-Life isn’t a Jane Austen novel
-Gay couples
-Bisexuality
+class:
+# Who cares?
 
-Why bother!
+
+![LGBTQ flag]()
+![Hospital NRMP]()
+![Heart transplant]()
+![Nobel prize]()
+
+&lt;!--
+Comment: 
+Life isn’t a Jane Austen novel. What about gay couples, bisexuality, polyamorous?
 
 Roth used Gale and Shapely’s work to reshape the NRMP matching algorithm so that it produced matches that were more stable
 
@@ -76,20 +91,7 @@ Helping transplant patients find a match
 
 Shapley and Roth the Nobel Prize in 2012. (David Gale passed away in 2008.)
  
- Theoretical and abstract
- Obscure and pointless?
- Built the foundation for improving lives.
- 
----
-
-![](the-stable-marriage-problem_files/figure-html/table-1.png)&lt;!-- --&gt;
----
-
-# Other applications
-
-- Stable roommates problem
-- Medical interns and hospitals
-
+Might seems theoretical, abstract and pointless -&gt; actually lead to improving peoples lives--&gt;
 ---
 
 background-image: url("./images/proposal.gif")
@@ -101,10 +103,10 @@ class: center, middle
 
 @trianglegirl
 
-## References
+### References
  - Oberwolfach Photo Collection
     </textarea>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="libs\remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "highlightLines": true,

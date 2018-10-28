@@ -1,0 +1,88 @@
+---
+title: "Planning the app"
+author: "Rhian Davies"
+date: "28 October 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+```
+
+## Set up
+
+3 men and 3 women
+
+Initally men first. Can change to women first. 
+
+1) Randomise the prefences
+
+2) Define and compute the algorithm
+
+3) Visualise the matchings
+
+## Initialise preferences
+
+For the male matrix, columns are the men and rows are the women. 
+A value 1 in `male[2,3]` should be read as female 2 is the 1st choice for male 3. 
+Might be easier using names.
+
+```{r initialise the prefernces}
+male_names <- c("Mike", "Rupert", "Daniel", "Willam")
+female_names <- c("Jessica", "Monica", "Rachel", "Phoebe", "Catherine", "Jane", "Lucy", "Emma", "Beatrice")
+
+n <- 4
+
+guys <- sample(male_names, n)
+gals <- sample(female_names, n)
+
+m_pref <- replicate(n, sample(seq(1, n, by = 1)))
+w_pref <- replicate(n, sample(seq(1, n, by = 1)))
+
+
+male <- as.table(m_pref)
+colnames(male) <- guys
+rownames(male) <- gals
+kable(male)
+
+
+female <- as.table(w_pref)
+colnames(female) <- gals
+rownames(female) <- guys
+kable(female)
+```
+
+## Compute GS
+
+```{r gs}
+
+  m_single <- rep(1, n) # Binary. One if man is single.
+  w_engaged <- rep(0, n) # Which male the women are engaged to. 0 if single
+  m_hist <- rep(0, n) # A count of the number of proposals a man has made
+    
+  while(sum(m_single != 0)){
+  offers <- rep(NA, n) # The current proposals on offer from the men  
+  # Proposals from single men
+  for (i in which(m_single == 1)){
+
+        m_hist[i] <- m_hist[i] + 1 # Increase number of proposals made
+        offers[i] <- m_pref[m_hist[i], i]
+        print(sprintf("Man %i proposes to Woman %i", i, offers[i]))
+  }
+      approached   <- sort(unique(offers))	# index of women who received offers
+  # Acceptances from women  
+  for(i in approached){
+      proposers <- which(offers == i) # Men who have proposed this round
+      best_offer <- proposers[which.min(w_pref[proposers, 1])]
+      if(w_engaged[i] == 0){w_engaged[i] <- best_offer}
+      else{ 
+      choices = c(w_engaged[i], best_offer)
+      w_engaged[i] <- choices[which.min(w_pref[choices, 1])]
+      }
+      print(sprintf("Woman %i accepts Man %i", i, w_engaged[i]))
+    }
+  m_single <- as.numeric(!(1:n %in% w_engaged))
+  }
+
+```

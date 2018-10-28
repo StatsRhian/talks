@@ -1,0 +1,36 @@
+
+
+|          | Alex| Jason| Willam|
+|:---------|----:|-----:|------:|
+|Beatrice  |    1|     1|      1|
+|Monica    |    3|     2|      2|
+|Catherine |    2|     3|      3|
+
+
+|       | Beatrice| Monica| Catherine|
+|:------|--------:|------:|---------:|
+|Alex   |        2|      2|         2|
+|Jason  |        1|      3|         3|
+|Willam |        3|      1|         1|
+
+ Day 1 
+[1] "Alex proposes to Beatrice"
+[1] "Jason proposes to Beatrice"
+[1] "Willam proposes to Beatrice"
+[1] "Beatrice accepts Jason"
+
+ Day 2 
+[1] "Alex proposes to Catherine"
+[1] "Willam proposes to Monica"
+[1] "Monica accepts Willam"
+[1] "Catherine accepts Alex"
+
+ 
+ Final pairings: 
+ 
+
+|Men    |Women     |
+|:------|:---------|
+|Jason  |Beatrice  |
+|Willam |Monica    |
+|Alex   |Catherine |
