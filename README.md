@@ -1,4 +1,4 @@
-# My presentations
+# My presentations [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 A place to store and link to presentations I have done.
 
