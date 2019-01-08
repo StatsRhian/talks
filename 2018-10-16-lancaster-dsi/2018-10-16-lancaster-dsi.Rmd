@@ -4,6 +4,7 @@ author: "Rhian Davies"
 date: "2018/10/16"
 output:
   xaringan::moon_reader:
+    chakra: libs\remark-latest.min.js
     css: ["default", "rladies", "rladies-fonts"]
     lib_dir: libs
     nature:
