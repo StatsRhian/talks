@@ -1,0 +1,43 @@
+---
+title: "Untitled"
+author: "Rhian Davies"
+date: "8 January 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+ ## Unused notes
+ 
+ 
+# Teenage pregnancy
+
+Over 40,000 teenage pregancies in the UK each year (check)
+Orkney had one of the highest teenage pregnancy rates in Scotland
+Health workers tried something new -> talking
+the teenage pregnancy rates halfed! Amazing
+--
+<center>
+<img src="images/teen1.gif" width = "700">
+</center>
+<!--Let's look more closely.-->
+
+---
+class: center, middle
+<center>
+<img src="images/teen2.gif" width = "700">
+</center>
+
+---
+
+class: center, middle
+<center>
+<img src="images/teen3.gif" width = "700">
+</center>
+
+
+# Can't we just use averages?
+
+--
+![](images/DinoSequentialSmaller.gif)

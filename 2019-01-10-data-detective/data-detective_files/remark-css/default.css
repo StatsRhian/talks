@@ -70,3 +70,6 @@ th, td { padding: 5px; }
     left: 0 !important;
   }
 }
+
+.large { font-size: 200% }
+.small { font-size: 70% }
