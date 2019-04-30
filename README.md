@@ -2,6 +2,8 @@
 
 A place to store and link to presentations I have done.
 
+* [2019-05-01 Introducing R-Ladies Lancaster](https://trianglegirl.github.io/presentations/2019-05-01-introducing-rladies-lancaster/introducing-rladies-lancaster.html#1)
+
 * [2019-01-10 Data Detectives: Florence Nightingale Day](https://trianglegirl.github.io/presentations/2019-01-10-data-detective/2019-01-10-data-detective.html#1)
 
 * [2018-10-23 Faster, Safer, Better: IMechE](https://trianglegirl.github.io/presentations/2018-10-23-mind-the-gap-iMechE/2018-10-23-mind-the-gap-iMechE.html#1)
