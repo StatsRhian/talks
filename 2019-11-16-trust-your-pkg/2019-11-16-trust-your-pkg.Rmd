@@ -1,0 +1,196 @@
+---
+title: "Can you trust your R package? `r emo::ji('package')`"
+subtitle: "SatRday Cardiff 2019"
+author: '`r jrPresentation::get_author()`'
+output:
+  xaringan::moon_reader:
+    css: ["default", "style.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE, message=FALSE}
+options(htmltools.dir.version = FALSE)
+library("jrPresentation")
+set_presentation_options()
+knitr::opts_chunk$set(cache = FALSE)
+```
+
+
+layout:true
+`r add_border(inverse=FALSE)`
+
+---
+
+# Jumping Rivers
+
+.pull-left[
+<img src="assets/robot.jpg"></img>
+]
+
+
+.pull-right[
+
+
+* On-site training (RSS accredited)
+
+* R and python consultancy
+
+* Dashboard creation
+
+* Code review
+
+* Continuous integration
+
+* RStudio full service certified partners
+
+* System architecture
+
+* R Package development
+
+* Predictive analytics
+  ]
+  
+---
+
+# Our clients
+
+<div id="clients">
+<img src="assets/shell.png"></img><img src="assets/sustrans.png"></img>
+<img src="assets/yorkshire.png"></img><img src="assets/hastings.png"></img>
+<img src="assets/Pragmatic.png" style=position:relative;top:*2.5rem></img><img src="assets/nhs.png"></img>
+<img src="assets/royal_statistical_society.jpg"></img><img src="assets/Francis_Crick_Institute.png"></img>
+<img src="assets/Ministry_of_Defence.png"></img><img src="assets/University_of_Manchester.png"></img>
+<img src="assets/scot-gov.png"></img>
+<img src="assets/ea.png" style=position:relative;top:-3rem></img>
+</div>
+
+---
+
+# Hands up... `r emo::ji("raising_hand_woman")`
+
+* If you've written a function before?
+
+--
+
+* If you've documented a function before?
+
+--
+
+* If you've written an R package before?
+
+--
+
+* If you've used version control before?
+
+--
+
+* If you've used continuous integration before?
+
+---
+
+
+# Continuous integration?
+
+
+Are you forgetful and lazy like me, but still want to make fabulous, dependable R packages? Enter Travis, a helpful service which can automatically run checks, tests and even tweet about your package. I'll explain what continuous integration is and tell stories of how we use it at Jumping Rivers. I'll also introduce inteRgrate, an R package we've developed to help us keep our packages running smoothly.
+
+* What is it?
+* Why we should use it?
+* How do you use it?
+* How we use it a Jumping Rivers?
+* Introducting inteRgrate.
+* Mention [tic](https://github.com/ropenscilabs/tic)
+
+---
+
+# What?
+
+Make change ->
+Test ->
+Pass  -> keepworking
+Fail -> fix it!
+---
+
+# Why
+
+Avoid the monster commit.
+
+# But I'm on Windows...
+
+* appveyer
+* Don't ask me too much, I'm allergic
+---
+
+# Weird and wonderful
+
+* Twitter
+* Pushbullet
+
+---
+
+# inteRgrate `r emo::ji("package")`
+
+* We wanted to simplfy and standardise the way we use CI at Jumping Rivers
+* Cross platform * work with both
+* make continuous integration more consistent across platforms
+* While checking R packages on travis is easy, support for GitLab (and others) is lacking.
+* When developing a package, sometimes we want to specify the exact number of NOTES and WARNINGS we expect/allow.
+* Having a consistent system for different CI is desirable.
+* For our CI steps, we have a few other checks that we tend to implement, e.g. lints, not using imports within namespaces.
+
+--- 
+
+Use this
+
+---
+
+# Main functions
+
+  * `check_pkg()`
+  * `check_r_filenames()`
+  * `check_tidy_description()`
+  * `check_lintr()`
+  * `check_namespace()`
+  
+
+check_pkg() - installs package dependencies, builds & installs the package, before running package check. By default, any notes or warnings will raise an error message. This can be changed by setting the environment variables ALLOWED_NOTES and ALLOWED_WARNINGS.
+
+check_namespace() - check for instances of import() in the NAMESPACE file. By default, no imports are allowed. This can be changed via the environment variable NO_IMPORTS
+
+check_lintr() - runs lintr on the package, README.Rmd and vignettes.
+
+check_r_filenames() - ensures file extensions are .R and all names are lower case.
+check_tidy_description() - ensure that the DESCRIPTION file is tidy, via usethis::use_tidy_description().
+
+  
+---
+
+# But TIC
+
+* ropensci are working on a similar pacakge called
+* Doesn't currently work with GitLab (which we req)
+* Might suit you?
+* [TIC](https://github.com/jumpingrivers/inteRgrate)
+
+---
+
+# Summary 
+
+* Do use continous integration
+* Don't get upset/angry when it fails
+* Do feel happy that you've taken a step toward more robust code
+* We can help you with CI set up and more.
+
+## Resources
+
+* **usethis**
+* **inteRgrate**
+* **tic**
+* Blog
+* article
