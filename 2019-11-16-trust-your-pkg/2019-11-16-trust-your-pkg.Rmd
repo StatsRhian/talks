@@ -78,10 +78,6 @@ layout:true
 
 --
 
-* If you've documented a function before?
-
---
-
 * If you've written an R package before?
 
 --
@@ -95,102 +91,231 @@ layout:true
 ---
 
 
-# Continuous integration?
-
-
-Are you forgetful and lazy like me, but still want to make fabulous, dependable R packages? Enter Travis, a helpful service which can automatically run checks, tests and even tweet about your package. I'll explain what continuous integration is and tell stories of how we use it at Jumping Rivers. I'll also introduce inteRgrate, an R package we've developed to help us keep our packages running smoothly.
-
-* What is it?
-* Why we should use it?
-* How do you use it?
-* How we use it a Jumping Rivers?
-* Introducting inteRgrate.
-* Mention [tic](https://github.com/ropenscilabs/tic)
-
----
-
-# What?
-
+# What is continuous integration? 
 Make change ->
 Test ->
 Pass  -> keepworking
 Fail -> fix it!
+
+
+* members of a team integrate their work frequently (daily)
+* Each integration is verified by an automated build (usually including tests) 
+* minimize the cost of integratio
+* build healthier software by developing and testing in smaller increments
+* automated processes build a working version of the project
+* test suites are run against the new build to check whether any bugs were introduced.
+* It is easier to fix a bug in something you wrote a few minutes ago than something you wrote yesterday
+* robust test suites and an automated system to run those tests
+* implement small changes and check in code to version control repositories frequently. 
+* establish a consistent and automated way to build, package, and test applications
+* build server that triggers a build whenever you push changes to a source code repository.
+
 ---
 
-# Why
+# Why use CI?
 
-Avoid the monster commit.
 
-# But I'm on Windows...
+* Get daily constant feedback `r emo::ji("repeat")`
 
-* appveyer
-* Don't ask me too much, I'm allergic
+* Catch bugs early `r emo::ji("bug")`
+
+* Avoid the monster commit. `r emo::ji("japanese_ogre")`
+
+* You don't have to remember to run `devtools::check()` `r emo::ji("person_facepalming")`
 ---
 
-# Weird and wonderful
+# Travis?
+
+.pull-left[
+
+* A hosted continuous integration service
+
+* Used to build and test software projects hosted at GitHub
+
+* Essentially a push to GitHub, triggers another job
+
+* this job could be anything e.g. checking an R package
+]
+
+.pull-right[
+<img src="assets/travis.png"></img>
+]
+
+
+---
+
+# How to set it up?
+
+* Host your R package on github
+* Create a .travis.yml file `usethis::use_travis()`
+* Go to travis-ci.org, accept to link your github account with travis
+* Turn on ci for your project by switching the button shown in travis-ci
+
+Travis will attach a badge to the results, green if all steps in the script (which run the tests) pass, red if not. 
+
+```{r, eval = FALSE}
+> usethis::use_travis()
+✔ Setting active project to '/home/rhian/Documents/presentations/2019-11-16-trust-your-pkg'
+✔ Writing '.travis.yml'
+✔ Adding '^\\.travis\\.yml$' to '.Rbuildignore'
+● Turn on travis for your repo at https://travis-ci.org/profile/trianglegirl
+● <!-- badges: start -->
+  [![Travis build status](https://travis-ci.org/trianglegirl/presentations.svg?branch=master)](https://travis-ci.org/trianglegirl/presentations)
+  <!-- badges: end -->
+```
+
+  - [GITHUB_PAT](https://itsalocke.com/blog/using-travis-make-sure-you-use-a-github-pat/)
+  
+---
+
+# An example `travis.yml` file
+
+
+```{}
+language: r
+cache: packages
+
+r:
+  - oldrel
+  - release
+  - devel
+
+notifications:
+  email:
+    recipients:
+     - alerts@jumpingrivers.support
+    on_success: change
+    on_failure: change
+```
+---
+
+class: center, middle, inverse
+
+![](assets/no-pass.gif)
+
+---
+
+class: center, middle, inverse
+
+![](assets/dammit-travis.png)
+
+---
+
+# Travis jobs
 
 * Twitter
 * Pushbullet
+* Shiny badges
+* tests
+* covereage
+* websites
+* Testing using different versions of R
 
+---
+
+# Jumping Rivers and CI
+
+* Packages for learners
+* Packages for clients
+* Remote team, sharing projects
+
+Notes build ok
+Notes are building using up-to-date-packages
+Spell checking
+Dead links
+Correct formatting
+
+---
+
+# Example
+
+```
+◉ Comparing to master
+✔ Update to date with master
+◉ Checking template files...check_template()
+  ◉ Cloning template repo
+  ◉ Checking gitlab-ci.yml
+✔ Template files look good
+◉ Checking package versions...check_pkgs()
+  ✔ ggplot2 (v3.2.1) is up to date
+  ✔ knitr (v1.25) is up to date
+◉ Spell check (experimental)...check_spelling()
+◉ Checking chapters for title case...check_chapter_titles()
+✔ Titles look good
+◉ Checking section for sentence case...check_section_titles()
+◉ Checking for full stops...check_fullstops()
+✔ Captions and friends look good look good
+◉ Checking for undefined citations...check_citations()
+✔ Citations look good
+◉ Checking for duplicate labels...check_labels()
+✔ Labels look good
+◉ Checking for undefined refs...check_references()
+✔ Refs look good
+◉ Checking URLS...check_urls()
+✔ URLs look good
+◉ Checking lint...check_code_style()
+✔ Styling looks good
+◉ Checking version in config.yml...check_version()
+✔ Config looks good!
+◉ Checking for uncommitted files...check_unstaged()
+✔ Everything committed!
+★ ★ You are fabulous! ★ ★
+```
 ---
 
 # inteRgrate `r emo::ji("package")`
 
-* We wanted to simplfy and standardise the way we use CI at Jumping Rivers
-* Cross platform * work with both
-* make continuous integration more consistent across platforms
-* While checking R packages on travis is easy, support for GitLab (and others) is lacking.
-* When developing a package, sometimes we want to specify the exact number of NOTES and WARNINGS we expect/allow.
-* Having a consistent system for different CI is desirable.
-* For our CI steps, we have a few other checks that we tend to implement, e.g. lints, not using imports within namespaces.
+We wanted to **simpilfy** and **standardise** the way we use CI at Jumping Rivers
 
---- 
-
-Use this
+* Make continuous integration more consistent across platforms
+* Specify the exact number of NOTES and WARNINGS we allow.
+* Include additional checks
+    * lints
+    * not using imports within namespaces
+* Can use it on travis-ci, gitlab-ci or just in R.
 
 ---
 
-# Main functions
+# Main functions of inteRgrate `r emo::ji("heavy_check_mark")`
 
   * `check_pkg()`
   * `check_r_filenames()`
   * `check_tidy_description()`
   * `check_lintr()`
   * `check_namespace()`
+
+```{}
+inteRgrate::check_lintr()
+◉ Checking lint...check_lintr()
+◉ Checking vignettes
+..........
+✔ Lint looks good
+```
   
-
-check_pkg() - installs package dependencies, builds & installs the package, before running package check. By default, any notes or warnings will raise an error message. This can be changed by setting the environment variables ALLOWED_NOTES and ALLOWED_WARNINGS.
-
-check_namespace() - check for instances of import() in the NAMESPACE file. By default, no imports are allowed. This can be changed via the environment variable NO_IMPORTS
-
-check_lintr() - runs lintr on the package, README.Rmd and vignettes.
-
-check_r_filenames() - ensures file extensions are .R and all names are lower case.
-check_tidy_description() - ensure that the DESCRIPTION file is tidy, via usethis::use_tidy_description().
-
-  
----
-
-# But TIC
-
-* ropensci are working on a similar pacakge called
-* Doesn't currently work with GitLab (which we req)
-* Might suit you?
-* [TIC](https://github.com/jumpingrivers/inteRgrate)
 
 ---
 
 # Summary 
 
-* Do use continous integration
-* Don't get upset/angry when it fails
-* Do feel happy that you've taken a step toward more robust code
-* We can help you with CI set up and more.
+.pull-left[
 
-## Resources
+* Do use continous integration `r emo::ji("heavy_check_mark")`
 
-* **usethis**
-* **inteRgrate**
-* **tic**
-* Blog
-* article
+* Don't get upset when it fails `r emo::ji("weary")`
+
+* Feel happy that you've taken a step toward more robust code `r emo::ji("lock")`
+
+* Chat to us if you need help `r emo::ji("email")`
+
+
+#### Resources
+* [inteRgrate](https://github.com/jumpingrivers/inteRgrate)
+* [usethis](https://usethis.r-lib.org/)
+* [tic](https://github.com/ropenscilabs/tic)
+* [Julia's blogpost](https://juliasilge.com/blog/beginners-guide-to-travis/)
+
+]
+
+.pull-right[
+![](assets/failing.jpg)
+]
