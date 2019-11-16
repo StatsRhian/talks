@@ -74,11 +74,11 @@ layout:true
 
 # Hands up... `r emo::ji("raising_hand_woman")`
 
-* If you've written a function before?
+* If you've written an R package before?
 
 --
 
-* If you've written an R package before?
+* If you've written a test before?
 
 --
 
@@ -90,27 +90,22 @@ layout:true
 
 ---
 
+# Git Refresher
 
-# What is continuous integration? 
-Make change ->
-Test ->
-Pass  -> keepworking
-Fail -> fix it!
-
-
-* members of a team integrate their work frequently (daily)
-* Each integration is verified by an automated build (usually including tests) 
-* minimize the cost of integratio
-* build healthier software by developing and testing in smaller increments
-* automated processes build a working version of the project
-* test suites are run against the new build to check whether any bugs were introduced.
-* It is easier to fix a bug in something you wrote a few minutes ago than something you wrote yesterday
-* robust test suites and an automated system to run those tests
-* implement small changes and check in code to version control repositories frequently. 
-* establish a consistent and automated way to build, package, and test applications
-* build server that triggers a build whenever you push changes to a source code repository.
+![](assets/git.png)
 
 ---
+
+class: center 
+
+#  Make a small changes and integrate often
+
+
+![](assets/ci.png)
+
+
+---
+
 
 # Why use CI?
 
@@ -119,7 +114,7 @@ Fail -> fix it!
 
 * Catch bugs early `r emo::ji("bug")`
 
-* Avoid the monster commit. `r emo::ji("japanese_ogre")`
+* Avoid the monster commit `r emo::ji("japanese_ogre")`
 
 * You don't have to remember to run `devtools::check()` `r emo::ji("person_facepalming")`
 ---
@@ -134,7 +129,7 @@ Fail -> fix it!
 
 * Essentially a push to GitHub, triggers another job
 
-* this job could be anything e.g. checking an R package
+* This job could be anything 
 ]
 
 .pull-right[
@@ -146,12 +141,15 @@ Fail -> fix it!
 
 # How to set it up?
 
-* Host your R package on github
-* Create a .travis.yml file `usethis::use_travis()`
-* Go to travis-ci.org, accept to link your github account with travis
-* Turn on ci for your project by switching the button shown in travis-ci
+* Host your R package on GitHub
 
-Travis will attach a badge to the results, green if all steps in the script (which run the tests) pass, red if not. 
+* Create a `.travis.yml` file `usethis::use_travis()`
+
+* Go to travis-ci.org to link your GitHub account with travis
+
+* Turn on ci for your project by switching the button
+
+--
 
 ```{r, eval = FALSE}
 > usethis::use_travis()
@@ -159,13 +157,8 @@ Travis will attach a badge to the results, green if all steps in the script (whi
 ✔ Writing '.travis.yml'
 ✔ Adding '^\\.travis\\.yml$' to '.Rbuildignore'
 ● Turn on travis for your repo at https://travis-ci.org/profile/trianglegirl
-● <!-- badges: start -->
-  [![Travis build status](https://travis-ci.org/trianglegirl/presentations.svg?branch=master)](https://travis-ci.org/trianglegirl/presentations)
-  <!-- badges: end -->
 ```
 
-  - [GITHUB_PAT](https://itsalocke.com/blog/using-travis-make-sure-you-use-a-github-pat/)
-  
 ---
 
 # An example `travis.yml` file
@@ -174,12 +167,20 @@ Travis will attach a badge to the results, green if all steps in the script (whi
 ```{}
 language: r
 cache: packages
+```
 
+--
+
+```{}
 r:
   - oldrel
   - release
   - devel
+```
 
+--
+
+```{}
 notifications:
   email:
     recipients:
@@ -187,6 +188,21 @@ notifications:
     on_success: change
     on_failure: change
 ```
+
+---
+
+
+# Badge-tastic
+
+[![Travis build status](https://travis-ci.org/jr-packages/jrIntroduction.svg?branch=master)](https://travis-ci.org/jr-packages/jrIntroduction)
+
+
+```{}
+
+[![Travis build status](https://travis-ci.org/jr-packages/jrIntroduction.svg?branch=master)](https://travis-ci.org/jr-packages/jrIntroduction)
+
+```
+  
 ---
 
 class: center, middle, inverse
@@ -197,67 +213,78 @@ class: center, middle, inverse
 
 class: center, middle, inverse
 
-![](assets/dammit-travis.png)
+![](assets/dammit-travis-1.png)
 
 ---
 
-# Travis jobs
+class: center, middle, inverse
 
-* Twitter
-* Pushbullet
-* Shiny badges
-* tests
-* covereage
-* websites
-* Testing using different versions of R
+![](assets/dammit-travis-2.png)
 
 ---
 
-# Jumping Rivers and CI
+class: center, middle, inverse
 
-* Packages for learners
-* Packages for clients
-* Remote team, sharing projects
-
-Notes build ok
-Notes are building using up-to-date-packages
-Spell checking
-Dead links
-Correct formatting
+![](assets/dammit-travis-3.png)
 
 ---
 
-# Example
+class: center, middle, inverse
+
+![](assets/dammit-travis-4.png)
+
+---
+
+class: center, middle, inverse
+
+![](assets/dammit-travis-5.png)
+
+---
+class: center 
+
+# What jobs can you run on Travis?
+
+![](assets/lintr.png)
+
+![](assets/pushbullet.png)
+
+![](assets/covr.png)
+![](assets/testthat.png)
+
+---
+
+# Jumping Rivers and CI 
+
+* R training notes `r emo::ji("book")`
+  * Spell check
+  * Full stops
+  * Up-to-date packages
+  * Dead links
+
+* Our R packages `r emo::ji("package")`
+  * Standard package check 
+  * Lintr styling
+  * Sensible file names
+
+---
+
+# Note check demo
 
 ```
 ◉ Comparing to master
-✔ Update to date with master
-◉ Checking template files...check_template()
-  ◉ Cloning template repo
-  ◉ Checking gitlab-ci.yml
-✔ Template files look good
-◉ Checking package versions...check_pkgs()
-  ✔ ggplot2 (v3.2.1) is up to date
-  ✔ knitr (v1.25) is up to date
-◉ Spell check (experimental)...check_spelling()
-◉ Checking chapters for title case...check_chapter_titles()
-✔ Titles look good
-◉ Checking section for sentence case...check_section_titles()
-◉ Checking for full stops...check_fullstops()
-✔ Captions and friends look good look good
-◉ Checking for undefined citations...check_citations()
-✔ Citations look good
-◉ Checking for duplicate labels...check_labels()
-✔ Labels look good
-◉ Checking for undefined refs...check_references()
-✔ Refs look good
-◉ Checking URLS...check_urls()
-✔ URLs look good
-◉ Checking lint...check_code_style()
-✔ Styling looks good
-◉ Checking version in config.yml...check_version()
-✔ Config looks good!
-◉ Checking for uncommitted files...check_unstaged()
+◉ Checking template files
+◉ Checking package versions
+◉ Spell check (experimental)
+◉ Checking chapters for title case
+◉ Checking section for sentence case
+◉ Checking for full stops
+◉ Checking for undefined citations
+◉ Checking for duplicate labels
+◉ Checking for undefined refs
+◉ Checking URLS
+◉ Checking lint
+◉ Checking version in config.yml
+◉ Checking for uncommitted 
 ✔ Everything committed!
 ★ ★ You are fabulous! ★ ★
 ```
@@ -265,14 +292,14 @@ Correct formatting
 
 # inteRgrate `r emo::ji("package")`
 
-We wanted to **simpilfy** and **standardise** the way we use CI at Jumping Rivers
+* We wanted to **simplify** and **standardise** the way we use CI
 
-* Make continuous integration more consistent across platforms
-* Specify the exact number of NOTES and WARNINGS we allow.
+* Create functions which will work on GitHub, GitLab and in R
+
+* Specify the exact number of NOTES and WARNINGS we allow
+
 * Include additional checks
-    * lints
-    * not using imports within namespaces
-* Can use it on travis-ci, gitlab-ci or just in R.
+
 
 ---
 
@@ -299,11 +326,11 @@ inteRgrate::check_lintr()
 
 .pull-left[
 
-* Do use continous integration `r emo::ji("heavy_check_mark")`
+* Use continuous integration `r emo::ji("heavy_check_mark")`
 
 * Don't get upset when it fails `r emo::ji("weary")`
 
-* Feel happy that you've taken a step toward more robust code `r emo::ji("lock")`
+* Feel happy you've taken a step toward more robust code `r emo::ji("lock")`
 
 * Chat to us if you need help `r emo::ji("email")`
 
@@ -313,6 +340,7 @@ inteRgrate::check_lintr()
 * [usethis](https://usethis.r-lib.org/)
 * [tic](https://github.com/ropenscilabs/tic)
 * [Julia's blogpost](https://juliasilge.com/blog/beginners-guide-to-travis/)
+* [GitHub PAT](https://itsalocke.com/blog/using-travis-make-sure-you-use-a-github-pat/)
 
 ]
 
