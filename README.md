@@ -2,6 +2,8 @@
 
 A place to store and link to presentations I have done.
 
+* [2019-11-16 Do you trust your R package?](https://trianglegirl.github.io/presentations/2019-05-01-introducing-rladies-lancaster/introducing-rladies-lancaster.html#1)
+
 * [2019-05-01 Introducing R-Ladies Lancaster](https://trianglegirl.github.io/presentations/2019-05-01-introducing-rladies-lancaster/introducing-rladies-lancaster.html#1)
 
 * [2019-01-10 Data Detectives: Florence Nightingale Day](https://trianglegirl.github.io/presentations/2019-01-10-data-detective/2019-01-10-data-detective.html#1)
