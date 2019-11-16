@@ -191,6 +191,18 @@ notifications:
 
 ---
 
+class: center
+
+# What jobs can you run on Travis?
+
+![](assets/lintr.png)
+![](assets/pushbullet.png)
+
+![](assets/covr.png)
+![](assets/testthat.png)
+
+---
+
 
 # Badge-tastic
 
@@ -238,18 +250,6 @@ class: center, middle, inverse
 class: center, middle, inverse
 
 ![](assets/dammit-travis-5.png)
-
----
-class: center 
-
-# What jobs can you run on Travis?
-
-![](assets/lintr.png)
-
-![](assets/pushbullet.png)
-
-![](assets/covr.png)
-![](assets/testthat.png)
 
 ---
 
