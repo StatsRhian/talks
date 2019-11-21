@@ -1,6 +1,6 @@
 ---
 title: "Can you trust your R package? `r emo::ji('package')`"
-subtitle: "SatRday Cardiff 2019"
+subtitle: "Manchester R"
 author: '`r jrPresentation::get_author()`'
 output:
   xaringan::moon_reader:
