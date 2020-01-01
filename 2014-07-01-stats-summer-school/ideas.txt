@@ -1,0 +1,104 @@
+Lecture 1
+
+Maths detective! Finding clues to understand the hidden pattern. 
+
+What is statistics? - NOT JUST DATA!
+Uncertainty
+
+Population and samples
+Gambling. 
+Tip from a friend (finance) or casino should we play?
+Get a return. 
+Assume we know the probabilities, therefore we can calcuate the average return. 
+Ideas: You can have runs of bad luck (or good) - therefore variance matters. Even if the game is in your favour, you might not want to play. 
+If you look at trendline/avereage return, you don't get the whole picture. 
+Leads into what is we don't know the probilities underlying. Thats the equivalent of taking a sample from a population. 
+It's hard to see what is happening underneath. 
+
+Problem session 1 - how the media reports uncertainty
+Example of patterns is this random
+Teen pregnancies - 
+http://news.bbc.co.uk/1/hi/scotland/highlands_and_islands/8073335.stm
+http://news.bbc.co.uk/1/hi/magazine/8486221.stm
+
+Lecture 2
+
+Regression to mean, speed cameras and also rice/cancer
+
+Get a positive results, what is the probability that that you have a disease?
+Breast cancer screening and terrorists. 
+
+Problem session 2
+
+Sally Clark - prosecutors fallacy
+
+
+The Brief - Statistics, Probability and Real Life Problems
+
+Statistics is not only a theoretical subject: it has a real impact on people's lives.  During the Summer School you will hear about:
+    how probability and statistics help analyse winning strategies for games,
+    how statistics is used - and misused - in the courtroom and,
+    why a positive or negative result in a diagnostic test might not quite mean what you would expect.
+Using a statistical computer package, you will explore some associated problems and data, then produce a poster and presentation describing your results.
+
+Our rough plan RANDOMNESS
+
+Ice breaker?
+Intro, who we are, what we do?
+What is a statistician?
+What is statistics?
+Sample/Italian Earthquake?
+
+Just numbers?
+
+
+Is that a big number? Examples
+Telegraph 2005, Raising the age of retirement  for men 65-> 67. 1 in 5 who would formally have survived long enough to collect a pension would now die before recieving a penny. 
+Yse that is big! But the really number is that 20% men die before 67, only 4% die within the 2 year gap of 65 - 67
+
+1997 Labor gov said it would spend and extra £300m over five years to create a million new childcare places. Break it down. £300 per place, £60 per year, £1.15 per week.
+
+The perils of ignoring variance
+
+False positives
+Causation / Correlation
+Regression to the mean
+
+Is this pattern random?
+
+Random walk/gambelers ruin
+#Woolworths Alien - http://www.badscience.net/2010/01/voices-of-the-ancients/
+Prosecutors fallacy (Sally Clark)
+Cancer/telephones/map CHAPTER 3 in TTTI http://www.dailymail.co.uk/health/article-473553/Orange-remove-mobile-mast-tower-doom-cancer-rate-soared.html
+
+Things go up and down. Dog walker,sports illustrated
+Death and serious injury fell by 35% on speed camera roads. Experiment. Each person is a road. Roll die twice and sum the throws - this is number of accidents. Any "black spots" (10, 11, 12) get given a speed camera. Roll again twice. 
+
+LINKS
+Jon's extremes talk - http://www.lancaster.ac.uk/fas/maths/docs/Predicting-the-Unpredictable-Prof-Jon-Tawn.pdf
+
+Cancer/telephones/map http://www.dailymail.co.uk/health/article-473553/Orange-remove-mobile-mast-tower-doom-cancer-rate-soared.html
+
+Bayes Theorem - http://yudkowsky.net/rational/bayes
+
+Professor Risk Risky you or cautious you? Micromort - https://www.youtube.com/watch?v=a1PtQ67urG4
+
+Tedtalk - Microlife (acute / chronic) https://www.youtube.com/watch?v=4LSbnEgvmG8
+
+Risk, Chance and Choice (DS and MB) Casulty - cough signal heart byypass.  FRAMING (michel and webb sketch) Probabilty of something not happening
+
+http://thenormchronicles.com/ interactive story of NORM
+
+Breast Cancer example - http://news.bbc.co.uk/1/hi/magazine/7910011.stm and a video http://vimeo.com/55761492
+
+Ratio bias - red bean 1/10 8/100 (53%)
+
+Risk trying to quantify incertaintly - one hour https://www.youtube.com/watch?v=MmnPdXZz-S8 
+Predict football results, micromort, obama, lottery, Swine flu - suprises
+
+Blastland gofigure links http://www.statlit.org/Blastland.htm
+
+Useful animations http://understandinguncertainty.org/view/animations
+
+Breat cancer animation - http://understandinguncertainty.org/files/animations/BayesTheorem1/BayesTheorem.html
+
