@@ -1,6 +1,9 @@
 # My presentations [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 A place to store and link to presentations I have done.
+* [2020-05-12 Florence and the Data Machine]()
+
+* [2019-02-05 Stories from San Francisco]()
 
 * [2019-11-16 Can you trust your R package?](https://trianglegirl.github.io/presentations/2019-11-16-trust-your-pkg/2019-11-16-trust-your-pkg.html#1)
 
