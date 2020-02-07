@@ -1,10 +1,8 @@
 # Presentation Ideas
 
 - [ ] Reproducible research
-- [x] Unusual uses for R
 - [ ] Is it significant?
 - [ ] How risky is fell running / cycling
-- [x] Research past and present (Unilever/Arctic)
 - [ ] Maths and love slides
 - [ ] Materials for Futurama group theory demo
 - [ ] Knitting and maths
@@ -15,3 +13,5 @@
 - [ ] Analysis of my experience with twitter hate bubbles
 - [ ] Scraping Welsh twitter
 - [ ] Parkrun
+- [x] Research past and present (Unilever/Arctic)
+- [x] Unusual uses for R
