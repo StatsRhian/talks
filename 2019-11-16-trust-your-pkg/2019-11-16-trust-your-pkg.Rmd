@@ -1,6 +1,6 @@
 ---
-title: "Can you trust your R package? `r emo::ji('package')`"
-subtitle: "Manchester R"
+title: "Can you trust your package? `r emo::ji('package')`"
+subtitle: "PyData Lancaster"
 author: '`r jrPresentation::get_author()`'
 output:
   xaringan::moon_reader:
@@ -74,11 +74,11 @@ layout:true
 
 # Hands up... `r emo::ji("raising_hand_woman")`
 
-* If you've written an R package before?
+* If you've written a package?
 
 --
 
-* If you've written a test before?
+* If you've written a test for your code before?
 
 --
 
@@ -96,9 +96,44 @@ layout:true
 
 ---
 
-class: center 
+class: center, middle, inverse
 
-#  Make a small changes and integrate often
+![](assets/cat-coding.gif)
+
+---
+
+class: center, middle, inverse
+
+![](assets/cat-cave.gif)
+
+---
+
+class: center, middle, inverse
+
+![](assets/cat-grumpy.gif)
+
+---
+class: middle center
+
+
+#  The Philosophy `r emo::ji("person_in_lotus_position")`
+
+--
+
+### Make small changes  `r emo::ji("mouse")`
+
+--
+
+### Integrate daily `r emo::ji("top")`
+
+--
+
+### Test automatically  `r emo::ji("robot")`
+
+
+---
+
+class: center middle
 
 
 ![](assets/ci.png)
@@ -260,6 +295,7 @@ class: center, middle, inverse
   * Full stops
   * Up-to-date packages
   * Dead links
+  * Chapter titles match slide titles
 
 * Our R packages `r emo::ji("package")`
   * Standard package check 
@@ -298,7 +334,7 @@ class: center, middle, inverse
 
 * Specify the exact number of NOTES and WARNINGS we allow
 
-* Include additional checks
+* Automate the checks locally **before** pushing
 
 
 ---
@@ -318,8 +354,28 @@ inteRgrate::check_lintr()
 ..........
 ✔ Lint looks good
 ```
-  
+ 
+---
 
+# What if you're forgetful like me?  `r emo::ji("person_facepalming")`
+
+* `inteRgrate::add_pre_commit()`
+* `inteRgrate::add_pre_push()`
+
+```{}
+rhian@xps13:~/git/jr-packages/jrIntroduction$ git commit -m "Test inteRgrate
+WARNING: ignoring environment value of R_HOME
+◉ Checking file extensions...check_r_filenames()
+✔ Extensions look good
+✔ Filenames look good
+ℹ Checking  R/get_data.R
+/home/rhian/git/jr-packages/jrIntroduction/R/get_data.R:54:4: style: Put spaces around all infix operators.
+  e=new.env()
+  ~^~
+Error: ✖ Linting errors
+Execution halted
+```
+ 
 ---
 
 # Summary 
