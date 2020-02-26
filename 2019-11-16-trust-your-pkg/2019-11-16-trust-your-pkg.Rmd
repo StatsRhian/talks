@@ -133,14 +133,6 @@ class: middle center
 
 ---
 
-class: center middle
-
-
-![](assets/ci.png)
-
-
----
-
 
 # Why use CI?
 
