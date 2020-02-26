@@ -256,42 +256,6 @@ class: center
 [![Travis build status](https://travis-ci.org/jr-packages/jrIntroduction.svg?branch=master)](https://travis-ci.org/jr-packages/jrIntroduction)
 
 ```
-  
----
-
-class: center, middle, inverse
-
-![](assets/no-pass.gif)
-
----
-
-class: center, middle, inverse
-
-![](assets/dammit-travis-1.png)
-
----
-
-class: center, middle, inverse
-
-![](assets/dammit-travis-2.png)
-
----
-
-class: center, middle, inverse
-
-![](assets/dammit-travis-3.png)
-
----
-
-class: center, middle, inverse
-
-![](assets/dammit-travis-4.png)
-
----
-
-class: center, middle, inverse
-
-![](assets/dammit-travis-5.png)
 
 ---
 
@@ -306,7 +270,7 @@ class: center, middle, inverse
 
 * Our R packages 📦
   * Standard package check 
-  * Lintr styling
+  * LintR / Flake8 styling
   * Sensible file names
 
 ---
@@ -370,19 +334,85 @@ inteRgrate::check_lintr()
 * `inteRgrate::add_pre_push()`
 
 ```{}
-rhian@xps13:~/git/jr-packages/jrIntroduction$ git commit -m "Test inteRgrate
-WARNING: ignoring environment value of R_HOME
+$ git commit -m "Test inteRgrate"
 ◉ Checking file extensions...check_r_filenames()
 ✔ Extensions look good
 ✔ Filenames look good
 ℹ Checking  R/get_data.R
-/home/rhian/git/jr-packages/jrIntroduction/R/get_data.R:54:4: style: Put spaces around all infix operators.
+/home/rhian/git/jr-packages/jrIntroduction/R/get_data.R:54:4:
+style: Put spaces around all infix operators.
   e=new.env()
   ~^~
 Error: ✖ Linting errors
 Execution halted
 ```
- 
+
+
+---
+
+# Package build &amp; test with Python 🐍
+
+
+```
+run-test:
+  stage: test
+  script:
+    - poetry run pip3 install jrpytests
+    - poetry run python3 -c "import jrpytests; jrpytests.checkvignettespdffiles()"
+    - poetry run python3 -c "import jrpytests; jrpytests.runpytests()"
+    - poetry run python3 -c "import jrpytests; jrpytests.runflake8pythonfiles()"
+    - poetry run python3 -c "import jrpytests; jrpytests.runflake8rmdpychunks()"
+  except:
+  - master
+
+run-publish:
+  stage: publish
+  script:
+    - poetry publish --username "__token__" --password "$PYPI_TOKEN"
+  only:
+    - master
+```
+
+---
+
+class: center, middle, inverse
+
+![](assets/no-pass.gif)
+
+---
+
+class: center, middle, inverse
+
+![](assets/dammit-travis-1.png)
+
+---
+
+class: center, middle, inverse
+
+![](assets/dammit-travis-2.png)
+
+---
+
+class: center, middle, inverse
+
+![](assets/dammit-travis-3.png)
+
+---
+
+class: center, middle, inverse
+
+![](assets/dammit-travis-4.png)
+
+---
+
+class: center, middle, inverse
+
+![](assets/dammit-travis-5.png)
+
+---
+
+![](assets/travis-hell.png)
+
 ---
 
 # Summary 
