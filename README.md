@@ -23,5 +23,7 @@ A place to store and link to presentations I have done.
 
 * [2017-04-20 Unilever case study](https://trianglegirl.github.io/presentations/2017-04-20-unilever-case-study/2017-04-20-unilever-case-study#1)
 
+* [2020-05-28 A Day in the Life with R](https://trianglegirl.github.io/presentations/2020-05-28-day-in-the-life/day-in-the-life-barclays.html#1)
+
 
 
