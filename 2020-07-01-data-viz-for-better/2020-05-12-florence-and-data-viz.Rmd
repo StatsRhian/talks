@@ -1,12 +1,14 @@
 ---
-title: "Can you trust your R package? `r emo::ji('package')`"
-subtitle: "Manchester R"
+title: "Data Viz for better `r emo::ji('graph')`"
+subtitle: " RSS Merseyside"
 author: '`r jrPresentation::get_author()`'
+date: '2020-07-01'
 output:
   xaringan::moon_reader:
-    css: ["default", "style.css"]
+    css: ["default", "ninjutsu", "style.css"]
     lib_dir: libs
     nature:
+      ratio: 16:10
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
@@ -17,333 +19,292 @@ editor_options:
 ```{r setup, include=FALSE, message=FALSE}
 options(htmltools.dir.version = FALSE)
 library("jrPresentation")
-set_presentation_options()
+#set_presentation_options()
 knitr::opts_chunk$set(cache = FALSE)
 ```
 
+layout: true
 
-layout:true
-`r add_border(inverse=FALSE)`
-
----
-
-# Jumping Rivers
-
-.pull-left[
-<img src="assets/robot.jpg"></img>
-]
-
-
-.pull-right[
-
-
-* On-site training (RSS accredited)
-
-* R and python consultancy
-
-* Dashboard creation
-
-* Code review
-
-* Continuous integration
-
-* RStudio full service certified partners
-
-* System architecture
-
-* R Package development
-
-* Predictive analytics
-  ]
-  
----
-
-# Our clients
-
-<div id="clients">
-<img src="assets/shell.png"></img><img src="assets/sustrans.png"></img>
-<img src="assets/yorkshire.png"></img><img src="assets/hastings.png"></img>
-<img src="assets/Pragmatic.png" style=position:relative;top:*2.5rem></img><img src="assets/nhs.png"></img>
-<img src="assets/royal_statistical_society.jpg"></img><img src="assets/Francis_Crick_Institute.png"></img>
-<img src="assets/Ministry_of_Defence.png"></img><img src="assets/University_of_Manchester.png"></img>
-<img src="assets/scot-gov.png"></img>
-<img src="assets/ea.png" style=position:relative;top:-3rem></img>
-</div>
+`r add_border()`
 
 ---
 
-# Hands up... `r emo::ji("raising_hand_woman")`
-
-* If you've written an R package before?
-
---
-
-* If you've written a test before?
-
---
-
-* If you've used version control before?
-
---
-
-* If you've used continuous integration before?
+# Florence Mug
 
 ---
 
-# Git Refresher
-
-![](assets/git.png)
-
----
-
-class: center 
-
-#  Make a small changes and integrate often
-
-
-![](assets/ci.png)
-
+My Florence mug (statistician & nurse)
+Communicator (key part of both)
 
 ---
 
+# Why do we make plots?
 
-# Why use CI?
-
-
-* Get daily constant feedback `r emo::ji("repeat")`
-
-* Catch bugs early `r emo::ji("bug")`
-
-* Avoid the monster commit `r emo::ji("japanese_ogre")`
-
-* You don't have to remember to run `devtools::check()` `r emo::ji("person_facepalming")`
----
-
-# Travis?
-
-.pull-left[
-
-* A hosted continuous integration service
-
-* Used to build and test software projects hosted at GitHub
-
-* Essentially a push to GitHub, triggers another job
-
-* This job could be anything 
-]
-
-.pull-right[
-<img src="assets/travis.png"></img>
-]
-
+Why do we make plots...
+Pretty
+Get published
+Clickbate
+Art
+Make a difference / make a change
 
 ---
 
-# How to set it up?
+# How can graphics make a difference?
 
-* Host your R package on GitHub
+* ACTION
+* Challenger disaster
+  https://bookdown.org/egarpor/PM-UC3M/glm-challenger.html
+* evidence-based healthcare
 
-* Create a `.travis.yml` file `usethis::use_travis()`
+FN: Asking the right questions - What make a good graph(before the plot)
+FN: Organise correctly - to make comparisons
 
-* Go to travis-ci.org to link your GitHub account with travis
+---
 
-* Turn on ci for your project by switching the button
+# Victoria Viz
 
---
+Playfair
+Minard
 
-```{r, eval = FALSE}
-> usethis::use_travis()
-✔ Setting active project to '/home/rhian/Documents/presentations/2019-11-16-trust-your-pkg'
-✔ Writing '.travis.yml'
-✔ Adding '^\\.travis\\.yml$' to '.Rbuildignore'
-● Turn on travis for your repo at https://travis-ci.org/profile/trianglegirl
+Golden Age of Statistics: https://projecteuclid.org/download/pdfview_1/euclid.ss/1242049392
+Graphcs: https://archive.org/details/mortalityofbriti00lond/page/n33/mode/2up
+
+" printed Tables & all in double columns I do not think anyone will read it. None but scientific men ever look in the Appendix of a Report. And this is for the vulgar public."
+Tables more common, graphics not seen as usfeul (cite)
+
+Nightingale hoped her charts would liven up her publications; the queen, she thought, might look at the pictures, even if she did not read the words.
+
+---
+# The polar area
+
+* Name (rose, polar area, wedges)
+* Coxcombe - not the name - pampleft - she self-publisised go girl!
+* Describe it visually
+* Worked with Dr William Farr(Medical Statistician)
+* Covid-collateral damage 
+* Originally Batwing but FN was worried misinterpretted.
+ * "The length of the radial line in each month is proportional to the death rate, but both the text and the appearance imply that it is the shaded area that is proportional to the death rate, rather than the length of the radial lines.  Florence recognised this error and inserted an erratum slip, but then replaced this diagram in later documents (nos. 3, 4, and 5 listed above) with what I will call the 'wedges' diagram."
+
+ * She didn't invent it:
+  * The first known use of polar area diagrams was by André-Michel Guerry,
+    * In 1829, Guerry invented a new graphic form, the polar area diagram to show variations in weather and       other phenomena over calendar cycles.[Explore!](https://history.infowetrust.com/)
+
+---
+
+# Reviewing / exploring the diagram
+
+* Show a modern version for easier reading
+* Why didn’t she make a column chart?
+ * Compare year on year
+ * Compare season on season
+ * Stand out from the rest (many bar charts)
+ * Which tells the better story?
+* colour palette
+* cyclic pattern - circular
+
+* Bar chart - polar area [distortion ](https://understandinguncertainty.org/node/214)
+
+* Not a bar chart!
+  3 benefits of Nightingale Rose charts over pie charts
+   1) Each slice takes an equal sector of the circle, making labeling much cleaner
+   2) Each slice still maintains an accurate area comparison w/ other slices (by making the radius of the slice equal to the square root of the value);
+   3) Since each slice is in a fixed position and the charts can be made much smaller than pie charts, small multiples are very easy to create
+
+* Could we improve
+ * Read left-to-right?
+ * Catchy title
+
+---
+
+# Opinions
+
+> The diagrams improve on pie charts in exchange for a greater difficulty of reading. As is the case for pie charts, the inherent problem is the difficulty of making good comparisons across the wedges. In general, for such small data sets, tables will outperform graphics.
+
+-- Edward Tufte
+
+* Is it wrong to be enraged by a graph - LL
+* The graph conceals parts of the data, misrepresents quantity by area, and what is worst of all, *requires explanation*.
+
+---
+# Other plots
+
+---
+
+# Area / stacked
+
+Most of the graphics used in Nos. 1 and 2 are similar to those previously used by her adviser William Farr in his Registrar-General's Annual Reports.  They are mostly what we might call '100% area' or '100% stacked bar':  Lord Herbert bar chart
+
+---
+
+# Honeycomb
+
+There is also one 'honeycomb' graphic showing how densely soldiers are packed in camp (a device which Farr had already used for illustrating urban density), and two other graphics that are highly original.  
+
+---
+
+# Lines
+
+The other highly original chart is what I will call the 'Lines' - a bar chart showing how soldiers in peacetime, living in their barracks in England, were dying at a faster rate than civilians in the cities around them.
+
+---
+
+# Re-creating in R
+
+---
+
+# StatsYSS #FloViz competition
+
+* All the results: 
+  https://twitter.com/statsyss/status/1260168592198455301
+
+https://statsyss.wordpress.com/2020/05/13/floviz-winning-entries/
+
+Highlight my favourites
+Edward Gunning: https://github.com/edwardgunning/FlorenceNightingale
+
+Graham:
+https://t.co/PxDiVppHI4?amp=1
+
+---
+
+# Elsewhere
+
+https://www.theguardian.com/world/interactive/2012/may/08/gay-rights-united-states
+http://measure.fathom.info/
+
+---
+
+# Data
+
+```{load data}
+library("HistData")
+```
+---
+
+# Perfect recreation in R (Flipbook)
+
+
+```{r}
+library("dplyr")
+library("HistData")
+library("ggplot2")
+library("tidyr")
+
+flo_pal = c("Wounds.rate" = "#e7bebc",
+            "Other.rate" = "#322b2f",
+            "Disease.rate" = "#b9c5cc")
+
+```
+
+* https://rpubs.com/kwlee58/492913 
+* Use flip book to show the breakdown
+* Use shiny to make interactive? Or plotly?
+* Appearing in time 
+* Show minimise from Before and after
+
+---
+
+# Flipbook
+
+```{r}
+source(file = "https://raw.githubusercontent.com/EvaMaeRey/little_flipbooks_library/master/xaringan_reveal_parentheses_balanced.R")
 ```
 
 ---
 
-# An example `travis.yml` file
+# Transform
 
-
-```{}
-language: r
-cache: packages
+```{r polartransform, echo = FALSE, eval = TRUE, fig.height=5}
+HistData::Nightingale %>%
+  mutate(When = if_else(Year == 1854 | (Year == 1855 & Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))  %>%
+  pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths") -> 
+  polar_data
 ```
 
---
 
-```{}
-r:
-  - oldrel
-  - release
-  - devel
-```
-
---
-
-```{}
-notifications:
-  email:
-    recipients:
-     - alerts@jumpingrivers.support
-    on_success: change
-    on_failure: change
-```
 
 ---
 
-class: center
-
-# What jobs can you run on Travis?
-
-![](assets/lintr.png)
-![](assets/pushbullet.png)
-
-![](assets/covr.png)
-![](assets/testthat.png)
+layout: true
 
 ---
 
+# Plot
 
-# Badge-tastic
-
-[![Travis build status](https://travis-ci.org/jr-packages/jrIntroduction.svg?branch=master)](https://travis-ci.org/jr-packages/jrIntroduction)
-
-
-```{}
-
-[![Travis build status](https://travis-ci.org/jr-packages/jrIntroduction.svg?branch=master)](https://travis-ci.org/jr-packages/jrIntroduction)
-
-```
-  
----
-
-class: center, middle, inverse
-
-![](assets/no-pass.gif)
-
----
-
-class: center, middle, inverse
-
-![](assets/dammit-travis-1.png)
-
----
-
-class: center, middle, inverse
-
-![](assets/dammit-travis-2.png)
-
----
-
-class: center, middle, inverse
-
-![](assets/dammit-travis-3.png)
-
----
-
-class: center, middle, inverse
-
-![](assets/dammit-travis-4.png)
-
----
-
-class: center, middle, inverse
-
-![](assets/dammit-travis-5.png)
-
----
-
-# Jumping Rivers and CI 
-
-* R training notes `r emo::ji("book")`
-  * Spell check
-  * Full stops
-  * Up-to-date packages
-  * Dead links
-
-* Our R packages `r emo::ji("package")`
-  * Standard package check 
-  * Lintr styling
-  * Sensible file names
-
----
-
-# Note check demo
-
-```
-◉ Comparing to master
-◉ Checking template files
-◉ Checking package versions
-◉ Spell check (experimental)
-◉ Checking chapters for title case
-◉ Checking section for sentence case
-◉ Checking for full stops
-◉ Checking for undefined citations
-◉ Checking for duplicate labels
-◉ Checking for undefined refs
-◉ Checking URLS
-◉ Checking lint
-◉ Checking version in config.yml
-◉ Checking for uncommitted 
-✔ Everything committed!
-★ ★ You are fabulous! ★ ★
+```{r, polarplot, eval = FALSE, fig.width = 10}
+  ggplot(polar_data) +
+  aes(x = Month) + 
+  aes(y = Deaths) + 
+  geom_col() + 
+  facet_wrap(~When) + 
+  aes(fill = Cause) + 
+  theme(legend.position = "none") + 
+  scale_y_sqrt() +
+  coord_polar(start = pi, clip = "off") +
+	ggtitle("Causes of Mortality in the Army in the East") + 
+	xlab("") + 
+  scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",
+            "Other.rate" = "#322b2f",
+            "Disease.rate" = "#b9c5cc")) +
+  geom_hline(yintercept = sqrt(12), linetype="dotted") #+ 
+  theme_void()
 ```
 ---
 
-# inteRgrate `r emo::ji("package")`
-
-* We wanted to **simplify** and **standardise** the way we use CI
-
-* Create functions which will work on GitHub, GitLab and in R
-
-* Specify the exact number of NOTES and WARNINGS we allow
-
-* Include additional checks
-
+`r apply_reveal("polartransform")`
 
 ---
 
-# Main functions of inteRgrate `r emo::ji("heavy_check_mark")`
 
-  * `check_pkg()`
-  * `check_r_filenames()`
-  * `check_tidy_description()`
-  * `check_lintr()`
-  * `check_namespace()`
-
-```{}
-inteRgrate::check_lintr()
-◉ Checking lint...check_lintr()
-◉ Checking vignettes
-..........
-✔ Lint looks good
-```
-  
+`r apply_reveal("polarplot")`
 
 ---
 
-# Summary 
+layout: true
 
-.pull-left[
+`r add_border()`
+---
 
-* Use continuous integration `r emo::ji("heavy_check_mark")`
+# Showcasing modern data in this style (Covid?)
 
-* Don't get upset when it fails `r emo::ji("weary")`
+---
 
-* Feel happy you've taken a step toward more robust code `r emo::ji("lock")`
+# Plots of R-Ladies data in Florence diagrams
 
-* Chat to us if you need help `r emo::ji("email")`
+---
 
+# Modern Nightingales
 
-#### Resources
-* [inteRgrate](https://github.com/jumpingrivers/inteRgrate)
-* [usethis](https://usethis.r-lib.org/)
-* [tic](https://github.com/ropenscilabs/tic)
-* [Julia's blogpost](https://juliasilge.com/blog/beginners-guide-to-travis/)
-* [GitHub PAT](https://itsalocke.com/blog/using-travis-make-sure-you-use-a-github-pat/)
+Who are the modern Florence Nightingales?
 
-]
+[TO READ](https://medium.com/@bituin/9-inspiring-females-in-data-visualization-6bf332185556)
+[TO READ](https://medium.com/nightingale/beyond-nightingale-being-a-woman-in-data-visualization-d7968d171ccf)
 
-.pull-right[
-![](assets/failing.jpg)
-]
+Many *twitter links and images*
+
+---
+
+# Amy Cesal
+
+* [Amy Cesal](https://medium.com/nightingale/https-medium-com-data-visualization-society-wedding-data-viz-36e7b9f4787f)
+
+---
+
+# Mona Chalabi
+
+---
+
+# Last words
+
+* Improve ourselves - through observation and reason
+* "God's revenge upon murder" (Divine mission - unavoidable deaths)
+* RSS moto  Data | Evidence | Decisions
+* Economist: 
+
+ “We do not want impressions, we want facts,” Farr wrote to her in 1861. “You complain that your report would be dry. The dryer the better. Statistics should be the dryest of all reading.” Fortunately, she ignored him.
+
+---
+
+# Thank you
+
+GitHub link

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data Viz for better 📈</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Rhian Davies (@trianglegirl)" />
+    <meta name="date" content="2020-07-01" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/ninjutsu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Data Viz for better 📈
+## RSS Merseyside
+### Rhian Davies (<a href="https://twitter.com/trianglegirl">@trianglegirl</a>)
+### 2020-07-01
+
+---
+
+
+
+
+layout: true
+
+layout: true
+
+      &lt;div class="jr-header"&gt;
+        &lt;img class="logo" src="assets/white_logo_full.png"/&gt;
+        &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+---
+
+# Florence Mug
+
+---
+
+My Florence mug (statistician &amp; nurse)
+Communicator (key part of both)
+
+---
+
+# Why do we make plots?
+
+Why do we make plots...
+Pretty
+Get published
+Clickbate
+Art
+Make a difference / make a change
+
+---
+
+# How can graphics make a difference?
+
+* ACTION
+* Challenger disaster
+  https://bookdown.org/egarpor/PM-UC3M/glm-challenger.html
+* evidence-based healthcare
+
+FN: Asking the right questions - What make a good graph(before the plot)
+FN: Organise correctly - to make comparisons
+
+---
+
+# Victoria Viz
+
+Playfair
+Minard
+
+Golden Age of Statistics: https://projecteuclid.org/download/pdfview_1/euclid.ss/1242049392
+Graphcs: https://archive.org/details/mortalityofbriti00lond/page/n33/mode/2up
+
+" printed Tables &amp; all in double columns I do not think anyone will read it. None but scientific men ever look in the Appendix of a Report. And this is for the vulgar public."
+Tables more common, graphics not seen as usfeul (cite)
+
+Nightingale hoped her charts would liven up her publications; the queen, she thought, might look at the pictures, even if she did not read the words.
+
+---
+# The polar area
+
+* Name (rose, polar area, wedges)
+* Coxcombe - not the name - pampleft - she self-publisised go girl!
+* Describe it visually
+* Worked with Dr William Farr(Medical Statistician)
+* Covid-collateral damage 
+* Originally Batwing but FN was worried misinterpretted.
+ * "The length of the radial line in each month is proportional to the death rate, but both the text and the appearance imply that it is the shaded area that is proportional to the death rate, rather than the length of the radial lines.  Florence recognised this error and inserted an erratum slip, but then replaced this diagram in later documents (nos. 3, 4, and 5 listed above) with what I will call the 'wedges' diagram."
+
+ * She didn't invent it:
+  * The first known use of polar area diagrams was by André-Michel Guerry,
+    * In 1829, Guerry invented a new graphic form, the polar area diagram to show variations in weather and       other phenomena over calendar cycles.[Explore!](https://history.infowetrust.com/)
+
+---
+
+# Reviewing / exploring the diagram
+
+* Show a modern version for easier reading
+* Why didn’t she make a column chart?
+ * Compare year on year
+ * Compare season on season
+ * Stand out from the rest (many bar charts)
+ * Which tells the better story?
+* colour palette
+* cyclic pattern - circular
+
+* Bar chart - polar area [distortion ](https://understandinguncertainty.org/node/214)
+
+* Not a bar chart!
+  3 benefits of Nightingale Rose charts over pie charts
+   1) Each slice takes an equal sector of the circle, making labeling much cleaner
+   2) Each slice still maintains an accurate area comparison w/ other slices (by making the radius of the slice equal to the square root of the value);
+   3) Since each slice is in a fixed position and the charts can be made much smaller than pie charts, small multiples are very easy to create
+
+* Could we improve
+ * Read left-to-right?
+ * Catchy title
+
+---
+
+# Opinions
+
+&gt; The diagrams improve on pie charts in exchange for a greater difficulty of reading. As is the case for pie charts, the inherent problem is the difficulty of making good comparisons across the wedges. In general, for such small data sets, tables will outperform graphics.
+
+-- Edward Tufte
+
+* Is it wrong to be enraged by a graph - LL
+* The graph conceals parts of the data, misrepresents quantity by area, and what is worst of all, *requires explanation*.
+
+---
+# Other plots
+
+---
+
+# Area / stacked
+
+Most of the graphics used in Nos. 1 and 2 are similar to those previously used by her adviser William Farr in his Registrar-General's Annual Reports.  They are mostly what we might call '100% area' or '100% stacked bar':  Lord Herbert bar chart
+
+---
+
+# Honeycomb
+
+There is also one 'honeycomb' graphic showing how densely soldiers are packed in camp (a device which Farr had already used for illustrating urban density), and two other graphics that are highly original.  
+
+---
+
+# Lines
+
+The other highly original chart is what I will call the 'Lines' - a bar chart showing how soldiers in peacetime, living in their barracks in England, were dying at a faster rate than civilians in the cities around them.
+
+---
+
+# Re-creating in R
+
+---
+
+# StatsYSS #FloViz competition
+
+* All the results: 
+  https://twitter.com/statsyss/status/1260168592198455301
+
+https://statsyss.wordpress.com/2020/05/13/floviz-winning-entries/
+
+Highlight my favourites
+Edward Gunning: https://github.com/edwardgunning/FlorenceNightingale
+
+Graham:
+https://t.co/PxDiVppHI4?amp=1
+
+---
+
+# Elsewhere
+
+https://www.theguardian.com/world/interactive/2012/may/08/gay-rights-united-states
+http://measure.fathom.info/
+
+---
+
+# Data
+
+
+```load
+library("HistData")
+```
+---
+
+# Perfect recreation in R (Flipbook)
+
+
+
+```r
+library("dplyr")
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
+library("HistData")
+library("ggplot2")
+library("tidyr")
+
+flo_pal = c("Wounds.rate" = "#e7bebc",
+            "Other.rate" = "#322b2f",
+            "Disease.rate" = "#b9c5cc")
+```
+
+* https://rpubs.com/kwlee58/492913 
+* Use flip book to show the breakdown
+* Use shiny to make interactive? Or plotly?
+* Appearing in time 
+* Show minimise from Before and after
+
+---
+
+# Flipbook
+
+
+```r
+source(file = "https://raw.githubusercontent.com/EvaMaeRey/little_flipbooks_library/master/xaringan_reveal_parentheses_balanced.R")
+```
+
+```
+## ── Attaching packages ──────────────────────────────────── tidyverse 1.3.0 ──
+```
+
+```
+## ✓ tibble  3.0.1     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0
+## ✓ purrr   0.3.4
+```
+
+```
+## ── Conflicts ─────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+```
+
+---
+
+# Transform
+
+
+
+
+
+---
+
+layout: true
+
+---
+
+# Plot
+
+
+```r
+  ggplot(polar_data) +
+  aes(x = Month) + 
+  aes(y = Deaths) + 
+  geom_col() + 
+  facet_wrap(~When) + 
+  aes(fill = Cause) + 
+  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) + 
+  theme(legend.position = "none") + 
+  scale_y_sqrt() +
+  coord_polar(start = pi, clip = "off") +
+	ggtitle("Causes of Mortality in the Army in the East") + 
+	xlab("") + 
+  scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",
+            "Other.rate" = "#322b2f",
+            "Disease.rate" = "#b9c5cc")) +
+  geom_hline(yintercept = sqrt(12), linetype="dotted") #+ 
+  theme_void()
+```
+---
+
+class: split-40
+count: false
+.column[.content[
+
+```r
+*HistData::Nightingale
+```
+]]
+.column[.content[
+
+```
+##          Date Month Year  Army Disease Wounds Other Disease.rate Wounds.rate
+## 1  1854-04-01   Apr 1854  8571       1      0     5          1.4         0.0
+## 2  1854-05-01   May 1854 23333      12      0     9          6.2         0.0
+## 3  1854-06-01   Jun 1854 28333      11      0     6          4.7         0.0
+## 4  1854-07-01   Jul 1854 28722     359      0    23        150.0         0.0
+## 5  1854-08-01   Aug 1854 30246     828      1    30        328.5         0.4
+## 6  1854-09-01   Sep 1854 30290     788     81    70        312.2        32.1
+## 7  1854-10-01   Oct 1854 30643     503    132   128        197.0        51.7
+## 8  1854-11-01   Nov 1854 29736     844    287   106        340.6       115.8
+## 9  1854-12-01   Dec 1854 32779    1725    114   131        631.5        41.7
+## 10 1855-01-01   Jan 1855 32393    2761     83   324       1022.8        30.7
+## 11 1855-02-01   Feb 1855 30919    2120     42   361        822.8        16.3
+## 12 1855-03-01   Mar 1855 30107    1205     32   172        480.3        12.8
+## 13 1855-04-01   Apr 1855 32252     477     48    57        177.5        17.9
+## 14 1855-05-01   May 1855 35473     508     49    37        171.8        16.6
+## 15 1855-06-01   Jun 1855 38863     802    209    31        247.6        64.5
+## 16 1855-07-01   Jul 1855 42647     382    134    33        107.5        37.7
+## 17 1855-08-01   Aug 1855 44614     483    164    25        129.9        44.1
+## 18 1855-09-01   Sep 1855 47751     189    276    20         47.5        69.4
+## 19 1855-10-01   Oct 1855 46852     128     53    18         32.8        13.6
+## 20 1855-11-01   Nov 1855 37853     178     33    32         56.4        10.5
+## 21 1855-12-01   Dec 1855 43217      91     18    28         25.3         5.0
+## 22 1856-01-01   Jan 1856 44212      42      2    48         11.4         0.5
+## 23 1856-02-01   Feb 1856 43485      24      0    19          6.6         0.0
+## 24 1856-03-01   Mar 1856 46140      15      0    35          3.9         0.0
+##    Other.rate
+## 1         7.0
+## 2         4.6
+## 3         2.5
+## 4         9.6
+## 5        11.9
+## 6        27.7
+## 7        50.1
+## 8        42.8
+## 9        48.0
+## 10      120.0
+## 11      140.1
+## 12       68.6
+## 13       21.2
+## 14       12.5
+## 15        9.6
+## 16        9.3
+## 17        6.7
+## 18        5.0
+## 19        4.6
+## 20       10.1
+## 21        7.8
+## 22       13.0
+## 23        5.2
+## 24        9.1
+```
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+HistData::Nightingale %&gt;%  
+* mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))
+```
+]]
+.column[.content[
+
+```
+##          Date Month Year  Army Disease Wounds Other Disease.rate Wounds.rate
+## 1  1854-04-01   Apr 1854  8571       1      0     5          1.4         0.0
+## 2  1854-05-01   May 1854 23333      12      0     9          6.2         0.0
+## 3  1854-06-01   Jun 1854 28333      11      0     6          4.7         0.0
+## 4  1854-07-01   Jul 1854 28722     359      0    23        150.0         0.0
+## 5  1854-08-01   Aug 1854 30246     828      1    30        328.5         0.4
+## 6  1854-09-01   Sep 1854 30290     788     81    70        312.2        32.1
+## 7  1854-10-01   Oct 1854 30643     503    132   128        197.0        51.7
+## 8  1854-11-01   Nov 1854 29736     844    287   106        340.6       115.8
+## 9  1854-12-01   Dec 1854 32779    1725    114   131        631.5        41.7
+## 10 1855-01-01   Jan 1855 32393    2761     83   324       1022.8        30.7
+## 11 1855-02-01   Feb 1855 30919    2120     42   361        822.8        16.3
+## 12 1855-03-01   Mar 1855 30107    1205     32   172        480.3        12.8
+## 13 1855-04-01   Apr 1855 32252     477     48    57        177.5        17.9
+## 14 1855-05-01   May 1855 35473     508     49    37        171.8        16.6
+## 15 1855-06-01   Jun 1855 38863     802    209    31        247.6        64.5
+## 16 1855-07-01   Jul 1855 42647     382    134    33        107.5        37.7
+## 17 1855-08-01   Aug 1855 44614     483    164    25        129.9        44.1
+## 18 1855-09-01   Sep 1855 47751     189    276    20         47.5        69.4
+## 19 1855-10-01   Oct 1855 46852     128     53    18         32.8        13.6
+## 20 1855-11-01   Nov 1855 37853     178     33    32         56.4        10.5
+## 21 1855-12-01   Dec 1855 43217      91     18    28         25.3         5.0
+## 22 1856-01-01   Jan 1856 44212      42      2    48         11.4         0.5
+## 23 1856-02-01   Feb 1856 43485      24      0    19          6.6         0.0
+## 24 1856-03-01   Mar 1856 46140      15      0    35          3.9         0.0
+##    Other.rate                     When
+## 1         7.0 APRIL 1854 TO MARCH 1855
+## 2         4.6 APRIL 1854 TO MARCH 1855
+## 3         2.5 APRIL 1854 TO MARCH 1855
+## 4         9.6 APRIL 1854 TO MARCH 1855
+## 5        11.9 APRIL 1854 TO MARCH 1855
+## 6        27.7 APRIL 1854 TO MARCH 1855
+## 7        50.1 APRIL 1854 TO MARCH 1855
+## 8        42.8 APRIL 1854 TO MARCH 1855
+## 9        48.0 APRIL 1854 TO MARCH 1855
+## 10      120.0 APRIL 1854 TO MARCH 1855
+## 11      140.1 APRIL 1854 TO MARCH 1855
+## 12       68.6 APRIL 1854 TO MARCH 1855
+## 13       21.2 APRIL 1855 TO MARCH 1856
+## 14       12.5 APRIL 1855 TO MARCH 1856
+## 15        9.6 APRIL 1855 TO MARCH 1856
+## 16        9.3 APRIL 1855 TO MARCH 1856
+## 17        6.7 APRIL 1855 TO MARCH 1856
+## 18        5.0 APRIL 1855 TO MARCH 1856
+## 19        4.6 APRIL 1855 TO MARCH 1856
+## 20       10.1 APRIL 1855 TO MARCH 1856
+## 21        7.8 APRIL 1855 TO MARCH 1856
+## 22       13.0 APRIL 1855 TO MARCH 1856
+## 23        5.2 APRIL 1855 TO MARCH 1856
+## 24        9.1 APRIL 1855 TO MARCH 1856
+```
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+HistData::Nightingale %&gt;%  
+  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))  %&gt;%  
+* pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths")
+```
+]]
+.column[.content[
+
+```
+## # A tibble: 72 x 10
+##    Date       Month  Year  Army Disease Wounds Other When         Cause   Deaths
+##    &lt;date&gt;     &lt;ord&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt;  &lt;int&gt; &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt;
+##  1 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Diseas…    1.4
+##  2 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Wounds…    0  
+##  3 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Other.…    7  
+##  4 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Diseas…    6.2
+##  5 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Wounds…    0  
+##  6 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Other.…    4.6
+##  7 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Diseas…    4.7
+##  8 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Wounds…    0  
+##  9 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Other.…    2.5
+## 10 1854-07-01 Jul    1854 28722     359      0    23 APRIL 1854 … Diseas…  150  
+## # … with 62 more rows
+```
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+HistData::Nightingale %&gt;%  
+  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))  %&gt;%  
+  pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths") -&gt;  
+* polar_data
+```
+]]
+.column[.content[
+
+]]
+
+---
+
+
+class: split-40
+count: false
+.column[.content[
+
+```r
+* ggplot(polar_data)
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_1-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+* aes(x = Month)
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_2-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+* aes(y = Deaths)
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_3-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+* geom_col()
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_4-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+* facet_wrap(~When)
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_5-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+  facet_wrap(~When) +  
+* aes(fill = Cause)
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_6-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+  facet_wrap(~When) +  
+  aes(fill = Cause) +  
+* theme(plot.margin = margin(t=-100,b=-100,50,r=-100))
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_7-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+  facet_wrap(~When) +  
+  aes(fill = Cause) +  
+  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
+* theme(legend.position = "none")
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_8-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+  facet_wrap(~When) +  
+  aes(fill = Cause) +  
+  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
+  theme(legend.position = "none") +  
+* scale_y_sqrt()
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_9-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+  facet_wrap(~When) +  
+  aes(fill = Cause) +  
+  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
+  theme(legend.position = "none") +  
+  scale_y_sqrt() +  
+* coord_polar(start = pi, clip = "off")
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_10-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+  facet_wrap(~When) +  
+  aes(fill = Cause) +  
+  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
+  theme(legend.position = "none") +  
+  scale_y_sqrt() +  
+  coord_polar(start = pi, clip = "off") +  
+*ggtitle("Causes of Mortality in the Army in the East")
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_11-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+  facet_wrap(~When) +  
+  aes(fill = Cause) +  
+  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
+  theme(legend.position = "none") +  
+  scale_y_sqrt() +  
+  coord_polar(start = pi, clip = "off") +  
+	ggtitle("Causes of Mortality in the Army in the East") +  
+*xlab("")
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_12-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+  facet_wrap(~When) +  
+  aes(fill = Cause) +  
+  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
+  theme(legend.position = "none") +  
+  scale_y_sqrt() +  
+  coord_polar(start = pi, clip = "off") +  
+	ggtitle("Causes of Mortality in the Army in the East") +  
+	xlab("") +  
+* scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",
+*           "Other.rate" = "#322b2f",
+*           "Disease.rate" = "#b9c5cc"))
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_15-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+  facet_wrap(~When) +  
+  aes(fill = Cause) +  
+  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
+  theme(legend.position = "none") +  
+  scale_y_sqrt() +  
+  coord_polar(start = pi, clip = "off") +  
+	ggtitle("Causes of Mortality in the Army in the East") +  
+	xlab("") +  
+  scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",  
+            "Other.rate" = "#322b2f",  
+            "Disease.rate" = "#b9c5cc")) +  
+* geom_hline(yintercept = sqrt(12), linetype="dotted")   #+
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_16-1.png)&lt;!-- --&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+  facet_wrap(~When) +  
+  aes(fill = Cause) +  
+  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
+  theme(legend.position = "none") +  
+  scale_y_sqrt() +  
+  coord_polar(start = pi, clip = "off") +  
+	ggtitle("Causes of Mortality in the Army in the East") +  
+	xlab("") +  
+  scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",  
+            "Other.rate" = "#322b2f",  
+            "Disease.rate" = "#b9c5cc")) +  
+  geom_hline(yintercept = sqrt(12), linetype="dotted") +  #+
+* theme_void()
+```
+]]
+.column[.content[
+![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_17-1.png)&lt;!-- --&gt;
+]]
+
+---
+
+layout: true
+
+layout: true
+
+      &lt;div class="jr-header"&gt;
+        &lt;img class="logo" src="assets/white_logo_full.png"/&gt;
+        &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+---
+
+# Showcasing modern data in this style (Covid?)
+
+---
+
+# Plots of R-Ladies data in Florence diagrams
+
+---
+
+# Modern Nightingales
+
+Who are the modern Florence Nightingales?
+
+[TO READ](https://medium.com/@bituin/9-inspiring-females-in-data-visualization-6bf332185556)
+[TO READ](https://medium.com/nightingale/beyond-nightingale-being-a-woman-in-data-visualization-d7968d171ccf)
+
+Many *twitter links and images*
+
+---
+
+# Amy Cesal
+
+* [Amy Cesal](https://medium.com/nightingale/https-medium-com-data-visualization-society-wedding-data-viz-36e7b9f4787f)
+
+---
+
+# Mona Chalabi
+
+---
+
+# Last words
+
+* Improve ourselves - through observation and reason
+* "God's revenge upon murder" (Divine mission - unavoidable deaths)
+* RSS moto  Data | Evidence | Decisions
+* Economist: 
+
+ “We do not want impressions, we want facts,” Farr wrote to her in 1861. “You complain that your report would be dry. The dryer the better. Statistics should be the dryest of all reading.” Fortunately, she ignored him.
+
+---
+
+# Thank you
+
+GitHub link
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:10",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
