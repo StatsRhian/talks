@@ -19,33 +19,55 @@ editor_options:
 ```{r setup, include=FALSE, message=FALSE}
 options(htmltools.dir.version = FALSE)
 library("jrPresentation")
-#set_presentation_options()
-knitr::opts_chunk$set(cache = FALSE)
+knitr::opts_chunk$set(fig.width = 8, message = FALSE, warning = FALSE, comment = "", cache = FALSE, fig.retina = 3)
+library(flipbookr)
+library(tidyverse)
+library(HistData)
+library(lubridate)
 ```
 
 layout: true
 
+---
+```{r tote}
+knitr::include_graphics(path = "graphics/tote-zoom.jpg")
+```
+???
+* I find myself looking at Florence's polar area diagram - atleast once a week.
+* If you see me in Aldi, or come to my house for a cuppa, you might think I'm a bit weird.
+
+
+---
+```{r crazy}
+knitr::include_graphics(path = "graphics/crazy-lady.jpg")
+```
+???
+
+* I have a large collection of FN paraphilania.
+* I might open a FN museum of the North
+* Florence Nigtingale Day started in 2013, run by Professor Nadia Mazda & Lancaster M&S dep
+* Statistician & Nurse. I would argue she was also a communicator - which is a key part of both.
+
+
+---
+
+layout: true
 `r add_border()`
-
----
-
-# Florence Mug
-
----
-
-My Florence mug (statistician & nurse)
-Communicator (key part of both)
 
 ---
 
 # Why do we make plots?
 
-Why do we make plots...
+
 Pretty
 Get published
 Clickbate
 Art
 Make a difference / make a change
+
+???
+
+* Florence made plots to tell a story 
 
 ---
 
@@ -61,20 +83,112 @@ FN: Organise correctly - to make comparisons
 
 ---
 
+# Challenger disaster
+
+• Launch Time: January 28, 1986
+• The temperature was 31◦F / -0.5 C
+• Exploded after 73 seconds from its launch leading to the death of its seven crew
+members
+
+Each rocket-booster has three joints called O-rings (6 total)
+
+• The night before the scheduled launch, discussions occurred as to whether the
+launch should be postponed because of the low temperature
+• It was believed, by some of the people who were involved in the decision, that
+low temperatures might harden the O-ring seals, and thus leading to a potentially
+dangerous combustion-gas leak
+• The O-rings had been designated as a ”Criticality 1” component
+• The engineers and manufacturers of the rocket motors believed that they should
+abort the flight
+• They presented several (hand written) tabulated numbers to show their point.
+The following figure was taken from Tufte (1997):
+
+```{r}
+data_url = "http://www.math.usu.edu/~symanzik/teaching/2009_stat6560/RDataAndScripts/sharif_abbass_project1_challenger.csv"
+
+challenger = readr::read_csv(url(data_url))
+
+challenger %>%
+ggplot(aes(x = temperature, y = r)) + 
+  geom_point() + 
+  geom_smooth(method = "gam", se = FALSE) +
+  xlim(20, 80) + 
+  ylim(0, 6) +
+  geom_vline(xintercept = 31, lty = 2) +
+  hrbrthemes::theme_ipsum()
+```
+
+---
+
 # Victoria Viz
 
-Playfair
-Minard
+
+[Explore!](https://history.infowetrust.com/)
+[Milestones](http://datavis.ca/milestones/index.php)
 
 Golden Age of Statistics: https://projecteuclid.org/download/pdfview_1/euclid.ss/1242049392
 Graphcs: https://archive.org/details/mortalityofbriti00lond/page/n33/mode/2up
 
 " printed Tables & all in double columns I do not think anyone will read it. None but scientific men ever look in the Appendix of a Report. And this is for the vulgar public."
-Tables more common, graphics not seen as usfeul (cite)
 
-Nightingale hoped her charts would liven up her publications; the queen, she thought, might look at the pictures, even if she did not read the words.
+* Tables more common, graphics not seen as usfeul (cite)
 
 ---
+
+# Minard
+ 
+---
+
+# William Playfair (1801)
+
+* http://www2.psych.utoronto.ca/users/spence/Spence%20(2006).pdf
+
+???
+
+Invention of the pie chart, and circle graph, used to show part-whole relations
+
+---
+
+layout: true
+
+---
+
+background-image: url(graphics/guerry_1829-coxcombs.jpg)
+background-size: contain 
+class: center, middle, inverse
+
+???
+
+* André-Michel Guerry (1829)
+* French lawyer and amateur statistician.
+* Show variations in weather and other phenomena over calendar cycles.
+* Variation of the pie chart
+* uses equi-angular sectors of differing radii
+* rather than sectors with varying angle, but equal radii
+* direction of the wind in 8 sectors
+* births and deaths by hour of theday.
+
+* Nightingale probably got the idea from William Farr, who in turn was acquainted with Guerry's work.
+
+---
+
+background-image: url(graphics/liverpool-rose.png)
+background-size: contain 
+class: center, middle
+
+---
+
+background-image: url(graphics/classic-wedge-2.jpeg)
+background-size: contain 
+class: center, middle, inverse
+
+---
+layout: true
+
+`r add_border()`
+
+---
+
 # The polar area
 
 * Name (rose, polar area, wedges)
@@ -83,11 +197,10 @@ Nightingale hoped her charts would liven up her publications; the queen, she tho
 * Worked with Dr William Farr(Medical Statistician)
 * Covid-collateral damage 
 * Originally Batwing but FN was worried misinterpretted.
- * "The length of the radial line in each month is proportional to the death rate, but both the text and the appearance imply that it is the shaded area that is proportional to the death rate, rather than the length of the radial lines.  Florence recognised this error and inserted an erratum slip, but then replaced this diagram in later documents (nos. 3, 4, and 5 listed above) with what I will call the 'wedges' diagram."
+ * "The length of the radial line in each month is proportional to the death rate, but both the text and the appearance imply that it is the shaded area that is proportional to the death rate, rather than the length of the radial lines.  Florence recognised this error and inserted an erratum slip, but then replaced this diagram in later documents (nos. 3, 4, and 5 listed above)
 
- * She didn't invent it:
-  * The first known use of polar area diagrams was by André-Michel Guerry,
-    * In 1829, Guerry invented a new graphic form, the polar area diagram to show variations in weather and       other phenomena over calendar cycles.[Explore!](https://history.infowetrust.com/)
+
+Nightingale hoped her charts would liven up her publications; the queen, she thought, might look at the pictures, even if she did not read the words.
 
 ---
 
@@ -102,7 +215,13 @@ Nightingale hoped her charts would liven up her publications; the queen, she tho
 * colour palette
 * cyclic pattern - circular
 
+---
+
+#  Bar chart?
 * Bar chart - polar area [distortion ](https://understandinguncertainty.org/node/214)
+
+
+---
 
 * Not a bar chart!
   3 benefits of Nightingale Rose charts over pie charts
@@ -113,6 +232,15 @@ Nightingale hoped her charts would liven up her publications; the queen, she tho
 * Could we improve
  * Read left-to-right?
  * Catchy title
+ 
+ . Shows direction as well as volume.
+The polar area diagram is good for plotting cyclic phenomena such as counts of death by month. It’s very evident from this chart that the height of deaths from infectious disease took place around January 1855.
+
+2. Visually impactful.
+Nightingale’s diagram is able to show that deaths from infectious disease is the leading cause very clearly because it’s easy to distinguish the difference in lengths than it would be angles as used with traditional pie charts.
+
+3. Can compare multiple sets of data or changes over time.
+Nightingale was able to leverage the polar area diagram to show the trends various causes of death from the Crimean War clearly over time. Thankfully as Nightingale and her team of nurses gained access to the soldiers in March 1855 we see a decline in deaths from infectious disease. This was done by improving ventilation in the hospital and implementing better sanitary practices.
 
 ---
 
@@ -124,9 +252,6 @@ Nightingale hoped her charts would liven up her publications; the queen, she tho
 
 * Is it wrong to be enraged by a graph - LL
 * The graph conceals parts of the data, misrepresents quantity by area, and what is worst of all, *requires explanation*.
-
----
-# Other plots
 
 ---
 
@@ -150,27 +275,8 @@ The other highly original chart is what I will call the 'Lines' - a bar chart sh
 
 # Re-creating in R
 
----
-
-# StatsYSS #FloViz competition
-
-* All the results: 
-  https://twitter.com/statsyss/status/1260168592198455301
-
-https://statsyss.wordpress.com/2020/05/13/floviz-winning-entries/
-
-Highlight my favourites
-Edward Gunning: https://github.com/edwardgunning/FlorenceNightingale
-
-Graham:
-https://t.co/PxDiVppHI4?amp=1
-
----
-
-# Elsewhere
-
-https://www.theguardian.com/world/interactive/2012/may/08/gay-rights-united-states
-http://measure.fathom.info/
+* Data from **histdata**
+* **ggplot2**
 
 ---
 
@@ -202,74 +308,78 @@ flo_pal = c("Wounds.rate" = "#e7bebc",
 * Appearing in time 
 * Show minimise from Before and after
 
----
-
-# Flipbook
-
-```{r}
-source(file = "https://raw.githubusercontent.com/EvaMaeRey/little_flipbooks_library/master/xaringan_reveal_parentheses_balanced.R")
-```
-
----
-
-# Transform
 
 ```{r polartransform, echo = FALSE, eval = TRUE, fig.height=5}
 HistData::Nightingale %>%
   mutate(When = if_else(Year == 1854 | (Year == 1855 & Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))  %>%
+  mutate(Month = factor(Month,  levels = c("Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"))) %>%
   pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths") -> 
   polar_data
 ```
 
 
-
----
-
-layout: true
-
----
-
-# Plot
-
-```{r, polarplot, eval = FALSE, fig.width = 10}
+```{r, polarplot, eval = TRUE, fig.width=12}
   ggplot(polar_data) +
   aes(x = Month) + 
   aes(y = Deaths) + 
   geom_col() + 
   facet_wrap(~When) + 
   aes(fill = Cause) + 
-  theme(legend.position = "none") + 
   scale_y_sqrt() +
-  coord_polar(start = pi, clip = "off") +
+  coord_polar(start = -pi/2, clip = "off") +
 	ggtitle("Causes of Mortality in the Army in the East") + 
 	xlab("") + 
   scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",
             "Other.rate" = "#322b2f",
             "Disease.rate" = "#b9c5cc")) +
-  geom_hline(yintercept = sqrt(12), linetype="dotted") #+ 
-  theme_void()
+  geom_hline(yintercept = sqrt(12), linetype = "dotted") + 
+  theme_void()  +
+  theme(legend.position = "none") 
 ```
+
+
 ---
 
-`r apply_reveal("polartransform")`
+layout: true
+
+---
+
+`r chunk_reveal("polartransform", break_type = "auto")`
 
 ---
 
 
-`r apply_reveal("polarplot")`
+`r chunk_reveal("polarplot", break_type = "auto")`
 
 ---
 
 layout: true
 
 `r add_border()`
----
-
-# Showcasing modern data in this style (Covid?)
 
 ---
 
-# Plots of R-Ladies data in Florence diagrams
+# StatsYSS #FloViz competition
+
+
+
+* [See the full results](https://statsyss.wordpress.com/2020/05/13/floviz-winning-entries/)
+
+
+
+Highlight my favourites
+Edward Gunning: https://github.com/edwardgunning/FlorenceNightingale
+
+Graham:
+https://t.co/PxDiVppHI4?amp=1
+
+
+---
+
+# Elsewhere
+
+https://www.theguardian.com/world/interactive/2012/may/08/gay-rights-united-states
+http://measure.fathom.info/
 
 ---
 
@@ -292,6 +402,7 @@ Many *twitter links and images*
 
 # Mona Chalabi
 
+
 ---
 
 # Last words
@@ -307,4 +418,4 @@ Many *twitter links and images*
 
 # Thank you
 
-GitHub link
+[Slides](https://trianglegirl.github.io/presentations/2020-07-01-data-viz-for-better/2020-05-12-florence-and-data-viz.html#1)

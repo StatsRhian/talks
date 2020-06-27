@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Data Viz for better 📈</title>
+    <title>Data Viz for better 📉</title>
     <meta charset="utf-8" />
     <meta name="author" content="Rhian Davies (@trianglegirl)" />
     <meta name="date" content="2020-07-01" />
@@ -13,7 +13,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Data Viz for better 📈
+# Data Viz for better 📉
 ## RSS Merseyside
 ### Rhian Davies (<a href="https://twitter.com/trianglegirl">@trianglegirl</a>)
 ### 2020-07-01
@@ -25,6 +25,36 @@ class: center, middle, inverse, title-slide
 
 layout: true
 
+---
+
+```r
+knitr::include_graphics(path = "graphics/tote-zoom.jpg")
+```
+
+&lt;img src="graphics/tote-zoom.jpg" width="1768" /&gt;
+???
+* I find myself looking at Florence's polar area diagram - atleast once a week.
+* If you see me in Aldi, or come to my house for a cuppa, you might think I'm a bit weird.
+
+
+---
+
+```r
+knitr::include_graphics(path = "graphics/crazy-lady.jpg")
+```
+
+&lt;img src="graphics/crazy-lady.jpg" width="1152" /&gt;
+???
+
+* I have a large collection of FN paraphilania.
+* I might open a FN museum of the North
+* Florence Nigtingale Day started in 2013, run by Professor Nadia Mazda &amp; Lancaster M&amp;S dep
+* Statistician &amp; Nurse. I would argue she was also a communicator - which is a key part of both.
+
+
+---
+
+layout: true
 layout: true
 
       &lt;div class="jr-header"&gt;
@@ -36,23 +66,18 @@ layout: true
 
 ---
 
-# Florence Mug
-
----
-
-My Florence mug (statistician &amp; nurse)
-Communicator (key part of both)
-
----
-
 # Why do we make plots?
 
-Why do we make plots...
+
 Pretty
 Get published
 Clickbate
 Art
 Make a difference / make a change
+
+???
+
+* Florence made plots to tell a story 
 
 ---
 
@@ -68,20 +93,122 @@ FN: Organise correctly - to make comparisons
 
 ---
 
+# Challenger disaster
+
+• Launch Time: January 28, 1986
+• The temperature was 31◦F / -0.5 C
+• Exploded after 73 seconds from its launch leading to the death of its seven crew
+members
+
+Each rocket-booster has three joints called O-rings (6 total)
+
+• The night before the scheduled launch, discussions occurred as to whether the
+launch should be postponed because of the low temperature
+• It was believed, by some of the people who were involved in the decision, that
+low temperatures might harden the O-ring seals, and thus leading to a potentially
+dangerous combustion-gas leak
+• The O-rings had been designated as a ”Criticality 1” component
+• The engineers and manufacturers of the rocket motors believed that they should
+abort the flight
+• They presented several (hand written) tabulated numbers to show their point.
+The following figure was taken from Tufte (1997):
+
+
+```r
+data_url = "http://www.math.usu.edu/~symanzik/teaching/2009_stat6560/RDataAndScripts/sharif_abbass_project1_challenger.csv"
+
+challenger = readr::read_csv(url(data_url))
+
+challenger %&gt;%
+ggplot(aes(x = temperature, y = r)) + 
+  geom_point() + 
+  geom_smooth(method = "gam", se = FALSE) +
+  xlim(20, 80) + 
+  ylim(0, 6) +
+  geom_vline(xintercept = 31, lty = 2) +
+  hrbrthemes::theme_ipsum()
+```
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/unnamed-chunk-1-1.png" width="576" /&gt;
+
+---
+
 # Victoria Viz
 
-Playfair
-Minard
+
+[Explore!](https://history.infowetrust.com/)
+[Milestones](http://datavis.ca/milestones/index.php)
 
 Golden Age of Statistics: https://projecteuclid.org/download/pdfview_1/euclid.ss/1242049392
 Graphcs: https://archive.org/details/mortalityofbriti00lond/page/n33/mode/2up
 
 " printed Tables &amp; all in double columns I do not think anyone will read it. None but scientific men ever look in the Appendix of a Report. And this is for the vulgar public."
-Tables more common, graphics not seen as usfeul (cite)
 
-Nightingale hoped her charts would liven up her publications; the queen, she thought, might look at the pictures, even if she did not read the words.
+* Tables more common, graphics not seen as usfeul (cite)
+
+
 
 ---
+
+# Minard
+ 
+---
+
+# William Playfair (1801)
+
+???
+
+Invention of the pie chart, and circle graph, used to show part-whole relations
+
+---
+
+layout: true
+
+---
+
+background-image: url(graphics/guerry_1829-coxcombs.jpg)
+background-size: contain 
+class: center, middle, inverse
+
+???
+
+* André-Michel Guerry (1829)
+* French lawyer and amateur statistician.
+* Show variations in weather and other phenomena over calendar cycles.
+* Variation of the pie chart
+* uses equi-angular sectors of differing radii
+* rather than sectors with varying angle, but equal radii
+* direction of the wind in 8 sectors
+* births and deaths by hour of theday.
+
+* Nightingale probably got the idea from William Farr, who in turn was acquainted with Guerry's work.
+
+---
+
+background-image: url(graphics/liverpool-rose.png)
+background-size: contain 
+class: center, middle
+
+---
+
+background-image: url(graphics/classic-wedge-2.jpeg)
+background-size: contain 
+class: center, middle, inverse
+
+---
+layout: true
+
+layout: true
+
+      &lt;div class="jr-header"&gt;
+        &lt;img class="logo" src="assets/white_logo_full.png"/&gt;
+        &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+---
+
 # The polar area
 
 * Name (rose, polar area, wedges)
@@ -90,11 +217,10 @@ Nightingale hoped her charts would liven up her publications; the queen, she tho
 * Worked with Dr William Farr(Medical Statistician)
 * Covid-collateral damage 
 * Originally Batwing but FN was worried misinterpretted.
- * "The length of the radial line in each month is proportional to the death rate, but both the text and the appearance imply that it is the shaded area that is proportional to the death rate, rather than the length of the radial lines.  Florence recognised this error and inserted an erratum slip, but then replaced this diagram in later documents (nos. 3, 4, and 5 listed above) with what I will call the 'wedges' diagram."
+ * "The length of the radial line in each month is proportional to the death rate, but both the text and the appearance imply that it is the shaded area that is proportional to the death rate, rather than the length of the radial lines.  Florence recognised this error and inserted an erratum slip, but then replaced this diagram in later documents (nos. 3, 4, and 5 listed above)
 
- * She didn't invent it:
-  * The first known use of polar area diagrams was by André-Michel Guerry,
-    * In 1829, Guerry invented a new graphic form, the polar area diagram to show variations in weather and       other phenomena over calendar cycles.[Explore!](https://history.infowetrust.com/)
+
+Nightingale hoped her charts would liven up her publications; the queen, she thought, might look at the pictures, even if she did not read the words.
 
 ---
 
@@ -109,7 +235,14 @@ Nightingale hoped her charts would liven up her publications; the queen, she tho
 * colour palette
 * cyclic pattern - circular
 
+
+---
+
+#  Bar chart?
 * Bar chart - polar area [distortion ](https://understandinguncertainty.org/node/214)
+
+
+---
 
 * Not a bar chart!
   3 benefits of Nightingale Rose charts over pie charts
@@ -172,12 +305,6 @@ Edward Gunning: https://github.com/edwardgunning/FlorenceNightingale
 Graham:
 https://t.co/PxDiVppHI4?amp=1
 
----
-
-# Elsewhere
-
-https://www.theguardian.com/world/interactive/2012/may/08/gay-rights-united-states
-http://measure.fathom.info/
 
 ---
 
@@ -195,26 +322,6 @@ library("HistData")
 
 ```r
 library("dplyr")
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 library("HistData")
 library("ggplot2")
 library("tidyr")
@@ -239,37 +346,9 @@ flo_pal = c("Wounds.rate" = "#e7bebc",
 source(file = "https://raw.githubusercontent.com/EvaMaeRey/little_flipbooks_library/master/xaringan_reveal_parentheses_balanced.R")
 ```
 
-```
-## ── Attaching packages ──────────────────────────────────── tidyverse 1.3.0 ──
-```
-
-```
-## ✓ tibble  3.0.1     ✓ stringr 1.4.0
-## ✓ readr   1.3.1     ✓ forcats 0.5.0
-## ✓ purrr   0.3.4
-```
-
-```
-## ── Conflicts ─────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
-```
-
----
-
-# Transform
 
 
 
-
-
----
-
-layout: true
-
----
-
-# Plot
 
 
 ```r
@@ -279,239 +358,362 @@ layout: true
   geom_col() + 
   facet_wrap(~When) + 
   aes(fill = Cause) + 
-  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) + 
-  theme(legend.position = "none") + 
   scale_y_sqrt() +
-  coord_polar(start = pi, clip = "off") +
+  coord_polar(start = -pi/2, clip = "off") +
 	ggtitle("Causes of Mortality in the Army in the East") + 
 	xlab("") + 
   scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",
             "Other.rate" = "#322b2f",
             "Disease.rate" = "#b9c5cc")) +
-  geom_hline(yintercept = sqrt(12), linetype="dotted") #+ 
-  theme_void()
+  geom_hline(yintercept = sqrt(12), linetype = "dotted") + 
+  theme_void()  +
+  theme(legend.position = "none") 
 ```
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot-1.png" width="864" /&gt;
+
+
 ---
 
-class: split-40
+layout: true
+
+---
+
 count: false
-.column[.content[
+ 
+
+.left-panel-polartransform-auto[
 
 ```r
 *HistData::Nightingale
 ```
-]]
-.column[.content[
+]
+ 
+.right-panel-polartransform-auto[
 
 ```
-##          Date Month Year  Army Disease Wounds Other Disease.rate Wounds.rate
-## 1  1854-04-01   Apr 1854  8571       1      0     5          1.4         0.0
-## 2  1854-05-01   May 1854 23333      12      0     9          6.2         0.0
-## 3  1854-06-01   Jun 1854 28333      11      0     6          4.7         0.0
-## 4  1854-07-01   Jul 1854 28722     359      0    23        150.0         0.0
-## 5  1854-08-01   Aug 1854 30246     828      1    30        328.5         0.4
-## 6  1854-09-01   Sep 1854 30290     788     81    70        312.2        32.1
-## 7  1854-10-01   Oct 1854 30643     503    132   128        197.0        51.7
-## 8  1854-11-01   Nov 1854 29736     844    287   106        340.6       115.8
-## 9  1854-12-01   Dec 1854 32779    1725    114   131        631.5        41.7
-## 10 1855-01-01   Jan 1855 32393    2761     83   324       1022.8        30.7
-## 11 1855-02-01   Feb 1855 30919    2120     42   361        822.8        16.3
-## 12 1855-03-01   Mar 1855 30107    1205     32   172        480.3        12.8
-## 13 1855-04-01   Apr 1855 32252     477     48    57        177.5        17.9
-## 14 1855-05-01   May 1855 35473     508     49    37        171.8        16.6
-## 15 1855-06-01   Jun 1855 38863     802    209    31        247.6        64.5
-## 16 1855-07-01   Jul 1855 42647     382    134    33        107.5        37.7
-## 17 1855-08-01   Aug 1855 44614     483    164    25        129.9        44.1
-## 18 1855-09-01   Sep 1855 47751     189    276    20         47.5        69.4
-## 19 1855-10-01   Oct 1855 46852     128     53    18         32.8        13.6
-## 20 1855-11-01   Nov 1855 37853     178     33    32         56.4        10.5
-## 21 1855-12-01   Dec 1855 43217      91     18    28         25.3         5.0
-## 22 1856-01-01   Jan 1856 44212      42      2    48         11.4         0.5
-## 23 1856-02-01   Feb 1856 43485      24      0    19          6.6         0.0
-## 24 1856-03-01   Mar 1856 46140      15      0    35          3.9         0.0
-##    Other.rate
-## 1         7.0
-## 2         4.6
-## 3         2.5
-## 4         9.6
-## 5        11.9
-## 6        27.7
-## 7        50.1
-## 8        42.8
-## 9        48.0
-## 10      120.0
-## 11      140.1
-## 12       68.6
-## 13       21.2
-## 14       12.5
-## 15        9.6
-## 16        9.3
-## 17        6.7
-## 18        5.0
-## 19        4.6
-## 20       10.1
-## 21        7.8
-## 22       13.0
-## 23        5.2
-## 24        9.1
+         Date Month Year  Army Disease Wounds Other Disease.rate Wounds.rate
+1  1854-04-01   Apr 1854  8571       1      0     5          1.4         0.0
+2  1854-05-01   May 1854 23333      12      0     9          6.2         0.0
+3  1854-06-01   Jun 1854 28333      11      0     6          4.7         0.0
+4  1854-07-01   Jul 1854 28722     359      0    23        150.0         0.0
+5  1854-08-01   Aug 1854 30246     828      1    30        328.5         0.4
+6  1854-09-01   Sep 1854 30290     788     81    70        312.2        32.1
+7  1854-10-01   Oct 1854 30643     503    132   128        197.0        51.7
+8  1854-11-01   Nov 1854 29736     844    287   106        340.6       115.8
+9  1854-12-01   Dec 1854 32779    1725    114   131        631.5        41.7
+10 1855-01-01   Jan 1855 32393    2761     83   324       1022.8        30.7
+11 1855-02-01   Feb 1855 30919    2120     42   361        822.8        16.3
+12 1855-03-01   Mar 1855 30107    1205     32   172        480.3        12.8
+13 1855-04-01   Apr 1855 32252     477     48    57        177.5        17.9
+14 1855-05-01   May 1855 35473     508     49    37        171.8        16.6
+15 1855-06-01   Jun 1855 38863     802    209    31        247.6        64.5
+16 1855-07-01   Jul 1855 42647     382    134    33        107.5        37.7
+17 1855-08-01   Aug 1855 44614     483    164    25        129.9        44.1
+18 1855-09-01   Sep 1855 47751     189    276    20         47.5        69.4
+19 1855-10-01   Oct 1855 46852     128     53    18         32.8        13.6
+20 1855-11-01   Nov 1855 37853     178     33    32         56.4        10.5
+21 1855-12-01   Dec 1855 43217      91     18    28         25.3         5.0
+22 1856-01-01   Jan 1856 44212      42      2    48         11.4         0.5
+23 1856-02-01   Feb 1856 43485      24      0    19          6.6         0.0
+24 1856-03-01   Mar 1856 46140      15      0    35          3.9         0.0
+   Other.rate
+1         7.0
+2         4.6
+3         2.5
+4         9.6
+5        11.9
+6        27.7
+7        50.1
+8        42.8
+9        48.0
+10      120.0
+11      140.1
+12       68.6
+13       21.2
+14       12.5
+15        9.6
+16        9.3
+17        6.7
+18        5.0
+19        4.6
+20       10.1
+21        7.8
+22       13.0
+23        5.2
+24        9.1
 ```
-]]
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+
+.left-panel-polartransform-auto[
 
 ```r
 HistData::Nightingale %&gt;%  
 * mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))
 ```
-]]
-.column[.content[
+]
+ 
+.right-panel-polartransform-auto[
 
 ```
-##          Date Month Year  Army Disease Wounds Other Disease.rate Wounds.rate
-## 1  1854-04-01   Apr 1854  8571       1      0     5          1.4         0.0
-## 2  1854-05-01   May 1854 23333      12      0     9          6.2         0.0
-## 3  1854-06-01   Jun 1854 28333      11      0     6          4.7         0.0
-## 4  1854-07-01   Jul 1854 28722     359      0    23        150.0         0.0
-## 5  1854-08-01   Aug 1854 30246     828      1    30        328.5         0.4
-## 6  1854-09-01   Sep 1854 30290     788     81    70        312.2        32.1
-## 7  1854-10-01   Oct 1854 30643     503    132   128        197.0        51.7
-## 8  1854-11-01   Nov 1854 29736     844    287   106        340.6       115.8
-## 9  1854-12-01   Dec 1854 32779    1725    114   131        631.5        41.7
-## 10 1855-01-01   Jan 1855 32393    2761     83   324       1022.8        30.7
-## 11 1855-02-01   Feb 1855 30919    2120     42   361        822.8        16.3
-## 12 1855-03-01   Mar 1855 30107    1205     32   172        480.3        12.8
-## 13 1855-04-01   Apr 1855 32252     477     48    57        177.5        17.9
-## 14 1855-05-01   May 1855 35473     508     49    37        171.8        16.6
-## 15 1855-06-01   Jun 1855 38863     802    209    31        247.6        64.5
-## 16 1855-07-01   Jul 1855 42647     382    134    33        107.5        37.7
-## 17 1855-08-01   Aug 1855 44614     483    164    25        129.9        44.1
-## 18 1855-09-01   Sep 1855 47751     189    276    20         47.5        69.4
-## 19 1855-10-01   Oct 1855 46852     128     53    18         32.8        13.6
-## 20 1855-11-01   Nov 1855 37853     178     33    32         56.4        10.5
-## 21 1855-12-01   Dec 1855 43217      91     18    28         25.3         5.0
-## 22 1856-01-01   Jan 1856 44212      42      2    48         11.4         0.5
-## 23 1856-02-01   Feb 1856 43485      24      0    19          6.6         0.0
-## 24 1856-03-01   Mar 1856 46140      15      0    35          3.9         0.0
-##    Other.rate                     When
-## 1         7.0 APRIL 1854 TO MARCH 1855
-## 2         4.6 APRIL 1854 TO MARCH 1855
-## 3         2.5 APRIL 1854 TO MARCH 1855
-## 4         9.6 APRIL 1854 TO MARCH 1855
-## 5        11.9 APRIL 1854 TO MARCH 1855
-## 6        27.7 APRIL 1854 TO MARCH 1855
-## 7        50.1 APRIL 1854 TO MARCH 1855
-## 8        42.8 APRIL 1854 TO MARCH 1855
-## 9        48.0 APRIL 1854 TO MARCH 1855
-## 10      120.0 APRIL 1854 TO MARCH 1855
-## 11      140.1 APRIL 1854 TO MARCH 1855
-## 12       68.6 APRIL 1854 TO MARCH 1855
-## 13       21.2 APRIL 1855 TO MARCH 1856
-## 14       12.5 APRIL 1855 TO MARCH 1856
-## 15        9.6 APRIL 1855 TO MARCH 1856
-## 16        9.3 APRIL 1855 TO MARCH 1856
-## 17        6.7 APRIL 1855 TO MARCH 1856
-## 18        5.0 APRIL 1855 TO MARCH 1856
-## 19        4.6 APRIL 1855 TO MARCH 1856
-## 20       10.1 APRIL 1855 TO MARCH 1856
-## 21        7.8 APRIL 1855 TO MARCH 1856
-## 22       13.0 APRIL 1855 TO MARCH 1856
-## 23        5.2 APRIL 1855 TO MARCH 1856
-## 24        9.1 APRIL 1855 TO MARCH 1856
+         Date Month Year  Army Disease Wounds Other Disease.rate Wounds.rate
+1  1854-04-01   Apr 1854  8571       1      0     5          1.4         0.0
+2  1854-05-01   May 1854 23333      12      0     9          6.2         0.0
+3  1854-06-01   Jun 1854 28333      11      0     6          4.7         0.0
+4  1854-07-01   Jul 1854 28722     359      0    23        150.0         0.0
+5  1854-08-01   Aug 1854 30246     828      1    30        328.5         0.4
+6  1854-09-01   Sep 1854 30290     788     81    70        312.2        32.1
+7  1854-10-01   Oct 1854 30643     503    132   128        197.0        51.7
+8  1854-11-01   Nov 1854 29736     844    287   106        340.6       115.8
+9  1854-12-01   Dec 1854 32779    1725    114   131        631.5        41.7
+10 1855-01-01   Jan 1855 32393    2761     83   324       1022.8        30.7
+11 1855-02-01   Feb 1855 30919    2120     42   361        822.8        16.3
+12 1855-03-01   Mar 1855 30107    1205     32   172        480.3        12.8
+13 1855-04-01   Apr 1855 32252     477     48    57        177.5        17.9
+14 1855-05-01   May 1855 35473     508     49    37        171.8        16.6
+15 1855-06-01   Jun 1855 38863     802    209    31        247.6        64.5
+16 1855-07-01   Jul 1855 42647     382    134    33        107.5        37.7
+17 1855-08-01   Aug 1855 44614     483    164    25        129.9        44.1
+18 1855-09-01   Sep 1855 47751     189    276    20         47.5        69.4
+19 1855-10-01   Oct 1855 46852     128     53    18         32.8        13.6
+20 1855-11-01   Nov 1855 37853     178     33    32         56.4        10.5
+21 1855-12-01   Dec 1855 43217      91     18    28         25.3         5.0
+22 1856-01-01   Jan 1856 44212      42      2    48         11.4         0.5
+23 1856-02-01   Feb 1856 43485      24      0    19          6.6         0.0
+24 1856-03-01   Mar 1856 46140      15      0    35          3.9         0.0
+   Other.rate                     When
+1         7.0 APRIL 1854 TO MARCH 1855
+2         4.6 APRIL 1854 TO MARCH 1855
+3         2.5 APRIL 1854 TO MARCH 1855
+4         9.6 APRIL 1854 TO MARCH 1855
+5        11.9 APRIL 1854 TO MARCH 1855
+6        27.7 APRIL 1854 TO MARCH 1855
+7        50.1 APRIL 1854 TO MARCH 1855
+8        42.8 APRIL 1854 TO MARCH 1855
+9        48.0 APRIL 1854 TO MARCH 1855
+10      120.0 APRIL 1854 TO MARCH 1855
+11      140.1 APRIL 1854 TO MARCH 1855
+12       68.6 APRIL 1854 TO MARCH 1855
+13       21.2 APRIL 1855 TO MARCH 1856
+14       12.5 APRIL 1855 TO MARCH 1856
+15        9.6 APRIL 1855 TO MARCH 1856
+16        9.3 APRIL 1855 TO MARCH 1856
+17        6.7 APRIL 1855 TO MARCH 1856
+18        5.0 APRIL 1855 TO MARCH 1856
+19        4.6 APRIL 1855 TO MARCH 1856
+20       10.1 APRIL 1855 TO MARCH 1856
+21        7.8 APRIL 1855 TO MARCH 1856
+22       13.0 APRIL 1855 TO MARCH 1856
+23        5.2 APRIL 1855 TO MARCH 1856
+24        9.1 APRIL 1855 TO MARCH 1856
 ```
-]]
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+
+.left-panel-polartransform-auto[
 
 ```r
 HistData::Nightingale %&gt;%  
   mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))  %&gt;%  
+* mutate(Month = factor(Month,  levels = c("Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar")))
+```
+]
+ 
+.right-panel-polartransform-auto[
+
+```
+         Date Month Year  Army Disease Wounds Other Disease.rate Wounds.rate
+1  1854-04-01   Apr 1854  8571       1      0     5          1.4         0.0
+2  1854-05-01   May 1854 23333      12      0     9          6.2         0.0
+3  1854-06-01   Jun 1854 28333      11      0     6          4.7         0.0
+4  1854-07-01   Jul 1854 28722     359      0    23        150.0         0.0
+5  1854-08-01   Aug 1854 30246     828      1    30        328.5         0.4
+6  1854-09-01   Sep 1854 30290     788     81    70        312.2        32.1
+7  1854-10-01   Oct 1854 30643     503    132   128        197.0        51.7
+8  1854-11-01   Nov 1854 29736     844    287   106        340.6       115.8
+9  1854-12-01   Dec 1854 32779    1725    114   131        631.5        41.7
+10 1855-01-01   Jan 1855 32393    2761     83   324       1022.8        30.7
+11 1855-02-01   Feb 1855 30919    2120     42   361        822.8        16.3
+12 1855-03-01   Mar 1855 30107    1205     32   172        480.3        12.8
+13 1855-04-01   Apr 1855 32252     477     48    57        177.5        17.9
+14 1855-05-01   May 1855 35473     508     49    37        171.8        16.6
+15 1855-06-01   Jun 1855 38863     802    209    31        247.6        64.5
+16 1855-07-01   Jul 1855 42647     382    134    33        107.5        37.7
+17 1855-08-01   Aug 1855 44614     483    164    25        129.9        44.1
+18 1855-09-01   Sep 1855 47751     189    276    20         47.5        69.4
+19 1855-10-01   Oct 1855 46852     128     53    18         32.8        13.6
+20 1855-11-01   Nov 1855 37853     178     33    32         56.4        10.5
+21 1855-12-01   Dec 1855 43217      91     18    28         25.3         5.0
+22 1856-01-01   Jan 1856 44212      42      2    48         11.4         0.5
+23 1856-02-01   Feb 1856 43485      24      0    19          6.6         0.0
+24 1856-03-01   Mar 1856 46140      15      0    35          3.9         0.0
+   Other.rate                     When
+1         7.0 APRIL 1854 TO MARCH 1855
+2         4.6 APRIL 1854 TO MARCH 1855
+3         2.5 APRIL 1854 TO MARCH 1855
+4         9.6 APRIL 1854 TO MARCH 1855
+5        11.9 APRIL 1854 TO MARCH 1855
+6        27.7 APRIL 1854 TO MARCH 1855
+7        50.1 APRIL 1854 TO MARCH 1855
+8        42.8 APRIL 1854 TO MARCH 1855
+9        48.0 APRIL 1854 TO MARCH 1855
+10      120.0 APRIL 1854 TO MARCH 1855
+11      140.1 APRIL 1854 TO MARCH 1855
+12       68.6 APRIL 1854 TO MARCH 1855
+13       21.2 APRIL 1855 TO MARCH 1856
+14       12.5 APRIL 1855 TO MARCH 1856
+15        9.6 APRIL 1855 TO MARCH 1856
+16        9.3 APRIL 1855 TO MARCH 1856
+17        6.7 APRIL 1855 TO MARCH 1856
+18        5.0 APRIL 1855 TO MARCH 1856
+19        4.6 APRIL 1855 TO MARCH 1856
+20       10.1 APRIL 1855 TO MARCH 1856
+21        7.8 APRIL 1855 TO MARCH 1856
+22       13.0 APRIL 1855 TO MARCH 1856
+23        5.2 APRIL 1855 TO MARCH 1856
+24        9.1 APRIL 1855 TO MARCH 1856
+```
+]
+
+---
+count: false
+ 
+
+.left-panel-polartransform-auto[
+
+```r
+HistData::Nightingale %&gt;%  
+  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))  %&gt;%  
+  mutate(Month = factor(Month,  levels = c("Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"))) %&gt;%  
 * pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths")
 ```
-]]
-.column[.content[
+]
+ 
+.right-panel-polartransform-auto[
 
 ```
-## # A tibble: 72 x 10
-##    Date       Month  Year  Army Disease Wounds Other When         Cause   Deaths
-##    &lt;date&gt;     &lt;ord&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt;  &lt;int&gt; &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt;
-##  1 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Diseas…    1.4
-##  2 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Wounds…    0  
-##  3 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Other.…    7  
-##  4 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Diseas…    6.2
-##  5 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Wounds…    0  
-##  6 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Other.…    4.6
-##  7 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Diseas…    4.7
-##  8 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Wounds…    0  
-##  9 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Other.…    2.5
-## 10 1854-07-01 Jul    1854 28722     359      0    23 APRIL 1854 … Diseas…  150  
-## # … with 62 more rows
+# A tibble: 72 x 10
+   Date       Month  Year  Army Disease Wounds Other When         Cause   Deaths
+   &lt;date&gt;     &lt;ord&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt;  &lt;int&gt; &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt;
+ 1 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Diseas…    1.4
+ 2 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Wounds…    0  
+ 3 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Other.…    7  
+ 4 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Diseas…    6.2
+ 5 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Wounds…    0  
+ 6 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Other.…    4.6
+ 7 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Diseas…    4.7
+ 8 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Wounds…    0  
+ 9 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Other.…    2.5
+10 1854-07-01 Jul    1854 28722     359      0    23 APRIL 1854 … Diseas…  150  
+# … with 62 more rows
 ```
-]]
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+
+.left-panel-polartransform-auto[
 
 ```r
 HistData::Nightingale %&gt;%  
   mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))  %&gt;%  
+  mutate(Month = factor(Month,  levels = c("Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"))) %&gt;%  
   pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths") -&gt;  
 * polar_data
 ```
-]]
-.column[.content[
+]
+ 
+.right-panel-polartransform-auto[
 
-]]
+]
+
+&lt;style&gt;
+.left-panel-polartransform-auto {
+  color: #777;
+  width: 38.6138613861386%;
+  height: 92%;
+  float: left;
+  font-size: 80%
+}
+.right-panel-polartransform-auto {
+  width: 59.4059405940594%;
+  float: right;
+  padding-left: 1%;
+  font-size: 80%
+}
+.middle-panel-polartransform-auto {
+  width: 0%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
 
 ---
 
 
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
 * ggplot(polar_data)
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_1-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_1_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
 * aes(x = Month)
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_2-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_2_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
   aes(x = Month) +  
 * aes(y = Deaths)
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_3-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_3_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
@@ -519,14 +721,17 @@ count: false
   aes(y = Deaths) +  
 * geom_col()
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_4-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_4_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
@@ -535,14 +740,17 @@ count: false
   geom_col() +  
 * facet_wrap(~When)
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_5-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_5_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
@@ -552,14 +760,17 @@ count: false
   facet_wrap(~When) +  
 * aes(fill = Cause)
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_6-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_6_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
@@ -568,55 +779,19 @@ count: false
   geom_col() +  
   facet_wrap(~When) +  
   aes(fill = Cause) +  
-* theme(plot.margin = margin(t=-100,b=-100,50,r=-100))
-```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_7-1.png)&lt;!-- --&gt;
-]]
----
-class: split-40
-count: false
-.column[.content[
-
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-  facet_wrap(~When) +  
-  aes(fill = Cause) +  
-  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
-* theme(legend.position = "none")
-```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_8-1.png)&lt;!-- --&gt;
-]]
----
-class: split-40
-count: false
-.column[.content[
-
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-  facet_wrap(~When) +  
-  aes(fill = Cause) +  
-  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
-  theme(legend.position = "none") +  
 * scale_y_sqrt()
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_9-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_7_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
@@ -625,19 +800,20 @@ count: false
   geom_col() +  
   facet_wrap(~When) +  
   aes(fill = Cause) +  
-  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
-  theme(legend.position = "none") +  
   scale_y_sqrt() +  
-* coord_polar(start = pi, clip = "off")
+* coord_polar(start = -pi/2, clip = "off")
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_10-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_8_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
@@ -646,20 +822,21 @@ count: false
   geom_col() +  
   facet_wrap(~When) +  
   aes(fill = Cause) +  
-  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
-  theme(legend.position = "none") +  
   scale_y_sqrt() +  
-  coord_polar(start = pi, clip = "off") +  
+  coord_polar(start = -pi/2, clip = "off") +  
 *ggtitle("Causes of Mortality in the Army in the East")
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_11-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_9_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
@@ -668,21 +845,22 @@ count: false
   geom_col() +  
   facet_wrap(~When) +  
   aes(fill = Cause) +  
-  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
-  theme(legend.position = "none") +  
   scale_y_sqrt() +  
-  coord_polar(start = pi, clip = "off") +  
+  coord_polar(start = -pi/2, clip = "off") +  
 	ggtitle("Causes of Mortality in the Army in the East") +  
 *xlab("")
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_12-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_10_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
@@ -691,24 +869,25 @@ count: false
   geom_col() +  
   facet_wrap(~When) +  
   aes(fill = Cause) +  
-  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
-  theme(legend.position = "none") +  
   scale_y_sqrt() +  
-  coord_polar(start = pi, clip = "off") +  
+  coord_polar(start = -pi/2, clip = "off") +  
 	ggtitle("Causes of Mortality in the Army in the East") +  
 	xlab("") +  
 * scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",
 *           "Other.rate" = "#322b2f",
 *           "Disease.rate" = "#b9c5cc"))
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_15-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_11_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
@@ -717,25 +896,26 @@ count: false
   geom_col() +  
   facet_wrap(~When) +  
   aes(fill = Cause) +  
-  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
-  theme(legend.position = "none") +  
   scale_y_sqrt() +  
-  coord_polar(start = pi, clip = "off") +  
+  coord_polar(start = -pi/2, clip = "off") +  
 	ggtitle("Causes of Mortality in the Army in the East") +  
 	xlab("") +  
   scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",  
             "Other.rate" = "#322b2f",  
             "Disease.rate" = "#b9c5cc")) +  
-* geom_hline(yintercept = sqrt(12), linetype="dotted")   #+
+* geom_hline(yintercept = sqrt(12), linetype = "dotted")
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_16-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_12_output-1.png" width="576" /&gt;
+]
+
 ---
-class: split-40
 count: false
-.column[.content[
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
 
 ```r
   ggplot(polar_data) +  
@@ -744,22 +924,75 @@ count: false
   geom_col() +  
   facet_wrap(~When) +  
   aes(fill = Cause) +  
-  theme(plot.margin = margin(t=-100,b=-100,50,r=-100)) +  
-  theme(legend.position = "none") +  
   scale_y_sqrt() +  
-  coord_polar(start = pi, clip = "off") +  
+  coord_polar(start = -pi/2, clip = "off") +  
 	ggtitle("Causes of Mortality in the Army in the East") +  
 	xlab("") +  
   scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",  
             "Other.rate" = "#322b2f",  
             "Disease.rate" = "#b9c5cc")) +  
-  geom_hline(yintercept = sqrt(12), linetype="dotted") +  #+
+  geom_hline(yintercept = sqrt(12), linetype = "dotted") +  
 * theme_void()
 ```
-]]
-.column[.content[
-![](2020-05-12-florence-and-data-viz_files/figure-html/output_polarplot_17-1.png)&lt;!-- --&gt;
-]]
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_13_output-1.png" width="576" /&gt;
+]
+
+---
+count: false
+ 
+Polar Area Chart
+.left-panel-polarplot-auto[
+
+```r
+  ggplot(polar_data) +  
+  aes(x = Month) +  
+  aes(y = Deaths) +  
+  geom_col() +  
+  facet_wrap(~When) +  
+  aes(fill = Cause) +  
+  scale_y_sqrt() +  
+  coord_polar(start = -pi/2, clip = "off") +  
+	ggtitle("Causes of Mortality in the Army in the East") +  
+	xlab("") +  
+  scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",  
+            "Other.rate" = "#322b2f",  
+            "Disease.rate" = "#b9c5cc")) +  
+  geom_hline(yintercept = sqrt(12), linetype = "dotted") +  
+  theme_void()  +  
+* theme(legend.position = "none")
+```
+]
+ 
+.right-panel-polarplot-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_14_output-1.png" width="576" /&gt;
+]
+
+&lt;style&gt;
+.left-panel-polarplot-auto {
+  color: #777;
+  width: 38.6138613861386%;
+  height: 92%;
+  float: left;
+  font-size: 80%
+}
+.right-panel-polarplot-auto {
+  width: 59.4059405940594%;
+  float: right;
+  padding-left: 1%;
+  font-size: 80%
+}
+.middle-panel-polarplot-auto {
+  width: 0%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
 
 ---
 
@@ -780,6 +1013,13 @@ layout: true
 ---
 
 # Plots of R-Ladies data in Florence diagrams
+
+---
+
+# Elsewhere
+
+https://www.theguardian.com/world/interactive/2012/may/08/gay-rights-united-states
+http://measure.fathom.info/
 
 ---
 
