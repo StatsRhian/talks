@@ -17,7 +17,7 @@ output:
 layout: true
 
 <div class = "rladies-header">
-<span class="social"><table><tr><td><img src="images/twitter.gif"/></td><td> @trianglegirl</td></tr></table></span>
+
 </div>
 
 
