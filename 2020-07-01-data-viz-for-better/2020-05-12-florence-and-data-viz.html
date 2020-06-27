@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Data Viz for better 📉</title>
+    <title>Data Viz for better</title>
     <meta charset="utf-8" />
     <meta name="author" content="Rhian Davies (@trianglegirl)" />
     <meta name="date" content="2020-07-01" />
@@ -13,7 +13,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Data Viz for better 📉
+# Data Viz for better
 ## RSS Merseyside
 ### Rhian Davies (<a href="https://twitter.com/trianglegirl">@trianglegirl</a>)
 ### 2020-07-01
@@ -26,11 +26,6 @@ class: center, middle, inverse, title-slide
 layout: true
 
 ---
-
-```r
-knitr::include_graphics(path = "graphics/tote-zoom.jpg")
-```
-
 &lt;img src="graphics/tote-zoom.jpg" width="1768" /&gt;
 ???
 * I find myself looking at Florence's polar area diagram - atleast once a week.
@@ -38,12 +33,8 @@ knitr::include_graphics(path = "graphics/tote-zoom.jpg")
 
 
 ---
-
-```r
-knitr::include_graphics(path = "graphics/crazy-lady.jpg")
-```
-
 &lt;img src="graphics/crazy-lady.jpg" width="1152" /&gt;
+
 ???
 
 * I have a large collection of FN paraphilania.
@@ -69,12 +60,13 @@ layout: true
 # Why do we make plots?
 
 
-Pretty
-Get published
-Clickbate
-Art
-Make a difference / make a change
-
+* Pretty - make Art
+* Get published
+* Tell a story
+* Educate
+* Clickbate
+* Make a difference 
+* Inspire change
 ???
 
 * Florence made plots to tell a story 
@@ -85,7 +77,7 @@ Make a difference / make a change
 
 * ACTION
 * Challenger disaster
-  https://bookdown.org/egarpor/PM-UC3M/glm-challenger.html
+https://bookdown.org/egarpor/PM-UC3M/glm-challenger.html
 * evidence-based healthcare
 
 FN: Asking the right questions - What make a good graph(before the plot)
@@ -113,22 +105,6 @@ abort the flight
 • They presented several (hand written) tabulated numbers to show their point.
 The following figure was taken from Tufte (1997):
 
-
-```r
-data_url = "http://www.math.usu.edu/~symanzik/teaching/2009_stat6560/RDataAndScripts/sharif_abbass_project1_challenger.csv"
-
-challenger = readr::read_csv(url(data_url))
-
-challenger %&gt;%
-ggplot(aes(x = temperature, y = r)) + 
-  geom_point() + 
-  geom_smooth(method = "gam", se = FALSE) +
-  xlim(20, 80) + 
-  ylim(0, 6) +
-  geom_vline(xintercept = 31, lty = 2) +
-  hrbrthemes::theme_ipsum()
-```
-
 &lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/unnamed-chunk-1-1.png" width="576" /&gt;
 
 ---
@@ -142,27 +118,31 @@ ggplot(aes(x = temperature, y = r)) +
 Golden Age of Statistics: https://projecteuclid.org/download/pdfview_1/euclid.ss/1242049392
 Graphcs: https://archive.org/details/mortalityofbriti00lond/page/n33/mode/2up
 
-" printed Tables &amp; all in double columns I do not think anyone will read it. None but scientific men ever look in the Appendix of a Report. And this is for the vulgar public."
-
+???
+* Minard,
+* John Snow - Cholera
 * Tables more common, graphics not seen as usfeul (cite)
 
 
+* Florence "printed Tables &amp; all in double columns I do not think anyone will read it. None but scientific men ever look in the Appendix of a Report. And this is for the vulgar public."
 
----
-
-# Minard
- 
----
-
-# William Playfair (1801)
-
-???
-
-Invention of the pie chart, and circle graph, used to show part-whole relations
 
 ---
 
 layout: true
+
+---
+
+
+background-image: url(graphics/playfair.jpg)
+background-size: contain 
+class: center, middle, inverse
+
+???
+
+Scottish-born William Playfair
+Invented of the pie chart, and circle graph, used to show part-whole relations
+http://www.branchcollective.org/?ps_articles=jonathan-sachs-17861801-william-playfair-statistical-graphics-and-the-meaning-of-an-event
 
 ---
 
@@ -195,7 +175,18 @@ background-image: url(graphics/classic-wedge-2.jpeg)
 background-size: contain 
 class: center, middle, inverse
 
+???
+
+* Name (rose, polar area, wedges)
+* Coxcombe - not the name - pampleft - she self-publisised go girl!
+* Describe it visually
+* Worked with Dr William Farr(Medical Statistician)
+* Covid-collateral damage 
+
+Nightingale hoped her charts would liven up her publications; the queen, she thought, might look at the pictures, even if she did not read the words.
+
 ---
+
 layout: true
 
 layout: true
@@ -209,50 +200,241 @@ layout: true
 
 ---
 
-# The polar area
-
-* Name (rose, polar area, wedges)
-* Coxcombe - not the name - pampleft - she self-publisised go girl!
-* Describe it visually
-* Worked with Dr William Farr(Medical Statistician)
-* Covid-collateral damage 
-* Originally Batwing but FN was worried misinterpretted.
- * "The length of the radial line in each month is proportional to the death rate, but both the text and the appearance imply that it is the shaded area that is proportional to the death rate, rather than the length of the radial lines.  Florence recognised this error and inserted an erratum slip, but then replaced this diagram in later documents (nos. 3, 4, and 5 listed above)
 
 
-Nightingale hoped her charts would liven up her publications; the queen, she thought, might look at the pictures, even if she did not read the words.
 
----
 
-# Reviewing / exploring the diagram
 
-* Show a modern version for easier reading
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/bar-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+
+???
+
 * Why didn’t she make a column chart?
- * Compare year on year
- * Compare season on season
- * Stand out from the rest (many bar charts)
- * Which tells the better story?
-* colour palette
-* cyclic pattern - circular
+* Compare year on year (cyclic)
+* Compare season on season
+* Stand out from the rest (many bar charts)
+* Which tells the better story?
+
+
+
+
+
+
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/bar2polar-1.png" width="1296" style="display: block; margin: auto;" /&gt;
 
 
 ---
 
-#  Bar chart?
-* Bar chart - polar area [distortion ](https://understandinguncertainty.org/node/214)
+count: false
+ 
+
+.left-panel-bar2polar-auto[
+
+```r
+*ggplot(df)
+```
+]
+ 
+.right-panel-bar2polar-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/bar2polar_auto_1_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+
+.left-panel-bar2polar-auto[
+
+```r
+ggplot(df) +  
+* theme_minimal()
+```
+]
+ 
+.right-panel-bar2polar-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/bar2polar_auto_2_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+
+.left-panel-bar2polar-auto[
+
+```r
+ggplot(df) +  
+  theme_minimal() +  
+* theme(text = element_text(size = 24))
+```
+]
+ 
+.right-panel-bar2polar-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/bar2polar_auto_3_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+
+.left-panel-bar2polar-auto[
+
+```r
+ggplot(df) +  
+  theme_minimal() +  
+  theme(text = element_text(size = 24)) +  
+* aes(x = category)
+```
+]
+ 
+.right-panel-bar2polar-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/bar2polar_auto_4_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+
+.left-panel-bar2polar-auto[
+
+```r
+ggplot(df) +  
+  theme_minimal() +  
+  theme(text = element_text(size = 24)) +  
+  aes(x = category) +  
+* aes(y = value)
+```
+]
+ 
+.right-panel-bar2polar-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/bar2polar_auto_5_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+
+.left-panel-bar2polar-auto[
+
+```r
+ggplot(df) +  
+  theme_minimal() +  
+  theme(text = element_text(size = 24)) +  
+  aes(x = category) +  
+  aes(y = value) +  
+* geom_col(width = 1)
+```
+]
+ 
+.right-panel-bar2polar-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/bar2polar_auto_6_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+
+.left-panel-bar2polar-auto[
+
+```r
+ggplot(df) +  
+  theme_minimal() +  
+  theme(text = element_text(size = 24)) +  
+  aes(x = category) +  
+  aes(y = value) +  
+  geom_col(width = 1) +  
+* aes(fill = category)
+```
+]
+ 
+.right-panel-bar2polar-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/bar2polar_auto_7_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+
+.left-panel-bar2polar-auto[
+
+```r
+ggplot(df) +  
+  theme_minimal() +  
+  theme(text = element_text(size = 24)) +  
+  aes(x = category) +  
+  aes(y = value) +  
+  geom_col(width = 1) +  
+  aes(fill = category) +  
+* coord_polar()
+```
+]
+ 
+.right-panel-bar2polar-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/bar2polar_auto_8_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+
+.left-panel-bar2polar-auto[
+
+```r
+ggplot(df) +  
+  theme_minimal() +  
+  theme(text = element_text(size = 24)) +  
+  aes(x = category) +  
+  aes(y = value) +  
+  geom_col(width = 1) +  
+  aes(fill = category) +  
+  coord_polar() +  
+* scale_y_sqrt()
+```
+]
+ 
+.right-panel-bar2polar-auto[
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/bar2polar_auto_9_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;style&gt;
+.left-panel-bar2polar-auto {
+  color: #777;
+  width: 38.6138613861386%;
+  height: 92%;
+  float: left;
+  font-size: 80%
+}
+.right-panel-bar2polar-auto {
+  width: 59.4059405940594%;
+  float: right;
+  padding-left: 1%;
+  font-size: 80%
+}
+.middle-panel-bar2polar-auto {
+  width: 0%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
 
 
 ---
 
-* Not a bar chart!
-  3 benefits of Nightingale Rose charts over pie charts
-   1) Each slice takes an equal sector of the circle, making labeling much cleaner
-   2) Each slice still maintains an accurate area comparison w/ other slices (by making the radius of the slice equal to the square root of the value);
-   3) Since each slice is in a fixed position and the charts can be made much smaller than pie charts, small multiples are very easy to create
+# The Rose is mightier than the Pie...?
 
-* Could we improve
- * Read left-to-right?
- * Catchy title
+1. Each slice is an equal sector
+1. Each slice allows area comparison with other slices
+1. Good for cyclic phenomia (direction + volume)
+1. Easier to compare radii than angles
+1. Suits small multiples
+
+???
+
+* Originally Batwing but FN was worried misinterpretted.
+
+The length of the radial line in each month is proportional to the death rate, but both the text and the appearance imply that it is the shaded area that is proportional to the death rate, rather than the length of the radial lines. Florence recognised this error and inserted an erratum slip, but then replaced this diagram in later documents (nos. 3, 4, and 5 listed above)
 
 ---
 
@@ -264,9 +446,6 @@ Nightingale hoped her charts would liven up her publications; the queen, she tho
 
 * Is it wrong to be enraged by a graph - LL
 * The graph conceals parts of the data, misrepresents quantity by area, and what is worst of all, *requires explanation*.
-
----
-# Other plots
 
 ---
 
@@ -290,88 +469,323 @@ The other highly original chart is what I will call the 'Lines' - a bar chart sh
 
 # Re-creating in R
 
----
-
-# StatsYSS #FloViz competition
-
-* All the results: 
-  https://twitter.com/statsyss/status/1260168592198455301
-
-https://statsyss.wordpress.com/2020/05/13/floviz-winning-entries/
-
-Highlight my favourites
-Edward Gunning: https://github.com/edwardgunning/FlorenceNightingale
-
-Graham:
-https://t.co/PxDiVppHI4?amp=1
+* Data available in the R pacakge **HistData**
 
 
----
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Date &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Month &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Year &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Army &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Disease &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Wounds &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Other &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Disease.rate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Wounds.rate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Other.rate &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1854-04-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Apr &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1854 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8571 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1854-05-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; May &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1854 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23333 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1854-06-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jun &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1854 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28333 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1854-07-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jul &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1854 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28722 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 359 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 150.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1854-08-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Aug &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1854 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30246 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 828 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 328.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1854-09-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sep &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1854 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30290 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 788 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 81 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 312.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1854-10-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Oct &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1854 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30643 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 503 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 132 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 128 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 197.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 51.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1854-11-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Nov &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1854 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29736 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 844 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 287 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 106 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 340.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 115.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42.8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1854-12-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dec &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1854 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32779 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1725 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 114 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 131 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 631.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-01-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jan &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32393 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2761 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 83 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 324 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1022.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 120.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-02-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Feb &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30919 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2120 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 361 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 822.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 140.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-03-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mar &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30107 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1205 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 172 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 480.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 68.6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-04-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Apr &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32252 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 477 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 177.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-05-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; May &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 35473 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 508 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 171.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-06-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jun &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38863 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 802 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 209 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 247.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 64.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-07-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jul &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42647 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 382 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 134 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 107.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-08-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Aug &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44614 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 483 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 164 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 129.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-09-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sep &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47751 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 189 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 276 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 69.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-10-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Oct &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46852 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 128 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 53 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-11-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Nov &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37853 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 178 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1855-12-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dec &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1855 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43217 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 91 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1856-01-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jan &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1856 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44212 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1856-02-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Feb &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1856 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43485 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1856-03-01 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mar &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1856 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46140 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
-# Data
-
-
-```load
-library("HistData")
-```
----
-
-# Perfect recreation in R (Flipbook)
-
-
-
-```r
-library("dplyr")
-library("HistData")
-library("ggplot2")
-library("tidyr")
-
-flo_pal = c("Wounds.rate" = "#e7bebc",
-            "Other.rate" = "#322b2f",
-            "Disease.rate" = "#b9c5cc")
-```
-
-* https://rpubs.com/kwlee58/492913 
-* Use flip book to show the breakdown
-* Use shiny to make interactive? Or plotly?
-* Appearing in time 
-* Show minimise from Before and after
-
----
-
-# Flipbook
-
-
-```r
-source(file = "https://raw.githubusercontent.com/EvaMaeRey/little_flipbooks_library/master/xaringan_reveal_parentheses_balanced.R")
-```
 
 
 
 
 
 
-```r
-  ggplot(polar_data) +
-  aes(x = Month) + 
-  aes(y = Deaths) + 
-  geom_col() + 
-  facet_wrap(~When) + 
-  aes(fill = Cause) + 
-  scale_y_sqrt() +
-  coord_polar(start = -pi/2, clip = "off") +
-	ggtitle("Causes of Mortality in the Army in the East") + 
-	xlab("") + 
-  scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",
-            "Other.rate" = "#322b2f",
-            "Disease.rate" = "#b9c5cc")) +
-  geom_hline(yintercept = sqrt(12), linetype = "dotted") + 
-  theme_void()  +
-  theme(legend.position = "none") 
-```
-
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot-1.png" width="864" /&gt;
-
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -453,63 +867,63 @@ count: false
 
 ```r
 HistData::Nightingale %&gt;%  
-* mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))
+* mutate(Month = str_to_upper(month((HistData::Nightingale$Date), label = TRUE, abbr = FALSE)))
 ```
 ]
  
 .right-panel-polartransform-auto[
 
 ```
-         Date Month Year  Army Disease Wounds Other Disease.rate Wounds.rate
-1  1854-04-01   Apr 1854  8571       1      0     5          1.4         0.0
-2  1854-05-01   May 1854 23333      12      0     9          6.2         0.0
-3  1854-06-01   Jun 1854 28333      11      0     6          4.7         0.0
-4  1854-07-01   Jul 1854 28722     359      0    23        150.0         0.0
-5  1854-08-01   Aug 1854 30246     828      1    30        328.5         0.4
-6  1854-09-01   Sep 1854 30290     788     81    70        312.2        32.1
-7  1854-10-01   Oct 1854 30643     503    132   128        197.0        51.7
-8  1854-11-01   Nov 1854 29736     844    287   106        340.6       115.8
-9  1854-12-01   Dec 1854 32779    1725    114   131        631.5        41.7
-10 1855-01-01   Jan 1855 32393    2761     83   324       1022.8        30.7
-11 1855-02-01   Feb 1855 30919    2120     42   361        822.8        16.3
-12 1855-03-01   Mar 1855 30107    1205     32   172        480.3        12.8
-13 1855-04-01   Apr 1855 32252     477     48    57        177.5        17.9
-14 1855-05-01   May 1855 35473     508     49    37        171.8        16.6
-15 1855-06-01   Jun 1855 38863     802    209    31        247.6        64.5
-16 1855-07-01   Jul 1855 42647     382    134    33        107.5        37.7
-17 1855-08-01   Aug 1855 44614     483    164    25        129.9        44.1
-18 1855-09-01   Sep 1855 47751     189    276    20         47.5        69.4
-19 1855-10-01   Oct 1855 46852     128     53    18         32.8        13.6
-20 1855-11-01   Nov 1855 37853     178     33    32         56.4        10.5
-21 1855-12-01   Dec 1855 43217      91     18    28         25.3         5.0
-22 1856-01-01   Jan 1856 44212      42      2    48         11.4         0.5
-23 1856-02-01   Feb 1856 43485      24      0    19          6.6         0.0
-24 1856-03-01   Mar 1856 46140      15      0    35          3.9         0.0
-   Other.rate                     When
-1         7.0 APRIL 1854 TO MARCH 1855
-2         4.6 APRIL 1854 TO MARCH 1855
-3         2.5 APRIL 1854 TO MARCH 1855
-4         9.6 APRIL 1854 TO MARCH 1855
-5        11.9 APRIL 1854 TO MARCH 1855
-6        27.7 APRIL 1854 TO MARCH 1855
-7        50.1 APRIL 1854 TO MARCH 1855
-8        42.8 APRIL 1854 TO MARCH 1855
-9        48.0 APRIL 1854 TO MARCH 1855
-10      120.0 APRIL 1854 TO MARCH 1855
-11      140.1 APRIL 1854 TO MARCH 1855
-12       68.6 APRIL 1854 TO MARCH 1855
-13       21.2 APRIL 1855 TO MARCH 1856
-14       12.5 APRIL 1855 TO MARCH 1856
-15        9.6 APRIL 1855 TO MARCH 1856
-16        9.3 APRIL 1855 TO MARCH 1856
-17        6.7 APRIL 1855 TO MARCH 1856
-18        5.0 APRIL 1855 TO MARCH 1856
-19        4.6 APRIL 1855 TO MARCH 1856
-20       10.1 APRIL 1855 TO MARCH 1856
-21        7.8 APRIL 1855 TO MARCH 1856
-22       13.0 APRIL 1855 TO MARCH 1856
-23        5.2 APRIL 1855 TO MARCH 1856
-24        9.1 APRIL 1855 TO MARCH 1856
+         Date     Month Year  Army Disease Wounds Other Disease.rate
+1  1854-04-01     APRIL 1854  8571       1      0     5          1.4
+2  1854-05-01       MAY 1854 23333      12      0     9          6.2
+3  1854-06-01      JUNE 1854 28333      11      0     6          4.7
+4  1854-07-01      JULY 1854 28722     359      0    23        150.0
+5  1854-08-01    AUGUST 1854 30246     828      1    30        328.5
+6  1854-09-01 SEPTEMBER 1854 30290     788     81    70        312.2
+7  1854-10-01   OCTOBER 1854 30643     503    132   128        197.0
+8  1854-11-01  NOVEMBER 1854 29736     844    287   106        340.6
+9  1854-12-01  DECEMBER 1854 32779    1725    114   131        631.5
+10 1855-01-01   JANUARY 1855 32393    2761     83   324       1022.8
+11 1855-02-01  FEBRUARY 1855 30919    2120     42   361        822.8
+12 1855-03-01     MARCH 1855 30107    1205     32   172        480.3
+13 1855-04-01     APRIL 1855 32252     477     48    57        177.5
+14 1855-05-01       MAY 1855 35473     508     49    37        171.8
+15 1855-06-01      JUNE 1855 38863     802    209    31        247.6
+16 1855-07-01      JULY 1855 42647     382    134    33        107.5
+17 1855-08-01    AUGUST 1855 44614     483    164    25        129.9
+18 1855-09-01 SEPTEMBER 1855 47751     189    276    20         47.5
+19 1855-10-01   OCTOBER 1855 46852     128     53    18         32.8
+20 1855-11-01  NOVEMBER 1855 37853     178     33    32         56.4
+21 1855-12-01  DECEMBER 1855 43217      91     18    28         25.3
+22 1856-01-01   JANUARY 1856 44212      42      2    48         11.4
+23 1856-02-01  FEBRUARY 1856 43485      24      0    19          6.6
+24 1856-03-01     MARCH 1856 46140      15      0    35          3.9
+   Wounds.rate Other.rate
+1          0.0        7.0
+2          0.0        4.6
+3          0.0        2.5
+4          0.0        9.6
+5          0.4       11.9
+6         32.1       27.7
+7         51.7       50.1
+8        115.8       42.8
+9         41.7       48.0
+10        30.7      120.0
+11        16.3      140.1
+12        12.8       68.6
+13        17.9       21.2
+14        16.6       12.5
+15        64.5        9.6
+16        37.7        9.3
+17        44.1        6.7
+18        69.4        5.0
+19        13.6        4.6
+20        10.5       10.1
+21         5.0        7.8
+22         0.5       13.0
+23         0.0        5.2
+24         0.0        9.1
 ```
 ]
 
@@ -521,64 +935,66 @@ count: false
 
 ```r
 HistData::Nightingale %&gt;%  
-  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))  %&gt;%  
-* mutate(Month = factor(Month,  levels = c("Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar")))
+  mutate(Month = str_to_upper(month((HistData::Nightingale$Date), label = TRUE, abbr = FALSE))) %&gt;%  
+* mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("JANUARY", "FEBRUARY", "MARCH")),
+*                       "1. \n APRIL 1854 TO MARCH 1855",
+*                       "2. \n APRIL 1855 TO MARCH 1856"))
 ```
 ]
  
 .right-panel-polartransform-auto[
 
 ```
-         Date Month Year  Army Disease Wounds Other Disease.rate Wounds.rate
-1  1854-04-01   Apr 1854  8571       1      0     5          1.4         0.0
-2  1854-05-01   May 1854 23333      12      0     9          6.2         0.0
-3  1854-06-01   Jun 1854 28333      11      0     6          4.7         0.0
-4  1854-07-01   Jul 1854 28722     359      0    23        150.0         0.0
-5  1854-08-01   Aug 1854 30246     828      1    30        328.5         0.4
-6  1854-09-01   Sep 1854 30290     788     81    70        312.2        32.1
-7  1854-10-01   Oct 1854 30643     503    132   128        197.0        51.7
-8  1854-11-01   Nov 1854 29736     844    287   106        340.6       115.8
-9  1854-12-01   Dec 1854 32779    1725    114   131        631.5        41.7
-10 1855-01-01   Jan 1855 32393    2761     83   324       1022.8        30.7
-11 1855-02-01   Feb 1855 30919    2120     42   361        822.8        16.3
-12 1855-03-01   Mar 1855 30107    1205     32   172        480.3        12.8
-13 1855-04-01   Apr 1855 32252     477     48    57        177.5        17.9
-14 1855-05-01   May 1855 35473     508     49    37        171.8        16.6
-15 1855-06-01   Jun 1855 38863     802    209    31        247.6        64.5
-16 1855-07-01   Jul 1855 42647     382    134    33        107.5        37.7
-17 1855-08-01   Aug 1855 44614     483    164    25        129.9        44.1
-18 1855-09-01   Sep 1855 47751     189    276    20         47.5        69.4
-19 1855-10-01   Oct 1855 46852     128     53    18         32.8        13.6
-20 1855-11-01   Nov 1855 37853     178     33    32         56.4        10.5
-21 1855-12-01   Dec 1855 43217      91     18    28         25.3         5.0
-22 1856-01-01   Jan 1856 44212      42      2    48         11.4         0.5
-23 1856-02-01   Feb 1856 43485      24      0    19          6.6         0.0
-24 1856-03-01   Mar 1856 46140      15      0    35          3.9         0.0
-   Other.rate                     When
-1         7.0 APRIL 1854 TO MARCH 1855
-2         4.6 APRIL 1854 TO MARCH 1855
-3         2.5 APRIL 1854 TO MARCH 1855
-4         9.6 APRIL 1854 TO MARCH 1855
-5        11.9 APRIL 1854 TO MARCH 1855
-6        27.7 APRIL 1854 TO MARCH 1855
-7        50.1 APRIL 1854 TO MARCH 1855
-8        42.8 APRIL 1854 TO MARCH 1855
-9        48.0 APRIL 1854 TO MARCH 1855
-10      120.0 APRIL 1854 TO MARCH 1855
-11      140.1 APRIL 1854 TO MARCH 1855
-12       68.6 APRIL 1854 TO MARCH 1855
-13       21.2 APRIL 1855 TO MARCH 1856
-14       12.5 APRIL 1855 TO MARCH 1856
-15        9.6 APRIL 1855 TO MARCH 1856
-16        9.3 APRIL 1855 TO MARCH 1856
-17        6.7 APRIL 1855 TO MARCH 1856
-18        5.0 APRIL 1855 TO MARCH 1856
-19        4.6 APRIL 1855 TO MARCH 1856
-20       10.1 APRIL 1855 TO MARCH 1856
-21        7.8 APRIL 1855 TO MARCH 1856
-22       13.0 APRIL 1855 TO MARCH 1856
-23        5.2 APRIL 1855 TO MARCH 1856
-24        9.1 APRIL 1855 TO MARCH 1856
+         Date     Month Year  Army Disease Wounds Other Disease.rate
+1  1854-04-01     APRIL 1854  8571       1      0     5          1.4
+2  1854-05-01       MAY 1854 23333      12      0     9          6.2
+3  1854-06-01      JUNE 1854 28333      11      0     6          4.7
+4  1854-07-01      JULY 1854 28722     359      0    23        150.0
+5  1854-08-01    AUGUST 1854 30246     828      1    30        328.5
+6  1854-09-01 SEPTEMBER 1854 30290     788     81    70        312.2
+7  1854-10-01   OCTOBER 1854 30643     503    132   128        197.0
+8  1854-11-01  NOVEMBER 1854 29736     844    287   106        340.6
+9  1854-12-01  DECEMBER 1854 32779    1725    114   131        631.5
+10 1855-01-01   JANUARY 1855 32393    2761     83   324       1022.8
+11 1855-02-01  FEBRUARY 1855 30919    2120     42   361        822.8
+12 1855-03-01     MARCH 1855 30107    1205     32   172        480.3
+13 1855-04-01     APRIL 1855 32252     477     48    57        177.5
+14 1855-05-01       MAY 1855 35473     508     49    37        171.8
+15 1855-06-01      JUNE 1855 38863     802    209    31        247.6
+16 1855-07-01      JULY 1855 42647     382    134    33        107.5
+17 1855-08-01    AUGUST 1855 44614     483    164    25        129.9
+18 1855-09-01 SEPTEMBER 1855 47751     189    276    20         47.5
+19 1855-10-01   OCTOBER 1855 46852     128     53    18         32.8
+20 1855-11-01  NOVEMBER 1855 37853     178     33    32         56.4
+21 1855-12-01  DECEMBER 1855 43217      91     18    28         25.3
+22 1856-01-01   JANUARY 1856 44212      42      2    48         11.4
+23 1856-02-01  FEBRUARY 1856 43485      24      0    19          6.6
+24 1856-03-01     MARCH 1856 46140      15      0    35          3.9
+   Wounds.rate Other.rate                           When
+1          0.0        7.0 1. \n APRIL 1854 TO MARCH 1855
+2          0.0        4.6 1. \n APRIL 1854 TO MARCH 1855
+3          0.0        2.5 1. \n APRIL 1854 TO MARCH 1855
+4          0.0        9.6 1. \n APRIL 1854 TO MARCH 1855
+5          0.4       11.9 1. \n APRIL 1854 TO MARCH 1855
+6         32.1       27.7 1. \n APRIL 1854 TO MARCH 1855
+7         51.7       50.1 1. \n APRIL 1854 TO MARCH 1855
+8        115.8       42.8 1. \n APRIL 1854 TO MARCH 1855
+9         41.7       48.0 1. \n APRIL 1854 TO MARCH 1855
+10        30.7      120.0 1. \n APRIL 1854 TO MARCH 1855
+11        16.3      140.1 1. \n APRIL 1854 TO MARCH 1855
+12        12.8       68.6 1. \n APRIL 1854 TO MARCH 1855
+13        17.9       21.2 2. \n APRIL 1855 TO MARCH 1856
+14        16.6       12.5 2. \n APRIL 1855 TO MARCH 1856
+15        64.5        9.6 2. \n APRIL 1855 TO MARCH 1856
+16        37.7        9.3 2. \n APRIL 1855 TO MARCH 1856
+17        44.1        6.7 2. \n APRIL 1855 TO MARCH 1856
+18        69.4        5.0 2. \n APRIL 1855 TO MARCH 1856
+19        13.6        4.6 2. \n APRIL 1855 TO MARCH 1856
+20        10.5       10.1 2. \n APRIL 1855 TO MARCH 1856
+21         5.0        7.8 2. \n APRIL 1855 TO MARCH 1856
+22         0.5       13.0 2. \n APRIL 1855 TO MARCH 1856
+23         0.0        5.2 2. \n APRIL 1855 TO MARCH 1856
+24         0.0        9.1 2. \n APRIL 1855 TO MARCH 1856
 ```
 ]
 
@@ -590,8 +1006,238 @@ count: false
 
 ```r
 HistData::Nightingale %&gt;%  
-  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))  %&gt;%  
-  mutate(Month = factor(Month,  levels = c("Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"))) %&gt;%  
+  mutate(Month = str_to_upper(month((HistData::Nightingale$Date), label = TRUE, abbr = FALSE))) %&gt;%  
+  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("JANUARY", "FEBRUARY", "MARCH")),  
+                        "1. \n APRIL 1854 TO MARCH 1855",  
+                        "2. \n APRIL 1855 TO MARCH 1856"))  %&gt;%  
+* mutate(angle = rep(90 - seq(15, 345, by = 30), times = 2))
+```
+]
+ 
+.right-panel-polartransform-auto[
+
+```
+         Date     Month Year  Army Disease Wounds Other Disease.rate
+1  1854-04-01     APRIL 1854  8571       1      0     5          1.4
+2  1854-05-01       MAY 1854 23333      12      0     9          6.2
+3  1854-06-01      JUNE 1854 28333      11      0     6          4.7
+4  1854-07-01      JULY 1854 28722     359      0    23        150.0
+5  1854-08-01    AUGUST 1854 30246     828      1    30        328.5
+6  1854-09-01 SEPTEMBER 1854 30290     788     81    70        312.2
+7  1854-10-01   OCTOBER 1854 30643     503    132   128        197.0
+8  1854-11-01  NOVEMBER 1854 29736     844    287   106        340.6
+9  1854-12-01  DECEMBER 1854 32779    1725    114   131        631.5
+10 1855-01-01   JANUARY 1855 32393    2761     83   324       1022.8
+11 1855-02-01  FEBRUARY 1855 30919    2120     42   361        822.8
+12 1855-03-01     MARCH 1855 30107    1205     32   172        480.3
+13 1855-04-01     APRIL 1855 32252     477     48    57        177.5
+14 1855-05-01       MAY 1855 35473     508     49    37        171.8
+15 1855-06-01      JUNE 1855 38863     802    209    31        247.6
+16 1855-07-01      JULY 1855 42647     382    134    33        107.5
+17 1855-08-01    AUGUST 1855 44614     483    164    25        129.9
+18 1855-09-01 SEPTEMBER 1855 47751     189    276    20         47.5
+19 1855-10-01   OCTOBER 1855 46852     128     53    18         32.8
+20 1855-11-01  NOVEMBER 1855 37853     178     33    32         56.4
+21 1855-12-01  DECEMBER 1855 43217      91     18    28         25.3
+22 1856-01-01   JANUARY 1856 44212      42      2    48         11.4
+23 1856-02-01  FEBRUARY 1856 43485      24      0    19          6.6
+24 1856-03-01     MARCH 1856 46140      15      0    35          3.9
+   Wounds.rate Other.rate                           When angle
+1          0.0        7.0 1. \n APRIL 1854 TO MARCH 1855    75
+2          0.0        4.6 1. \n APRIL 1854 TO MARCH 1855    45
+3          0.0        2.5 1. \n APRIL 1854 TO MARCH 1855    15
+4          0.0        9.6 1. \n APRIL 1854 TO MARCH 1855   -15
+5          0.4       11.9 1. \n APRIL 1854 TO MARCH 1855   -45
+6         32.1       27.7 1. \n APRIL 1854 TO MARCH 1855   -75
+7         51.7       50.1 1. \n APRIL 1854 TO MARCH 1855  -105
+8        115.8       42.8 1. \n APRIL 1854 TO MARCH 1855  -135
+9         41.7       48.0 1. \n APRIL 1854 TO MARCH 1855  -165
+10        30.7      120.0 1. \n APRIL 1854 TO MARCH 1855  -195
+11        16.3      140.1 1. \n APRIL 1854 TO MARCH 1855  -225
+12        12.8       68.6 1. \n APRIL 1854 TO MARCH 1855  -255
+13        17.9       21.2 2. \n APRIL 1855 TO MARCH 1856    75
+14        16.6       12.5 2. \n APRIL 1855 TO MARCH 1856    45
+15        64.5        9.6 2. \n APRIL 1855 TO MARCH 1856    15
+16        37.7        9.3 2. \n APRIL 1855 TO MARCH 1856   -15
+17        44.1        6.7 2. \n APRIL 1855 TO MARCH 1856   -45
+18        69.4        5.0 2. \n APRIL 1855 TO MARCH 1856   -75
+19        13.6        4.6 2. \n APRIL 1855 TO MARCH 1856  -105
+20        10.5       10.1 2. \n APRIL 1855 TO MARCH 1856  -135
+21         5.0        7.8 2. \n APRIL 1855 TO MARCH 1856  -165
+22         0.5       13.0 2. \n APRIL 1855 TO MARCH 1856  -195
+23         0.0        5.2 2. \n APRIL 1855 TO MARCH 1856  -225
+24         0.0        9.1 2. \n APRIL 1855 TO MARCH 1856  -255
+```
+]
+
+---
+count: false
+ 
+
+.left-panel-polartransform-auto[
+
+```r
+HistData::Nightingale %&gt;%  
+  mutate(Month = str_to_upper(month((HistData::Nightingale$Date), label = TRUE, abbr = FALSE))) %&gt;%  
+  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("JANUARY", "FEBRUARY", "MARCH")),  
+                        "1. \n APRIL 1854 TO MARCH 1855",  
+                        "2. \n APRIL 1855 TO MARCH 1856"))  %&gt;%  
+  mutate(angle = rep(90 - seq(15, 345, by = 30), times = 2)) %&gt;%  
+* mutate(text_pos = if_else(Disease.rate &gt; 120,
+*                           Disease.rate,
+*                           120))
+```
+]
+ 
+.right-panel-polartransform-auto[
+
+```
+         Date     Month Year  Army Disease Wounds Other Disease.rate
+1  1854-04-01     APRIL 1854  8571       1      0     5          1.4
+2  1854-05-01       MAY 1854 23333      12      0     9          6.2
+3  1854-06-01      JUNE 1854 28333      11      0     6          4.7
+4  1854-07-01      JULY 1854 28722     359      0    23        150.0
+5  1854-08-01    AUGUST 1854 30246     828      1    30        328.5
+6  1854-09-01 SEPTEMBER 1854 30290     788     81    70        312.2
+7  1854-10-01   OCTOBER 1854 30643     503    132   128        197.0
+8  1854-11-01  NOVEMBER 1854 29736     844    287   106        340.6
+9  1854-12-01  DECEMBER 1854 32779    1725    114   131        631.5
+10 1855-01-01   JANUARY 1855 32393    2761     83   324       1022.8
+11 1855-02-01  FEBRUARY 1855 30919    2120     42   361        822.8
+12 1855-03-01     MARCH 1855 30107    1205     32   172        480.3
+13 1855-04-01     APRIL 1855 32252     477     48    57        177.5
+14 1855-05-01       MAY 1855 35473     508     49    37        171.8
+15 1855-06-01      JUNE 1855 38863     802    209    31        247.6
+16 1855-07-01      JULY 1855 42647     382    134    33        107.5
+17 1855-08-01    AUGUST 1855 44614     483    164    25        129.9
+18 1855-09-01 SEPTEMBER 1855 47751     189    276    20         47.5
+19 1855-10-01   OCTOBER 1855 46852     128     53    18         32.8
+20 1855-11-01  NOVEMBER 1855 37853     178     33    32         56.4
+21 1855-12-01  DECEMBER 1855 43217      91     18    28         25.3
+22 1856-01-01   JANUARY 1856 44212      42      2    48         11.4
+23 1856-02-01  FEBRUARY 1856 43485      24      0    19          6.6
+24 1856-03-01     MARCH 1856 46140      15      0    35          3.9
+   Wounds.rate Other.rate                           When angle text_pos
+1          0.0        7.0 1. \n APRIL 1854 TO MARCH 1855    75    120.0
+2          0.0        4.6 1. \n APRIL 1854 TO MARCH 1855    45    120.0
+3          0.0        2.5 1. \n APRIL 1854 TO MARCH 1855    15    120.0
+4          0.0        9.6 1. \n APRIL 1854 TO MARCH 1855   -15    150.0
+5          0.4       11.9 1. \n APRIL 1854 TO MARCH 1855   -45    328.5
+6         32.1       27.7 1. \n APRIL 1854 TO MARCH 1855   -75    312.2
+7         51.7       50.1 1. \n APRIL 1854 TO MARCH 1855  -105    197.0
+8        115.8       42.8 1. \n APRIL 1854 TO MARCH 1855  -135    340.6
+9         41.7       48.0 1. \n APRIL 1854 TO MARCH 1855  -165    631.5
+10        30.7      120.0 1. \n APRIL 1854 TO MARCH 1855  -195   1022.8
+11        16.3      140.1 1. \n APRIL 1854 TO MARCH 1855  -225    822.8
+12        12.8       68.6 1. \n APRIL 1854 TO MARCH 1855  -255    480.3
+13        17.9       21.2 2. \n APRIL 1855 TO MARCH 1856    75    177.5
+14        16.6       12.5 2. \n APRIL 1855 TO MARCH 1856    45    171.8
+15        64.5        9.6 2. \n APRIL 1855 TO MARCH 1856    15    247.6
+16        37.7        9.3 2. \n APRIL 1855 TO MARCH 1856   -15    120.0
+17        44.1        6.7 2. \n APRIL 1855 TO MARCH 1856   -45    129.9
+18        69.4        5.0 2. \n APRIL 1855 TO MARCH 1856   -75    120.0
+19        13.6        4.6 2. \n APRIL 1855 TO MARCH 1856  -105    120.0
+20        10.5       10.1 2. \n APRIL 1855 TO MARCH 1856  -135    120.0
+21         5.0        7.8 2. \n APRIL 1855 TO MARCH 1856  -165    120.0
+22         0.5       13.0 2. \n APRIL 1855 TO MARCH 1856  -195    120.0
+23         0.0        5.2 2. \n APRIL 1855 TO MARCH 1856  -225    120.0
+24         0.0        9.1 2. \n APRIL 1855 TO MARCH 1856  -255    120.0
+```
+]
+
+---
+count: false
+ 
+
+.left-panel-polartransform-auto[
+
+```r
+HistData::Nightingale %&gt;%  
+  mutate(Month = str_to_upper(month((HistData::Nightingale$Date), label = TRUE, abbr = FALSE))) %&gt;%  
+  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("JANUARY", "FEBRUARY", "MARCH")),  
+                        "1. \n APRIL 1854 TO MARCH 1855",  
+                        "2. \n APRIL 1855 TO MARCH 1856"))  %&gt;%  
+  mutate(angle = rep(90 - seq(15, 345, by = 30), times = 2)) %&gt;%  
+  mutate(text_pos = if_else(Disease.rate &gt; 120,  
+                            Disease.rate,  
+                            120)) %&gt;%  
+* mutate(When = factor(When, levels = c("2. \n APRIL 1855 TO MARCH 1856",  "1. \n APRIL 1854 TO MARCH 1855")))
+```
+]
+ 
+.right-panel-polartransform-auto[
+
+```
+         Date     Month Year  Army Disease Wounds Other Disease.rate
+1  1854-04-01     APRIL 1854  8571       1      0     5          1.4
+2  1854-05-01       MAY 1854 23333      12      0     9          6.2
+3  1854-06-01      JUNE 1854 28333      11      0     6          4.7
+4  1854-07-01      JULY 1854 28722     359      0    23        150.0
+5  1854-08-01    AUGUST 1854 30246     828      1    30        328.5
+6  1854-09-01 SEPTEMBER 1854 30290     788     81    70        312.2
+7  1854-10-01   OCTOBER 1854 30643     503    132   128        197.0
+8  1854-11-01  NOVEMBER 1854 29736     844    287   106        340.6
+9  1854-12-01  DECEMBER 1854 32779    1725    114   131        631.5
+10 1855-01-01   JANUARY 1855 32393    2761     83   324       1022.8
+11 1855-02-01  FEBRUARY 1855 30919    2120     42   361        822.8
+12 1855-03-01     MARCH 1855 30107    1205     32   172        480.3
+13 1855-04-01     APRIL 1855 32252     477     48    57        177.5
+14 1855-05-01       MAY 1855 35473     508     49    37        171.8
+15 1855-06-01      JUNE 1855 38863     802    209    31        247.6
+16 1855-07-01      JULY 1855 42647     382    134    33        107.5
+17 1855-08-01    AUGUST 1855 44614     483    164    25        129.9
+18 1855-09-01 SEPTEMBER 1855 47751     189    276    20         47.5
+19 1855-10-01   OCTOBER 1855 46852     128     53    18         32.8
+20 1855-11-01  NOVEMBER 1855 37853     178     33    32         56.4
+21 1855-12-01  DECEMBER 1855 43217      91     18    28         25.3
+22 1856-01-01   JANUARY 1856 44212      42      2    48         11.4
+23 1856-02-01  FEBRUARY 1856 43485      24      0    19          6.6
+24 1856-03-01     MARCH 1856 46140      15      0    35          3.9
+   Wounds.rate Other.rate                           When angle text_pos
+1          0.0        7.0 1. \n APRIL 1854 TO MARCH 1855    75    120.0
+2          0.0        4.6 1. \n APRIL 1854 TO MARCH 1855    45    120.0
+3          0.0        2.5 1. \n APRIL 1854 TO MARCH 1855    15    120.0
+4          0.0        9.6 1. \n APRIL 1854 TO MARCH 1855   -15    150.0
+5          0.4       11.9 1. \n APRIL 1854 TO MARCH 1855   -45    328.5
+6         32.1       27.7 1. \n APRIL 1854 TO MARCH 1855   -75    312.2
+7         51.7       50.1 1. \n APRIL 1854 TO MARCH 1855  -105    197.0
+8        115.8       42.8 1. \n APRIL 1854 TO MARCH 1855  -135    340.6
+9         41.7       48.0 1. \n APRIL 1854 TO MARCH 1855  -165    631.5
+10        30.7      120.0 1. \n APRIL 1854 TO MARCH 1855  -195   1022.8
+11        16.3      140.1 1. \n APRIL 1854 TO MARCH 1855  -225    822.8
+12        12.8       68.6 1. \n APRIL 1854 TO MARCH 1855  -255    480.3
+13        17.9       21.2 2. \n APRIL 1855 TO MARCH 1856    75    177.5
+14        16.6       12.5 2. \n APRIL 1855 TO MARCH 1856    45    171.8
+15        64.5        9.6 2. \n APRIL 1855 TO MARCH 1856    15    247.6
+16        37.7        9.3 2. \n APRIL 1855 TO MARCH 1856   -15    120.0
+17        44.1        6.7 2. \n APRIL 1855 TO MARCH 1856   -45    129.9
+18        69.4        5.0 2. \n APRIL 1855 TO MARCH 1856   -75    120.0
+19        13.6        4.6 2. \n APRIL 1855 TO MARCH 1856  -105    120.0
+20        10.5       10.1 2. \n APRIL 1855 TO MARCH 1856  -135    120.0
+21         5.0        7.8 2. \n APRIL 1855 TO MARCH 1856  -165    120.0
+22         0.5       13.0 2. \n APRIL 1855 TO MARCH 1856  -195    120.0
+23         0.0        5.2 2. \n APRIL 1855 TO MARCH 1856  -225    120.0
+24         0.0        9.1 2. \n APRIL 1855 TO MARCH 1856  -255    120.0
+```
+]
+
+---
+count: false
+ 
+
+.left-panel-polartransform-auto[
+
+```r
+HistData::Nightingale %&gt;%  
+  mutate(Month = str_to_upper(month((HistData::Nightingale$Date), label = TRUE, abbr = FALSE))) %&gt;%  
+  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("JANUARY", "FEBRUARY", "MARCH")),  
+                        "1. \n APRIL 1854 TO MARCH 1855",  
+                        "2. \n APRIL 1855 TO MARCH 1856"))  %&gt;%  
+  mutate(angle = rep(90 - seq(15, 345, by = 30), times = 2)) %&gt;%  
+  mutate(text_pos = if_else(Disease.rate &gt; 120,  
+                            Disease.rate,  
+                            120)) %&gt;%  
+  mutate(When = factor(When, levels = c("2. \n APRIL 1855 TO MARCH 1856",  "1. \n APRIL 1854 TO MARCH 1855"))) %&gt;%  
 * pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths")
 ```
 ]
@@ -599,20 +1245,20 @@ HistData::Nightingale %&gt;%
 .right-panel-polartransform-auto[
 
 ```
-# A tibble: 72 x 10
-   Date       Month  Year  Army Disease Wounds Other When         Cause   Deaths
-   &lt;date&gt;     &lt;ord&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt;  &lt;int&gt; &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt;
- 1 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Diseas…    1.4
- 2 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Wounds…    0  
- 3 1854-04-01 Apr    1854  8571       1      0     5 APRIL 1854 … Other.…    7  
- 4 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Diseas…    6.2
- 5 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Wounds…    0  
- 6 1854-05-01 May    1854 23333      12      0     9 APRIL 1854 … Other.…    4.6
- 7 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Diseas…    4.7
- 8 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Wounds…    0  
- 9 1854-06-01 Jun    1854 28333      11      0     6 APRIL 1854 … Other.…    2.5
-10 1854-07-01 Jul    1854 28722     359      0    23 APRIL 1854 … Diseas…  150  
-# … with 62 more rows
+# A tibble: 72 x 12
+   Date       Month  Year  Army Disease Wounds Other When  angle text_pos Cause
+   &lt;date&gt;     &lt;chr&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt;  &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;
+ 1 1854-04-01 APRIL  1854  8571       1      0     5 "1. …    75      120 Dise…
+ 2 1854-04-01 APRIL  1854  8571       1      0     5 "1. …    75      120 Woun…
+ 3 1854-04-01 APRIL  1854  8571       1      0     5 "1. …    75      120 Othe…
+ 4 1854-05-01 MAY    1854 23333      12      0     9 "1. …    45      120 Dise…
+ 5 1854-05-01 MAY    1854 23333      12      0     9 "1. …    45      120 Woun…
+ 6 1854-05-01 MAY    1854 23333      12      0     9 "1. …    45      120 Othe…
+ 7 1854-06-01 JUNE   1854 28333      11      0     6 "1. …    15      120 Dise…
+ 8 1854-06-01 JUNE   1854 28333      11      0     6 "1. …    15      120 Woun…
+ 9 1854-06-01 JUNE   1854 28333      11      0     6 "1. …    15      120 Othe…
+10 1854-07-01 JULY   1854 28722     359      0    23 "1. …   -15      150 Dise…
+# … with 62 more rows, and 1 more variable: Deaths &lt;dbl&gt;
 ```
 ]
 
@@ -624,9 +1270,103 @@ count: false
 
 ```r
 HistData::Nightingale %&gt;%  
-  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))  %&gt;%  
-  mutate(Month = factor(Month,  levels = c("Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"))) %&gt;%  
-  pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths") -&gt;  
+  mutate(Month = str_to_upper(month((HistData::Nightingale$Date), label = TRUE, abbr = FALSE))) %&gt;%  
+  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("JANUARY", "FEBRUARY", "MARCH")),  
+                        "1. \n APRIL 1854 TO MARCH 1855",  
+                        "2. \n APRIL 1855 TO MARCH 1856"))  %&gt;%  
+  mutate(angle = rep(90 - seq(15, 345, by = 30), times = 2)) %&gt;%  
+  mutate(text_pos = if_else(Disease.rate &gt; 120,  
+                            Disease.rate,  
+                            120)) %&gt;%  
+  mutate(When = factor(When, levels = c("2. \n APRIL 1855 TO MARCH 1856",  "1. \n APRIL 1854 TO MARCH 1855"))) %&gt;%  
+  pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths")  %&gt;%  
+* mutate(Label = if_else(Cause == "Disease.rate", as.character(Month), ""))
+```
+]
+ 
+.right-panel-polartransform-auto[
+
+```
+# A tibble: 72 x 13
+   Date       Month  Year  Army Disease Wounds Other When  angle text_pos Cause
+   &lt;date&gt;     &lt;chr&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt;  &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;
+ 1 1854-04-01 APRIL  1854  8571       1      0     5 "1. …    75      120 Dise…
+ 2 1854-04-01 APRIL  1854  8571       1      0     5 "1. …    75      120 Woun…
+ 3 1854-04-01 APRIL  1854  8571       1      0     5 "1. …    75      120 Othe…
+ 4 1854-05-01 MAY    1854 23333      12      0     9 "1. …    45      120 Dise…
+ 5 1854-05-01 MAY    1854 23333      12      0     9 "1. …    45      120 Woun…
+ 6 1854-05-01 MAY    1854 23333      12      0     9 "1. …    45      120 Othe…
+ 7 1854-06-01 JUNE   1854 28333      11      0     6 "1. …    15      120 Dise…
+ 8 1854-06-01 JUNE   1854 28333      11      0     6 "1. …    15      120 Woun…
+ 9 1854-06-01 JUNE   1854 28333      11      0     6 "1. …    15      120 Othe…
+10 1854-07-01 JULY   1854 28722     359      0    23 "1. …   -15      150 Dise…
+# … with 62 more rows, and 2 more variables: Deaths &lt;dbl&gt;, Label &lt;chr&gt;
+```
+]
+
+---
+count: false
+ 
+
+.left-panel-polartransform-auto[
+
+```r
+HistData::Nightingale %&gt;%  
+  mutate(Month = str_to_upper(month((HistData::Nightingale$Date), label = TRUE, abbr = FALSE))) %&gt;%  
+  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("JANUARY", "FEBRUARY", "MARCH")),  
+                        "1. \n APRIL 1854 TO MARCH 1855",  
+                        "2. \n APRIL 1855 TO MARCH 1856"))  %&gt;%  
+  mutate(angle = rep(90 - seq(15, 345, by = 30), times = 2)) %&gt;%  
+  mutate(text_pos = if_else(Disease.rate &gt; 120,  
+                            Disease.rate,  
+                            120)) %&gt;%  
+  mutate(When = factor(When, levels = c("2. \n APRIL 1855 TO MARCH 1856",  "1. \n APRIL 1854 TO MARCH 1855"))) %&gt;%  
+  pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths")  %&gt;%  
+  mutate(Label = if_else(Cause == "Disease.rate", as.character(Month), "")) %&gt;%  
+* mutate(Month = factor(Month,  levels = c("APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "JANUARY", "FEBRUARY", "MARCH")))
+```
+]
+ 
+.right-panel-polartransform-auto[
+
+```
+# A tibble: 72 x 13
+   Date       Month  Year  Army Disease Wounds Other When  angle text_pos Cause
+   &lt;date&gt;     &lt;fct&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt;  &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;
+ 1 1854-04-01 APRIL  1854  8571       1      0     5 "1. …    75      120 Dise…
+ 2 1854-04-01 APRIL  1854  8571       1      0     5 "1. …    75      120 Woun…
+ 3 1854-04-01 APRIL  1854  8571       1      0     5 "1. …    75      120 Othe…
+ 4 1854-05-01 MAY    1854 23333      12      0     9 "1. …    45      120 Dise…
+ 5 1854-05-01 MAY    1854 23333      12      0     9 "1. …    45      120 Woun…
+ 6 1854-05-01 MAY    1854 23333      12      0     9 "1. …    45      120 Othe…
+ 7 1854-06-01 JUNE   1854 28333      11      0     6 "1. …    15      120 Dise…
+ 8 1854-06-01 JUNE   1854 28333      11      0     6 "1. …    15      120 Woun…
+ 9 1854-06-01 JUNE   1854 28333      11      0     6 "1. …    15      120 Othe…
+10 1854-07-01 JULY   1854 28722     359      0    23 "1. …   -15      150 Dise…
+# … with 62 more rows, and 2 more variables: Deaths &lt;dbl&gt;, Label &lt;chr&gt;
+```
+]
+
+---
+count: false
+ 
+
+.left-panel-polartransform-auto[
+
+```r
+HistData::Nightingale %&gt;%  
+  mutate(Month = str_to_upper(month((HistData::Nightingale$Date), label = TRUE, abbr = FALSE))) %&gt;%  
+  mutate(When = if_else(Year == 1854 | (Year == 1855 &amp; Month %in% c("JANUARY", "FEBRUARY", "MARCH")),  
+                        "1. \n APRIL 1854 TO MARCH 1855",  
+                        "2. \n APRIL 1855 TO MARCH 1856"))  %&gt;%  
+  mutate(angle = rep(90 - seq(15, 345, by = 30), times = 2)) %&gt;%  
+  mutate(text_pos = if_else(Disease.rate &gt; 120,  
+                            Disease.rate,  
+                            120)) %&gt;%  
+  mutate(When = factor(When, levels = c("2. \n APRIL 1855 TO MARCH 1856",  "1. \n APRIL 1854 TO MARCH 1855"))) %&gt;%  
+  pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths")  %&gt;%  
+  mutate(Label = if_else(Cause == "Disease.rate", as.character(Month), "")) %&gt;%  
+  mutate(Month = factor(Month,  levels = c("APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "JANUARY", "FEBRUARY", "MARCH"))) -&gt;  
 * polar_data
 ```
 ]
@@ -661,314 +1401,99 @@ HistData::Nightingale %&gt;%
 
 ---
 
-
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-* ggplot(polar_data)
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_1_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_1_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-* aes(x = Month)
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_2_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_2_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-* aes(y = Deaths)
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_3_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_3_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-* geom_col()
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_4_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_4_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-* facet_wrap(~When)
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_5_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_5_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-  facet_wrap(~When) +  
-* aes(fill = Cause)
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_6_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_6_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-  facet_wrap(~When) +  
-  aes(fill = Cause) +  
-* scale_y_sqrt()
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_7_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_7_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-  facet_wrap(~When) +  
-  aes(fill = Cause) +  
-  scale_y_sqrt() +  
-* coord_polar(start = -pi/2, clip = "off")
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_8_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_8_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-  facet_wrap(~When) +  
-  aes(fill = Cause) +  
-  scale_y_sqrt() +  
-  coord_polar(start = -pi/2, clip = "off") +  
-*ggtitle("Causes of Mortality in the Army in the East")
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_9_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_9_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-  facet_wrap(~When) +  
-  aes(fill = Cause) +  
-  scale_y_sqrt() +  
-  coord_polar(start = -pi/2, clip = "off") +  
-	ggtitle("Causes of Mortality in the Army in the East") +  
-*xlab("")
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_10_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_10_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-  facet_wrap(~When) +  
-  aes(fill = Cause) +  
-  scale_y_sqrt() +  
-  coord_polar(start = -pi/2, clip = "off") +  
-	ggtitle("Causes of Mortality in the Army in the East") +  
-	xlab("") +  
-* scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",
-*           "Other.rate" = "#322b2f",
-*           "Disease.rate" = "#b9c5cc"))
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_11_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_11_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-  facet_wrap(~When) +  
-  aes(fill = Cause) +  
-  scale_y_sqrt() +  
-  coord_polar(start = -pi/2, clip = "off") +  
-	ggtitle("Causes of Mortality in the Army in the East") +  
-	xlab("") +  
-  scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",  
-            "Other.rate" = "#322b2f",  
-            "Disease.rate" = "#b9c5cc")) +  
-* geom_hline(yintercept = sqrt(12), linetype = "dotted")
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_12_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_12_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-  facet_wrap(~When) +  
-  aes(fill = Cause) +  
-  scale_y_sqrt() +  
-  coord_polar(start = -pi/2, clip = "off") +  
-	ggtitle("Causes of Mortality in the Army in the East") +  
-	xlab("") +  
-  scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",  
-            "Other.rate" = "#322b2f",  
-            "Disease.rate" = "#b9c5cc")) +  
-  geom_hline(yintercept = sqrt(12), linetype = "dotted") +  
-* theme_void()
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_13_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_13_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 ---
 count: false
- 
-Polar Area Chart
-.left-panel-polarplot-auto[
 
-```r
-  ggplot(polar_data) +  
-  aes(x = Month) +  
-  aes(y = Deaths) +  
-  geom_col() +  
-  facet_wrap(~When) +  
-  aes(fill = Cause) +  
-  scale_y_sqrt() +  
-  coord_polar(start = -pi/2, clip = "off") +  
-	ggtitle("Causes of Mortality in the Army in the East") +  
-	xlab("") +  
-  scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",  
-            "Other.rate" = "#322b2f",  
-            "Disease.rate" = "#b9c5cc")) +  
-  geom_hline(yintercept = sqrt(12), linetype = "dotted") +  
-  theme_void()  +  
-* theme(legend.position = "none")
-```
-]
- 
-.right-panel-polarplot-auto[
-&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_14_output-1.png" width="576" /&gt;
-]
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_14_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_15_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_16_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_17_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_18_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/polarplot_auto_19_output-1.png" width="1440" style="display: block; margin: auto;" /&gt;
 
 &lt;style&gt;
 .left-panel-polarplot-auto {
@@ -1006,21 +1531,148 @@ layout: true
       &lt;/div&gt;
       
 &lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
----
-
-# Showcasing modern data in this style (Covid?)
 
 ---
 
-# Plots of R-Ladies data in Florence diagrams
+# StatsYSS #FloViz competition
+
+
+.pull-left[
+&lt;img src="graphics/gunning.jpg" width="455" style="display: block; margin: auto;" /&gt;
+
+* [Most accurate: Edward Gunning](https://github.com/edwardgunning/FlorenceNightingale)
+* [Full results](https://statsyss.wordpress.com/2020/05/13/floviz-winning-entries/)
+
+]
+
+.pull-right[
+&lt;img src="graphics/athena.jpg" width="190" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+???
+
+Nandita Das for her beautiful version of the diagram in the shape of Athena, Flo’s pet owl
+
 
 ---
 
-# Elsewhere
+# Modern Polar Area Graphs
 
 https://www.theguardian.com/world/interactive/2012/may/08/gay-rights-united-states
 http://measure.fathom.info/
+http://www.storytellingwithdata.com/blog/2019/7/15/recapping-radials
 
+---
+layout: true
+---
+
+
+
+
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/run_rose-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+
+---
+
+count: false
+
+
+```
+# A tibble: 60 x 6
+# Groups:   month [12]
+   month  year total_runs label      hjust vjust
+   &lt;ord&gt; &lt;dbl&gt;      &lt;int&gt; &lt;glue&gt;     &lt;dbl&gt; &lt;dbl&gt;
+ 1 Jan    2016         10 ""           0.6    -1
+ 2 Jan    2017         17 ""           0.6    -1
+ 3 Jan    2018          9 ""           0.6    -1
+ 4 Jan    2019          9 ""           0.6    -1
+ 5 Jan    2020         14 "Jan 2020"   0.6    -1
+ 6 Feb    2016          2 ""           0       0
+ 7 Feb    2017         10 ""           0       0
+ 8 Feb    2018          6 ""           0       0
+ 9 Feb    2019          9 ""           0       0
+10 Feb    2020          9 ""           0       0
+# … with 50 more rows
+```
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/run_rose_auto_2_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/run_rose_auto_3_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/run_rose_auto_4_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/run_rose_auto_5_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/run_rose_auto_6_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/run_rose_auto_7_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/run_rose_auto_8_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+&lt;img src="2020-05-12-florence-and-data-viz_files/figure-html/run_rose_auto_9_output-1.png" width="1296" style="display: block; margin: auto;" /&gt;
+
+&lt;style&gt;
+.left-panel-run_rose-auto {
+  color: #777;
+  width: 38.6138613861386%;
+  height: 92%;
+  float: left;
+  font-size: 80%
+}
+.right-panel-run_rose-auto {
+  width: 59.4059405940594%;
+  float: right;
+  padding-left: 1%;
+  font-size: 80%
+}
+.middle-panel-run_rose-auto {
+  width: 0%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+
+
+---
+layout: true
+layout: true
+
+      &lt;div class="jr-header"&gt;
+        &lt;img class="logo" src="assets/white_logo_full.png"/&gt;
+        &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
 ---
 
 # Modern Nightingales
@@ -1030,7 +1682,6 @@ Who are the modern Florence Nightingales?
 [TO READ](https://medium.com/@bituin/9-inspiring-females-in-data-visualization-6bf332185556)
 [TO READ](https://medium.com/nightingale/beyond-nightingale-being-a-woman-in-data-visualization-d7968d171ccf)
 
-Many *twitter links and images*
 
 ---
 
@@ -1042,22 +1693,44 @@ Many *twitter links and images*
 
 # Mona Chalabi
 
----
-
-# Last words
-
-* Improve ourselves - through observation and reason
-* "God's revenge upon murder" (Divine mission - unavoidable deaths)
-* RSS moto  Data | Evidence | Decisions
-* Economist: 
-
- “We do not want impressions, we want facts,” Farr wrote to her in 1861. “You complain that your report would be dry. The dryer the better. Statistics should be the dryest of all reading.” Fortunately, she ignored him.
 
 ---
+
+# Final words
+
+--
+
+&gt; “We do not want impressions, we want facts. You complain that your report would be dry. The dryer the better. Statistics should be the dryest of all reading.”
+
+-- William Farr, 1861
+
+??? 
+
+Florence realised the power of data.
+Observation, reasoning and communication to have impact
+
+RSS moto: Data, Evidence, Decisions
+
+Fortunately, she ignored him.
+
+---
+layout: true
+layout: true
+
+      &lt;div class="jr-header-inverse"&gt;
+        &lt;img class="logo" src="assets/white_logo_full.png"/&gt;
+        &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      
+&lt;div class="jr-footer-inverse"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+
+---
+
+class: center, middle, inverse
 
 # Thank you
 
-GitHub link
+* [Slides: bit.ly/flo-data-viz](https://trianglegirl.github.io/presentations/2020-07-01-data-viz-for-better/2020-05-12-florence-and-data-viz.html#1)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

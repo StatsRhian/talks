@@ -1,5 +1,5 @@
 ---
-title: "Data Viz for better `r emo::ji('graph')`"
+title: "Data Viz for better"
 subtitle: " RSS Merseyside"
 author: '`r jrPresentation::get_author()`'
 date: '2020-07-01'
@@ -19,7 +19,7 @@ editor_options:
 ```{r setup, include=FALSE, message=FALSE}
 options(htmltools.dir.version = FALSE)
 library("jrPresentation")
-knitr::opts_chunk$set(fig.width = 8, message = FALSE, warning = FALSE, comment = "", cache = FALSE, fig.retina = 3)
+knitr::opts_chunk$set(fig.width = 8, message = FALSE, warning = FALSE, comment = "", cache = FALSE, fig.retina = 3, echo = FALSE)
 library(flipbookr)
 library(tidyverse)
 library(HistData)
@@ -41,6 +41,7 @@ knitr::include_graphics(path = "graphics/tote-zoom.jpg")
 ```{r crazy}
 knitr::include_graphics(path = "graphics/crazy-lady.jpg")
 ```
+
 ???
 
 * I have a large collection of FN paraphilania.
@@ -59,12 +60,13 @@ layout: true
 # Why do we make plots?
 
 
-Pretty
-Get published
-Clickbate
-Art
-Make a difference / make a change
-
+* Pretty - make Art
+* Get published
+* Tell a story
+* Educate
+* Clickbate
+* Make a difference 
+* Inspire change
 ???
 
 * Florence made plots to tell a story 
@@ -75,7 +77,7 @@ Make a difference / make a change
 
 * ACTION
 * Challenger disaster
-  https://bookdown.org/egarpor/PM-UC3M/glm-challenger.html
+https://bookdown.org/egarpor/PM-UC3M/glm-challenger.html
 * evidence-based healthcare
 
 FN: Asking the right questions - What make a good graph(before the plot)
@@ -109,7 +111,7 @@ data_url = "http://www.math.usu.edu/~symanzik/teaching/2009_stat6560/RDataAndScr
 challenger = readr::read_csv(url(data_url))
 
 challenger %>%
-ggplot(aes(x = temperature, y = r)) + 
+  ggplot(aes(x = temperature, y = r)) + 
   geom_point() + 
   geom_smooth(method = "gam", se = FALSE) +
   xlim(20, 80) + 
@@ -129,27 +131,31 @@ ggplot(aes(x = temperature, y = r)) +
 Golden Age of Statistics: https://projecteuclid.org/download/pdfview_1/euclid.ss/1242049392
 Graphcs: https://archive.org/details/mortalityofbriti00lond/page/n33/mode/2up
 
-" printed Tables & all in double columns I do not think anyone will read it. None but scientific men ever look in the Appendix of a Report. And this is for the vulgar public."
-
+???
+* Minard,
+* John Snow - Cholera
 * Tables more common, graphics not seen as usfeul (cite)
 
----
 
-# Minard
- 
----
+* Florence "printed Tables & all in double columns I do not think anyone will read it. None but scientific men ever look in the Appendix of a Report. And this is for the vulgar public."
 
-# William Playfair (1801)
-
-* http://www2.psych.utoronto.ca/users/spence/Spence%20(2006).pdf
-
-???
-
-Invention of the pie chart, and circle graph, used to show part-whole relations
 
 ---
 
 layout: true
+
+---
+
+
+background-image: url(graphics/playfair.jpg)
+background-size: contain 
+class: center, middle, inverse
+
+???
+
+Scottish-born William Playfair
+Invented of the pie chart, and circle graph, used to show part-whole relations
+http://www.branchcollective.org/?ps_articles=jonathan-sachs-17861801-william-playfair-statistical-graphics-and-the-meaning-of-an-event
 
 ---
 
@@ -182,65 +188,116 @@ background-image: url(graphics/classic-wedge-2.jpeg)
 background-size: contain 
 class: center, middle, inverse
 
----
-layout: true
-
-`r add_border()`
-
----
-
-# The polar area
+???
 
 * Name (rose, polar area, wedges)
 * Coxcombe - not the name - pampleft - she self-publisised go girl!
 * Describe it visually
 * Worked with Dr William Farr(Medical Statistician)
 * Covid-collateral damage 
-* Originally Batwing but FN was worried misinterpretted.
- * "The length of the radial line in each month is proportional to the death rate, but both the text and the appearance imply that it is the shaded area that is proportional to the death rate, rather than the length of the radial lines.  Florence recognised this error and inserted an erratum slip, but then replaced this diagram in later documents (nos. 3, 4, and 5 listed above)
-
 
 Nightingale hoped her charts would liven up her publications; the queen, she thought, might look at the pictures, even if she did not read the words.
 
 ---
 
-# Reviewing / exploring the diagram
+layout: true
 
-* Show a modern version for easier reading
+`r add_border()`
+
+---
+
+
+```{r, echo=F}
+knitr::opts_chunk$set(fig.width = 18, fig.height = 10, fig.align = 'center')
+```
+
+
+
+```{r bar}
+HistData::Nightingale %>% 
+  mutate(Month = str_to_upper(month((HistData::Nightingale$Date), label = TRUE, abbr = FALSE))) %>% 
+  mutate(When = if_else(Year == 1854 | (Year == 1855 & Month %in% c("JANUARY", "FEBRUARY", "MARCH")),
+                        "1. \n APRIL 1854 TO MARCH 1855",
+                        "2. \n APRIL 1855 TO MARCH 1856"))  %>%
+  mutate(angle = rep(90 - seq(15, 345, by = 30), times = 2)) %>%
+  mutate(text_pos = if_else(Disease.rate > 120,
+                            Disease.rate,
+                            120)) %>%
+  pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths")  %>%
+  mutate(Label = if_else(Cause == "Disease.rate", as.character(Month), "")) %>%
+  mutate(Month = factor(Month,  levels = c("APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "JANUARY", "FEBRUARY", "MARCH"))) %>%
+ggplot() +
+  aes(x = Month) + 
+  aes(y = Deaths) + 
+  geom_col(width = 1, alpha = 0.9, position = "identity", col = "white") + 
+  facet_wrap(~When) + 
+  aes(fill = Cause, col = Cause) + 
+  scale_fill_manual(values = c("Wounds.rate" = "red",#"#e7bebc",
+                               "Other.rate" = "#322b2f",
+                               "Disease.rate" = "lightblue")) + 
+  scale_colour_manual(values = c("Wounds.rate" = "#e7bebc",
+                                 "Other.rate" = "grey",
+                                 "Disease.rate" = "lightblue")) +
+  theme_minimal()  +
+  theme(plot.title = element_text(hjust = 0.5, family = "serif", size = 18), 
+        plot.subtitle = element_text(hjust = 0.5, size = 14, family = "Times New Roman"),
+        plot.caption = element_text(hjust = 0, size = 10, family = "serif", face = "italic")) + 
+  theme(panel.spacing = unit(0, "lines")) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+  theme(text = element_text(size = 24))
+```
+
+???
+
 * Why didn’t she make a column chart?
- * Compare year on year
- * Compare season on season
- * Stand out from the rest (many bar charts)
- * Which tells the better story?
-* colour palette
-* cyclic pattern - circular
+* Compare year on year (cyclic)
+* Compare season on season
+* Stand out from the rest (many bar charts)
+* Which tells the better story?
+
+
+```{r, bar_data}
+df = tibble::tibble(category = c("A", "B", "C"),
+                    value = c(1, 3, 2))
+```
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(fig.width = 18, fig.height = 10, fig.align = "center")
+```
+
+
+```{r, bar2polar}
+ggplot(df) + 
+  theme_minimal() +
+  theme(text = element_text(size = 24)) +
+  aes(x = category) +
+  aes(y = value) +
+  geom_col(width = 1) + 
+  aes(fill = category) + 
+  coord_polar() +
+  scale_y_sqrt()
+```
+
 
 ---
 
-#  Bar chart?
-* Bar chart - polar area [distortion ](https://understandinguncertainty.org/node/214)
-
+`r chunk_reveal("bar2polar")`
 
 ---
 
-* Not a bar chart!
-  3 benefits of Nightingale Rose charts over pie charts
-   1) Each slice takes an equal sector of the circle, making labeling much cleaner
-   2) Each slice still maintains an accurate area comparison w/ other slices (by making the radius of the slice equal to the square root of the value);
-   3) Since each slice is in a fixed position and the charts can be made much smaller than pie charts, small multiples are very easy to create
+# The Rose is mightier than the Pie...?
 
-* Could we improve
- * Read left-to-right?
- * Catchy title
- 
- . Shows direction as well as volume.
-The polar area diagram is good for plotting cyclic phenomena such as counts of death by month. It’s very evident from this chart that the height of deaths from infectious disease took place around January 1855.
+1. Each slice is an equal sector
+1. Each slice allows area comparison with other slices
+1. Good for cyclic phenomia (direction + volume)
+1. Easier to compare radii than angles
+1. Suits small multiples
 
-2. Visually impactful.
-Nightingale’s diagram is able to show that deaths from infectious disease is the leading cause very clearly because it’s easy to distinguish the difference in lengths than it would be angles as used with traditional pie charts.
+???
 
-3. Can compare multiple sets of data or changes over time.
-Nightingale was able to leverage the polar area diagram to show the trends various causes of death from the Crimean War clearly over time. Thankfully as Nightingale and her team of nurses gained access to the soldiers in March 1855 we see a decline in deaths from infectious disease. This was done by improving ventilation in the hospital and implementing better sanitary practices.
+* Originally Batwing but FN was worried misinterpretted.
+
+The length of the radial line in each month is proportional to the death rate, but both the text and the appearance imply that it is the shaded area that is proportional to the death rate, rather than the length of the radial lines. Florence recognised this error and inserted an erratum slip, but then replaced this diagram in later documents (nos. 3, 4, and 5 listed above)
 
 ---
 
@@ -275,68 +332,70 @@ The other highly original chart is what I will call the 'Lines' - a bar chart sh
 
 # Re-creating in R
 
-* Data from **histdata**
-* **ggplot2**
-
----
-
-# Data
-
-```{load data}
-library("HistData")
-```
----
-
-# Perfect recreation in R (Flipbook)
+* Data available in the R pacakge **HistData**
 
 
-```{r}
-library("dplyr")
-library("HistData")
-library("ggplot2")
-library("tidyr")
-
-flo_pal = c("Wounds.rate" = "#e7bebc",
-            "Other.rate" = "#322b2f",
-            "Disease.rate" = "#b9c5cc")
-
+```{r histdata}
+kableExtra::kable(HistData::Nightingale)
 ```
 
-* https://rpubs.com/kwlee58/492913 
-* Use flip book to show the breakdown
-* Use shiny to make interactive? Or plotly?
-* Appearing in time 
-* Show minimise from Before and after
-
-
-```{r polartransform, echo = FALSE, eval = TRUE, fig.height=5}
-HistData::Nightingale %>%
-  mutate(When = if_else(Year == 1854 | (Year == 1855 & Month %in% c("Jan", "Feb", "Mar")), "APRIL 1854 TO MARCH 1855", "APRIL 1855 TO MARCH 1856"))  %>%
-  mutate(Month = factor(Month,  levels = c("Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"))) %>%
-  pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths") -> 
+```{r polartransform, echo = FALSE, eval = TRUE}
+HistData::Nightingale %>% 
+  mutate(Month = str_to_upper(month((HistData::Nightingale$Date), label = TRUE, abbr = FALSE))) %>% 
+  mutate(When = if_else(Year == 1854 | (Year == 1855 & Month %in% c("JANUARY", "FEBRUARY", "MARCH")),
+                        "1. \n APRIL 1854 TO MARCH 1855",
+                        "2. \n APRIL 1855 TO MARCH 1856"))  %>%
+  mutate(angle = rep(90 - seq(15, 345, by = 30), times = 2)) %>%
+  mutate(text_pos = if_else(Disease.rate > 120,
+                            Disease.rate,
+                            120)) %>%
+  mutate(When = factor(When, levels = c("2. \n APRIL 1855 TO MARCH 1856",  "1. \n APRIL 1854 TO MARCH 1855"))) %>%
+  pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths")  %>%
+  mutate(Label = if_else(Cause == "Disease.rate", as.character(Month), "")) %>%
+  mutate(Month = factor(Month,  levels = c("APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "JANUARY", "FEBRUARY", "MARCH"))) -> 
   polar_data
 ```
 
 
-```{r, polarplot, eval = TRUE, fig.width=12}
-  ggplot(polar_data) +
-  aes(x = Month) + 
-  aes(y = Deaths) + 
-  geom_col() + 
-  facet_wrap(~When) + 
-  aes(fill = Cause) + 
-  scale_y_sqrt() +
-  coord_polar(start = -pi/2, clip = "off") +
-	ggtitle("Causes of Mortality in the Army in the East") + 
-	xlab("") + 
-  scale_fill_manual(values = c("Wounds.rate" = "#e7bebc",
-            "Other.rate" = "#322b2f",
-            "Disease.rate" = "#b9c5cc")) +
-  geom_hline(yintercept = sqrt(12), linetype = "dotted") + 
-  theme_void()  +
-  theme(legend.position = "none") 
+```{r, echo = FALSE}
+knitr::opts_chunk$set(fig.width = 20, fig.align = "center")
 ```
 
+
+```{r, polarplot, eval = TRUE}
+ggplot(polar_data) +
+  aes(x = Month) + 
+  aes(y = Deaths) + 
+  geom_col(width = 1, alpha = 0.3, position = "identity") + 
+  theme(text = element_text(size = 24)) +
+  facet_wrap(~When) + 
+  aes(fill = Cause, col = Cause) + 
+  coord_polar(start = -pi/2, clip = "off") +
+  scale_y_sqrt() +
+  geom_text(aes(label = Label, y = text_pos, angle = angle),
+            position = "identity", color = "black",
+            size = 5, vjust = -1.5) +
+  labs(title = "DIAGRAM OF THE CAUSES OF MORTALITY",
+       subtitle = "IN THE ARMY IN THE EAST") +
+  xlab("") + 
+  scale_fill_manual(values = c("Wounds.rate" = "red",#"#e7bebc",
+                               "Other.rate" = "#322b2f",
+                               "Disease.rate" = "lightblue")) + 
+  scale_colour_manual(values = c("Wounds.rate" = "#e7bebc",
+                                 "Other.rate" = "grey",
+                                 "Disease.rate" = "lightblue")) +
+  theme_void()  +
+  theme(legend.position = "none") + 
+  theme(plot.title = element_text(hjust = 0.5, family = "serif", size = 36), 
+        plot.subtitle = element_text(hjust = 0.5, size = 30, family = "Times New Roman"),
+        plot.caption = element_text(hjust = 0, size = 10, family = "serif", face = "italic")) + 
+  theme(panel.spacing = unit(-15, "lines")) +
+  labs(caption =  "The Areas of the blue, red, & black wedges are each measured from \n   the centre as the common vertex.
+The blue wedges measured from the centre of the circle represent area \n   for area the deaths from Preventable or Mitigable Zymotic diseases, the \n   red wedges measured from the centre the deaths from wounds, & the \n   black wedges measured from the centre the deaths from all other causes.
+The black line across the red triangle in Nov. 1854 marks the boundary \n   of the deaths from all other causes during the month.
+In October 1854, & April 1855, the black area coincides with the red, \n   in January & February 1856, the blue coincides with the black.
+The entire areas may be compared by following the blue, the red, & the \n   black lines enclosing them.")
+```
 
 ---
 
@@ -348,8 +407,7 @@ layout: true
 
 ---
 
-
-`r chunk_reveal("polarplot", break_type = "auto")`
+`r chunk_reveal("polarplot", break_type = "auto", display_type = "output")`
 
 ---
 
@@ -362,25 +420,114 @@ layout: true
 # StatsYSS #FloViz competition
 
 
+.pull-left[
+```{r gunning}
+knitr::include_graphics(path = "graphics/gunning.jpg")
+```
 
-* [See the full results](https://statsyss.wordpress.com/2020/05/13/floviz-winning-entries/)
+* [Most accurate: Edward Gunning](https://github.com/edwardgunning/FlorenceNightingale)
+* [Full results](https://statsyss.wordpress.com/2020/05/13/floviz-winning-entries/)
+
+]
+
+.pull-right[
+```{r athena}
+knitr::include_graphics(path = "graphics/athena.jpg")
+```
 
 
+]
 
-Highlight my favourites
-Edward Gunning: https://github.com/edwardgunning/FlorenceNightingale
+???
 
-Graham:
-https://t.co/PxDiVppHI4?amp=1
+Nandita Das for her beautiful version of the diagram in the shape of Athena, Flo’s pet owl
 
 
 ---
 
-# Elsewhere
+# Modern Polar Area Graphs
 
 https://www.theguardian.com/world/interactive/2012/may/08/gay-rights-united-states
 http://measure.fathom.info/
+http://www.storytellingwithdata.com/blog/2019/7/15/recapping-radials
 
+---
+layout: true
+---
+```{r}
+# Run data
+df = readRDS("all_activies.RDS")
+
+# Run activity count
+run_rose = 
+  df %>%
+  mutate(month = month(start_date, label = TRUE),
+         year = year(start_date))  %>%
+  filter(type == "Run") %>%
+  group_by(month, year) %>%
+  summarise(total_runs = n()) %>%
+  mutate(label = if_else((month == "Dec" & year == 2015) |
+                           (month == "Jul" & year == 2015) |
+                           (month == "Sep" & year == 2015) |
+                           (month == "Jan" & year == 2020) |
+                           (month == "Apr" & year == 2020) |
+                           (month == "Jun" & year == 2020),
+                         glue::glue("{month} {year}"),
+                         ""))
+
+run_rose$hjust = 0
+run_rose$vjust = 0
+
+run_rose$hjust[run_rose$month == "Jul"] = 0.7
+run_rose$vjust[run_rose$month == "Jul"] = 2
+
+run_rose$hjust[run_rose$month == "Sep"] = 1.1
+run_rose$vjust[run_rose$month == "Sep"] = 0
+
+run_rose$hjust[run_rose$month == "Dec"] = 0.7
+run_rose$vjust[run_rose$month == "Dec"] = -1
+
+run_rose$hjust[run_rose$month == "Jan"] = 0.6
+run_rose$vjust[run_rose$month == "Jan"] = -1
+
+run_rose$hjust[run_rose$month == "Apr"] = -0.1
+run_rose$vjust[run_rose$month == "Apr"] = 0
+
+run_rose$hjust[run_rose$month == "Jun"] = 0.2
+run_rose$vjust[run_rose$month == "Jun"] = 4.2
+```
+
+
+```{r, echo=F}
+knitr::opts_chunk$set(fig.width = 18, fig.height = 10, fig.align = 'center')
+```
+
+```{r run_rose, fig.width = 18, fig.height = 13, fig.align = "center"}
+run_rose %>%
+  ggplot(aes(x = month, y = total_runs)) + 
+  facet_wrap(vars(year), nrow = 1) +
+  geom_col(fill = "skyblue", width = 1, col = "black") +
+  coord_polar()  +
+  scale_y_sqrt() + 
+  theme_void() +
+  theme(panel.spacing = unit(-10, "lines"),
+        strip.text.x = element_blank()) + 
+  geom_text(aes(label = label, y = total_runs,
+                hjust = hjust, vjust = vjust),
+            family =  "Roboto Condensed",
+            size = 5,
+            position = "identity")
+```
+
+---
+
+`r chunk_reveal("run_rose", display_type = "output")`
+
+
+
+---
+layout: true
+`r add_border()`
 ---
 
 # Modern Nightingales
@@ -390,7 +537,6 @@ Who are the modern Florence Nightingales?
 [TO READ](https://medium.com/@bituin/9-inspiring-females-in-data-visualization-6bf332185556)
 [TO READ](https://medium.com/nightingale/beyond-nightingale-being-a-woman-in-data-visualization-d7968d171ccf)
 
-Many *twitter links and images*
 
 ---
 
@@ -405,17 +551,35 @@ Many *twitter links and images*
 
 ---
 
-# Last words
+# Final words
 
-* Improve ourselves - through observation and reason
-* "God's revenge upon murder" (Divine mission - unavoidable deaths)
-* RSS moto  Data | Evidence | Decisions
-* Economist: 
+--
 
- “We do not want impressions, we want facts,” Farr wrote to her in 1861. “You complain that your report would be dry. The dryer the better. Statistics should be the dryest of all reading.” Fortunately, she ignored him.
+> “We do not want impressions, we want facts. You complain that your report would be dry. The dryer the better. Statistics should be the dryest of all reading.”
+
+-- William Farr, 1861
+
+??? 
+
+Florence realised the power of data.
+Observation, reasoning and communication to have impact
+
+RSS moto: Data, Evidence, Decisions
+
+Fortunately, she ignored him.
+
+---
+layout: true
+`r add_border(inverse=TRUE)`
 
 ---
 
+class: center, middle, inverse
+
 # Thank you
 
-[Slides](https://trianglegirl.github.io/presentations/2020-07-01-data-viz-for-better/2020-05-12-florence-and-data-viz.html#1)
+* [Slides: bit.ly/flo-data-viz](https://trianglegirl.github.io/presentations/2020-07-01-data-viz-for-better/2020-05-12-florence-and-data-viz.html#1)
+
+
+
+
