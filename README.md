@@ -1,7 +1,7 @@
 # My presentations [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 A place to store and link to presentations I have done.
-* [2020-05-12 Data Viz for better]()
+* [2020-05-12 Data Viz for better](https://trianglegirl.github.io/presentations/2020-07-01-data-viz-for-better/2020-05-12-florence-and-data-viz.html#1)
 
 * [2020-02-26 Can you trust your R package (PyData Lancaster)?](https://trianglegirl.github.io/presentations/2019-11-16-trust-your-pkg/2019-11-16-trust-your-pkg.html#1)
 
