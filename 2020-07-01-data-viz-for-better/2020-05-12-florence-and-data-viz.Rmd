@@ -1,5 +1,5 @@
 ---
-title: "Data Viz for better"
+title: "Data Viz for Better"
 subtitle: " RSS Merseyside"
 author: '`r jrPresentation::get_author()`'
 date: '2020-07-01'
@@ -27,17 +27,19 @@ library(lubridate)
 ```
 
 layout: true
+`r add_border()`
 
 ---
 ```{r tote}
 knitr::include_graphics(path = "graphics/tote-zoom.jpg")
 ```
 ???
-* I find myself looking at Florence's polar area diagram - atleast once a week.
+
+* I look at Florence's polar area diagram atleast once a week.
 * If you see me in Aldi, or come to my house for a cuppa, you might think I'm a bit weird.
 
-
 ---
+
 ```{r crazy}
 knitr::include_graphics(path = "graphics/crazy-lady.jpg")
 ```
@@ -47,8 +49,125 @@ knitr::include_graphics(path = "graphics/crazy-lady.jpg")
 * I have a large collection of FN paraphilania.
 * I might open a FN museum of the North
 * Florence Nigtingale Day started in 2013, run by Professor Nadia Mazda & Lancaster M&S dep
-* Statistician & Nurse. I would argue she was also a communicator - which is a key part of both.
+* On mug it saysStatistician & Nurse.
+* I would argue she was also a communicator - which is a key part of both.
 
+
+
+---
+
+#  Inspire **Action** and Drive **Change**
+
+.pull-left[
+```{r mug}
+knitr::include_graphics(path = "graphics/mug.jpg")
+```
+
+]
+.pull-right[
+```{r rss}
+knitr::include_graphics(path = "graphics/RSS.jpg")
+```
+]
+
+???
+
+* Why do we make graphs?
+ * Pretty - make Art
+ * Get published
+ * Tell a story
+ * Educate
+ * Clickbate
+
+* Make a difference 
+* Inspire change
+* Florence made plots to tell a story 
+
+Florence realised the power of data.
+Observation, reasoning and communication to have impact
+
+---
+
+# Visualisation in Victorian Britain
+
+.pull-left[
+
+> “We do not want impressions, we want facts. You complain that your report would be dry. The dryer the better. Statistics should be the dryest of all reading.”
+
+-- William Farr, 1861
+
+
+
+#### Explore More
+
+* [Interactive timeline of infographics historic data](https://history.infowetrust.com/) 
+* [Data Vis Milestones](http://datavis.ca/milestones/)
+* [Florence Nightingale & Victorian data visualisation ](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1740-9713.01376)
+]
+
+.pull-right[
+```{r victorian, out.width="150%"}
+knitr::include_graphics(path = "graphics/florence.jpg")
+```
+]
+
+???
+
+* Tables were common
+* Graphs were seen as inferior
+
+Fortunately, Florence ignored William Farr.
+None but scientific men ever look in the Appendix of a Report.
+And this is for the vulgar public.
+
+
+* Are tables better?
+
+Charles Minard (map of Napoleon's Russian campaign) 
+John Snow (Cholera map of London)
+
+RJ Andrews, Michel Friendly, Alison Hedley
+
+
+---
+
+# Challenger disaster
+
+.pull-left[
+```{r temperatue}
+knitr::include_graphics(path = "graphics/challenger-temp.png")
+```
+]
+
+.pull-right[
+```{r crew}
+knitr::include_graphics(path = "graphics/challenger-crew.jpg")
+```
+]
+
+???
+
+Link image: https://en.wikipedia.org/wiki/Space_Shuttle_Challenger_disaster#/media/File:Challenger_flight_51-l_crew.jpg
+
+* Launch Time: January 28, 1986
+* The temperature was 31◦F / -0.6 C
+* Exploded after 73 seconds from its launch leading to the death of its seven crew
+* 6 orings
+* Low temperatures might harden the O-ring seals leading to gas leak
+* Engineers and manufacturers of the rocket motors believed that they should
+abort the flight
+* 13 charts
+---
+
+layout: true
+
+---
+
+background-image: url(graphics/challenger-graph.png)
+background-size: contain 
+class: bottom, right
+
+Tufte, Edward R. (1997). Visual Explanations: Images and Quantities, Evidence and Narrative
 
 ---
 
@@ -57,95 +176,9 @@ layout: true
 
 ---
 
-# Why do we make plots?
-
-
-* Pretty - make Art
-* Get published
-* Tell a story
-* Educate
-* Clickbate
-* Make a difference 
-* Inspire change
-???
-
-* Florence made plots to tell a story 
-
----
-
-# How can graphics make a difference?
-
-* ACTION
-* Challenger disaster
-https://bookdown.org/egarpor/PM-UC3M/glm-challenger.html
-* evidence-based healthcare
-
-FN: Asking the right questions - What make a good graph(before the plot)
-FN: Organise correctly - to make comparisons
-
----
-
-# Challenger disaster
-
-• Launch Time: January 28, 1986
-• The temperature was 31◦F / -0.5 C
-• Exploded after 73 seconds from its launch leading to the death of its seven crew
-members
-
-Each rocket-booster has three joints called O-rings (6 total)
-
-• The night before the scheduled launch, discussions occurred as to whether the
-launch should be postponed because of the low temperature
-• It was believed, by some of the people who were involved in the decision, that
-low temperatures might harden the O-ring seals, and thus leading to a potentially
-dangerous combustion-gas leak
-• The O-rings had been designated as a ”Criticality 1” component
-• The engineers and manufacturers of the rocket motors believed that they should
-abort the flight
-• They presented several (hand written) tabulated numbers to show their point.
-The following figure was taken from Tufte (1997):
-
-```{r}
-data_url = "http://www.math.usu.edu/~symanzik/teaching/2009_stat6560/RDataAndScripts/sharif_abbass_project1_challenger.csv"
-
-challenger = readr::read_csv(url(data_url))
-
-challenger %>%
-  ggplot(aes(x = temperature, y = r)) + 
-  geom_point() + 
-  geom_smooth(method = "gam", se = FALSE) +
-  xlim(20, 80) + 
-  ylim(0, 6) +
-  geom_vline(xintercept = 31, lty = 2) +
-  hrbrthemes::theme_ipsum()
-```
-
----
-
-# Victoria Viz
-
-
-[Explore!](https://history.infowetrust.com/)
-[Milestones](http://datavis.ca/milestones/index.php)
-
-Golden Age of Statistics: https://projecteuclid.org/download/pdfview_1/euclid.ss/1242049392
-Graphcs: https://archive.org/details/mortalityofbriti00lond/page/n33/mode/2up
-
-???
-* Minard,
-* John Snow - Cholera
-* Tables more common, graphics not seen as usfeul (cite)
-
-
-* Florence "printed Tables & all in double columns I do not think anyone will read it. None but scientific men ever look in the Appendix of a Report. And this is for the vulgar public."
-
-
----
-
 layout: true
 
 ---
-
 
 background-image: url(graphics/playfair.jpg)
 background-size: contain 
@@ -179,38 +212,55 @@ class: center, middle, inverse
 ---
 
 background-image: url(graphics/liverpool-rose.png)
-background-size: contain 
+background-size: contain
 class: center, middle
+
+???
+* Wind rose for Liverpool
+* 2 weeks of data
+* Taken from MetroBlue
 
 ---
 
 background-image: url(graphics/classic-wedge-2.jpeg)
-background-size: contain 
-class: center, middle, inverse
+background-size: contain
+class: bottom, right, inverse
+
+
+### [Wellcome Collection.](https://wellcomecollection.org/works/sz9sms2m)
 
 ???
 
-* Name (rose, polar area, wedges)
-* Coxcombe - not the name - pampleft - she self-publisised go girl!
+* Name (rose, polar area, wedges) - not coxcombe
 * Describe it visually
-* Worked with Dr William Farr(Medical Statistician)
-* Covid-collateral damage 
+* Worked with Dr William Farr (Medical Statistician)
 
 Nightingale hoped her charts would liven up her publications; the queen, she thought, might look at the pictures, even if she did not read the words.
+
+Compare to a pie chart:
+
+1. Each slice is an equal sector
+1. Each slice allows area comparison with other slices
+1. Easier to compare radii than angles
+
 
 ---
 
 layout: true
 
-`r add_border()`
-
 ---
 
+background-image: url(assets/white_logo.png)
+background-size: cover
+class: center, middle, inverse
+
+# Why not a bar chart?
+
+---
 
 ```{r, echo=F}
 knitr::opts_chunk$set(fig.width = 18, fig.height = 10, fig.align = 'center')
 ```
-
 
 
 ```{r bar}
@@ -249,12 +299,11 @@ ggplot() +
 
 ???
 
-* Why didn’t she make a column chart?
+* Why didn’t she make a bar chart?
+* Florence Nightingale made lots of bar charts. Have you seen any? Did they make the history books?
 * Compare year on year (cyclic)
 * Compare season on season
-* Stand out from the rest (many bar charts)
 * Which tells the better story?
-
 
 ```{r, bar_data}
 df = tibble::tibble(category = c("A", "B", "C"),
@@ -262,14 +311,13 @@ df = tibble::tibble(category = c("A", "B", "C"),
 ```
 
 ```{r, echo = FALSE}
-knitr::opts_chunk$set(fig.width = 18, fig.height = 10, fig.align = "center")
+knitr::opts_chunk$set(fig.width = 18, fig.height = 20, fig.align = "center")
 ```
 
 
 ```{r, bar2polar}
 ggplot(df) + 
-  theme_minimal() +
-  theme(text = element_text(size = 24)) +
+  theme(text = element_text(size = 50)) +
   aes(x = category) +
   aes(y = value) +
   geom_col(width = 1) + 
@@ -279,54 +327,39 @@ ggplot(df) +
 ```
 
 
+???
+
+* FN was worried the charts would be misinterpretted
+
+
+---
+
+background-image: url(graphics/moba-bar.png)
+background-size: contain
+class: bottom, right, inverse
+
+
+???
+
+bar chart showing how soldiers in peacetime, living in their barracks in England, were dying at a faster rate than civilians in the cities around them.
+
 ---
 
 `r chunk_reveal("bar2polar")`
 
----
-
-# The Rose is mightier than the Pie...?
-
-1. Each slice is an equal sector
-1. Each slice allows area comparison with other slices
-1. Good for cyclic phenomia (direction + volume)
-1. Easier to compare radii than angles
-1. Suits small multiples
-
-???
-
-* Originally Batwing but FN was worried misinterpretted.
-
-The length of the radial line in each month is proportional to the death rate, but both the text and the appearance imply that it is the shaded area that is proportional to the death rate, rather than the length of the radial lines. Florence recognised this error and inserted an erratum slip, but then replaced this diagram in later documents (nos. 3, 4, and 5 listed above)
 
 ---
 
-# Opinions
+background-image: url(graphics/moba-bat.png)
+background-size: contain
+class: bottom, right, inverse
 
-> The diagrams improve on pie charts in exchange for a greater difficulty of reading. As is the case for pie charts, the inherent problem is the difficulty of making good comparisons across the wedges. In general, for such small data sets, tables will outperform graphics.
-
--- Edward Tufte
-
-* Is it wrong to be enraged by a graph - LL
-* The graph conceals parts of the data, misrepresents quantity by area, and what is worst of all, *requires explanation*.
 
 ---
 
-# Area / stacked
+layout: true
 
-Most of the graphics used in Nos. 1 and 2 are similar to those previously used by her adviser William Farr in his Registrar-General's Annual Reports.  They are mostly what we might call '100% area' or '100% stacked bar':  Lord Herbert bar chart
-
----
-
-# Honeycomb
-
-There is also one 'honeycomb' graphic showing how densely soldiers are packed in camp (a device which Farr had already used for illustrating urban density), and two other graphics that are highly original.  
-
----
-
-# Lines
-
-The other highly original chart is what I will call the 'Lines' - a bar chart showing how soldiers in peacetime, living in their barracks in England, were dying at a faster rate than civilians in the cities around them.
+`r add_border()`
 
 ---
 
@@ -351,6 +384,7 @@ HistData::Nightingale %>%
                             120)) %>%
   mutate(When = factor(When, levels = c("2. \n APRIL 1855 TO MARCH 1856",  "1. \n APRIL 1854 TO MARCH 1855"))) %>%
   pivot_longer(cols = ends_with("rate"),  names_to = "Cause", values_to = "Deaths")  %>%
+  mutate(Cause = fct_relevel(Cause, c("Disease.rate","Other.rate", "Wounds.rate"))) %>%
   mutate(Label = if_else(Cause == "Disease.rate", as.character(Month), "")) %>%
   mutate(Month = factor(Month,  levels = c("APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "JANUARY", "FEBRUARY", "MARCH"))) -> 
   polar_data
@@ -358,7 +392,7 @@ HistData::Nightingale %>%
 
 
 ```{r, echo = FALSE}
-knitr::opts_chunk$set(fig.width = 20, fig.align = "center")
+knitr::opts_chunk$set(fig.width = 20, fig.height = 10, fig.align = "center")
 ```
 
 
@@ -366,35 +400,22 @@ knitr::opts_chunk$set(fig.width = 20, fig.align = "center")
 ggplot(polar_data) +
   aes(x = Month) + 
   aes(y = Deaths) + 
-  geom_col(width = 1, alpha = 0.3, position = "identity") + 
-  theme(text = element_text(size = 24)) +
+  geom_col(width = 1, alpha = 0.8, position = "identity", aes(fill = Cause, col = Cause)) + 
   facet_wrap(~When) + 
-  aes(fill = Cause, col = Cause) + 
   coord_polar(start = -pi/2, clip = "off") +
   scale_y_sqrt() +
+  theme_void()  +
+  theme(strip.text.x = element_text(size = 16)) + 
   geom_text(aes(label = Label, y = text_pos, angle = angle),
             position = "identity", color = "black",
-            size = 5, vjust = -1.5) +
-  labs(title = "DIAGRAM OF THE CAUSES OF MORTALITY",
-       subtitle = "IN THE ARMY IN THE EAST") +
-  xlab("") + 
+            size = 3, vjust = -1.5) +
   scale_fill_manual(values = c("Wounds.rate" = "red",#"#e7bebc",
                                "Other.rate" = "#322b2f",
                                "Disease.rate" = "lightblue")) + 
   scale_colour_manual(values = c("Wounds.rate" = "#e7bebc",
                                  "Other.rate" = "grey",
                                  "Disease.rate" = "lightblue")) +
-  theme_void()  +
-  theme(legend.position = "none") + 
-  theme(plot.title = element_text(hjust = 0.5, family = "serif", size = 36), 
-        plot.subtitle = element_text(hjust = 0.5, size = 30, family = "Times New Roman"),
-        plot.caption = element_text(hjust = 0, size = 10, family = "serif", face = "italic")) + 
-  theme(panel.spacing = unit(-15, "lines")) +
-  labs(caption =  "The Areas of the blue, red, & black wedges are each measured from \n   the centre as the common vertex.
-The blue wedges measured from the centre of the circle represent area \n   for area the deaths from Preventable or Mitigable Zymotic diseases, the \n   red wedges measured from the centre the deaths from wounds, & the \n   black wedges measured from the centre the deaths from all other causes.
-The black line across the red triangle in Nov. 1854 marks the boundary \n   of the deaths from all other causes during the month.
-In October 1854, & April 1855, the black area coincides with the red, \n   in January & February 1856, the blue coincides with the black.
-The entire areas may be compared by following the blue, the red, & the \n   black lines enclosing them.")
+  theme(legend.position = "none") 
 ```
 
 ---
@@ -403,11 +424,7 @@ layout: true
 
 ---
 
-`r chunk_reveal("polartransform", break_type = "auto")`
-
----
-
-`r chunk_reveal("polarplot", break_type = "auto", display_type = "output")`
+`r chunk_reveal("polarplot", display_type = "output")`
 
 ---
 
@@ -434,26 +451,68 @@ knitr::include_graphics(path = "graphics/gunning.jpg")
 ```{r athena}
 knitr::include_graphics(path = "graphics/athena.jpg")
 ```
-
-
 ]
 
 ???
 
 Nandita Das for her beautiful version of the diagram in the shape of Athena, Flo’s pet owl
 
-
 ---
 
-# Modern Polar Area Graphs
-
-https://www.theguardian.com/world/interactive/2012/may/08/gay-rights-united-states
-http://measure.fathom.info/
-http://www.storytellingwithdata.com/blog/2019/7/15/recapping-radials
-
----
 layout: true
+
 ---
+
+background-image: url(assets/white_logo.png)
+background-size: cover
+class: center, middle, inverse
+
+# Are they still relevant?
+
+???
+
+YES!
+Good for:
+1. Good for cyclic phenomia (direction + volume)
+1. Grabbing attention / making pretty art
+1. Suits small multiples
+
+---
+
+background-image: url(graphics/SWDChallenge20July20201920f.png)
+background-size: contain 
+class: bottom, right, inverse
+
+### [Leah Erb](https://community.storytellingwithdata.com/challenges/d7239073-bf80-4b9e-98f9-8b19f2b2ad55/b5fd3236-3a4c-4efd-8c25-171b70252553)
+
+---
+
+background-image: url(graphics/cricket-big.jpg)
+background-size: contain 
+class: bottom, right, inverse
+
+### [@sportschord](https://twitter.com/sportschord)
+
+???
+
+James Smith (ETSY)
+
+Link: https://community.storytellingwithdata.com/challenges/d7239073-bf80-4b9e-98f9-8b19f2b2ad55/f1f66d07-c466-4cd4-9083-345c42cfbdb9
+---
+
+background-image: url(graphics/got.png)
+background-size: contain 
+class: bottom, right, inverse
+
+### [@hanykowska](https://twitter.com/hanykowska)
+
+???
+
+Link: https://community.storytellingwithdata.com/challenges/d7239073-bf80-4b9e-98f9-8b19f2b2ad55/8540c7b7-6661-4409-b8a9-546a2966aeeb
+---
+
+class: bottom, right
+
 ```{r}
 # Run data
 df = readRDS("all_activies.RDS")
@@ -499,7 +558,7 @@ run_rose$vjust[run_rose$month == "Jun"] = 4.2
 
 
 ```{r, echo=F}
-knitr::opts_chunk$set(fig.width = 18, fig.height = 10, fig.align = 'center')
+knitr::opts_chunk$set(fig.width = 24, fig.height = 10, fig.align = 'center')
 ```
 
 ```{r run_rose, fig.width = 18, fig.height = 13, fig.align = "center"}
@@ -516,70 +575,188 @@ run_rose %>%
                 hjust = hjust, vjust = vjust),
             family =  "Roboto Condensed",
             size = 5,
-            position = "identity")
+            position = "identity") +
+theme(plot.margin = grid::unit(c(0,0,0,0), "mm"))
 ```
 
----
-
-`r chunk_reveal("run_rose", display_type = "output")`
-
-
 
 ---
+
+background-image: url(assets/white_logo.png)
+background-size: cover
+class: center, middle, inverse
+
+# My Modern Data Viz Nightingales
+
+---
+
 layout: true
 `r add_border()`
----
-
-# Modern Nightingales
-
-Who are the modern Florence Nightingales?
-
-[TO READ](https://medium.com/@bituin/9-inspiring-females-in-data-visualization-6bf332185556)
-[TO READ](https://medium.com/nightingale/beyond-nightingale-being-a-woman-in-data-visualization-d7968d171ccf)
-
 
 ---
 
-# Amy Cesal
 
-* [Amy Cesal](https://medium.com/nightingale/https-medium-com-data-visualization-society-wedding-data-viz-36e7b9f4787f)
+# Amber Thomas [@ProQuesAsker](https://twitter.com/proquesasker)
 
----
+.pull-left[
+```{r amber, out.width="150%"}
+knitr::include_graphics(path = "graphics/amber.png")
+```
+]
 
-# Mona Chalabi
+.pull-right[
 
 
----
+* Senior Journalist-Engineer at [The Pudding](https://pudding.cool/)
 
-# Final words
+* [Measuring racial diversity in journalism](https://pudding.cool/2017/10/asne/)
 
---
+* [Analyzing gender tropes in film](https://pudding.cool/2017/08/screen-direction/) with [@juliasilge](https://twitter.com/juliasilge)
 
-> “We do not want impressions, we want facts. You complain that your report would be dry. The dryer the better. Statistics should be the dryest of all reading.”
+* [Colorism in High Fashion](https://pudding.cool/2019/04/vogue/)
 
--- William Farr, 1861
-
-??? 
-
-Florence realised the power of data.
-Observation, reasoning and communication to have impact
-
-RSS moto: Data, Evidence, Decisions
-
-Fortunately, she ignored him.
+]
 
 ---
+
+
 layout: true
-`r add_border(inverse=TRUE)`
 
 ---
 
+background-image: url(graphics/fashion.gif)
+background-size: contain 
+class: center, middle, inverse
+
+---
+
+layout: true
+`r add_border()`
+
+---
+
+# Amy Cesal [@AmyCesal](https://twitter.com/AmyCesal)
+
+.pull-left[
+
+* Founding member of the [DataVizSociety](https://www.datavisualizationsociety.com/)
+
+* [#DayDohViz](https://twitter.com/search?q=%23DayDohViz)
+
+* [Wedding Data Viz](https://medium.com/nightingale/https-medium-com-data-visualization-society-wedding-data-viz-36e7b9f4787f)
+
+]
+
+.pull-right[
+```{r amy, out.width="150%"}
+knitr::include_graphics(path = "graphics/amy-cesal.jpg")
+```
+]
+
+---
+
+layout: true
+
+---
+
+background-image: url(graphics/perceptions-of-probability.jpeg)
+background-size: contain 
+class: center, middle, inverse
+
+---
+
+background-image: url(graphics/badges.jpg)
+background-size: contain 
+class: center, middle, inverse
+
+???
+guest badges that would function as name tags and conversation starters
+
+If we had been interested in making a strictly informative graphic, the heart shape would have been an impractical, and frankly, poor choice to display this data. Comparing the size of asymmetric shapes is difficult, and it is unclear if the variable scales linearly with the diameter of the shape or non-linearly with the area of the shape.
+But, we were more interested in creating a feeling.
+
+---
+
+layout: true
+`r add_border()`
+
+---
+
+# Mona Chalabi [@monachalabi](https://www.instagram.com/monachalabi/)
+
+
+.pull-left[
+```{r mona}
+knitr::include_graphics(path = "graphics/mona-chalabi-2.jpg")
+```
+]
+
+.pull-right[
+
+* Data editor at [Guardian US](https://www.theguardian.com/profile/mona-chalabi)
+
+* Funny & creative
+
+* Powerful social issues
+
+* Instagram swipe to tell a story
+
+]
+
+---
+
+layout: true
+
+---
+
+background-image: url(graphics/acne.jpg)
+background-size: contain 
+class: center, middle, inverse
+
+
+---
+
+background-image: url(graphics/covid.jpg)
+background-size: contain 
+class: center, middle, inverse
+
+---
+
+background-image: url(graphics/justice1.jpg)
+background-size: contain 
+class: center, middle, inverse
+
+---
+
+background-image: url(graphics/justice2.jpg)
+background-size: contain 
+class: center, middle, inverse
+
+---
+
+background-image: url(graphics/justice3.jpg)
+background-size: contain 
+class: center, middle, inverse
+
+---
+
+background-image: url(graphics/justice4.jpg)
+background-size: contain 
+class: center, middle, inverse
+---
+
+
+background-image: url(graphics/justice5.jpg)
+background-size: contain 
+class: center, middle, inverse
+
+---
+
+background-image: url(assets/white_logo.png)
+background-size: cover
 class: center, middle, inverse
 
 # Thank you
 
-* [Slides: bit.ly/flo-data-viz](https://trianglegirl.github.io/presentations/2020-07-01-data-viz-for-better/2020-05-12-florence-and-data-viz.html#1)
-
-
-
+## [Slides: bit.ly/flo-data-viz](https://trianglegirl.github.io/presentations/2020-07-01-data-viz-for-better/2020-05-12-florence-and-data-viz.html#1)
 
