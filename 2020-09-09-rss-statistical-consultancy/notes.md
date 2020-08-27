@@ -3,7 +3,7 @@ _Royal Statistical Society 2020 Conference: Panel Session_
 
 ## About me
 
-* Data Scientist at [Jumping Rivers](www.jumpingrivers.com)
+* Data Scientist at [Jumping Rivers](https://www.jumpingrivers.com)
 * Consultancy is a mix of data analysis, statistical modelling and code development & deployment
 * Industries
 
