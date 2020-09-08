@@ -17,7 +17,7 @@ _Royal Statistical Society 2020 Conference: Panel Session_
   * When is it the project finished - and who decides
   * Who is responsible for the tasks? E.g. Quality control of variables
   
-*	Understand the problem
+* Understand the problem
   * Ask lots of questions!
   * What do you hope to answer by running that analysis
   * How will you know if you’ve answered your question
