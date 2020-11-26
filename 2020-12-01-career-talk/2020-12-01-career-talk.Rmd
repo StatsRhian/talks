@@ -1,0 +1,160 @@
+---
+title: "Jobs and Stuff"
+subtitle: "Life as a statistician"  
+author: "Rhian Davies"
+date: '2020-12-01'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(fontawesome)
+library(xaringanExtra)
+# set default options
+opts_chunk$set(echo = FALSE,
+               collapse = TRUE,
+               fig.width = 7.252,
+               fig.height = 4,
+               dpi = 300)
+xaringanExtra::use_tile_view()
+xaringanExtra::use_broadcast()
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(
+  share_buttons = c("twitter")
+)
+```
+
+class: right, top
+background-image: url(https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)
+background-position: 75% 75%
+background-size: cover
+
+.right-column[
+# `r rmarkdown::metadata$title`
+### `r rmarkdown::metadata$subtitle` </br></br>
+
+### `r rmarkdown::metadata$author`
+]
+
+.left[.footnote[<span>Photo by <a href="https://unsplash.com/@joannakosinska?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Joanna Kosinska</a> on <a href="https://unsplash.com/backgrounds/colors?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>]]
+
+---
+
+name: logos
+
+# My Career... so far
+
+.pull-left[
+<center>
+<img src="img/lu.jpg" class = "center" height = "80">
+</br></br>
+<img src="img/unilever.png" class = "center" height = "80">
+</br></br>
+<img src="img/drl.png" class = "center" height = "120">
+</center>]
+
+.pull-right[
+<center>
+<img src="img/stori.png" class = "center" height = "80">
+</br></br>
+<img src="img/as.png" class = "center" height = "80">
+</br></br>
+<img src="img/jr.png" class = "center" height = "120">
+</center>]
+
+???
+
+Unilever:  Global 169,000 employees over - R&D over 6000, 15 people in my group owns over 400 brands, 100 countries
+Arctic Shores: Scale up, 30 employees across 3 offices Manchester, London, Singapore) Psychologists, artists, video game developers and me 
+Digital Rail: 2 employee across one office
+JR: 12 mostly full-time remote
+
+---
+name: unilever
+
+## Unilever
+
+.pull-left[
+<center><img src ="img/rexona.png" alt="Roll on deodorant" style="width: 180px;"/></center>
+]
+.pull-right[<center><img src="img/datalogger.jpg" alt="Data Loggers" style="width: 300px;"/></center>]
+
+???
+* Unilever want to understand how consumers use deodorant.
+* Experimental participants are notoriously bad at filling in study diaries.
+* Can we learn how consumers use deodorant just using the logger data?
+
+---
+
+name: arctic
+background-image: url(img/pv.jpg)
+background-size: contain
+## Arctic Shores
+
+
+---
+
+name: jr
+## Jumping Rivers
+
+.pull-left[
+<img src="img/computer-small.jpg" class = "center">
+]
+
+.pull-right[
+.right[
+### Stats Consultancy
+### R & Python training
+### Dashboard creation
+]
+]
+
+---
+name: jr-time
+background-image: url(img/jr_breakdown.png)
+background-size: contain
+
+# A day in the life
+
+---
+name:top-tips
+class: middle inverse
+
+## Top tips
+
+
+### `r fa(name = "palette", fill = "white")` &nbsp; Build a portfolio
+
+--
+
+### `r fa(name = "user-friends", fill = "white")` &nbsp; Engage with the community
+
+--
+
+### `r fa(name = "trophy", fill = "white")` &nbsp;  Showcase your strengths to stand out
+
+???
+
+Artists have a portfolio - so should statisticians
+I got all my jobs and opportunities through twitter or meetings and there is free beer!
+
+---
+
+class: right, middle, inverse
+
+<img style="border-radius: 5%;" src="img/r-book.jpg" width="180px"/>
+
+# Find me at...
+
+#### [`r fa(name = "twitter")` @statsRhian](http://twitter.com/apreshill)  
+#### [`r fa(name = "github")` @statsRhian](http://github.com/apreshill)  
+#### [`r fa(name = "link")` rhian.rbind.io](https://alison.rbind.io)  
