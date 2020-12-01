@@ -1,6 +1,6 @@
 ---
-title: "Jobs and Stuff"
-subtitle: "Life as a statistician"  
+title: "The varied life of a statistician"
+subtitle: ""  
 author: "Rhian Davies"
 date: '2020-12-01'
 output:
@@ -93,6 +93,7 @@ name: unilever
 * Experimental participants are notoriously bad at filling in study diaries.
 * Can we learn how consumers use deodorant just using the logger data?
 
+
 ---
 
 name: arctic
@@ -100,6 +101,18 @@ background-image: url(img/pv.jpg)
 background-size: contain
 ## Arctic Shores
 
+---
+name: digital 
+
+## Digital Rail
+
+.pull-left[<video controls width="320" height="240">
+<source src="img/yellow-line.mp4" type="video/mp4">
+</video>]
+
+.pull-right[<video controls width="320" height="240">
+<source src="img/bikes.mp4" type="video/mp4">
+</video>]
 
 ---
 
@@ -118,12 +131,6 @@ name: jr
 ]
 ]
 
----
-name: jr-time
-background-image: url(img/jr_breakdown.png)
-background-size: contain
-
-# A day in the life
 
 ---
 name:top-tips
@@ -158,3 +165,10 @@ class: right, middle, inverse
 #### [`r fa(name = "twitter")` @statsRhian](http://twitter.com/apreshill)  
 #### [`r fa(name = "github")` @statsRhian](http://github.com/apreshill)  
 #### [`r fa(name = "link")` rhian.rbind.io](https://alison.rbind.io)  
+
+---
+name: jr-time
+background-image: url(img/jr_breakdown.png)
+background-size: contain
+
+# A day in the life
