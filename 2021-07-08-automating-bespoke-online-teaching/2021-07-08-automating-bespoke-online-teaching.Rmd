@@ -1,0 +1,228 @@
+---
+title: "Automating Bespoke Online Training"
+subtitle: "Jumping Rivers"  
+author: "Rhian Davies"
+date: '2020-12-01'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(fontawesome)
+library(xaringanExtra)
+# set default options
+opts_chunk$set(echo = FALSE,
+               collapse = TRUE,
+               fig.width = 7.252,
+               fig.height = 4,
+               dpi = 300)
+xaringanExtra::use_tile_view()
+xaringanExtra::use_broadcast()
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(
+  share_buttons = c("twitter")
+)
+```
+
+class: right, top
+background-image: url(https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)
+background-position: 75% 75%
+background-size: cover
+
+.right-column[
+# `r rmarkdown::metadata$title`
+
+### `r rmarkdown::metadata$author`</br></br>
+
+#### http://bit.ly/jr-auto-teach
+]
+
+.left[.footnote[<span>Photo by <a href="https://unsplash.com/@joannakosinska?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Joanna Kosinska</a> on <a href="https://unsplash.com/backgrounds/colors?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>]]
+
+---
+
+name: jr
+## Jumping Rivers
+
+.pull-left[
+<img src="img/computer-small.jpg" class = "center">
+]
+
+.pull-right[
+.right[
+### Stats Consultancy
+### R & Python training
+### Dashboard creation
+]
+]
+
+
+---
+
+name: many-training-courses
+
+## Hundreds of courses a year
+
+```{r}
+knitr::include_graphics("img/r-lecture.jpg")
+```
+
+???
+* We deliver over 100 R, Python and Stan training courses each year
+* Engaging with thousands of new learners.
+
+---
+name: Jamie-dull
+class: middle inverse
+
+## Moving training online
+
+--
+
+### `r fa(name = "virus", fill = "white")` &nbsp; So March 2020 happened
+
+--
+
+### `r fa(name = "user-friends", fill = "white")` &nbsp; We tested online training internally
+
+--
+
+### `r fa(name = "tired", fill = "white")` &nbsp;  It was DULL
+
+???
+
+The necessity to move to fully online training in March last year meant we quickly had to completely rethink how to deliver R training interactively online. We internally trialled running our usual in-person training just on Zoom - and it really doesn’t work trust us!
+
+---
+name: r-materials
+
+## Starting point: R Materials
+
+.pull-left[
+- Already using {rmarkdown} {tufte} notes, {xaringan} slides
+- On GitLab with many CI checks
+- Course packages to handle dependencies e.g. {jrIntroduction} 
+]
+
+.pull-right[
+```{r}
+include_graphics(path = "img/notes.png")
+```
+]
+
+
+
+
+???
+
+- Even our Python course are built with R infrastructure
+- We just count chapters from 0 instead...
+
+---
+name: new-workflow
+
+## New Workflow
+However, our new workflow uses R in every step of the way, from creating a bespoke learning environment, to collating feedback and generating certificates.
+
+This improves the learning experience as the “small” things are automated and allows the trainer to concentrate on actual training.
+
+---
+
+Upcoming training sessions are stored in Asana. Using a single call from R, we extract the relevant Asana task details and:
+
+* Provide the client with a single URL that contains all necessary information for the course
+
+* Deploy a bespoke virtual training environment with {analogsea}
+
+* Automate password generation with {shiny}
+
+* Track and upload attendance sheets
+
+* Create bespoke Google Documents for code quizzes
+
+* Generate fill-in-the-blank tutor R scripts
+
+* Provide automatic feedback reports for clients with {rmarkdown}, {shiny} & {rtypeform}
+
+* Deliver personalised certificates in {shiny}
+
+* Tag the training materials and VM to enable a completely reproducible set-up
+
+---
+???
+
+Add presenter notes here
+
+---
+* Code review: the balance between being reviewed and wasting senior people's time with reviewing a missing full spot 
+* But we want to encourage missing tiny little bugs, so need minimial barriers.
+* Challenges as the team grows. Saying "look in the Dockerfile" is not a good solution
+* Moving from master -> main. I've not really seen this being talked about other than "I've moved my toy repo". With us, we had to block off a day for two people.
+* Talk about Rmd and keeping track of dangling branches
+* Balance between having the package in the repo vs a separate repo
+* Using renv isn't a solution for notes
+* Every repo should have a readme. No-one botherered, so we now autogenerate
+* Every repo should have a project description. No one bothered, so we now (well we will soon) autogenerate to point to our website
+
+---
+name: auto-breakfast
+class: center middle inverse
+
+<video controls width="640" height="480">
+<source src="img/auto-breakfast.mp4" type="video/mp4">
+</video>
+
+.left[.footnote[<span><a href="https://youtu.be/mk6zbY8i4_8?t=64">https://youtu.be/mk6zbY8i4_8</a></span>]]
+
+---
+
+# Was it worth it?
+
+```{r, results=FALSE, out.width="100%"}
+RXKCD::getXKCD(which = "1205")
+```
+
+---
+
+name:top-tips
+class: middle inverse
+
+## Top tips
+
+
+### `r fa(name = "palette", fill = "white")` &nbsp; Build a portfolio
+
+--
+
+### `r fa(name = "user-friends", fill = "white")` &nbsp; Engage with the community
+
+--
+
+### `r fa(name = "trophy", fill = "white")` &nbsp;  Showcase your strengths to stand out
+
+???
+
+
+
+---
+
+class: right, middle, inverse
+
+<img style="border-radius: 5%;" src="img/r-book.jpg" width="180px"/>
+
+## Find me at...
+
+#### [`r fa(name = "twitter")` @statsRhian](http://twitter.com/statsRhian)  
+#### [`r fa(name = "github")` @statsRhian](http://github.com/statsRhian)  
+#### [`r fa(name = "link")` rhian.rbind.io](https://rhian.rbind.io)  
+#### [`r fa(name = "slideshare")` http://bit.ly/jr-auto-teach](http://bit.ly/jr-auto-teach)  
+
