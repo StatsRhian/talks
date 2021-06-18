@@ -43,7 +43,7 @@ background-size: cover
 
 ### `r rmarkdown::metadata$author`</br></br>
 
-#### http://bit.ly/jr-auto-teach
+#### http://bit.ly/jr-auto-train
 ]
 
 .left[.footnote[<span>Photo by <a href="https://unsplash.com/@joannakosinska?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Joanna Kosinska</a> on <a href="https://unsplash.com/backgrounds/colors?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>]]
@@ -224,5 +224,5 @@ class: right, middle, inverse
 #### [`r fa(name = "twitter")` @statsRhian](http://twitter.com/statsRhian)  
 #### [`r fa(name = "github")` @statsRhian](http://github.com/statsRhian)  
 #### [`r fa(name = "link")` rhian.rbind.io](https://rhian.rbind.io)  
-#### [`r fa(name = "slideshare")` http://bit.ly/jr-auto-teach](http://bit.ly/jr-auto-teach)  
+#### [`r fa(name = "slideshare")` http://bit.ly/jr-auto-train](http://bit.ly/jr-auto-train)  
 
