@@ -15,7 +15,7 @@ output:
 ---
 
 ```{r setup, include = FALSE}
-options(htmltools.dir.version = FALSE)
+#options(htmltools.dir.version = FALSE)
 library(knitr)
 library(fontawesome)
 library(xaringanExtra)
@@ -25,12 +25,12 @@ opts_chunk$set(echo = FALSE,
                fig.width = 7.252,
                fig.height = 4,
                dpi = 300)
-xaringanExtra::use_tile_view()
-xaringanExtra::use_broadcast()
-xaringanExtra::use_share_again()
-xaringanExtra::style_share_again(
-  share_buttons = c("twitter")
-)
+#xaringanExtra::use_tile_view()
+#xaringanExtra::use_broadcast()
+#xaringanExtra::use_share_again()
+#xaringanExtra::style_share_again(
+#  share_buttons = c("twitter")
+#)
 ```
 
 class: right, top
@@ -139,7 +139,7 @@ class: middle inverse
 ## Top tips
 
 
-### `r fa(name = "palette", fill = "white")` &nbsp; Build a portfolio
+### `r fontawesome::fa(name = "palette", fill = "white")` &nbsp; Build a portfolio
 
 --
 
@@ -162,9 +162,9 @@ class: right, middle, inverse
 
 # Find me at...
 
-#### [`r fa(name = "twitter")` @statsRhian](http://twitter.com/apreshill)  
-#### [`r fa(name = "github")` @statsRhian](http://github.com/apreshill)  
-#### [`r fa(name = "link")` rhian.rbind.io](https://alison.rbind.io)  
+#### [`r fa(name = "twitter")` @statsRhian](http://twitter.com/statsRhian)  
+#### [`r fa(name = "github")` @statsRhian](http://github.com/statsRhian)  
+#### [`r fa(name = "link")` rhian.rbind.io](https://rhian.rbind.io)  
 
 ---
 name: jr-time
