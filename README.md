@@ -2,6 +2,7 @@
 
 A place to store and link to presentations I have done.
 * [2021-07-08 Automating Bespoke Online Teaching](https://statsrhian.github.io/presentations/2021-07-08-automating-bespoke-online-teaching/2021-07-08-automating-bespoke-online-teaching.html#1)
+* [2020-12-01 Career talk](https://statsrhian.github.io/presentations/2020-12-01-career-talk/2020-12-01-career-talk.html#1)
 * [2020-09-09 Statistical consultancy: advice for going it alone](https://github.com/statsrhian/presentations/blob/master/2020-09-09-rss-statistical-consultancy/notes.md)
 * [2020-05-12 Data Viz for better](https://statsrhian.github.io/presentations/2020-07-01-data-viz-for-better/2020-05-12-florence-and-data-viz.html#1)
 * [2020-02-26 Can you trust your R package (PyData Lancaster)?](https://statsrhian.github.io/presentations/2019-11-16-trust-your-pkg/2019-11-16-trust-your-pkg.html#1)
