@@ -198,23 +198,34 @@ include_graphics("img/typeform.png")
 .panelset[
 .panel[.panel-name[What]
 
-- Builds RStudio Server Pro
-- All R packages pre-installed
-- Training materials pre-populated
-- 
+```{r fig.align='center', out.width="70%"}
+include_graphics("img/slack-notify.png")
+```
+
 
 ]
 
+
 .panel[.panel-name[Why]
 
-- 
+- System & R dependencies managed
+- Training materials pre-populated
 
 ]
 
 .panel[.panel-name[How]
 
 - {analogsea} to talk to Digital Ocean
+- Grab artefacts from GitLab
+- Asana & Slack APIs
 
+]
+
+.panel[.panel-name[Code]
+
+```{r, echo = TRUE}
+#Snippet to give the main ideas
+```
 
 ]
 ]
@@ -308,6 +319,14 @@ magick::image_read_pdf("demos/Rhian_Davies_Getting_to_Grips_with_the_Tidyverse_c
 - {emayili} for sending emails
 - {RHandsontable} for copy-paste table
 - {magick} for `image_annotate()`
+
+]
+
+.panel[.panel-name[Code]
+
+```{r, echo = TRUE}
+#Snippet to give the main ideas
+```
 
 ]
 ]

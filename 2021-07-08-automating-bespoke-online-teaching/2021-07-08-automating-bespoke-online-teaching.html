@@ -182,23 +182,33 @@ jrDroplet::create_droplet_from_asana("https://app.asana.com/0/1200490496720734/1
 .panelset[
 .panel[.panel-name[What]
 
-- Builds RStudio Server Pro
-- All R packages pre-installed
-- Training materials pre-populated
-- 
+&lt;img src="img/slack-notify.png" width="70%" style="display: block; margin: auto;" /&gt;
+
 
 ]
 
+
 .panel[.panel-name[Why]
 
-- 
+- System &amp; R dependencies managed
+- Training materials pre-populated
 
 ]
 
 .panel[.panel-name[How]
 
 - {analogsea} to talk to Digital Ocean
+- Grab artefacts from GitLab
+- Asana &amp; Slack APIs
 
+]
+
+.panel[.panel-name[Code]
+
+
+```r
+#Snippet to give the main ideas
+```
 
 ]
 ]
@@ -237,7 +247,7 @@ jrNotes2::make_ballot(q, choices)
 ```
 
 
-&lt;template id="9a892a1c-902f-4305-b9e7-10bcc307cee9"&gt;&lt;style&gt;
+&lt;template id="fee9eadb-5df7-485c-abaf-03244cd17043"&gt;&lt;style&gt;
 .tabwid table{
   border-collapse:collapse;
   line-height:1;
@@ -271,11 +281,11 @@ jrNotes2::make_ballot(q, choices)
 .tabwid table tr {
 background-color: transparent;
 }
-&lt;/style&gt;&lt;div class="tabwid"&gt;&lt;style&gt;.cl-d1ffc538{border-collapse:collapse;}.cl-d1f9ae1e{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-d1f9ae3c{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-d1f9c41c{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-d1f9f0fe{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d1f9f11c{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(102, 102, 102, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}&lt;/style&gt;&lt;table class='cl-d1ffc538'&gt;&lt;thead&gt;&lt;tr style="overflow-wrap:break-word;"&gt;&lt;td  colspan="4"class="cl-d1f9f11c"&gt;&lt;p class="cl-d1f9c41c"&gt;&lt;span class="cl-d1f9ae1e"&gt;Where was the first useR! conference?&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style="overflow-wrap:break-word;"&gt;&lt;td class="cl-d1f9f11c"&gt;&lt;p class="cl-d1f9c41c"&gt;&lt;span class="cl-d1f9ae1e"&gt;Dortmund, Germany&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-d1f9f11c"&gt;&lt;p class="cl-d1f9c41c"&gt;&lt;span class="cl-d1f9ae1e"&gt;Rennes, France&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-d1f9f11c"&gt;&lt;p class="cl-d1f9c41c"&gt;&lt;span class="cl-d1f9ae1e"&gt;Vienna, Austria&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-d1f9f11c"&gt;&lt;p class="cl-d1f9c41c"&gt;&lt;span class="cl-d1f9ae1e"&gt;I'm not sure&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr style="overflow-wrap:break-word;"&gt;&lt;td class="cl-d1f9f0fe"&gt;&lt;p class="cl-d1f9c41c"&gt;&lt;span class="cl-d1f9ae3c"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-d1f9f0fe"&gt;&lt;p class="cl-d1f9c41c"&gt;&lt;span class="cl-d1f9ae3c"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-d1f9f0fe"&gt;&lt;p class="cl-d1f9c41c"&gt;&lt;span class="cl-d1f9ae3c"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-d1f9f0fe"&gt;&lt;p class="cl-d1f9c41c"&gt;&lt;span class="cl-d1f9ae3c"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/template&gt;
-&lt;div class="flextable-shadow-host" id="8c62ed7d-d304-4eb0-a4d4-0144b0c00740"&gt;&lt;/div&gt;
+&lt;/style&gt;&lt;div class="tabwid"&gt;&lt;style&gt;.cl-ad0e42f2{border-collapse:collapse;}.cl-ad07ee2a{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-ad07ee3e{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-ad080180{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-ad083650{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ad083664{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(102, 102, 102, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}&lt;/style&gt;&lt;table class='cl-ad0e42f2'&gt;&lt;thead&gt;&lt;tr style="overflow-wrap:break-word;"&gt;&lt;td  colspan="4"class="cl-ad083664"&gt;&lt;p class="cl-ad080180"&gt;&lt;span class="cl-ad07ee2a"&gt;Where was the first useR! conference?&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style="overflow-wrap:break-word;"&gt;&lt;td class="cl-ad083664"&gt;&lt;p class="cl-ad080180"&gt;&lt;span class="cl-ad07ee2a"&gt;Dortmund, Germany&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-ad083664"&gt;&lt;p class="cl-ad080180"&gt;&lt;span class="cl-ad07ee2a"&gt;Rennes, France&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-ad083664"&gt;&lt;p class="cl-ad080180"&gt;&lt;span class="cl-ad07ee2a"&gt;Vienna, Austria&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-ad083664"&gt;&lt;p class="cl-ad080180"&gt;&lt;span class="cl-ad07ee2a"&gt;I'm not sure&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr style="overflow-wrap:break-word;"&gt;&lt;td class="cl-ad083650"&gt;&lt;p class="cl-ad080180"&gt;&lt;span class="cl-ad07ee3e"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-ad083650"&gt;&lt;p class="cl-ad080180"&gt;&lt;span class="cl-ad07ee3e"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-ad083650"&gt;&lt;p class="cl-ad080180"&gt;&lt;span class="cl-ad07ee3e"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="cl-ad083650"&gt;&lt;p class="cl-ad080180"&gt;&lt;span class="cl-ad07ee3e"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/template&gt;
+&lt;div class="flextable-shadow-host" id="00bcfcaa-6de4-417f-865e-02137a376cd1"&gt;&lt;/div&gt;
 &lt;script&gt;
-var dest = document.getElementById("8c62ed7d-d304-4eb0-a4d4-0144b0c00740");
-var template = document.getElementById("9a892a1c-902f-4305-b9e7-10bcc307cee9");
+var dest = document.getElementById("00bcfcaa-6de4-417f-865e-02137a376cd1");
+var template = document.getElementById("fee9eadb-5df7-485c-abaf-03244cd17043");
 var caption = template.content.querySelector("caption");
 if(caption) {
   caption.style.cssText = "display:block;text-align:center;";
@@ -333,7 +343,7 @@ name: jrCertificate
 - Easy for non-tech
 - Direct emails
 
-&lt;img src="2021-07-08-automating-bespoke-online-teaching_files/figure-html/unnamed-chunk-12-1.png" width="60%" /&gt;
+&lt;img src="2021-07-08-automating-bespoke-online-teaching_files/figure-html/unnamed-chunk-14-1.png" width="60%" /&gt;
 
 ]
 
@@ -342,6 +352,15 @@ name: jrCertificate
 - {emayili} for sending emails
 - {RHandsontable} for copy-paste table
 - {magick} for `image_annotate()`
+
+]
+
+.panel[.panel-name[Code]
+
+
+```r
+#Snippet to give the main ideas
+```
 
 ]
 ]
