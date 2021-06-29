@@ -27,6 +27,7 @@ opts_chunk$set(echo = FALSE,
                dpi = 300)
 xaringanExtra::use_tile_view()
 xaringanExtra::use_broadcast()
+xaringanExtra::use_panelset()
 xaringanExtra::use_share_again()
 xaringanExtra::style_share_again(
   share_buttons = c("twitter")
@@ -128,50 +129,188 @@ include_graphics(path = "img/notes.png")
 - We just count chapters from 0 instead...
 
 ---
-name: new-workflow
+name: asana
+# Everything in Asana
 
-## New Workflow
-However, our new workflow uses R in every step of the way, from creating a bespoke learning environment, to collating feedback and generating certificates.
+.panelset[
+.panel[.panel-name[Asana]
 
-This improves the learning experience as the “small” things are automated and allows the trainer to concentrate on actual training.
+```{r fig.align='center', out.width="50%"}
+include_graphics("img/asana-zoom.png")
+```
 
----
+```{r, eval = FALSE, echo = TRUE}
+jrDroplet::create_droplet_from_asana("https://app.asana.com/0/1200490496720734/1200490373207542")
+```
 
-Upcoming training sessions are stored in Asana. Using a single call from R, we extract the relevant Asana task details and:
+]
 
-* Provide the client with a single URL that contains all necessary information for the course
+.panel[.panel-name[Welcome Page]
 
-* Deploy a bespoke virtual training environment with {analogsea}
+```{r fig.align='center', out.width="60%"}
+include_graphics("img/welcome.png")
+```
 
-* Automate password generation with {shiny}
+]
 
-* Track and upload attendance sheets
+.panel[.panel-name[Training Environment]
 
-* Create bespoke Google Documents for code quizzes
+```{r fig.align='center', out.width="100%"}
+include_graphics("img/virtual-training-env.png")
+```
 
-* Generate fill-in-the-blank tutor R scripts
+]
 
-* Provide automatic feedback reports for clients with {rmarkdown}, {shiny} & {rtypeform}
+.panel[.panel-name[Post-Course]
+.pull-left[
+```{r fig.align='center', out.width="100%"}
+include_graphics("img/typeform.png")
+```
+]
 
-* Deliver personalised certificates in {shiny}
+.pull-right[
+- Register uploaded to Asana
+- Personalised certificates
+- Markdown feedback reports via Typeform
+]
+]
+]
 
-* Tag the training materials and VM to enable a completely reproducible set-up
-
----
 ???
 
-Add presenter notes here
+- Asana
+  - One localised place
+
+- Welcome Page
+  - One URL - all materials
+  - Set up account
+  - Links to Zoom & Google Doc
+  - {shiny} app with websockets
+
+- Virtual Training Environment
+    - Materials uploaded
+    - Relevant R packages installed
+    - All tagged with version (reproducible)
+---
+
+# jrDroplet
+
+.panelset[
+.panel[.panel-name[What]
+
+- Builds RStudio Server Pro
+- All R packages pre-installed
+- Training materials pre-populated
+- 
+
+]
+
+.panel[.panel-name[Why]
+
+- 
+
+]
+
+.panel[.panel-name[How]
+
+- {analogsea} to talk to Digital Ocean
+
+
+]
+]
+
+
 
 ---
-* Code review: the balance between being reviewed and wasting senior people's time with reviewing a missing full spot 
-* But we want to encourage missing tiny little bugs, so need minimial barriers.
-* Challenges as the team grows. Saying "look in the Dockerfile" is not a good solution
-* Moving from master -> main. I've not really seen this being talked about other than "I've moved my toy repo". With us, we had to block off a day for two people.
-* Talk about Rmd and keeping track of dangling branches
-* Balance between having the package in the repo vs a separate repo
-* Using renv isn't a solution for notes
-* Every repo should have a readme. No-one botherered, so we now autogenerate
-* Every repo should have a project description. No one bothered, so we now (well we will soon) autogenerate to point to our website
+
+# Google Docs
+
+.panelset[
+.panel[.panel-name[What]
+
+#### Quick Quiz!
+
+Visit: [bit.ly/user2021-quiz](https://bit.ly/user2021-quiz)
+
+]
+
+.panel[.panel-name[Why]
+
+- Good for formative assessment
+- Freedom to ask questions 
+- Available after the course
+
+]
+
+.panel[.panel-name[How]
+
+```{r, echo = TRUE}
+q = "Where was the first useR! conference?"
+choices = c("Dortmund, Germany", "Rennes, France", "Vienna, Austria", "I'm not sure")
+
+jrNotes2::make_ballot(q, choices)
+```
+
+]
+
+.panel[.panel-name[Code]
+
+```{r, echo = TRUE}
+render_docx = function(){
+  rmarkdown::render("index.Rmd", output_format = "word_document",
+                    params = list(asana = course_info, extdata = extdata))
+}
+```
+
+```{r, echo = TRUE}
+upload_docx = function (public = TRUE){
+  filename = construct_gdoc_filename(course_info)
+  upload = googledrive::drive_upload("index.docx", name = filename,
+                                     overwrite = TRUE, type = "document", path = client_dir)
+  if (isTRUE(public)) {
+    googledrive::drive_share(upload, role = "writer", type = "anyone")
+  }
+  message(glue::glue("\n\nDocument uploaded to: {web_link}"))
+}
+```
+
+
+]
+]
+---
+name: jrCertificate
+
+# jrCertificate
+
+.panelset[
+.panel[.panel-name[What]
+
+```{r fig.align='center', out.width="80%"}
+include_graphics("img/demo_jrCertificate.gif")
+```
+
+]
+
+.panel[.panel-name[Why]
+
+- Easy for non-tech
+- Direct emails
+
+```{r, out.width = "60%"}
+magick::image_read_pdf("demos/Rhian_Davies_Getting_to_Grips_with_the_Tidyverse_certificate.pdf",
+                       pages = 1)
+```
+
+]
+
+.panel[.panel-name[How]
+
+- {emayili} for sending emails
+- {RHandsontable} for copy-paste table
+- {magick} for `image_annotate()`
+
+]
+]
 
 ---
 name: auto-breakfast
@@ -184,11 +323,20 @@ class: center middle inverse
 .left[.footnote[<span><a href="https://youtu.be/mk6zbY8i4_8?t=64">https://youtu.be/mk6zbY8i4_8</a></span>]]
 
 ---
-
+name: worth-it
 # Was it worth it?
 
-```{r, results=FALSE, out.width="100%"}
-RXKCD::getXKCD(which = "1205")
+```{r, out.width = "70%", fig.cap="https://xkcd.com/1205/", fig.align='center'}
+include_graphics("img/xkcd-1205.png")
+```
+
+---
+name: slack-poll
+
+# Yes!
+
+```{r, out.width = "80%", fig.align='center'}
+include_graphics("img/poll.png")
 ```
 
 ---
@@ -196,20 +344,20 @@ RXKCD::getXKCD(which = "1205")
 name:top-tips
 class: middle inverse
 
-## Top tips
-
-
-### `r fa(name = "palette", fill = "white")` &nbsp; Build a portfolio
+## Final Thoughts
 
 --
 
-### `r fa(name = "user-friends", fill = "white")` &nbsp; Engage with the community
+### `r fa(name = "code", fill = "white")` &nbsp;  Automating is fun!
 
 --
 
-### `r fa(name = "trophy", fill = "white")` &nbsp;  Showcase your strengths to stand out
+### `r fa(name = "chalkboard-teacher", fill = "white")` &nbsp; Focus on teaching
 
-???
+
+--
+
+### `r fa(name = "user-friends", fill = "white")` &nbsp; It takes a team
 
 
 
@@ -222,7 +370,7 @@ class: right, middle, inverse
 ## Find me at...
 
 #### [`r fa(name = "twitter")` @statsRhian](http://twitter.com/statsRhian)  
-#### [`r fa(name = "github")` @statsRhian](http://github.com/statsRhian)  
-#### [`r fa(name = "link")` rhian.rbind.io](https://rhian.rbind.io)  
+#### [`r fa(name = "twitter")` @jumping_uk](http://twitter.com/jumping_uk)  
+#### [`r fa(name = "link")` jumpingrivers.com](https://www.jumpingrivers.com/)  
 #### [`r fa(name = "slideshare")` http://bit.ly/jr-auto-train](http://bit.ly/jr-auto-train)  
 
