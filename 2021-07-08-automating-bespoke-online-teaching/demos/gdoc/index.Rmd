@@ -1,0 +1,28 @@
+---
+title: "`r jrNotes2::get_config()$running`"
+params:
+  asana: Fetched from the asana_task specified in upcoming_course.yml
+  extdata: Optional extra params specified in upcoming_course.yml
+output:
+  word_document:
+    reference_docx: !expr system.file("extdata/style-template.docx", package = "jrNotes2")
+---
+
+<!-- This file should not be edited -->
+<!-- Course details should be specified in upcoming_course.yml -->
+<!-- Document content should be specified in gdoc_content.Rmd -->
+
+```{r setup, include=FALSE}
+library(flextable)
+
+flextable::set_flextable_defaults(
+  font.size = 12,
+  theme_fun = theme_box,
+  text.align = "center",
+  table.layout = "autofit",
+  font.family = "Lato",
+  font.color = "#595959")
+```
+
+```{r child="gdoc_content.Rmd"}
+```

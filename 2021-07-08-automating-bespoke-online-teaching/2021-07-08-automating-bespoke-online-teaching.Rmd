@@ -85,7 +85,7 @@ knitr::include_graphics("img/r-lecture.jpg")
 name: Jamie-dull
 class: middle inverse
 
-## Moving training online
+# Moving training online
 
 --
 
@@ -99,138 +99,113 @@ class: middle inverse
 
 ### `r fa(name = "tired", fill = "white")` &nbsp;  It was DULL
 
+
+--
+
+### `r fa(name = "code", fill = "white")` &nbsp; Made it more interactive
+
+--
+
+### `r fa(name = "layer-group", fill = "white")` &nbsp; Lots of work for trainers
+
+
 ???
 
 The necessity to move to fully online training in March last year meant we quickly had to completely rethink how to deliver R training interactively online. We internally trialled running our usual in-person training just on Zoom - and it really doesn’t work trust us!
 
 ---
-name: r-materials
 
-## Starting point: R Materials
-
-.pull-left[
-- Already using {rmarkdown} {tufte} notes, {xaringan} slides
-- On GitLab with many CI checks
-- Course packages to handle dependencies e.g. {jrIntroduction} 
-]
-
-.pull-right[
-```{r}
-include_graphics(path = "img/notes.png")
+```{r fig.align='center', out.width="80%"}
+include_graphics("img/deborah.jpg")
 ```
-]
-
-
-
-
-???
-
-- Even our Python course are built with R infrastructure
-- We just count chapters from 0 instead...
 
 ---
-name: asana
-# Everything in Asana
 
-.panelset[
-.panel[.panel-name[Asana]
+```{r fig.align='center', out.width="100%"}
+include_graphics("img/flow-1.png")
+```
 
-```{r fig.align='center', out.width="50%"}
+---
+class: middle
+```{r fig.align='center', out.width="80%"}
 include_graphics("img/asana-zoom.png")
 ```
 
-```{r, eval = FALSE, echo = TRUE}
-jrDroplet::create_droplet_from_asana("https://app.asana.com/0/1200490496720734/1200490373207542")
+---
+
+```{r fig.align='center', out.width="100%"}
+include_graphics("img/flow-2.png")
 ```
 
-]
+---
+class: middle
+```{r, eval = FALSE, echo = TRUE}
+jrDroplet::create_droplet_from_asana("https://app.asana.com/...")
+ℹ Creating a Droplet from Asana task
+...
+✓ Droplet configuration finished
+```
 
-.panel[.panel-name[Welcome Page]
+---
 
-```{r fig.align='center', out.width="60%"}
+```{r fig.align='center', out.width="100%"}
+include_graphics("img/flow-3b.png")
+```
+
+---
+```{r fig.align='center', out.width="100%"}
+include_graphics("img/flow-4.png")
+```
+
+---
+
+
+```{r fig.align='center', out.width="100%"}
+include_graphics("img/notes.png")
+```
+
+---
+
+```{r fig.align='center', out.width="100%"}
+include_graphics("img/scripts.png")
+
+```
+
+---
+
+```{r fig.align='center', out.width="100%"}
+include_graphics("img/flow-5.png")
+```
+
+---
+
+```{r fig.align='center', out.width="80%"}
 include_graphics("img/welcome.png")
 ```
 
-]
+---
 
-.panel[.panel-name[Training Environment]
+```{r fig.align='center', out.width="100%"}
+include_graphics("img/flow-6.png")
+```
 
+---
+class: middle 
 ```{r fig.align='center', out.width="100%"}
 include_graphics("img/virtual-training-env.png")
 ```
 
-]
-
-.panel[.panel-name[Post-Course]
-.pull-left[
-```{r fig.align='center', out.width="100%"}
-include_graphics("img/typeform.png")
-```
-]
-
-.pull-right[
-- Register uploaded to Asana
-- Personalised certificates
-- Markdown feedback reports via Typeform
-]
-]
-]
-
-???
-
-- Asana
-  - One localised place
-
-- Welcome Page
-  - One URL - all materials
-  - Set up account
-  - Links to Zoom & Google Doc
-  - {shiny} app with websockets
-
-- Virtual Training Environment
-    - Materials uploaded
-    - Relevant R packages installed
-    - All tagged with version (reproducible)
 ---
+```{r fig.align='center', out.width="100%"}
+include_graphics("img/flow-7.png")
+```
 
-# jrDroplet
 
-.panelset[
-.panel[.panel-name[What]
-
-```{r fig.align='center', out.width="70%"}
+---
+class: middle 
+```{r fig.align='center', out.width="80%"}
 include_graphics("img/slack-notify.png")
 ```
-
-
-]
-
-
-.panel[.panel-name[Why]
-
-- System & R dependencies managed
-- Training materials pre-populated
-
-]
-
-.panel[.panel-name[How]
-
-- {analogsea} to talk to Digital Ocean
-- Grab artefacts from GitLab
-- Asana & Slack APIs
-
-]
-
-.panel[.panel-name[Code]
-
-```{r, echo = TRUE}
-#Snippet to give the main ideas
-```
-
-]
-]
-
-
 
 ---
 
@@ -274,14 +249,10 @@ render_docx = function(){
 ```
 
 ```{r, echo = TRUE}
-upload_docx = function (public = TRUE){
-  filename = construct_gdoc_filename(course_info)
-  upload = googledrive::drive_upload("index.docx", name = filename,
-                                     overwrite = TRUE, type = "document", path = client_dir)
-  if (isTRUE(public)) {
-    googledrive::drive_share(upload, role = "writer", type = "anyone")
-  }
-  message(glue::glue("\n\nDocument uploaded to: {web_link}"))
+upload_docx = function(){
+  upload = googledrive::drive_upload("index.docx", path = client_dir)
+  googledrive::drive_share(upload, role = "writer", type = "anyone")
+  message(glue::glue("Document uploaded to: {web_link}"))
 }
 ```
 
@@ -321,25 +292,7 @@ magick::image_read_pdf("demos/Rhian_Davies_Getting_to_Grips_with_the_Tidyverse_c
 - {magick} for `image_annotate()`
 
 ]
-
-.panel[.panel-name[Code]
-
-```{r, echo = TRUE}
-#Snippet to give the main ideas
-```
-
 ]
-]
-
----
-name: auto-breakfast
-class: center middle inverse
-
-<video controls width="640" height="480">
-<source src="img/auto-breakfast.mp4" type="video/mp4">
-</video>
-
-.left[.footnote[<span><a href="https://youtu.be/mk6zbY8i4_8?t=64">https://youtu.be/mk6zbY8i4_8</a></span>]]
 
 ---
 name: worth-it
@@ -350,22 +303,11 @@ include_graphics("img/xkcd-1205.png")
 ```
 
 ---
-name: slack-poll
-
-# Yes!
-
-```{r, out.width = "80%", fig.align='center'}
-include_graphics("img/poll.png")
-```
-
----
 
 name:top-tips
 class: middle inverse
 
 ## Final Thoughts
-
---
 
 ### `r fa(name = "code", fill = "white")` &nbsp;  Automating is fun!
 
@@ -388,8 +330,8 @@ class: right, middle, inverse
 
 ## Find me at...
 
-#### [`r fa(name = "twitter")` @statsRhian](http://twitter.com/statsRhian)  
-#### [`r fa(name = "twitter")` @jumping_uk](http://twitter.com/jumping_uk)  
+#### [`r fa(name = "slack")` _sponsor_jumping_rivers](https://app.slack.com/client/T0270SMAND9/C026XL96ACV/thread/C027G7K56M7-1625579750.318200)  
+#### [`r fa(name = "twitter")` @statsRhian / @jumping_uk](http://twitter.com/statsRhian)  
 #### [`r fa(name = "link")` jumpingrivers.com](https://www.jumpingrivers.com/)  
 #### [`r fa(name = "slideshare")` http://bit.ly/jr-auto-train](http://bit.ly/jr-auto-train)  
 

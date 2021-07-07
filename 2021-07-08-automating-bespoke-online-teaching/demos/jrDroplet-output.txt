@@ -1,0 +1,421 @@
+# jrDroplet print out
+
+# jrDroplet print out
+
+> jrDroplet::create_droplet_from_asana("https://app.asana.com/0/1200490496720734/1200490373207542")
+ℹ Creating a Droplet from Asana task
+→ Fetching data for Asana task 1200490373207542...
+→ Parsing course data from task...
+
+── Creating Droplet from Config ─────────────────────────────────────────────────────────────────────────────────
+✓ Droplet Name: 'jr-train-tyne'
+✓ Droplet Region: 'lon1'
+✓ Droplet Size: 's-6vcpu-16gb'
+→ Finding snapshot from pattern 'jr-pro-training-.+'...
+ℹ Using 'jr-pro-training-20201111-150611 (73291113)'
+✓ Droplet Image: '73291113'
+✓ Droplet SSH Keys: 'Sebastian, Colin, Rhian, Jamie, Jack, Andrew'
+✓ Droplet DNS: 'jumpingrivers.training'
+✓ Droplet URL: 'tyne.jumpingrivers.training'
+✓ Droplet Notifications: 'alerts@jumpingrivers.support'
+✓ Let's Encrypt Enabled
+ℹ Setting Asana access token for welcome app
+✓ Configuration validated!
+→ Checking for existing droplet...
+→ Creating droplet...
+NB: This costs $0.11905 / hour until you droplet_delete() it
+Waiting for create .........................................................................................................................................
+✓ Droplet created
+→ Waiting for IPv4...
+✓ IPv4: 178.128.42.151
+→ Determining IPv4...
+→ Using domain 'jumpingrivers.training'...
+→ Creating DNS A record 'tyne'=>'178.128.42.151' (300)...
+jumpingrivers.training
+178.128.42.151
+tyne
+300
+Bearer a08d64f60ac0e1b201d96ecb34bc3c4dbbcfc6bc76111754dcdb2e22c3c06ba3Response [https://api.digitalocean.com/v2/domains/jumpingrivers.training/records]
+  Date: 2021-06-29 11:02
+  Status: 201
+  Content-Type: application/json; charset=utf-8
+  Size: 159 B
+
+✓Unable to find image 'certbot/certbot:latest' locally→ Resetting welcome page config and users...→ Loading remote YAML /data/welcome-stack/data/welcome_config.yml... DNS record created
+→ Tagging Droplet with 'training'...
+→ Waiting for SSH...
+! SSH connection failed, retrying in 30s (4)...
+New server key: 72:5b:43:3f:fa:89:30:41:42:28:d1:f1:75:0e:62:83:a0:16:ce:bd
+✓ SSH connected!
+ℹ Stopping web proxy...
+Stopping data_web-proxy_1 ...
+
+latest: Pulling from certbot/certbot
+339de151aab4: Pulling fs layer
+a860e27ad689: Pulling fs layer
+910a9a405b4b: Pulling fs layer
+bde2ad12a253: Pulling fs layer
+c6c8e9f0153d: Pulling fs layer
+945dabbf129d: Pulling fs layer
+3baa0c549d33: Pulling fs layer
+dbb0943a8d50: Pulling fs layer
+e8872c4a647e: Pulling fs layer
+050beaad25b6: Pulling fs layer
+2510804d6bf4: Pulling fs layer
+3a273385f036: Pulling fs layer
+434439c6a81e: Pulling fs layer
+c6c8e9f0153d: Waiting
+945dabbf129d: Waiting
+3baa0c549d33: Waiting
+dbb0943a8d50: Waiting
+e8872c4a647e: Waiting
+050beaad25b6: Waiting
+bde2ad12a253: Waiting
+3a273385f036: Waiting
+2510804d6bf4: Waiting
+434439c6a81e: Waiting
+a860e27ad689: Verifying Checksum
+a860e27ad689: Download complete
+339de151aab4: Verifying Checksum
+339de151aab4: Download complete
+910a9a405b4b: Verifying Checksum
+910a9a405b4b: Download complete
+339de151aab4: Pull complete
+bde2ad12a253: Verifying Checksum
+bde2ad12a253: Download complete
+c6c8e9f0153d: Verifying Checksum
+c6c8e9f0153d: Download complete
+945dabbf129d: Verifying Checksum
+945dabbf129d: Download complete
+a860e27ad689: Pull complete
+3baa0c549d33: Verifying Checksum
+3baa0c549d33: Download complete
+dbb0943a8d50: Verifying Checksum
+dbb0943a8d50: Download complete
+e8872c4a647e: Verifying Checksum
+e8872c4a647e: Download complete
+2510804d6bf4: Download complete
+3a273385f036: Verifying Checksum
+3a273385f036: Download complete
+910a9a405b4b: Pull complete
+bde2ad12a253: Pull complete
+434439c6a81e: Verifying Checksum
+434439c6a81e: Download complete
+c6c8e9f0153d: Pull complete
+945dabbf129d: Pull complete
+3baa0c549d33: Pull complete
+dbb0943a8d50: Pull complete
+e8872c4a647e: Pull complete
+050beaad25b6: Pull complete
+2510804d6bf4: Pull complete
+3a273385f036: Pull complete
+434439c6a81e: Pull complete
+Digest: sha256:1de29b86aa08f09b944b89dc74f1b3a4789b53eb7addeb2b29c276ec730a402f
+Status: Downloaded newer image for certbot/certbot:latest
+Account registered.
+Requesting a certificate for tyne.jumpingrivers.training
+
+Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/tyne.jumpingrivers.training/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/tyne.jumpingrivers.training/privkey.pem
+This certificate expires on 2021-09-27.
+These files will be updated when the certificate renews.
+
+NEXT STEPS:
+- The certificate will need to be renewed before it expires. Certbot can automatically renew the certificate in the background, but you may need to take steps to enable that functionality. See https://certbot.org/renewal-setup for instructions.
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+If you like Certbot, please consider supporting our work by:
+ * Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+* Donating to EFF:                    https://eff.org/donate-le
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  ℹ Copying SSL certificates...
+ℹ Starting web proxy...
+Starting data_web-proxy_1 ...
+
+→ Uploading to /data/welcome-stack/data/welcome_config.yml...
+[100%] /home/rhian/R/x86_64-pc-linux-gnu-library/4.0/jrDroplet/welcome_config.training.yml
+→ Updating welcome page...
+→ Preparing to clear CONNECT_LINK...
+→ Preparing to clear DOC_LINK...
+→ Preparing to clear RSPM_LINK...
+→ Preparing to clear ZOOM_LINK...
+→ Preparing to update/add ASANA_ACCESS_TOKEN...
+→ Preparing to update/add ASANA_TASK_ID...
+✓ Env file /data/welcome-stack/welcome_environment.env updated
+Pulling passwordApp ...
+topping welcome-stack_passwordApp_1 ...  up to date for r...
+emoving welcome-stack_passwordApp_1 ...  done
+emoving network welcome-stack_default... done
+Creating network "welcome-stack_default" with the default driver
+Creating welcome-stack_passwordApp_1 ...
+
+→ Reading remote file /data/welcome-stack/data/welcome_config.yml...
+→ Updating course requirements...
+→ R: Also installing 'remotes'...
+→ R: Installing jrIntroduction", "remotes...
+→ Executing Rscript /opt/R/3.6.3/bin/Rscript...
+also installing the dependencies ‘ellipsis’, ‘extrafontdb’, ‘Rttf2pt1’, ‘systemfonts’, ‘generics’, ‘lifecycle’, ‘rlang’, ‘vctrs’, ‘pillar’, ‘anytime’, ‘extrafont’, ‘gdtools’, ‘cyclocomp’, ‘xmlparsedata’, ‘cpp11’, ‘dplyr’, ‘ggplot2movies’, ‘gtrendsR’, ‘formatR’, ‘hrbrthemes’, ‘lintr’, ‘lubridate’, ‘tidyr’, ‘tufte’, ‘mockery’, ‘webfakes’
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/ellipsis_0.3.2.tar.gz'
+Content type 'binary/octet-stream' length 39763 bytes (38 KB)
+==================================================
+  downloaded 38 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/extrafontdb_1.0.tar.gz'
+Content type 'binary/octet-stream' length 6656 bytes
+==================================================
+  downloaded 6656 bytes
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/Rttf2pt1_1.3.8.tar.gz'
+Content type 'binary/octet-stream' length 231566 bytes (226 KB)
+==================================================
+  downloaded 226 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/systemfonts_1.0.2.tar.gz'
+Content type 'binary/octet-stream' length 1876431 bytes (1.8 MB)
+==================================================
+  downloaded 1.8 MB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/generics_0.1.0.tar.gz'
+Content type 'binary/octet-stream' length 69550 bytes (67 KB)
+==================================================
+  downloaded 67 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/lifecycle_1.0.0.tar.gz'
+Content type 'binary/octet-stream' length 93562 bytes (91 KB)
+==================================================
+  downloaded 91 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/rlang_0.4.11.tar.gz'
+Content type 'binary/octet-stream' length 1311861 bytes (1.3 MB)
+==================================================
+  downloaded 1.3 MB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/vctrs_0.3.8.tar.gz'
+Content type 'binary/octet-stream' length 1540494 bytes (1.5 MB)
+==================================================
+  downloaded 1.5 MB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/pillar_1.6.1.tar.gz'
+Content type 'binary/octet-stream' length 1010436 bytes (986 KB)
+==================================================
+  downloaded 986 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/anytime_0.3.9.tar.gz'
+Content type 'binary/octet-stream' length 1158784 bytes (1.1 MB)
+==================================================
+  downloaded 1.1 MB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/extrafont_0.17.tar.gz'
+Content type 'binary/octet-stream' length 49834 bytes (48 KB)
+==================================================
+  downloaded 48 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/gdtools_0.2.3.tar.gz'
+Content type 'binary/octet-stream' length 917170 bytes (895 KB)
+==================================================
+  downloaded 895 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/cyclocomp_1.1.0.tar.gz'
+Content type 'binary/octet-stream' length 30572 bytes (29 KB)
+==================================================
+  downloaded 29 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/xmlparsedata_1.0.5.tar.gz'
+Content type 'binary/octet-stream' length 18265 bytes (17 KB)
+==================================================
+  downloaded 17 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/cpp11_0.3.1.tar.gz'
+Content type 'binary/octet-stream' length 208340 bytes (203 KB)
+==================================================
+  downloaded 203 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/dplyr_1.0.7.tar.gz'
+Content type 'binary/octet-stream' length 1232183 bytes (1.2 MB)
+==================================================
+  downloaded 1.2 MB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/ggplot2movies_0.0.1.tar.gz'
+Content type 'binary/octet-stream' length 1247156 bytes (1.2 MB)
+==================================================
+  downloaded 1.2 MB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/gtrendsR_1.4.8.tar.gz'
+Content type 'binary/octet-stream' length 1984418 bytes (1.9 MB)
+==================================================
+  downloaded 1.9 MB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/formatR_1.11.tar.gz'
+Content type 'binary/octet-stream' length 145094 bytes (141 KB)
+==================================================
+  downloaded 141 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/hrbrthemes_0.8.0.tar.gz'
+Content type 'binary/octet-stream' length 2297005 bytes (2.2 MB)
+==================================================
+  downloaded 2.2 MB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/lintr_2.0.1.tar.gz'
+Content type 'binary/octet-stream' length 360155 bytes (351 KB)
+==================================================
+  downloaded 351 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/lubridate_1.7.10.tar.gz'
+Content type 'binary/octet-stream' length 1802177 bytes (1.7 MB)
+==================================================
+  downloaded 1.7 MB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/tidyr_1.1.3.tar.gz'
+Content type 'binary/octet-stream' length 1079919 bytes (1.0 MB)
+==================================================
+  downloaded 1.0 MB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/tufte_0.10.tar.gz'
+Content type 'binary/octet-stream' length 269551 bytes (263 KB)
+==================================================
+  downloaded 263 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/mockery_0.4.2.tar.gz'
+Content type 'binary/octet-stream' length 40610 bytes (39 KB)
+==================================================
+  downloaded 39 KB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/webfakes_1.1.3.tar.gz'
+Content type 'binary/octet-stream' length 785880 bytes (767 KB)
+==================================================
+  downloaded 767 KB
+
+trying URL 'https://jr-packages.github.io/drat/src/contrib/jrIntroduction_1.0.14.tar.gz'
+Content type 'application/gzip' length 2577504 bytes (2.5 MB)
+==================================================
+  downloaded 2.5 MB
+
+trying URL 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest/src/contrib/remotes_2.4.0.tar.gz'
+Content type 'binary/octet-stream' length 393811 bytes (384 KB)
+==================================================
+  downloaded 384 KB
+
+* installing *binary* package ‘extrafontdb’ ...
+* DONE (extrafontdb)
+* installing *binary* package ‘Rttf2pt1’ ...
+* DONE (Rttf2pt1)
+* installing *binary* package ‘generics’ ...
+* DONE (generics)
+* installing *binary* package ‘rlang’ ...
+* DONE (rlang)
+* installing *binary* package ‘anytime’ ...
+* DONE (anytime)
+* installing *binary* package ‘xmlparsedata’ ...
+* DONE (xmlparsedata)
+* installing *binary* package ‘cpp11’ ...
+* DONE (cpp11)
+* installing *binary* package ‘ggplot2movies’ ...
+* DONE (ggplot2movies)
+* installing *binary* package ‘formatR’ ...
+* DONE (formatR)
+* installing *binary* package ‘tufte’ ...
+* DONE (tufte)
+* installing *binary* package ‘mockery’ ...
+* DONE (mockery)
+* installing *binary* package ‘webfakes’ ...
+* DONE (webfakes)
+* installing *binary* package ‘remotes’ ...
+* DONE (remotes)
+* installing *binary* package ‘ellipsis’ ...
+* DONE (ellipsis)
+* installing *binary* package ‘systemfonts’ ...
+* DONE (systemfonts)
+* installing *binary* package ‘lifecycle’ ...
+* DONE (lifecycle)
+* installing *binary* package ‘extrafont’ ...
+* DONE (extrafont)
+* installing *binary* package ‘cyclocomp’ ...
+* DONE (cyclocomp)
+* installing *binary* package ‘gtrendsR’ ...
+* DONE (gtrendsR)
+* installing *binary* package ‘lubridate’ ...
+* DONE (lubridate)
+* installing *binary* package ‘vctrs’ ...
+* DONE (vctrs)
+* installing *binary* package ‘gdtools’ ...
+* DONE (gdtools)
+* installing *binary* package ‘lintr’ ...
+* DONE (lintr)
+* installing *binary* package ‘pillar’ ...
+* DONE (pillar)
+* installing *binary* package ‘hrbrthemes’ ...
+* DONE (hrbrthemes)
+* installing *binary* package ‘dplyr’ ...
+* DONE (dplyr)
+* installing *binary* package ‘tidyr’ ...
+* DONE (tidyr)
+* installing *source* package ‘jrIntroduction’ ...
+** using staged installation
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (jrIntroduction)
+
+The downloaded source packages are in
+‘/tmp/Rtmp1yYyVW/downloaded_packages’
+Updating HTML index of packages in '.Library'
+Making 'packages.html' ... done
+→ R: Installing gadenbuie/countdown (GitHub)...
+→ Executing Rscript /opt/R/3.6.3/bin/Rscript...
+Skipping install of 'countdown' from a github remote, the SHA1 (a544fa48) has not changed since last install.
+Use `force = TRUE` to force installation
+→ Getting artefacts from 12584006:main (notes-build)...
+trying URL 'https://gitlab.com/api/v4/projects/12584006/jobs/artifacts/main/download?job=notes-build'
+Content type 'application/octet-stream' length 6527304 bytes (6.2 MB)
+==================================================
+  downloaded 6.2 MB
+
+→ Extracting 'scripts/vm_scripts.zip'...
+→ Preparing temporary directory on remote...
+→ Uploading /tmp/Rtmp5eKPQy/vm_scripts.zip...
+→ Uploading to /tmp/tmp.jBCsMnSIJl/...
+[100%] /tmp/Rtmp5eKPQy/vm_scripts.zip
+→ Unzipping remote file...
+Archive:  vm_scripts.zip
+creating: vm_scripts/
+  creating: vm_scripts/chapter2/
+  inflating: vm_scripts/chapter2/2-demo.R
+inflating: vm_scripts/chapter2/2-exercises-backup.R
+inflating: vm_scripts/chapter2/2-exercises-solutions.R
+inflating: vm_scripts/chapter2/2-exercises.R
+creating: vm_scripts/chapter3/
+  inflating: vm_scripts/chapter3/3-demo.R
+inflating: vm_scripts/chapter3/3-exercises-backup.R
+inflating: vm_scripts/chapter3/3-exercises-solutions.R
+inflating: vm_scripts/chapter3/3-exercises.R
+creating: vm_scripts/chapter4/
+  inflating: vm_scripts/chapter4/4-demo.R
+inflating: vm_scripts/chapter4/4-exercises-backup.R
+inflating: vm_scripts/chapter4/4-exercises-solutions.R
+inflating: vm_scripts/chapter4/4-exercises.R
+creating: vm_scripts/chapter5/
+  inflating: vm_scripts/chapter5/5-demo.R
+inflating: vm_scripts/chapter5/5-exercises-backup.R
+inflating: vm_scripts/chapter5/5-exercises-solutions.R
+inflating: vm_scripts/chapter5/5-exercises.R
+creating: vm_scripts/chapter6/
+  inflating: vm_scripts/chapter6/6-demo.R
+inflating: vm_scripts/chapter6/6-exercises-backup.R
+inflating: vm_scripts/chapter6/6-exercises-solutions.R
+inflating: vm_scripts/chapter6/6-exercises.R
+inflating: vm_scripts/notes.pdf
+→ Copying all files to homes...
+✓ Artefacts uploaded and unpacked!
+
+  ── Droplet configuration finished
