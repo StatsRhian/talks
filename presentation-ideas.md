@@ -15,3 +15,4 @@
 - [ ] Parkrun
 - [x] Research past and present (Unilever/Arctic)
 - [x] Unusual uses for R
+- [ ] CODEOWNER files and R
