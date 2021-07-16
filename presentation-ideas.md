@@ -17,7 +17,7 @@
 - [ ] Reproducible research
 - [ ] 🌩️ OWN your code  Why/Why/How of CODEOWNERS
 - [ ] 🌩️ Google docs for formative assessment (with {googledrive} and {rmarkdown}
-- [ ] Using {bookdown} for client communication Clarity over Availability
+- [ ] Using {bookdown} for client communication Clarity over Availability. Why are we always on? Choose auto-reporting and planned meetings over slack channels
 
 
 ## Maths & Stats
