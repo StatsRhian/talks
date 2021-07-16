@@ -1,6 +1,9 @@
 # Presentation Ideas
 
-- [ ] Reproducible research
+- [ ] CODEOWNER files and R
+- [ ] Tips and tricks for R & Gitlab (CODEOWNER), resolve stuff from R, clone all repos with the API, specific pkgs, etc.
+- [ ] An #RStats valentines day (Cute ways to tell someone you love them in R - messages on pkg load, change prompt, R profile/env)
+- [ ] [ ] Reproducible research
 - [ ] Is it significant?
 - [ ] How risky is fell running / cycling
 - [ ] Maths and love slides
@@ -15,4 +18,3 @@
 - [ ] Parkrun
 - [x] Research past and present (Unilever/Arctic)
 - [x] Unusual uses for R
-- [ ] CODEOWNER files and R
