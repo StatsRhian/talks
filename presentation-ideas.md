@@ -18,6 +18,7 @@
 - [ ] 🌩️ OWN your code  Why/Why/How of CODEOWNERS
 - [ ] 🌩️ Google docs for formative assessment (with {googledrive} and {rmarkdown}
 - [ ] Reproducible research
+- [ ] Seperating play and production
 
 
 ## Maths & Stats
