@@ -11,6 +11,7 @@
 - [ ] 🌩️{levelup} Using {yaml} & {rmarkdown} for CPD reporting 
 - [ ] 🌩️ Visualising my work day with clockify, {dplyr}, {ggplot2}
 - [ ] Bilingual {shiny} / dashboards (too much like Appsilon [{shiny.i18n}](https://appsilon.com/rapid-internationalization-of-shiny-apps-shiny-i18n-version-0-2/)?
+- [ ] The little RMarkdown doc that grew and grew and grew
 
 ## Reproducibility & Workflow
 
