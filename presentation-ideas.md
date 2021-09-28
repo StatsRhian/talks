@@ -20,6 +20,7 @@
 - [ ] 🌩️ Google docs for formative assessment (with {googledrive} and {rmarkdown}
 - [ ] Reproducible research
 - [ ] Seperating play and production
+- [ ] 🌩️ How not to organise a meetup
 
 
 ## Maths & Stats
