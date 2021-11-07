@@ -1,8 +1,0 @@
-# Link to upcoming course's Asana task
-# Must have ASANA_ACCESS_TOKEN defined in ~/.Renviron
-asana_task_url: https://app.asana.com/0/1200490496720734/1200490373207542
-# Optional: any other parameters you'd like to have access to in
-# gdoc_content.Rmd
-extdata:
-  master_password: update-me
-  num_attendees: 12

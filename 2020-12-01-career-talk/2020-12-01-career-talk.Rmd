@@ -18,7 +18,7 @@ output:
 #options(htmltools.dir.version = FALSE)
 library(knitr)
 library(fontawesome)
-library(xaringanExtra)
+#library(xaringanExtra)
 # set default options
 opts_chunk$set(echo = FALSE,
                collapse = TRUE,
@@ -93,7 +93,6 @@ name: unilever
 * Experimental participants are notoriously bad at filling in study diaries.
 * Can we learn how consumers use deodorant just using the logger data?
 
-
 ---
 
 name: arctic
@@ -106,6 +105,13 @@ name: digital
 
 ## Digital Rail
 
+<center>
+<video controls width="640" height="480">
+<source src="img/yellow-line.mp4" type="video/mp4">
+</video>
+</center>
+
+<!--
 .pull-left[<video controls width="320" height="240">
 <source src="img/yellow-line.mp4" type="video/mp4">
 </video>]
@@ -113,6 +119,7 @@ name: digital
 .pull-right[<video controls width="320" height="240">
 <source src="img/bikes.mp4" type="video/mp4">
 </video>]
+-->
 
 ---
 
@@ -120,7 +127,7 @@ name: jr
 ## Jumping Rivers
 
 .pull-left[
-<img src="img/computer-small.jpg" class = "center">
+<img src="img/r-lecture.jpg" class = "center">
 ]
 
 .pull-right[
@@ -131,7 +138,6 @@ name: jr
 ]
 ]
 
-
 ---
 name:top-tips
 class: middle inverse
@@ -139,7 +145,7 @@ class: middle inverse
 ## Top tips
 
 
-### `r fontawesome::fa(name = "palette", fill = "white")` &nbsp; Build a portfolio
+### `r fontawesome::fa(name = "edit", fill = "white")` &nbsp; Share your data story
 
 --
 
