@@ -32,6 +32,7 @@
 ## Career
 
 - [ ] Identity Crisis - data scientist vs statistician
+- [ ] Share your data story
 
 
 ## Converting old slides
