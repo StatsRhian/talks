@@ -21,6 +21,7 @@
 - [ ] Reproducible research
 - [ ] Seperating play and production
 - [ ] 🌩️ How not to organise a meetup
+- [ ] You don't need shiny to sparkle - an overview of interactivity in R
 
 
 ## Maths & Stats
