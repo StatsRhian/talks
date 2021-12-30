@@ -273,7 +273,7 @@ library("xaringan")
 ---
 title: "A day in the life with R"
 subtitle: ""
-author: "Rhian Davies ([\\@trianglegirl](https://twitter.com/trianglegirl))"
+author: "Rhian Davies ([\\@statsrhian](https://twitter.com/statsrhian))"
 ---
 
 # About me
@@ -306,7 +306,7 @@ Witty, interesting content.
 ![images/funnypicture.png]()
 ```
 
-## [trianglegirl.rbind.io/](http://trianglegirl.rbind.io/post/tidy-tuesday/)
+## [rhian.rbind.io/](http://rhian.rbind.io)
 
 ---
 # Write a C.V
@@ -355,7 +355,7 @@ background-position: 50% 50%
 background-size: 80%
 class: center
 
-# https://trianglegirl.github.io/recipes/
+# https://rhian.github.io/recipes/
 
 ---
 background-image: url("images/netflixR.png")
@@ -375,4 +375,4 @@ include_graphics("images/rstudio.jpg")
 
 [jumpingrivers.com](http://www.jumpingrivers.com)
 
-[@jumping_uk](http://www.twitter.com/jumping_uk) / [@trianglegirl](http://www.twitter.com/trianglegirl)
+[@jumping_uk](http://www.twitter.com/jumping_uk) / [@statsrhian](http://www.twitter.com/statsrhian)

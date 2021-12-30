@@ -1,7 +1,7 @@
 ---
 title: "Introducing R-Ladies Lancaster"
 subtitle: ""
-author: "([\\@RLadiesLancs](https://twitter.com/trianglegirl))"
+author: "([\\@RLadiesLancs](https://twitter.com/statsrhian))"
 date: "2019-05-01"
 output:
   xaringan::moon_reader:

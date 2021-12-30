@@ -135,7 +135,7 @@ class: center, middle
 
 ![](images/drl.png)
 
-@digitalrailltd / @trianglegirl
+@digitalrailltd / @statsrhian
 
 rhian.davies@digitalrail.co.uk
 

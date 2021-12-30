@@ -1,7 +1,7 @@
 ---
 title: "A day in the life with R"
 subtitle: ""
-author: "Rhian Davies ([\\@trianglegirl](https://twitter.com/trianglegirl))"
+author: "Rhian Davies ([\\@statsrhian](https://twitter.com/statsrhian))"
 date: "2019-05-01"
 output:
   xaringan::moon_reader:
@@ -219,7 +219,7 @@ library("xaringan")
 ---
 title: "A day in the life with R"
 subtitle: ""
-author: "Rhian Davies ([\\@trianglegirl](https://twitter.com/trianglegirl))"
+author: "Rhian Davies ([\\@statsrhian](https://twitter.com/statsrhian))"
 ---
 
 # About me
@@ -252,7 +252,7 @@ Witty, interesting content.
 ![images/funnypicture.png]()
 ```
 
-## [trianglegirl.rbind.io/](http://trianglegirl.rbind.io/post/tidy-tuesday/)
+## [rhian.rbind.io/](http://rhian.rbind.io)
 
 ---
 # Write a C.V
@@ -301,7 +301,7 @@ background-position: 50% 50%
 background-size: 80%
 class: center
 
-# https://trianglegirl.github.io/recipes/
+# https://statsrhian.github.io/recipes/
 
 ---
 background-image: url("images/netflixR.png")
@@ -315,7 +315,7 @@ class: center, middle, inverse
 
 ![](images/my-packages.png)
 
-<a href="https://trianglegirl.rbind.io"><i class="fa fa-link fa-fw"></i>&nbsp; trianglegirl.rbind.io</a><br>
-<a href="http://twitter.com/trianglegirl"><i class="fa fa-twitter fa-fw"></i>&nbsp; @trianglegirl</a><br>
-<a href="http://github.com/trianglegirl"><i class="fa fa-github fa-fw"></i>&nbsp; @trianglegirl</a><br>
+<a href="https://rhian.rbind.io"><i class="fa fa-link fa-fw"></i>&nbsp; rhian.rbind.io</a><br>
+<a href="http://twitter.com/statsrhian"><i class="fa fa-twitter fa-fw"></i>&nbsp; @statsrhian</a><br>
+<a href="http://github.com/statsrhian"><i class="fa fa-github fa-fw"></i>&nbsp; @statsrhian</a><br>
 

@@ -758,5 +758,5 @@ class: center, middle, inverse
 
 # Thank you
 
-## [Slides: bit.ly/flo-data-viz](https://trianglegirl.github.io/presentations/2020-07-01-data-viz-for-better/2020-05-12-florence-and-data-viz.html#1)
+## [Slides: bit.ly/flo-data-viz](https://statsrhian.github.io/presentations/2020-07-01-data-viz-for-better/2020-05-12-florence-and-data-viz.html#1)
 

@@ -18,7 +18,7 @@ Contact Info {#contact}
 --------------------------------------------------------------------------------
 
 - <i class="fa fa-envelope"></i> thetrianglegirl@gmail.com
-- <i class="fa fa-github"></i> [github.com/trianglegirl](https://github.com/trianglegirl)
+- <i class="fa fa-github"></i> [github.com/statsrhian](https://github.com/statsrhian)
 
 
 Key points {#skills}

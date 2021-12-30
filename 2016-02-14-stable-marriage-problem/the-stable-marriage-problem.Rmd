@@ -97,7 +97,7 @@ background-size: cover
 class: center, middle
 # Thank you
 
-@trianglegirl
+@statsrhian
 
 ### References
  - Oberwolfach Photo Collection

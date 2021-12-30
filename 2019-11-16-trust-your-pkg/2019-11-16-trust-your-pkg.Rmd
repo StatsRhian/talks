@@ -183,7 +183,7 @@ class: middle center
 ✔ Setting active project to '/home/rhian/Documents/presentations/2019-11-16-trust-your-pkg'
 ✔ Writing '.travis.yml'
 ✔ Adding '^\\.travis\\.yml$' to '.Rbuildignore'
-● Turn on travis for your repo at https://travis-ci.org/profile/trianglegirl
+● Turn on travis for your repo at https://travis-ci.org/profile/statsrhian
 ```
 
 ---
