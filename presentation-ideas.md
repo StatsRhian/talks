@@ -16,7 +16,7 @@
 ## Reproducibility & Workflow
 
 - [ ] Using {bookdown} for client communication Clarity over Availability. Why are we always on? Choose auto-reporting and planned meetings over slack channels
-- [ ] 🌩️ OWN your code  Why/Why/How of CODEOWNERS
+- [ ] OWN your code  Why/Why/How of CODEOWNERS -> Who's been committing in _my_ repo?
 - [ ] 🌩️ Google docs for formative assessment (with {googledrive} and {rmarkdown}
 - [ ] Reproducible research
 - [ ] Seperating play and production
