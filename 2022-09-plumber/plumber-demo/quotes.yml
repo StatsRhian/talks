@@ -1,0 +1,88 @@
+---
+quotes:
+  - source: "The Tidyverse Style Guide"
+    content: "Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread."
+
+  - source: "Tidy Data, Journal of Statistical Software"
+    content: "Tidy datasets are all alike but every messy dataset is messy in its own way."
+
+  - source: "Twitter"
+    content: "Dear past-Hadley: PLEASE COMMENT YOUR CODE BETTER. Love present-Hadley"
+
+  - source: "Twitter"
+    content: "You shouldn't feel ashamed about your code - if it solves the problem, it's perfect just the way it is."
+
+  - source: "Twitter"
+    content: "A data scientist is a statistician who is useful"
+
+  - source: "LondonR, 2019"
+    content: "People maybe think the reason that I am different to them is that I make fewer mistakes, and that is absolutely not the case. I think the main difference is that I make more mistakes, but I make them as quickly as possible"
+
+  - source: "LondonR, 2019"
+    content: "One of the things that guides my development practices is making mistakes as quickly as possible"
+
+  - source: "LondonR, 2019"
+    content: "Declaring 2016 the year of GGvis was perhaps the biggest mistake I've ever made"
+
+  - source: "LondonR, 2019"
+    content: "If I did have a time machine I would go back in time 13 years ago and discover the pipe"
+
+  - source: "LondonR, 2019"
+    content: "If you really don't like this style of programming you should just use Python"
+
+  - source: "LondonR, 2019"
+    content: "Can you remember how gather and spreads work? It used to be really obvious to me until Jenny Bryan explained this complicated metaphor using toothpaste to me and it broke the connection in my head"
+
+  - source: "LondonR, 2019"
+    content: "You never know, in six months time I might be like 'oh well, pivot longer and pivor wider are sh*t, don't use them'"
+
+  - source: "StackOverflow"
+    content: "globalVariables is a hideous hack and I will never use it."
+
+  - source: "StackOverflow"
+    content: "@hadley you shouldn't say you'll never use things when only two years later you think it's fine."
+
+  - source: "Monktoberfest, 2019"
+    content: "So I'm going to start by talking briefly about my background and maybe why you should listen to me, and then follow up with a slide about why you shouldn't listen to me."
+
+  - source: "Monktoberfest, 2019"
+    content: "I am convinced that the KPI of Twitter is outrage."
+
+  - source: "Monktoberfest, 2019"
+    content: "Twitter is actually a great place to get insulted."
+
+  - source: "Monktoberfest, 2019"
+    content: "Anything you can do to increase the amount of time you spend deeply focused on the hard problems is really, really valuable."
+
+  - source: "Monktoberfest, 2019"
+    content: "I really feel like a lot of open source maintainers could really benefit from a good relationship with a therapist."
+
+  - source: "Monktoberfest, 2019"
+    content: "One of my bad habits is waking up and reading Twitter. Which I think has to be probably the worst way to wake up."
+
+  - source: "Monktoberfest, 2019"
+    content: "I delete Twitter off my phone for a while, then I start using it on my computer and then I delete it off the computer and switch back to the phone."
+
+  - source: "Priceonomics"
+    content: "Fundamentally learning about the world through data is really, really cool."
+
+  - source: "Priceonomics"
+    content: "The fact that data science exists as a field is a colossal failure of statistics. To me, that is what statistics is all about."
+
+  - source: "Data Science Conference 4.0, 2018"
+    content: "What makes a good door?"
+
+  - source: "Data Science Conference 4.0, 2018"
+    content: "When you find a function hard to use, you shouldn't necessarity blame yourself. Don't think 'Oh, I'm stupid', think 'Oh, Hadley's stupid because he designed this function wrong'"
+
+  - source: "Data Science Conference 4.0, 2018"
+    content: "You don't want to be surprised when calling a function"
+
+  - source: "Mastering Shiny"
+    content: "In my experience the easiest way to make code faster is to make it incorrect"
+
+  - source: "Mastering Shiny"
+    content: "...women tend to live longer than men, so at older ages there are simply more women alive to be injured by toilets."
+
+  - source: "Interview with Dan Kopf"
+    content: 'Which Should You Use, R or Python?..."Use whatever makes you happy".'

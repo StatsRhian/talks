@@ -1,0 +1,168 @@
+---
+title: "Share your Models with R {plumber} APIs"
+format:
+  revealjs: 
+    theme: [default, custom.scss]
+    logo: logo.svg
+    code-link: true
+    css: custom.scss
+    self-contained: true
+    footer: "@statsRhian"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## How much do lemurs weigh?
+
+::: columns
+::: {.column width="40%"}
+-   You've built a great model
+
+-   You want others to be able to use it
+
+-   ... without R
+:::
+
+::: {.column width="60%"}
+[![Image from Duke
+Lemur](little-lemur.jpg){fig-alt="Baby ring tailed lemur being held by two gloved hands."
+fig-align="center"}](https://lemur.duke.edu/discover/meet-the-lemurs/red-collared-lemur/)
+:::
+:::
+
+## What is an API?
+
+-   **A**pplication **P**rogramming **I**nterface
+
+-   Standardised way for computers to communicate
+
+-   Can be called anywhere from internet access
+
+![REST API - Author: Seobility - License: CC BY-SA
+4.0](rest-api.png){width="600"}
+
+::: notes
+Just as human communication is improved by a shared baseline or common
+language, APIs allow different digital platforms to communicate with one
+another.
+:::
+
+## Example of APIs
+
+-   LastFM
+-   Weather
+-   Electricity pricing
+-   Statistics.gov.scot
+
+## Why create an API?
+
+-   Make your R code more *accessible*
+
+-   Allows real time interactivity with other technologies
+
+-   Increases the impact of an analysis
+
+-   Easy to scale the reach of your work
+
+## How?
+
+::: columns
+::: {.column width="65%"}
+The {plumber} package turns functions into API endpoints
+
+1.  Write an R function
+2.  Decorate it with *special* comments
+3.  Plumb it
+4.  Deploy it
+:::
+
+::: {.column width="35%"}
+![](plumber.png){fig-alt="A black hexagon, with the word plumber made out of pipes"
+fig-align="right" width="350"}
+:::
+:::
+
+## 1. Write an R function
+
+```{r}
+#| label: write_func
+#| echo: true
+lemur_weight = function(age){
+  lemurs <- readr::read_csv("lemurs.csv")
+  fit <- lm(weight_g ~ age_at_wt_mo, data = lemurs)
+  new <- data.frame(age_at_wt_mo = as.numeric(age))
+  weight <- predict.lm(fit, newdata = new)/1000
+  return(weight)
+}
+```
+
+## 2. Add special comments
+
+```{r}
+#| echo: fenced
+library(plumber)
+
+#* Predict the weight of the lemur (kg) given it's age (months)
+#* @get /
+
+lemur_weight = function(age){
+  lemurs <- readr::read_csv("lemurs.csv")
+  fit <- lm(weight_g ~ age_at_wt_mo, data = lemurs)
+  new <- data.frame(age_at_wt_mo = as.numeric(age))
+  weight <- predict.lm(fit, newdata = new)/1000
+  return(weight)
+}
+```
+
+::: notes
+By default, plumber will turn your response into JSON format. You can
+adjust the type of response if that is not the output you would like.
+:::
+
+## 3. Plumb it
+
+-   **Run API** button
+
+-   Generates a user interface
+
+-   Query it locally
+
+    -   `curl` request
+    -   `httr::get`
+
+## 4. Host the API
+
+-   Your code needs to run *somewhere*
+-   Sharing it with others
+-   RStudio Connect
+
+::: notes
+Don't want to use our laptop as the server RSC also supports Python APIs
+{plumberDeploy} for auto-deploy on Digital Ocean
+:::
+
+## Try it for yourself
+
+[rss-lemurs.jmpr.io/?age=24](https://rss-lemurs.jmpr.io/?age=24)
+
+[rss-hadley.jmpr.io](https://rss-hadley.jmpr.io/)
+
+
+[![Image from Duke
+Lemur](female-collared-lemur.jpg){fig-alt="Female collared lemur eating leaves."
+fig-align="center"
+width="200"}](https://lemur.duke.edu/discover/meet-the-lemurs/red-collared-lemur/)
+
+## Learn More
+
+::: columns
+::: {.column width="40%"}
+![](jr-newsletter-R1-T.png){width="300"}
+:::
+
+::: {.column width="60%"}
+-   {plumber} [documentation](https://www.rplumber.io/)
+-   {plumber} [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/plumber.pdf)
+:::
+:::
