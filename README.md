@@ -1,6 +1,8 @@
 # My presentations [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 A place to store and link to presentations I have done.
+* [2022-09-14 Communicating Statistics
+](https://statsrhian.github.io/presentations/2022-09-communicating-stats/2022-09-communicating-stats.html)
 * [2022-09-13 Share your Models with R {plumber} APIs
 ](https://statsrhian.github.io/presentations/2022-09-plumber/2022-09-plumber.html)
 * [2022-07-27 A tale of two languages](https://statsrhian.github.io/presentations/2022-07-27-tale-of-two-languages/2022-07-27-tale-two-languages.pdf)
