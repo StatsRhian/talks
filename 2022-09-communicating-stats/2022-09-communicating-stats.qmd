@@ -1,0 +1,81 @@
+---
+title: "Communicating statistics"
+format:
+  revealjs: 
+    theme: [default]
+    footer: "@statsRhian"
+---
+
+## Warm up
+
+-   Turn to the person next to you and tell them about your research/work in once sentence.
+
+```{r}
+countdown::countdown(2)
+```
+
+::: notes
+What do they know? Technical terms? Knowing when to stop talking
+:::
+
+## Explaining statistical concepts
+
+Choose a statistical concept and try and explain it to your neighbour
+
+::: columns
+::: {.column width="50%"}
+-   p-value
+-   Hypothesis test
+-   Confidence interval
+-   Significance
+-   Sample
+:::
+
+::: {.column width="50%"}
+-   Prior distribution
+-   Bayes' Theorem
+-   Median
+-   Variance
+-   Linear regression
+:::
+:::
+
+```{r}
+countdown::countdown(2)
+```
+
+## Explaining statistical concepts
+
+-   Use common language
+
+-   Analogies can be useful
+
+-   Personalise
+
+-   Practice makes perfect
+
+## What happens next?
+
+![Image from Den of the Geek](ybf.webp)
+
+## Concept maps
+
+![Image from Teaching Tech Together](concept-map.svg){fig-alt="A mind map linking concepts around seasons together"}
+
+## Curiosity and Play
+
+![Image by driven-by-data.net](college-chart-game-1.png)
+
+## Curiosity and Play
+
+![Image by driven-by-data.net](college-chart-game-2.png)
+
+## Curiosity and Play
+
+![Image by driven-by-data.net](college-chart-game-3.png)
+
+## Resources
+
+-   [Teaching Tech Together](https://teachtogether.tech/en/index.html)
+
+-   [Hands on Statistics](https://rss.org.uk/about/useful-resources/hands-on-statistics/)
