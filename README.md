@@ -6,11 +6,11 @@ Slides and resources for talks I have given
 
 * 2022-09-14 [Communicating Statistics](https://statsrhian.github.io/presentations/2022/2022-09-14-communicating-stats/2022-09-14-communicating-stats.html) _RSS International Conference_
 * 2022-09-13  [Share your Models with R {plumber} APIs](https://statsrhian.github.io/presentations/2022/2022-09-13-plumber/2022-09-13-plumber.html) _RSS International Conference_
-* 2022-07-27 [A tale of two languages](https://statsrhian.github.io/presentations/2022-07-27-tale-of-two-languages/2022-07-27-tale-two-languages.pdf) _RLadies Cologne/PyLadies Munich/PyLadies Tunis_
+* 2022-07-27 [A tale of two languages](https://statsrhian.github.io/presentations/2022/2022-07-27-tale-of-two-languages/2022-07-27-tale-two-languages.pdf) _RLadies Cologne/PyLadies Munich/PyLadies Tunis_
 
 ## 2021
 
-* 2021-07-08 [Automating Bespoke Online Teaching](https://statsrhian.github.io/presentations/2021-07-08-automating-bespoke-online-teaching/2021-07-08-automating-bespoke-online-teaching.html#1)  _useR! 2021_
+* 2021-07-08 [Automating Bespoke Online Teaching](https://statsrhian.github.io/presentations/2021/2021-07-08-automating-bespoke-online-teaching/2021-07-08-automating-bespoke-online-teaching.html#1)  _useR! 2021_
 
 ## 2020
 
