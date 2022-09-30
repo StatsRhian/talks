@@ -26,7 +26,7 @@ editor:
 
 ::: {.column width="60%"}
 [![Image from Duke
-Lemur](little-lemur.jpg){fig-alt="Baby ring tailed lemur being held by two gloved hands."
+Lemur Center](little-lemur.jpg){fig-alt="Baby ring tailed lemur being held by two gloved hands."
 fig-align="center"}](https://lemur.duke.edu/discover/meet-the-lemurs/red-collared-lemur/)
 :::
 :::
