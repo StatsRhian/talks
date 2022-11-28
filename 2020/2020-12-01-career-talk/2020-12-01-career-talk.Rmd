@@ -1,8 +1,7 @@
 ---
-title: "The varied life of a statistician"
+title: "The varied life of a data scientist"
 subtitle: ""  
 author: "Rhian Davies"
-date: '2020-12-01'
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -132,11 +131,30 @@ name: jr
 
 .pull-right[
 .right[
-### Stats Consultancy
+
 ### R & Python training
+### Data Infrastructure 
+### Statistical Consultancy
 ### Dashboard creation
 ]
 ]
+
+---
+
+## Waterbody Explorer
+
+<a href = "https://water-body-explorer.jumpingrivers.cloud">
+<img src="img/wbe.png" class = "center">
+</a>
+
+---
+
+## COVID-19 Vaccine Monitor
+
+<a href = "https://worldhealthorg.shinyapps.io/EURO_COVID-19_vaccine_monitor/">
+<img src="img/who-vac.png" class = "center">
+</a>
+
 
 ---
 name:top-tips
@@ -167,7 +185,7 @@ class: right, middle, inverse
 <img style="border-radius: 5%;" src="img/r-book.jpg" width="180px"/>
 
 # Find me at...
-
+#### [`r fa(name = "mastodon")` @statsRhian@fosstodon.org](https://fosstodon.org/@statsrhian)  
 #### [`r fa(name = "twitter")` @statsRhian](http://twitter.com/statsRhian)  
 #### [`r fa(name = "github")` @statsRhian](http://github.com/statsRhian)  
 #### [`r fa(name = "link")` rhian.rbind.io](https://rhian.rbind.io)  
