@@ -23,6 +23,7 @@
 - [ ] OWN your code  Why/Why/How of CODEOWNERS -> Who's been committing in _my_ repo?
 - [ ] 🌩️ Google docs for formative assessment (with {googledrive} and {rmarkdown}
 - [ ] Reproducible research
+- [ ] GitLab quick actions
 - [ ] Seperating play and production
 - [ ] 🌩️ How not to organise a meetup
 - [ ] You don't need shiny to sparkle - an overview of interactivity in R
