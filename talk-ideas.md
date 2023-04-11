@@ -1,4 +1,6 @@
-# Presentation Ideas
+# Talk Ideas
+
+Make every talk a blog (and vice-versa)
 
 ## RStats
 - [ ] Tips and tricks for R & Gitlab (CODEOWNER), resolve stuff from R, clone all repos with the API, specific pkgs, etc.
@@ -12,6 +14,8 @@
 - [ ] 🌩️ Visualising my work day with clockify, {dplyr}, {ggplot2}
 - [ ] Bilingual {shiny} / dashboards (too much like Appsilon [{shiny.i18n}](https://appsilon.com/rapid-internationalization-of-shiny-apps-shiny-i18n-version-0-2/)?
 - [ ] The little RMarkdown doc that grew and grew and grew
+- [ ] Validating data (comparison of packages)
+- [ ] Pretty tables with {GT}
 
 ## Shiny
 
@@ -23,10 +27,12 @@
 - [ ] OWN your code  Why/Why/How of CODEOWNERS -> Who's been committing in _my_ repo?
 - [ ] 🌩️ Google docs for formative assessment (with {googledrive} and {rmarkdown}
 - [ ] Reproducible research
-- [ ] GitLab quick actions
-- [ ] Seperating play and production
+- [ ] 🌩️ GitLab quick actions
+- [ ] Seperating play and production -> sandboxing
 - [ ] 🌩️ How not to organise a meetup
 - [ ] You don't need shiny to sparkle - an overview of interactivity in R
+- [ ] JR blog on [Refactoring Russian Doll Code](https://www.jumpingrivers.com/blog/refactoring-russian-doll-code/)
+- [ ] Using Git in your organisation - what to think about?
 
 
 ## Maths & Stats
