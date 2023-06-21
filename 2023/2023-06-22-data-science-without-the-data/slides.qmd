@@ -1,0 +1,452 @@
+---
+title: "Data Science without the Data"
+subtitle: ""
+author: "Rhian Davies | @statsRhian"
+format:
+  jrSlides-revealjs:
+    self-contained: true
+execute:
+  echo: true
+  eval: false
+---
+
+## About Me 👋
+
+::: columns
+::: {.column width="60%"}
+-   Data Scientist at [Jumping Rivers](http://www.jumpingrivers.com/)
+-   [RSS](https://rss.org.uk/) Statistical Ambassador
+-   Bad at French (Je suis désolé 😳)
+:::
+
+::: {.column width="40%"}
+![](cartoons/teaching/r-book.jpg){fig-alt="Cartoon of a woman holding out a book"}
+:::
+:::
+
+## About Jumping Rivers
+
+::: columns
+::: column
+-   Data science & machine learning
+-   Training courses
+-   Dashboard development and deployment
+-   Infrastructure
+-   Managed Posit services
+:::
+
+::: column
+![](images/office.jpg){fig-alt="Cartoon of three people working at computers" fig-align="center"}
+:::
+:::
+
+## I'm going to tell you a story {background-color="#5b868d"}
+
+::: notes
+-   No names
+-   Lots of problems, some solutions
+-   Project on-going so it's still a little raw
+:::
+
+::: aside
+Disclaimer: Solutions are not guaranteed to fix your problems. Batteries not included. Do not eat.
+:::
+
+## The Client
+
+::: columns
+::: column
+-   Database of patients with a rare disease
+-   Consulted us to perform the data analysis for a study
+    -   200 statistical results (count, %, mean, sd, median, IQR)
+    -   Interrupted Time Series Analysis
+:::
+
+::: column
+![](images/robot-science.jpg){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
+:::
+:::
+
+::: notes
+2000 patients from 6 countries 6 subtypes of the disease 3 drugs Introduce Marcus
+:::
+
+## Stratifications
+
+-   Country
+-   Subtypes of the disease
+-   Mobility
+-   Drug
+-   Year
+-   Age of patient
+
+ALL THE COMBINATIONS MEGA PLOT
+
+::: notes
+6 subtypes of the disease 3 drugs 13 patients were on two drugs simultaneously, none were on all three
+:::
+
+## For example
+
+-   What is the average age of patients when they are diagnosed (by country and subtype)?
+
+-   What percentage of patients are taking Drug A (by country, subtype and year)?
+
+# C'est facile, ne pas? {background-color="#5b868d"}
+
+```{r}
+data |>
+  group_by(country, subtype) |>
+  summarise(mean = age_at_diagnosis)
+```
+
+------------------------------------------------------------------------
+
+[![](images/no-no.jpg)](https://www.youtube.com/watch?v=2k7KAmgPO20)
+
+## The challenge 🙈
+
+-   Write a detailed Statistical Analysis Plan without seeing *any* data
+-   Data will arrive slowly throughout the project
+-   We can't see the data for Germany *ever*
+
+# Time to chat 💬
+
+::: columns
+::: column
+-   Have you experienced scenarios have led you to having no data?
+
+-   What problems did you encounter?
+:::
+
+::: column
+![](images/community.jpg)
+
+::: notes
+You might not work with medical data, but this can also manifest in other scenarios
+Other industries with sensitive data
+Scoping data science projects
+Beginning development before all of the data is ready
+:::
+
+# Our plan
+
+## 
+
+::: columns
+::: column
+:::
+
+::: column
+![](images/bigdata.jpg){fig-alt="A small cartoon robot stood next to a huge pile of data"}
+:::
+:::
+
+::: notes
+A data stream is data which is observed continuously in an ordered sequence Millions of points an hour e.g sensors in digital oil fields or satelliete video Data stream clustering algorithms take classic clustering algorithms such as k-means and DBSCAN and adapt them to work in the data streaming environment. One-pass access Unbounded Micro-clustering, macro-clustering
+:::
+
+## Finding patterns in datastreams
+
+-   Clustream
+
+image satellite video
+
+## The power of statistical summaries
+
+$$
+\sum (X) / N
+$$
+
+Standard deviatioon
+
+$$
+\sum(X^2) - (\sum X)^2/N
+$$
+
+-   But this won't work for median / IQR.
+
+## What is the average
+
+Needs to be unequal
+
+average salary of data professional male and female
+
+Means (and standard deviations can be averaged)
+
+Give example
+
+1)  you can grab summaries as they go past
+
+2)  you can aggregate
+
+## The workflow
+
+-   For each country, calculate all the summarys we might need
+-   We can aggregate the private and public summaries as we like
+-   Calculate stratified results from the summaries
+
+## Build an R package
+
+::: columns
+::: {.column width="80%"}
+-   Run it on the data we can see
+-   Send it to Marcus
+-   He sends us an `.RDS`
+-   We aggregate and plot as needed
+
+```{r}
+devtools::install_local("describeDisease.tar.gz")
+library("describeDisease")
+run_analysis("path/to/german.xlsx")
+```
+:::
+
+::: {.column width="20%"}
+![](images/r-package.jpg){fig-alt="Cartoon people holding wraped presents"}
+:::
+:::
+
+::: notes
+Why R? Collaborator was an R user
+:::
+
+## Where to develop?
+
+::: columns
+::: column {width="60%"} - Data security was important - Logs - All collaborators sharing one machine - Visibility for the client - Shared projects - Multiple sessions
+:::
+
+::: column
+:::
+
+::::
+
+::: notes
+-   CSVs automatically download
+-   Demo workbench
+-   Demo shared projects (cursor follow)
+-   Demo multiple sessions
+-   Pro - not your compute, client visibility, same environment
+-   Downside requires internet (Eurostar, being patched - programming from memory)
+-   VM needed a security patch. Developers kept writing code without the data.
+-   Notes from Liam document
+:::
+
+## Top Tip
+
+Don't play with shared projects whilst someone is git rebasing
+
+MEME
+
+## Data exploration
+
+-   What values are unique per patient?
+
+-   Which stratifications are viable?
+
+-   Quarto document for data exploration aand validation
+
+::: notes
+printing summary stats, graph, factor levels, data types 13 patients on 2 drugs simultaneously, none on all 3 - Pros - Easy for collaborator to share with you - Control to explore - Cons - How to ensure you don't see something you shouldn't - Additional dependencies for the collaborator
+:::
+
+## Data validation
+
+For example: Unique values per patient Specific factor levels
+
+-   [{validate}](https://github.com/data-cleaning/validate)
+-   [{assertr}](https://github.com/ropensci/assertr)
+-   [{data.validator}](https://appsilon.github.io/data.validator/)
+-   [{pointblank}](https://rich-iannone.github.io/pointblank/)
+
+# What happened? {background-color="#5b868d"}
+
+## Sure, we'll send you dummy data
+
+## Oh no
+
+It was an XLSX worksheet
+
+## Sure, we'll send you the schema
+
+![](images/schema.png){fig-alt="Database schema for a single indicator listing allowed entries"}
+
+## Oh no
+
+Data structure Example data collection (forms) Formal database specification Dummy data Might not be available Can't rely on these
+
+-   Missing data types
+-   Data types not defined
+    -   Dates were yyyymm character
+
+## Sure we'll send you validated data
+
+## Oh no
+
+-   It wasn't validated.
+-   Patients with stop dates but no start dates
+-   Patients with start & stop dates but with the drug name missing
+
+Whose responsibility is it?
+
+::: notes
+-   You don't want to have arguments about the data quality
+-   Clarify whose responsibility it is to validate the data in advance
+-   What does validated data "look like"
+:::
+
+## Okay let's run the analysis
+
+## Oh no
+
+> Hi Rhian, I have run the code, unfortunately I get the error you can see below. Please let me know how to proceed. Thanks, Marcus
+
+    Error in `purrr::map()`:■■■■■■■■■■■■■■■■■               53% | ETA: 11s
+    In index: 18.
+    Caused by error in `dplyr::group_by()`:
+    ! Must group by variables found in `.data`.
+    Column `time_axis` is not found.
+
+::: notes
+No one in Germany had died.
+:::
+
+## Generating results...
+
+## Oh no
+
+```{r}
+#' eval: TRUE
+wb = openxlsx::createWorkbook("Results")
+openxlsx::addWorksheet(wb, "Analysis by country, subtype and drug")
+```
+
+::: notes
+The maximum length for a worksheet name in a XLSX spreadsheet is 31 characters
+:::
+
+## Final run
+
+> Sure, I'll run it right away and let you know!
+
+::: notes
+Friday 6pm
+:::
+
+------------------------------------------------------------------------
+
+![](images/a-few-moments-later.gif)
+
+## Oh no
+
+> Unfortunately, I get the error below. The same error also appears when I only use the data that you already have, which is strange because I suppose that you have already tested this script on that data. I'll try fiddling around a bit to make sure it's not something on my side, but we can also have a chat and screenshare if that could help!
+
+    Error in `dplyr::left_join()`:
+    ! `...` must be empty.
+    ✖ Problematic argument:
+    • relationship = "many-to-many"
+
+::: notes
+You know when you're sharing `sessionInfo()` by email - there is a better way.
+:::
+
+## {dplyr} version
+
+::: columns
+::: column
+-   We specified {dplyr} v1.1.0
+-   We needed to specify {dplyr} v1.1.1
+-   {renv} or Docker would have avoided this
+:::
+
+::: column
+[![](images/diffify_hex.png){fig-alt="Diffify hex sticker a red package symbol next to a green package symbol"}](https://diffify.com/)
+:::
+:::
+
+::: notes
+:::
+
+## Tada 🎉
+
+![](images/results.png){fig-alt="Table of results, mostly blank (-,-)" width="618"}
+
+![](images/graph.png){fig-alt="Facetted ggplot graph showing points and standard deviation"}
+
+::: notes
+-   The data was very sparse
+-   Small sample size, many correlated stratifications, and censoring
+:::
+
+## Client happy
+
+-   Understood the data
+-   Sees the potential
+-   Better informed for the next round of studies
+
+## Useful R bits
+
+-   {cli} make sharing code output from collaborators easier
+-   `purrr::map(.progress = "Running analysis")`
+-   `any_of()` was helpful for missing columns
+-   Quarto handbook for tracking assumptions and time spend
+-   Leaned heavily on `purrr::map2()` with `tidyr::nest()`
+
+## In hindsight
+
+-   Push back earlier to evidence to data challenges
+-   Set realistic expectations
+-   Use a proper database
+-   Design it to let Marcus run the entire pipeline
+-   Different git workflow
+-   Use {renv} from the start
+
+::: notes
+Recreate the database from a SQL dump
+
+Because the people running the study didn't know the data - they wanted to ask for *everything* "just in case". I think this made things worse and taking the time to help them understand what is possible in the data and what they cared about would have avoided the millions of censored results issue.
+:::
+
+# Questions? {background-color="#5b868d"}
+
+::: columns
+::: {.column width="75%"}
+<br>
+
+{{< fa brands twitter >}} [@statsRhian](https://twitter.com/StatsRhian)
+
+{{< fa brands github >}} [StatsRhian](https://github.com/StatsRhian)
+
+{{< fa briefcase >}} [jumpingrivers.com](https://www.jumpingrivers.com/)
+
+{{< fa calendar >}} [shiny-in-production.jumpingrivers.com](https://shiny-in-production.jumpingrivers.com/)
+:::
+
+::: {.column width="25%"}
+![](images/qr_code.png){fig-align="center" fig-alt="QR code" width="70%"}
+:::
+:::
+
+::: notes
+12th - 13th October
+:::
+
+## TO DO
+
+-   [ ] Colour of quote font in SCSS
+-   [ ] Check the {dplyr} bug
+-   [ ] Upload slides to GitHub
+-   [ ] Create QR
+-   [ ] Check images and links
+-   [ ] Mini example on purrr list col
+-   [ ] Comparison of validation packages and examples
+-   [ ] Spell check
+
+::: notes
+CI/CD how do we make sure we don't break anything
+
+How can we be confident that German numbers are correct?
+
+Designing the code flow without seeing data was very hard Although it might seem more efficient to start right away, delays, back and forth etc will probably case more hassle
+:::
