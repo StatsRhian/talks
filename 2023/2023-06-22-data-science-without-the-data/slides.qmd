@@ -138,9 +138,9 @@ Beginning development before all of the data is ready
 ## The power of statistical summaries
 
 :::: columns
-::: column{width="65%"}
+::: column
 
--   For each dataset, calculate all the summaries we might need at a granular level
+-   For each dataset, calculate all the summaries we might need
 -   We can combine these summaries as we like
 -   Calculate stratified results from the summaries
     - Mean:  $\frac{1}{N} \sum_{i=i}^{N} x_{i}$
@@ -241,7 +241,24 @@ printing summary stats, graph, factor levels, data types 13 patients on 2 drugs 
 
 ## Oh no
 
-It was an XLSX worksheet
+:::: columns
+
+::: column
+
+- Real data shuffled
+- It was an XLSX worksheet
+
+:::
+
+::: column
+![](images/ohno.jpg){fig-alt="Cartoon figure saying 'Oh no'"}
+:::
+
+::::
+
+::: aside
+[webcomicname.com](https://webcomicname.com/)
+:::
 
 ## Sure, we'll send you the schema
 
@@ -253,11 +270,8 @@ It was an XLSX worksheet
 
 ::: column
 
-Data structure Example data collection (forms) Formal database specification Dummy data Might not be available Can't rely on these
-
--   Missing data types
+-   Data didn't match the specification
 -   Data types not defined
-    -   Dates were yyyymm character
     
 :::
 
@@ -266,6 +280,10 @@ Data structure Example data collection (forms) Formal database specification Dum
 :::
 
 ::::
+
+::: aside
+[webcomicname.com](https://webcomicname.com/)
+:::
 
 ## Sure we'll send you validated data
 
@@ -279,7 +297,6 @@ Data structure Example data collection (forms) Formal database specification Dum
 -   Patients with start & stop dates but with the drug name missing
 
 Whose responsibility is it?
-
 :::
 
 ::: column
@@ -294,6 +311,10 @@ Whose responsibility is it?
 -   What does validated data "look like"
 :::
 
+::: aside
+[webcomicname.com](https://webcomicname.com/)
+:::
+
 ## Okay let's run the analysis
 
 ## Oh no
@@ -302,7 +323,7 @@ Whose responsibility is it?
 
 ::: column
 
-_Hi Rhian, I have run the code, unfortunately I get the error you can see below. Please let me know how to proceed. Thanks, Marcus_
+_Hi Rhian, I have run the code, unfortunately I get the error you can see below._
 
 ```
 Error in `purrr::map()`:■■■■■■■■■■■■■■■■■               53% | ETA: 11s
@@ -320,6 +341,10 @@ Column `time_axis` is not found.
 :::
 
 ::::
+
+::: aside
+[webcomicname.com](https://webcomicname.com/)
+:::
 
 ::: notes
 No one in Germany had died.
@@ -359,7 +384,7 @@ Friday 6pm
 
 ::: column
 
-_Unfortunately, I get the error below. The same error also appears when I only use the data that you already have, which is strange because I suppose that you have already tested this script on that data. I'll try fiddling around a bit to make sure it's not something on my side, but we can also have a chat and screenshare if that could help!_
+_Unfortunately, I get the error below. The same error also appears when I only use the data that you already have, which is strange because I suppose that you have already tested this script on that data._
 
 ```
     Error in `dplyr::left_join()`:
@@ -411,7 +436,6 @@ You know when you're sharing `sessionInfo()` by email - there is a better way.
 -   Sees the potential
 -   Better informed for the next round of studies
 :::
-
 
 ## In hindsight
 
