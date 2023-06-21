@@ -141,8 +141,7 @@ Beginning development before all of the data is ready
 ::: column
 
 -   For each dataset, calculate all the summaries we might need
--   We can combine these summaries as we like
--   Calculate stratified results from the summaries
+-   Combine these summaries as we like
     - Mean:  $\frac{1}{N} \sum_{i=i}^{N} x_{i}$
     - Standard deviation: $\frac{1}{N - 1} \sqrt{\sum_{i=i}^{N} x^2_{i} -  (\sum_{i=i}^{N} x_{i} )^2}$
 :::
@@ -153,7 +152,7 @@ Beginning development before all of the data is ready
 ::::
 
 ::: aside
-But this won't work for median / IQR.
+Won't work for median / IQR
 :::
 
 ## Develop an R package
@@ -425,8 +424,6 @@ You know when you're sharing `sessionInfo()` by email - there is a better way.
 
 ## Tada 🎉
 
-![](images/results.png){fig-alt="Table of results, mostly blank (-,-)" width="618"}
-
 ![](images/graph.png){fig-alt="Facetted ggplot graph showing points and standard deviation"}
 
 ::: notes
@@ -439,11 +436,11 @@ You know when you're sharing `sessionInfo()` by email - there is a better way.
 
 ## In hindsight
 
--   Push back earlier to evidence to data challenges
+-   Push back earlier to evidence the data challenges
 -   Set realistic expectations
 -   Use a proper database
--   Lean heavily on `purrr::map2()` with `tidyr::nest()`
--   Different git workflow
+-   `purrr::map2()` with `tidyr::nest()` was a helpful workflow
+-   Use a different git workflow
 -   Use {renv} from the start
 
 ::: notes
@@ -455,7 +452,7 @@ Because the people running the study didn't know the data - they wanted to ask f
 # Questions? {background-color="#5b868d"}
 
 ::: columns
-::: {.column width="75%"}
+::: {.column width="65%"}
 <br>
 
 {{< fa brands twitter >}} [@statsRhian](https://twitter.com/StatsRhian)
@@ -467,8 +464,8 @@ Because the people running the study didn't know the data - they wanted to ask f
 {{< fa calendar >}} [shiny-in-production.jumpingrivers.com](https://shiny-in-production.jumpingrivers.com/)
 :::
 
-::: {.column width="25%"}
-![](images/qr_code.png){fig-align="center" fig-alt="QR code" width="70%"}
+::: {.column width="35%"}
+![](images/qr_code.png){fig-align="center" fig-alt="QR code"}
 :::
 :::
 
