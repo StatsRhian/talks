@@ -353,19 +353,38 @@ No one in Germany had died.
 
 ## Oh no
 
-```{r}
-#' eval: TRUE
-wb = openxlsx::createWorkbook("Results")
-openxlsx::addWorksheet(wb, "Analysis by country, subtype and drug")
+:::: columns
+
+::: {.column width="80%"}
+
+```
+> wb = openxlsx::createWorkbook("Results")
+> openxlsx::addWorksheet(wb, "Analysis by country, subtype and drug")
+Error in openxlsx::addWorksheet(wb, "Analysis by country, subtype and drug") : 
+  sheetName 'Analysis by country, subtype and drug' too long! Max length is 31 characters.
 ```
 
+:::
+
+::: {.column width="20%"}
+
 ![](images/ohno.jpg){fig-alt="Cartoon figure saying 'Oh no'"}
+
+
+:::
+
+::::
 
 ::: notes
 The maximum length for a worksheet name in a XLSX spreadsheet is 31 characters
 :::
 
-## Final run
+::: aside
+[webcomicname.com](https://webcomicname.com/)
+:::
+
+
+## "Final" run
 
 _Sure, I'll run it right away and let you know!_
 
@@ -399,6 +418,11 @@ _Unfortunately, I get the error below. The same error also appears when I only u
 ![](images/ohno.jpg){fig-alt="Cartoon figure saying 'Oh no'"}
 :::
 
+::: aside
+[webcomicname.com](https://webcomicname.com/)
+:::
+
+
 ::::
 
 ::: notes
@@ -422,9 +446,9 @@ You know when you're sharing `sessionInfo()` by email - there is a better way.
 ::: notes
 :::
 
-## Tada 🎉
+## Voilà  🎉
 
-![](images/graph.png){fig-alt="Facetted ggplot graph showing points and standard deviation"}
+![](images/graph-1.png){fig-alt="Facetted ggplot graph showing points and standard deviation"}
 
 ::: notes
 -   The data was very sparse
@@ -433,6 +457,11 @@ You know when you're sharing `sessionInfo()` by email - there is a better way.
 -   Sees the potential
 -   Better informed for the next round of studies
 :::
+
+
+## Voilà  🎉
+
+![](images/graph-2.png){fig-alt="Facetted ggplot graph showing points and standard deviation"}
 
 ## In hindsight
 
