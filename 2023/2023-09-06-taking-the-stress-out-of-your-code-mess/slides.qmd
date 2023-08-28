@@ -1,0 +1,289 @@
+---
+title: "Taking the stress out of your code mess"
+subtitle: ""
+author: "Rhian Davies | @statsRhian"
+format:
+  jrSlides-revealjs:
+    self-contained: true
+execute:
+  echo: true
+  eval: false
+---
+
+## About Me 👋
+
+::: columns
+::: {.column width="60%"}
+-   Data Scientist at [Jumping Rivers](http://www.jumpingrivers.com/)
+-   [RSS](https://rss.org.uk/) Statistical Ambassador
+
+:::
+
+::: {.column width="40%"}
+![](images/r-book.jpg){fig-alt="Cartoon of a woman holding out a book"}
+:::
+:::
+
+## About Jumping Rivers
+
+::: columns
+::: column
+-   Data science & machine learning
+-   Training courses
+-   Dashboard development and deployment
+-   Infrastructure
+-   Managed Posit services
+:::
+
+::: column
+![](images/office.jpg){fig-alt="Cartoon of three people working at computers" fig-align="center"}
+:::
+:::
+
+## I'm going to tell you a story {background-color="#5b868d"}
+
+::: aside
+Disclaimer: Solutions are not guaranteed to fix your problems. Batteries not included. Do not eat.
+:::
+
+## Meet Jane
+
+::: columns
+::: column
+-   Environmental scientist
+-   Specialises in carbon models
+-   Comfortable using R in academic setting
+:::
+
+::: column
+![](images/robot-science.jpg){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
+:::
+:::
+
+::: notes
+1:1 bespoke support
+:::
+
+## Jane was frustrated
+
+::: columns
+::: column
+-   Inherited a pile of messy R code
+-   Responsible for getting it to work, fast
+-   Very deeply nested
+-   Matryoshka doll code
+:::
+
+::: column
+![](https://www.jumpingrivers.com/blog/refactoring-russian-doll-code/featured.jpg "Russian Dolls"){alt="Seven, traditional wooden Russian Dolls doing from largest on the left, to smallest on the right."}
+:::
+:::
+
+## The solution
+
+::: columns
+::: column
+-   A series of 1:1 bespoke coding sessions
+-   Unnesting the code, one doll at a time
+:::
+
+::: column
+![](images/robot-science.jpg){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
+:::
+:::
+
+
+# The messy zone {background-color="#5b868d"}
+
+
+## Define the messy zone
+
+:::: columns
+::: {.column width="75%"}
+Throughout the refactoring process, it was essential that we were able to continuously run and test the functionality of the package. But how could we rewrite all of our functions without affecting the functionality of the whole code base?
+
+- Start with the smallest functions first
+- Re-write the main body
+- Clearly defined messy zones at the start and the end
+:::
+
+::: {.column width="25%"}
+![](https://www.jumpingrivers.com/blog/refactoring-russian-doll-code/vacuum.png "Tidy your code"){alt="Jumping Rivers robot using a vacuum cleaner on a pile of code and text."}
+:::
+::::
+
+::: notes
+You know when you tidy your bedroom, you optimistically pull *everything* out onto the floor. A few hours later, the bed is covered and there are piles of clothes everywhere. There\'s no going back, and you aren't going to be able to sleep on your bed tonight unless you clean everything. (Just me?)
+:::
+
+## Define the messy zone: benefits
+
+- Being explicit about where the mess is _allowed_ us to focus on simplifying and clarifying the internals
+- Higher level code functioned as expected
+- Didn't have to commit to the structure of the function parameters initially
+- We could work that out naturally as the code evolved 
+- Clear markers of where we would need to clean up later, - Avoided the issue of forgetting to change parameters everywhere
+
+## Define the messy zone example
+
+```r
+example = function(arg1, arg2) {
+# Messy zone
+
+a_better_name = arg1$mess$ugh
+helpful_name = arg2$what$is$this
+
+# Refactor the internals
+
+useful_result = a_better_name + helpful_name
+sensible_name_tibble = a_better_name * helpful_name    
+
+# Messy Zone
+results$some$mess = useful_result
+results$another$naff$list = sensible_name_tibble
+
+}
+```
+
+## Push the mess up
+
+:::: columns
+::: {.column width="75%"}
+
+Once the inner functions are clean
+
+1. List all the arguments of inners
+1. List all the returns of the inner
+1. Double check names
+1. Clear the messy zone in one go
+1. Move up one level
+1. Repeat
+:::
+
+::: {.column width="25%"}
+
+![](https://tenor.com/en-GB/view/salt-n-pepa-push-it-real-good-hip-hop-rap-80s-gif-16181344 ){alt="Salt N Pepa Push It Real Good GIF"}
+
+:::
+::::
+
+::: notes
+Push it Salt'n'Pepper gif
+:::
+
+# Quick tips {background-color="#5b868d"}
+
+## Start with a blank slate
+
+- Avoid the temptation to copy-paste
+- Can tie you to the old style
+
+## Take time to design
+
+Jane and I had one session where we didn’t touch any code at all.
+We talked, doodled and drew diagrams. You might leave a session like this feeling a little deflated that you didn’t achieve anything. However, that session was actually the most valuable. In the following session we made huge progress, because we had already done the hard work of thinking out the design fully. We were able to whizz through the functions, implementing our new design efficiently. We found ourselves constantly referring back to the diagrams to remind ourselves of the design choices we had made.
+
+My favourite tools:
+
+- Miro board
+- [draw.io](draw.io)
+- [excalidraw](https://excalidraw.com/)
+
+## A good name goes a long way
+
+We all know that it’s important to choose good names for parameters and functions. However, in this project, I was surprised just how much of a difference a good name makes. Sometimes, the only thing we would change in a function would be the names. Often a simple rename morphed the unintelligible code in front of me into a clear, readable explanation of the approach.
+
+```r
+# Example
+```
+
+## Test regularly
+
+- Things _will_ go wrong 
+- Deleted code
+- Brackets
+
+- You want to know as soon as possible
+
+- Ensure that your code is always run-able
+
+- Check your code still works by running your tests - {testthat}
+
+- Statistical models must ensure numerical results are unaffected by the refactor
+
+- CI/CD
+
+
+## Why rather than How
+
+The code was initially what I would call “How” programming. The different components of the functions were grouped by how the calculations were computed programmatically rather than why we were calculating them. This made it hard for someone new to the code to understand what each function did.
+
+I’m not an environmental scientist, so I don’t understand all of the science behind Jane’s complex model. However, by asking questions about what she was trying to achieve, we re-grouped the different stages of each function in terms of the science, rather than the implementation. Changing focus of the code to the scientific method made it much clearer to follow.
+
+## Do it with a friend
+
+:::: columns
+::: {.column width="75%"}
+
+- Refactoring can be daunting
+- Lot's of moving parts
+- Hard to hold the overall design and small technical details simulatenously
+- The person helping you doesn’t have to understand the code in detail, in fact sometimes it helps if they don’t! 
+- More fun (joint celebration)
+- Learn stuff
+:::
+
+::: {.column width="25%"}
+
+![](https://www.jumpingrivers.com/blog/refactoring-russian-doll-code/colab.jpg "Collaboration"){alt="Cartoon of  four people sat around a table, with laptops. One of them is pointing at a projector screen with the python logo on it."}
+
+:::
+::::
+
+# Recap {background-color="#5b868d"}
+
+::: notes
+Refactoring code properly takes time, and sometimes it can be hard to justify the cost. However, poorly written code is difficult to develop, time consuming to maintain and tends to mask bugs which are hiding in the cobwebs of functions that no-one really understands any more.
+:::
+
+## Top tips
+
+1. Define the messy zone
+
+1. Push the mess up
+
+1. Start with a blank slate
+
+1. Take time to design
+
+1. A good name goes a long way
+
+1. Test regularly
+
+1. Why rather than How
+
+1. Do it with a friend
+
+# Questions? {background-color="#5b868d"}
+
+::: columns
+::: {.column width="65%"}
+<br>
+
+{{< fa brands twitter >}} [@statsRhian](https://twitter.com/StatsRhian)
+
+{{< fa brands github >}} [StatsRhian](https://github.com/StatsRhian)
+
+{{< fa briefcase >}} [jumpingrivers.com](https://www.jumpingrivers.com/)
+
+{{< fa calendar >}} [shiny-in-production.jumpingrivers.com](https://shiny-in-production.jumpingrivers.com/)
+:::
+
+::: {.column width="35%"}
+![](){fig-align="center" fig-alt="QR code"}
+:::
+:::
+
+::: notes
+12th - 13th October
+:::
