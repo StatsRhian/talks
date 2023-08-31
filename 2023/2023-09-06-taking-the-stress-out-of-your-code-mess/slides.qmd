@@ -20,7 +20,7 @@ execute:
 :::
 
 ::: {.column width="40%"}
-![](images/r-book.jpg){fig-alt="Cartoon of a woman holding out a book"}
+![](images/r-book-small.png){fig-alt="Cartoon of a woman holding out a book"}
 :::
 :::
 
