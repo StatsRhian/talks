@@ -118,22 +118,22 @@ You know when you tidy your bedroom, you optimistically pull *everything* out on
 
 ## Messy zone example
 
-```r
+```{r}
+#| eval: false
 example = function(arg1, arg2) {
-# Messy zone
-
-a_better_name = arg1$mess$ugh
-helpful_name = arg2$what$is$this
-
-# Refactor the internals
-
-useful_result = a_better_name + helpful_name
-sensible_name_tibble = a_better_name * helpful_name    
-
-# Messy Zone
-results$some$mess = useful_result
-results$another$naff$list = sensible_name_tibble
-
+  # Messy zone
+  
+  a_better_name = arg1$mess$ugh
+  helpful_name = arg2$what$is$this
+  
+  # Refactor the internals
+  
+  useful_result = a_better_name + helpful_name
+  sensible_name_tibble = a_better_name * helpful_name    
+  
+  # Messy Zone
+  results$some$mess = useful_result
+  results$another$naff$list = sensible_name_tibble
 }
 ```
 
