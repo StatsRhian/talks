@@ -56,7 +56,7 @@ Disclaimer: Solutions are not guaranteed to fix your problems. Batteries not inc
 :::
 
 ::: column
-![](images/robot-science.jpg){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
+![](images/robot-science-small-tp.png){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
 :::
 :::
 
@@ -88,7 +88,7 @@ Disclaimer: Solutions are not guaranteed to fix your problems. Batteries not inc
 :::
 
 ::: column
-![](images/robot-science.jpg){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
+![](images/robot-science-small-tp.png){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
 :::
 :::
 
