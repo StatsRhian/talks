@@ -4,9 +4,15 @@ Slides and resources for talks I have given
 
 ## 2022
 
-* 2022-09-14 [Communicating Statistics](https://statsrhian.github.io/presentations/2022/2022-09-14-communicating-stats/2022-09-14-communicating-stats.html) _RSS International Conference_
-* 2022-09-13  [Share your Models with R {plumber} APIs](https://statsrhian.github.io/presentations/2022/2022-09-13-plumber/2022-09-13-plumber.html) _RSS International Conference_
-* 2022-07-27 [A tale of two languages](https://statsrhian.github.io/presentations/2022/2022-07-27-tale-of-two-languages/2022-07-27-tale-two-languages.pdf) _RLadies Cologne/PyLadies Munich/PyLadies Tunis_
+* 2023-09-06 [Taking the stress out of your code mess](https://statsrhian.github.io/talks/2023/2023-09-06-taking-the-stress-out-of-your-code-mess/slides.html) _RSS International Conference_
+* 2023-09-04 [Share your data story](https://statsrhian.github.io/talks/2023/2023-09-04-share-your-data-story/slides.html) _RSS International Conference_
+* 2023-06-22 [Data Science without the Data](https://statsrhian.github.io/talks/2023/2023-06-22-data-science-without-the-data/slides.html) _Rencontres R_
+
+## 2022
+
+* 2022-09-14 [Communicating Statistics](https://statsrhian.github.io/talks/2022/2022-09-14-communicating-stats/2022-09-14-communicating-stats.html) _RSS International Conference_
+* 2022-09-13  [Share your Models with R {plumber} APIs](https://statsrhian.github.io/talks/2022/2022-09-13-plumber/2022-09-13-plumber.html) _RSS International Conference_
+* 2022-07-27 [A tale of two languages](https://statsrhian.github.io/talks/2022/2022-07-27-tale-of-two-languages/2022-07-27-tale-two-languages.pdf) _RLadies Cologne/PyLadies Munich/PyLadies Tunis_
 
 ## 2021
 
