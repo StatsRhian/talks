@@ -96,18 +96,18 @@ Disclaimer: Solutions are not guaranteed to fix your problems. Batteries not inc
 # The messy zone {background-color="#5b868d"}
 
 
-## Define the messy zone
+## Tidy up bit-by-bit
 
 :::: columns
-::: {.column width="75%"}
-Throughout the refactoring process, it was essential that we were able to continuously run and test the functionality of the package. But how could we rewrite all of our functions without affecting the functionality of the whole code base?
+::: column
+How can we rewrite functions without breaking the code base?
 
-- Start with the smallest functions first
-- Re-write the main body
-- Clearly defined messy zones at the start and the end
+1. Start with the inner functions
+1. Re-write the main body
+1. Clearly define the messy zones
 :::
 
-::: {.column width="25%"}
+::: column
 ![](https://www.jumpingrivers.com/blog/refactoring-russian-doll-code/vacuum.png "Tidy your code"){alt="Jumping Rivers robot using a vacuum cleaner on a pile of code and text."}
 :::
 ::::
@@ -116,15 +116,7 @@ Throughout the refactoring process, it was essential that we were able to contin
 You know when you tidy your bedroom, you optimistically pull *everything* out onto the floor. A few hours later, the bed is covered and there are piles of clothes everywhere. There\'s no going back, and you aren't going to be able to sleep on your bed tonight unless you clean everything. (Just me?)
 :::
 
-## Define the messy zone: benefits
-
-- Being explicit about where the mess is _allowed_ us to focus on simplifying and clarifying the internals
-- Higher level code functioned as expected
-- Didn't have to commit to the structure of the function parameters initially
-- We could work that out naturally as the code evolved 
-- Clear markers of where we would need to clean up later, - Avoided the issue of forgetting to change parameters everywhere
-
-## Define the messy zone example
+## Messy zone example
 
 ```r
 example = function(arg1, arg2) {
@@ -161,8 +153,7 @@ Once the inner functions are clean
 :::
 
 ::: {.column width="25%"}
-
-![](https://tenor.com/en-GB/view/salt-n-pepa-push-it-real-good-hip-hop-rap-80s-gif-16181344 ){alt="Salt N Pepa Push It Real Good GIF"}
+![](https://media.tenor.com/PzGKGLb54G8AAAAd/salt-n-pepa-push-it-real-good.gif){alt="Salt N Pepa"}
 
 :::
 ::::
@@ -171,71 +162,159 @@ Once the inner functions are clean
 Push it Salt'n'Pepper gif
 :::
 
+## Benefits
+
+- Being explicit about where the mess is allowed us to focus on simplifying internals
+- Higher level code functioned as expected
+- Didn't have to commit to the structure of the function parameters upfront
+- Clear markers of where we would need to tidy later
+
 # Quick tips {background-color="#5b868d"}
 
 ## Start with a blank slate
 
+
+:::: columns
+::: column
+
 - Avoid the temptation to copy-paste
+
 - Can tie you to the old style
+:::
+
+::: column
+
+![](images/engineer.jpg){alt="Cartoon of two engineers."}
+
+:::
+::::
+
+
 
 ## Take time to design
 
-Jane and I had one session where we didn’t touch any code at all.
-We talked, doodled and drew diagrams. You might leave a session like this feeling a little deflated that you didn’t achieve anything. However, that session was actually the most valuable. In the following session we made huge progress, because we had already done the hard work of thinking out the design fully. We were able to whizz through the functions, implementing our new design efficiently. We found ourselves constantly referring back to the diagrams to remind ourselves of the design choices we had made.
+:::: columns
+::: column
 
-My favourite tools:
+- One session we drew diagrams - no code
 
-- Miro board
-- [draw.io](draw.io)
-- [excalidraw](https://excalidraw.com/)
+- The most valuable session
+
+- We often referred back to the diagrams to remind ourselves of the design choices
+
+- My favourite tools:
+    - [Miro](miro.com)
+    - [draw.io](draw.io)
+    - [excalidraw](https://excalidraw.com/)
+:::
+
+::: column
+
+![](images/artist.jpg){alt="Cartoon of artist next to an easel."}
+
+:::
+::::
+
 
 ## A good name goes a long way
 
-We all know that it’s important to choose good names for parameters and functions. However, in this project, I was surprised just how much of a difference a good name makes. Sometimes, the only thing we would change in a function would be the names. Often a simple rename morphed the unintelligible code in front of me into a clear, readable explanation of the approach.
+- Just renaming arguments can make functions much clearer
 
-```r
-# Example
+```{r}
+#| eval: false
+defac = function(x) {
+  as.numeric(as.character(x))
+}
+crm_summ = crimtab %>%
+  as.data.frame() %>%
+    mutate(
+      fng = defac(Var1),
+      ht = defac(Var2),
+      n = Freq
+    ) %>%
+    select(fng, ht, n)
 ```
+
+
+
+## A good name goes a long way
+
+- Just renaming arguments can make functions much clearer
+
+```{r}
+#| eval: false
+extract_numeric_from_level = function(x) {
+  as.numeric(as.character(x))
+}
+
+criminal_summary = crimtab %>%
+  as.data.frame() %>%
+  mutate(
+    finger_length = extract_numeric_from_level(Var1),
+    height = extract_numeric_from_level(Var2),
+    count = Freq
+  ) %>%
+  select(finger_length, height, count)
+```
+
 
 ## Test regularly
 
+:::: columns
+::: column
+
 - Things _will_ go wrong 
-- Deleted code
-- Brackets
 
 - You want to know as soon as possible
 
 - Ensure that your code is always run-able
 
-- Check your code still works by running your tests - {testthat}
+- Numerical results should be unaffected by the refactor
 
-- Statistical models must ensure numerical results are unaffected by the refactor
+- Run unit tests with {testthat} and GitHub actions CI/CD
+:::
 
-- CI/CD
+::: column
 
+![](images/computer-small.jpg){alt="Cartoon robot at a laptop."}
+
+:::
+::::
 
 ## Why rather than How
 
-The code was initially what I would call “How” programming. The different components of the functions were grouped by how the calculations were computed programmatically rather than why we were calculating them. This made it hard for someone new to the code to understand what each function did.
+:::: columns
+::: column
 
-I’m not an environmental scientist, so I don’t understand all of the science behind Jane’s complex model. However, by asking questions about what she was trying to achieve, we re-grouped the different stages of each function in terms of the science, rather than the implementation. Changing focus of the code to the scientific method made it much clearer to follow.
+- Code was "How" programming
+
+- We regrouped the functions based on the _science_ rather than the _programming_
+
+- Changing focus made it much clearer to follow
+:::
+
+::: column
+
+![](https://www.jumpingrivers.com/blog/refactoring-russian-doll-code/colab.jpg "Collaboration"){alt="Cartoon of  four people sat around a table, with laptops. One of them is pointing at a projector screen with the python logo on it."}
+
+:::
+::::
 
 ## Do it with a friend
 
 :::: columns
-::: {.column width="75%"}
+::: column
 
 - Refactoring can be daunting
-- Lot's of moving parts
 - Hard to hold the overall design and small technical details simulatenously
-- The person helping you doesn’t have to understand the code in detail, in fact sometimes it helps if they don’t! 
-- More fun (joint celebration)
-- Learn stuff
+- The person helping you doesn’t have to understand the details
+- You can learn from each other
+- It's fun 
 :::
 
-::: {.column width="25%"}
+::: column
 
-![](https://www.jumpingrivers.com/blog/refactoring-russian-doll-code/colab.jpg "Collaboration"){alt="Cartoon of  four people sat around a table, with laptops. One of them is pointing at a projector screen with the python logo on it."}
+![](images/community.jpg){alt="Cartoon of three people with speech bubbles."}
 
 :::
 ::::
@@ -247,6 +326,9 @@ Refactoring code properly takes time, and sometimes it can be hard to justify th
 :::
 
 ## Top tips
+
+:::: columns
+::: column
 
 1. Define the messy zone
 
@@ -263,14 +345,22 @@ Refactoring code properly takes time, and sometimes it can be hard to justify th
 1. Why rather than How
 
 1. Do it with a friend
+:::
+
+::: column
+
+![](images/clipboard.png){alt="Cartoon of robot with a clipboard."}
+
+:::
+::::
+
+
 
 # Questions? {background-color="#5b868d"}
 
 ::: columns
 ::: {.column width="65%"}
 <br>
-
-{{< fa brands twitter >}} [@statsRhian](https://twitter.com/StatsRhian)
 
 {{< fa brands github >}} [StatsRhian](https://github.com/StatsRhian)
 
@@ -284,6 +374,4 @@ Refactoring code properly takes time, and sometimes it can be hard to justify th
 :::
 :::
 
-::: notes
-12th - 13th October
-:::
+
