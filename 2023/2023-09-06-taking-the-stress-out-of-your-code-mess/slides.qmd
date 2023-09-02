@@ -276,7 +276,7 @@ criminal_summary = crimtab %>%
 
 ::: column
 
-![](images/computer-small.jpg){alt="Cartoon robot at a laptop."}
+![](images/computer-small-tp.png){alt="Cartoon robot at a laptop."}
 
 :::
 ::::
@@ -314,7 +314,7 @@ criminal_summary = crimtab %>%
 
 ::: column
 
-![](images/community.jpg){alt="Cartoon of three people with speech bubbles."}
+![](images/community-small-tp.png){alt="Cartoon of three people with speech bubbles."}
 
 :::
 ::::
