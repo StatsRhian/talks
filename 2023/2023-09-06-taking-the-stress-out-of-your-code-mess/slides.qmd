@@ -184,7 +184,7 @@ Push it Salt'n'Pepper gif
 
 ::: column
 
-![](images/engineer.jpg){alt="Cartoon of two engineers."}
+![](images/engineer-small-tp.png){alt="Cartoon of two engineers."}
 
 :::
 ::::
