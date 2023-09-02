@@ -10,6 +10,8 @@ execute:
   eval: false
 ---
 
+# Introduction {visibility="hidden"}
+
 ## About Me 👋
 
 ::: columns
@@ -20,7 +22,7 @@ execute:
 :::
 
 ::: {.column width="40%"}
-![](images/r-book.jpg){fig-alt="Cartoon of a woman holding out a book"}
+![](images/r-book-small.png){fig-alt="Cartoon of a woman holding out a book"}
 :::
 :::
 
@@ -36,7 +38,7 @@ execute:
 :::
 
 ::: column
-![](images/office.jpg){fig-alt="Cartoon of three people working at computers" fig-align="center"}
+![](images/office-small-tp.png){fig-alt="Cartoon of three people working at computers" fig-align="center"}
 :::
 :::
 
@@ -56,7 +58,7 @@ Disclaimer: Solutions are not guaranteed to fix your problems. Batteries not inc
 :::
 
 ::: column
-![](images/robot-science.jpg){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
+![](images/robot-science-small-tp.png){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
 :::
 :::
 
@@ -88,7 +90,7 @@ Disclaimer: Solutions are not guaranteed to fix your problems. Batteries not inc
 :::
 
 ::: column
-![](images/robot-science.jpg){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
+![](images/robot-science-small-tp.png){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
 :::
 :::
 
@@ -118,22 +120,22 @@ You know when you tidy your bedroom, you optimistically pull *everything* out on
 
 ## Messy zone example
 
-```r
+```{r}
+#| eval: false
 example = function(arg1, arg2) {
-# Messy zone
-
-a_better_name = arg1$mess$ugh
-helpful_name = arg2$what$is$this
-
-# Refactor the internals
-
-useful_result = a_better_name + helpful_name
-sensible_name_tibble = a_better_name * helpful_name    
-
-# Messy Zone
-results$some$mess = useful_result
-results$another$naff$list = sensible_name_tibble
-
+  # Messy zone
+  
+  a_better_name = arg1$mess$ugh
+  helpful_name = arg2$what$is$this
+  
+  # Refactor the internals
+  
+  useful_result = a_better_name + helpful_name
+  sensible_name_tibble = a_better_name * helpful_name    
+  
+  # Messy Zone
+  results$some$mess = useful_result
+  results$another$naff$list = sensible_name_tibble
 }
 ```
 
@@ -184,7 +186,7 @@ Push it Salt'n'Pepper gif
 
 ::: column
 
-![](images/engineer.jpg){alt="Cartoon of two engineers."}
+![](images/engineer-small-tp.png){alt="Cartoon of two engineers."}
 
 :::
 ::::
@@ -201,18 +203,31 @@ Push it Salt'n'Pepper gif
 - The most valuable session
 
 - We often referred back to the diagrams to remind ourselves of the design choices
-
-- My favourite tools:
-    - [Miro](miro.com)
-    - [draw.io](draw.io)
-    - [excalidraw](https://excalidraw.com/)
 :::
 
 ::: column
 
-![](images/artist.jpg){alt="Cartoon of artist next to an easel."}
+![](images/artist-small-tp.png){alt="Cartoon of artist next to an easel."}
 
 :::
+::::
+
+## My favourite tools
+
+:::: {.columns style="display: flex; justify-content: center; align-items: center; height: 90%;"}
+
+::: {.column width="33%"}
+[![](images/miro-logo.png){alt="Miro logo"}](https://miro.com)
+:::
+
+::: {.column width="33%"}
+[![](images/draw-io-logo.png){alt="draw.io logo"}](https://draw.io)
+:::
+
+::: {.column width="33%"}
+[![](images/excalidraw-logo.png){alt="Excalidraw logo"}](https://excalidraw.com)
+:::
+
 ::::
 
 
@@ -227,12 +242,12 @@ defac = function(x) {
 }
 crm_summ = crimtab %>%
   as.data.frame() %>%
-    mutate(
-      fng = defac(Var1),
-      ht = defac(Var2),
-      n = Freq
-    ) %>%
-    select(fng, ht, n)
+  mutate(
+    fng = defac(Var1),
+    ht = defac(Var2),
+    n = Freq
+  ) %>%
+  select(fng, ht, n)
 ```
 
 
@@ -276,7 +291,7 @@ criminal_summary = crimtab %>%
 
 ::: column
 
-![](images/computer-small.jpg){alt="Cartoon robot at a laptop."}
+![](images/computer-small-tp.png){alt="Cartoon robot at a laptop."}
 
 :::
 ::::
@@ -306,15 +321,15 @@ criminal_summary = crimtab %>%
 ::: column
 
 - Refactoring can be daunting
-- Hard to hold the overall design and small technical details simulatenously
+- Hard to hold the overall design and small technical details simultaneously
 - The person helping you doesn’t have to understand the details
-- You can learn from each other
+- Learn from each other
 - It's fun 
 :::
 
 ::: column
 
-![](images/community.jpg){alt="Cartoon of three people with speech bubbles."}
+![](images/community-small-tp.png){alt="Cartoon of three people with speech bubbles."}
 
 :::
 ::::
