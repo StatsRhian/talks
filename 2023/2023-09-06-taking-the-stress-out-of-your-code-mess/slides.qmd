@@ -210,7 +210,7 @@ Push it Salt'n'Pepper gif
 
 ::: column
 
-![](images/artist.jpg){alt="Cartoon of artist next to an easel."}
+![](images/artist-small-tp.png){alt="Cartoon of artist next to an easel."}
 
 :::
 ::::
