@@ -308,7 +308,7 @@ criminal_summary = crimtab %>%
 - Refactoring can be daunting
 - Hard to hold the overall design and small technical details simulatenously
 - The person helping you doesn’t have to understand the details
-- You can learn from each other
+- Learn from each other
 - It's fun 
 :::
 
