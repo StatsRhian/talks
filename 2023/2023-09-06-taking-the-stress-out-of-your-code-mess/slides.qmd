@@ -227,12 +227,12 @@ defac = function(x) {
 }
 crm_summ = crimtab %>%
   as.data.frame() %>%
-    mutate(
-      fng = defac(Var1),
-      ht = defac(Var2),
-      n = Freq
-    ) %>%
-    select(fng, ht, n)
+  mutate(
+    fng = defac(Var1),
+    ht = defac(Var2),
+    n = Freq
+  ) %>%
+  select(fng, ht, n)
 ```
 
 
