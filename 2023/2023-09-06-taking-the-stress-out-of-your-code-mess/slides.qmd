@@ -306,7 +306,7 @@ criminal_summary = crimtab %>%
 ::: column
 
 - Refactoring can be daunting
-- Hard to hold the overall design and small technical details simulatenously
+- Hard to hold the overall design and small technical details simultaneously
 - The person helping you doesn’t have to understand the details
 - Learn from each other
 - It's fun 
