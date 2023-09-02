@@ -10,6 +10,8 @@ execute:
   eval: false
 ---
 
+# Introduction {visibility="hidden"}
+
 ## About Me 👋
 
 ::: columns
