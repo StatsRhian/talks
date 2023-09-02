@@ -201,11 +201,6 @@ Push it Salt'n'Pepper gif
 - The most valuable session
 
 - We often referred back to the diagrams to remind ourselves of the design choices
-
-- My favourite tools:
-    - [Miro](miro.com)
-    - [draw.io](draw.io)
-    - [excalidraw](https://excalidraw.com/)
 :::
 
 ::: column
@@ -213,6 +208,24 @@ Push it Salt'n'Pepper gif
 ![](images/artist-small-tp.png){alt="Cartoon of artist next to an easel."}
 
 :::
+::::
+
+## My favourite tools
+
+:::: {.columns style="display: flex; justify-content: center; align-items: center; height: 90%;"}
+
+::: {.column width="33%"}
+[![](images/miro-logo.png){alt="Miro logo"}](https://miro.com)
+:::
+
+::: {.column width="33%"}
+[![](images/draw-io-logo.png){alt="draw.io logo"}](https://draw.io)
+:::
+
+::: {.column width="33%"}
+[![](images/excalidraw-logo.png){alt="Excalidraw logo"}](https://excalidraw.com)
+:::
+
 ::::
 
 
