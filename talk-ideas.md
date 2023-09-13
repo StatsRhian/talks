@@ -17,6 +17,12 @@ Make every talk a blog (and vice-versa)
 - [ ] Validating data (comparison of packages)
 - [ ] Pretty tables with {GT}
 
+## Storytelling
+
+- [ ] Visualising TB story
+- [ ] 
+
+ 
 ## Shiny
 
 - [ ] "I wonder how many characters I can fit into this title bo..." Shiny QA
@@ -31,7 +37,7 @@ Make every talk a blog (and vice-versa)
 - [ ] Seperating play and production -> sandboxing
 - [ ] 🌩️ How not to organise a meetup
 - [ ] You don't need shiny to sparkle - an overview of interactivity in R
-- [ ] JR blog on [Refactoring Russian Doll Code](https://www.jumpingrivers.com/blog/refactoring-russian-doll-code/)
+- [x] JR blog on [Refactoring Russian Doll Code](https://www.jumpingrivers.com/blog/refactoring-russian-doll-code/)
 - [ ] Using Git in your organisation - what to think about?
 
 
@@ -44,7 +50,7 @@ Make every talk a blog (and vice-versa)
 ## Career
 
 - [ ] Identity Crisis - data scientist vs statistician
-- [ ] Share your data story
+- [x] Share your data story
 
 
 ## Converting old slides
