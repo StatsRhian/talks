@@ -373,20 +373,13 @@ Refactoring code properly takes time, and sometimes it can be hard to justify th
 
 # Questions? {background-color="#5b868d"}
 
-::: columns
-::: {.column width="65%"}
-<br>
 
 {{< fa brands github >}} [StatsRhian](https://github.com/StatsRhian)
 
 {{< fa briefcase >}} [jumpingrivers.com](https://www.jumpingrivers.com/)
 
 {{< fa calendar >}} [shiny-in-production.jumpingrivers.com](https://shiny-in-production.jumpingrivers.com/)
-:::
 
-::: {.column width="35%"}
-![](){fig-align="center" fig-alt="QR code"}
-:::
-:::
+
 
 
