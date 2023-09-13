@@ -1,0 +1,506 @@
+---
+title: "Changing the world with data"
+subtitle: "Jumping Rivers"
+author: "Dr Clarissa Barratt & Dr Rhian Davies"
+format:
+  jrSlides-revealjs:
+    self-contained: true
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Part 1: Hello 👋 {background-color="#5b868d"}
+
+```{r, echo = FALSE}
+# Load libraries and data
+
+library(reactable)
+library(palmerpenguins)
+library(readxl)
+library(dplyr)
+library(leaflet)
+library(maps)
+
+food_responses = read_excel("data/food_responses.xlsx")
+remove_columns = c(-1, -5, -6, -8, -10, -11)
+
+food_responses = food_responses[remove_columns]
+
+food_responses = food_responses %>%
+  rename(
+    region = Region,
+    fast_food = A1,
+    snack = A2,
+    age = `Age(Years)`
+  )
+```
+
+## Clarissa
+
+::: columns
+::: {.column width="60%"}
+Helloo, I'm Clarissa! I am the Ambassador for Data Science at Jumping
+Rivers, which just means I talk a lot...
+
+I started out doing a degree in Astrophysics, worked in cyber security
+for a bit, moved to Newcastle to do a PhD in Quantum Physics before
+starting to work for Jumping Rivers. I now work from home in Austria!
+:::
+
+::: {.column width="40%"}
+![](graphics/Clarissa.png){fig-alt="A cartoon of Clarissa"
+fig-align="right" width="350"}
+:::
+:::
+
+## Clarissa
+
+```{r, echo = FALSE}
+names = c("Windsor", "Nottingham", "Aberystwyth", "Bristol", "Newcastle", "Innsbruck")
+reason = c("I was born in Windsor and lived there till I was 4 - I don't remember very much of this, other than incredibly loud concordes flying over!", 
+           "I lived in Nottingham from the age of 4 to 18, when I moved to go to University",
+           "I studied astrophysics at Aberystwyth University for 4 years. Going to Uni at the beach was amazing!",
+           "After my masters, I worked for a year in cyber security in Bristol. This was interesting, but I decided it wasn't for me. I do miss Bristol though!",
+           "I moved up to Newcastle to do a PhD in Quantum Physics. This took about 5 years & and a pandemic, and I moved countries towards the end, but I got there",
+           "I now live in Innsbruck in Austria. Thanks to Jumping Rivers being a remote company, I can do data science in the week and ski at the weekend!")
+lat = c(51.4803, 52.9540, 52.4153, 51.4545, 54.9783, 47.2692)
+lng = c(-0.6157, -1.1550, -4.0829, -2.5879, -1.6178, 11.4041)
+
+df = data.frame(names, reason, lat, lng)
+
+location_icons = iconList(
+  Windsor = makeIcon("graphics/describe-clarissa/graphics/windsor.jpg", "graphics/describe-clarissa/graphics/windsor@2x.jpg", 40, 40),
+  Nottingham = makeIcon("graphics/describe-clarissa/graphics/nottingham.jpg", "graphics/describe-clarissa/graphics/nottingham@2x.jpg", 40, 40),
+  Aberystwyth = makeIcon("graphics/describe-clarissa/graphics/aberystwyth.jpg", "graphics/describe-clarissa/graphics/aberystwyth@2x.jpg", 40, 40),
+  Bristol = makeIcon("graphics/describe-clarissa/graphics/bristol.jpg", "graphics/describe-clarissa/graphics/bristol@2x.jpg", 40, 40),
+  Newcastle = makeIcon("graphics/describe-clarissa/graphics/newcastle.jpg", "graphics/describe-clarissa/graphics/newcastle@2x.jpg", 40, 40),
+  Innsbruck = makeIcon("graphics/describe-clarissa/graphics/innsbruck.jpg", "graphics/describe-clarissa/graphics/innsbruck@2x.jpg", 40, 40)
+)
+
+leaflet(df) %>% 
+  addProviderTiles(providers$Esri.WorldImagery) %>%
+  addProviderTiles(providers$Stamen.TonerLines) %>% 
+  addMarkers(~lng, ~lat, 
+             icon = location_icons[df$names],
+             popup = ~as.character(reason), 
+             label = ~as.character(names))
+```
+
+## Rhian
+
+::: columns
+::: {.column width="40%"}
+-   I love helping people understand their data
+
+-   I enjoy dabbling at lots of different things
+
+-   I near Newcastle by the sea 🌊
+:::
+
+::: {.column width="60%"}
+![](graphics/Rhian.jpg){fig-alt="A cartoon of Rhian"}
+:::
+:::
+
+## Rhian
+
+![](graphics/rhian-activity.png){fig-alt="An infographic showing various statistics about 2022 activity"
+fig-align="center"}
+
+## 🚣 Jumping Rivers
+
+::: columns
+::: {.column width="60%"}
+-   Small company in Newcastle
+-   We work with a huge variety of domains including:
+    -   Farming
+
+    -   Railway
+
+    -   Energy
+
+    -   Covid-19
+-   Provide data science and engineering services and training
+:::
+
+::: {.column width="40%"}
+![](graphics/clipboard-robot-transparent.png){fig-alt="A cartoon of a robot with a clipboard."}
+:::
+:::
+
+## 📔 The Plan
+
+-   What is a Data Scientist?
+
+-   Being a data detective with problem solving skills
+
+-   Unleash the inner artist
+
+## 🔍 What is consultancy?
+
+-   General problem solving
+
+-   Making peoples lives easier
+
+-   Exists across all
+
+![](graphics/computer-small-transparent.png){fig-alt="A cartoon of a robot with a clipboard."
+fig-align="center"}
+
+## 🦄 What is a data scientist?
+
+![](graphics/faces.png){fig-alt="A collection of cartoons of Jumping Rivers employees. Top: Clarissa, Myles, Keith, Russ. Bottom: Nicola, Jack, Rhian, Mandy"
+width="75%" fig-align="center"}
+
+::: notes
+-   A consultant that specialises in any problem involving data
+-   Skills - creative, problem solver, communicator, curiousity
+-   Anyone can be a data scientist
+:::
+
+## 📝 Your turn
+
+-   Introduce yourself with a visualisation
+
+```{r}
+countdown::countdown(minutes = 8)
+```
+
+::: notes
+-   Get them to draw a viz in a box in the Jam Board
+-   Look at the different viz
+-   Look what we made earlier - link to leaflet map of locations
+:::
+
+## 👋 You!
+
+```{r, echo = FALSE}
+data = readxl::read_xlsx("data/food_responses.xlsx")
+
+names = unique(data$local_authority)
+lat = c(51.5886, 54.5236, 54.3503, 51.3770, 52.4862, 51.2839, 54.9966, 51.4934, 51.4609, 53.6958, 52.5703, 52.9540, 51.4551, 53.1610, 51.5436, 53.5933, 51.8072, 54.6411, 51.6569, 52.7064, 51.5390, 53.0929, 51.5264, 52.4128, 51.2362, 51.5105, 51.8787, 53.7938, 52.5123, 51.4123)
+lng = c(0.0824, -1.5595, -6.6528, -0.0957, -1.8904, -0.2099, -7.3086, 0.0098, -0.3731, -2.4683, -0.2408, -1.1550, -0.9787, -2.2186, -0.0554, -2.2966, -0.8128, -6.7523, -0.1949, -2.7418, -0.1426, -1.2697, -2.4728, -1.5090, -0.5704, -0.5950, -0.4200, -1.7564, -2.0811, -0.3007)
+
+df = data.frame(names, lat, lng)
+
+leaflet(df) %>%
+  addProviderTiles(providers$Esri.WorldImagery) %>%
+  addProviderTiles(providers$Stamen.TonerLines) %>%
+  addMarkers(~lng, ~lat,
+             label = ~as.character(names))
+
+```
+
+# Part 2: Playing with Data {background-color="#5b868d"}
+
+## 🍔 What's your favourite food?
+
+-   We asked you two questions:
+
+-   What's your favourite fast food restaurant?
+
+-   What's your favourite snack?
+
+## 👩‍💻 Explore your data
+
+```{r}
+reactable(food_responses, 
+          columns = list(
+            region = colDef(name = "Region", minWidth = 50),   
+            local_authority = colDef(name = "Local Authority", minWidth = 50),  
+            age = colDef(name = "Age", minWidth = 20),
+            fast_food = colDef(name = "Fast food", minWidth = 100),
+            snack = colDef(name = "Snacks", minWidth = 100)
+          ),
+          height = 575,
+          striped = TRUE,
+          resizable = TRUE,
+          searchable = TRUE, 
+          defaultPageSize = 10, 
+          compact = TRUE)
+```
+
+::: notes
+Insert real food data here - How do we explore this data? - Scroll and
+look for anything weird (data validation) - Does this like "right"? -
+What are the units? (Age in months?)
+:::
+
+## 👩‍💻 Data Quality issues
+
+-   Biased sample (14-19 year olds)
+
+-   Sentences rather than one-word
+
+-   Spaces and capitalisation (e.g "Pringles" / " pringles")
+
+-   Is there missing data?
+
+-   Sometimes we have different names for the same things
+
+-   Can we "validate" the data?
+
+::: notes
+(barn/bap/butty/cob) (Opal fruits / starburst) (marathon / snickers)
+:::
+
+## 🔍 What's the question?
+
+-   What do we want to know?
+-   What else do we need to know to answer the question?
+
+## 📝 Your turn
+
+-   What questions could you ask the data?
+
+Try and be creative
+
+```{r}
+countdown::countdown(minutes = 2)
+```
+
+::: notes
+-   Most popular
+-   Least popular
+-   Longest name
+-   Equally popular
+-   When do people start liking Brussels sprouts?
+-   Are burger places more popular than pizza places?
+-   Have certain foods got more popular over time?
+-   Savoury or sweet?
+-   North vs South? Greggs vs Pret?
+-   Are healthy foods less popular than less-healthy foods?
+-   Can we answer those questions with the data?
+-   We can "power up" our data with data transformation
+:::
+
+## 👀 Plot examples
+
+::: columns
+::: {.column width="50%"}
+![](graphics/fast_food_wordcloud.png){fig-alt="Wordcloud of common words in fast food answers. Mcdonalds, Subway, Greggs and KFC are largest."}
+:::
+
+::: {.column width="50%"}
+![](graphics/snack_wordcloud.png){fig-alt="Wordcloud of common words in snack answers. Crisps and chocolate are largest."}
+:::
+:::
+
+## 🔋Power Up your data with transformation
+
+-   Creating data "features" by combining with other data set
+-   Linking data sets together
+-   Why do we transform?
+-   Data we don't have that we want to pull in
+
+## 🔋What data-sets might we want to add
+
+-   Nutritional data
+-   Classifying sweet/savoury, chain/independent
+-   Location data - we could make maps!
+-   Average price of the fast food restaurant?
+-   Advertising budget of the restaurant/chain?
+-   Classifying to create small categories
+-   E.g. Pizza places with different names
+-   Savoury / sweet
+
+::: notes
+Find some external data and show how we can join it
+:::
+
+## 👀 Examples
+
+![](graphics/fast_food_types.png){width="75%" fig-align="center"}
+
+## 👀 Examples
+
+![](graphics/snack_type.png){width="75%" fig-align="center"}
+
+## 👀 Examples
+
+![](graphics/sweetvsavoury.png){width="75%" fig-align="center"}
+
+## 🍔 What type of fast food?
+
+```{r}
+type = readr::read_csv("data/type.csv")
+type |>
+  reactable(compact = TRUE)
+```
+
+## 🧲 Let's join
+
+```{r}
+responses = readr::read_csv("data/responses.csv")
+full_join(responses, type)|>
+  reactable(height = 575,
+          striped = TRUE,
+          resizable = TRUE,
+          searchable = TRUE, 
+          defaultPageSize = 10, 
+          compact = TRUE)
+```
+
+## 🧲 Left Join
+
+![](graphics/left-join.gif){fig-align="center"}
+
+## 🧲 Full Join
+
+![](graphics/full-join.gif){fig-align="center"}
+
+## 🧲 Inner Join
+
+![](graphics/inner-join.gif){fig-align="center"}
+
+# Part 3 Visualisation {background-color="#5b868d"}
+
+## 🔍 What types of graphs can we make?
+
+-   Sentence
+-   Table
+-   Bar chart
+-   Scatter plot
+-   Can be interactive
+
+::: notes
+Show tableau public viz or Tidy Tuesday (variety)
+:::
+
+## 🔍 What makes a good viz
+
+-   Tells a story
+-   Clear and concise
+-   Truthful!
+-   Engaging title (it doesn't just have to say "A graph to show ...")
+
+## 👀 Viz examples
+
+![](graphics/tube_map.png){fig-alt="Map of the London underground"
+fig-align="center"}
+
+## 👀 Viz examples
+
+![](graphics/football-viz.png){fig-alt="Football match with pundits commentary highlighted."
+fig-align="center"}
+
+## 👀 Viz examples
+
+![](graphics/stock-market-crash.png){fig-alt="Plot of 20 and 40 year cycles in the stock market pointing to a low in 2022."
+fig-align="center"}
+
+## 👀 Viz examples
+
+![](graphics/network-graph-star-wars-characters.jpg){fig-alt="Plot of many coloured lined interacting on a black background. There are no axes and there is no text."
+fig-align="center"}
+
+## 🐧 Meet your clients
+
+![](graphics/climate-scientists.png){fig-alt="Poorly edited image of Rhian and Clarissa cartoons with bobble hats on, in front of an icy mountain, with three cartoon penguins between them."
+fig-align="center"}
+
+## 📝 Your turn
+
+You are the data science consultant. We want to learn something about
+our penguins
+
+-   What do you want to ask the client?
+-   What can you learn from the data?
+-   What does the client want to learn?
+
+```{r}
+countdown::countdown(minutes = 3)
+```
+
+## 🐧 Penguins
+
+```{r, echo = FALSE}
+reactable(penguins,
+          columns = list(
+            species = colDef(name = "Species"),   
+            island = colDef(name = "Island"),  
+            bill_length_mm = colDef(name = "Bill length [mm]"),
+            bill_depth_mm = colDef(name = "Bill depth [mm]"),
+            flipper_length_mm = colDef(name = "Flipper length [mm]"),
+            body_mass_g = colDef(name = "Body mass [g]"),
+            sex = colDef(name = "Sex"),
+            year = colDef(name = "Year")
+          ),
+          height = 575,
+          striped = TRUE,
+          resizable = TRUE,
+          searchable = TRUE, 
+          defaultPageSize = 10, 
+          compact = TRUE)
+```
+
+## 📝 Your turn
+
+Play around with the shiny app to build a scatter for our penguins.
+
+[jr-ctw.jmpr.io/scatter](https://jr-ctw.jmpr.io/scatter/)
+
+```{r}
+countdown::countdown(minutes = 10)
+```
+
+## 👀 What makes a great viz?
+
+::: columns
+::: {.column width="40%"}
+-   What do you like about this graphic?
+-   What makes a good title?
+-   Do you need legends and labels?
+-   Does it tell a story?
+:::
+
+::: {.column width="60%"}
+![](graphics/acne.jpg){fig-alt="A cartoon of a woman with acne. The
+spots on her face are real data points" fig-align="right" width="350"
+caption = "https://monachalabi.com/}
+:::
+:::
+
+::: notes
+Remember to add source
+:::
+
+## 🎨 Bob Ross - Libby Daniells
+
+![](graphics/bob-ross-libby.png){fig-align="center"}
+
+## 🎨 Bob Ross - Jared Wilber
+
+![](graphics/bob-ross-jared.png){fig-align="center"}
+
+## 🎨 Bob Ross - Ryan Hart
+
+![](graphics/bob-ross-ryan.png){fig-align="center"}
+
+## 🎨 Bob Ross - Nicola Rennie
+
+![](graphics/bob-ross-nicola.png){fig-align="center"}
+
+## 📝 Your turn
+
+-   Work together in the Jam board to design a great graphic
+-   It doesn't have to be accurate - we're just looking for a
+    sketch/design
+
+```{r}
+countdown::countdown(minutes = 20)
+```
+
+# The Wrap up {background-color="#5b868d"}
+
+# Something we made earlier
+
+::: notes
+-   Show visualisations from their introductions
+:::
+
+## Thanks! 👋
+
+-   You can find the slides at this link:
+-   [jr-ctw.jmpr.io/slides/slides.html](https://jr-ctw.jmpr.io/slides/slides.html)

@@ -1,0 +1,83 @@
+/*-- scss:defaults --*/
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+// font family
+$font-family-sans-serif: 'Lato', 'Lato-Regular', Arial, sans-serif !default;
+$presentation-heading-font: 'Lato',  Tahoma, sans-serif  !default;
+
+// font size
+$presentation-h1-font-size: 2.6em;
+$presentation-h2-font-size: 1.7em;
+$presentation-h3-font-size: 1.4em;
+$presentation-h4-font-size: 1.1em;
+$presentation-font-size-root: 38px;
+$presentation-line-height: 1.5em;
+
+// font colour
+$presentation-heading-color: #5b868d !default;
+
+// code
+$code-color: #12a79d !default;
+$code-block-font-size: 0.6em;
+$code-block-border-color: #5b868d;
+$code-block-bg: #E5ECEE;
+
+// bg colours
+$body-color: #5b868d;
+$link-color: #12a79d;
+$body-bg: #dae5e7;
+
+/*-- scss:rules --*/
+
+.subtitle {
+  color: $body-bg;
+  font-size: $presentation-h2-font-size;
+  font-family: $presentation-heading-font;
+}
+
+.author {
+  color: $body-bg;
+  font-size: $presentation-h4-font-size;
+  font-family: $presentation-heading-font;
+}
+
+.author a {
+  color: $body-bg;
+  font-size: $presentation-h4-font-size;
+  font-family: $presentation-heading-font;
+}
+
+section.has-dark-background a, section.has-dark-background a:hover {
+  color: $body-bg;
+}
+
+.reveal .footer {
+  color: #5b868d;
+  font-family: 'Lato', 'Lato-Regular', Arial, sans-serif;
+  padding-bottom: 25px;
+}
+
+.reveal .slide-logo {
+  right: 12px;
+  padding-bottom: 20px !important;
+  max-height: 100px !important;
+}
+
+.reveal .slide-menu-button {
+    left: 100px;
+    top: 30px;
+    padding-left: 20px;
+    color: #12a79d;
+  }
+
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: #5b868d;
+  height: 2%;
+}
+
+.reactable {
+  font-size: 0.5em;
+}
