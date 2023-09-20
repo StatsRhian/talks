@@ -20,7 +20,7 @@ execute:
 :::
 
 ::: {.column width="40%"}
-![](images/r-book.jpg){fig-alt="Cartoon of a woman holding out a book"}
+![](images/r-book.png){fig-alt="Cartoon of a woman holding out a book"}
 :::
 :::
 
@@ -36,7 +36,7 @@ execute:
 :::
 
 ::: column
-![](images/office.jpg){fig-alt="Cartoon of three people working at computers" fig-align="center"}
+![](images/office.png){fig-alt="Cartoon of three people working at computers" fig-align="center"}
 :::
 :::
 
@@ -63,7 +63,7 @@ Disclaimer: Solutions are not guaranteed to fix your problems. Batteries not inc
 :::
 
 ::: column
-![](images/robot-science.jpg){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
+![](images/robot-science.png){fig-alt="A cartoon robot holding a testtube and wearing a lab coat"}
 :::
 :::
 
@@ -122,7 +122,7 @@ data |>
 :::
 
 ::: column
-![](images/community.jpg)
+![](images/community.png)
 :::
 ::::
 
@@ -147,7 +147,7 @@ Beginning development before all of the data is ready
 :::
 
 ::: column
-![](images/bigdata.jpg){fig-alt="A small cartoon robot stood next to a huge pile of data"}
+![](images/bigdata.png){fig-alt="A small cartoon robot stood next to a huge pile of data"}
 :::
 ::::
 
@@ -172,7 +172,7 @@ run_analysis("path/to/german.xlsx")
 :::
 
 ::: {.column width="25%"}
-![](images/r-package.jpg){fig-alt="Cartoon people holding wraped presents"}
+![](images/r-package.png){fig-alt="Cartoon people holding wraped presents"}
 :::
 ::::
 
@@ -216,7 +216,7 @@ Why R? Collaborator was an R user
 :::
 
 ::: column
-![](images/quarto.jpeg){fig-alt="The posit workbench logo"}
+![](images/quarto.png){fig-alt="The posit workbench logo"}
 :::
 
 ::::
@@ -250,7 +250,7 @@ printing summary stats, graph, factor levels, data types 13 patients on 2 drugs 
 :::
 
 ::: column
-![](images/ohno.jpg){fig-alt="Cartoon figure saying 'Oh no'"}
+![](images/ohno.png){fig-alt="Cartoon figure saying 'Oh no'"}
 :::
 
 ::::
@@ -275,7 +275,7 @@ printing summary stats, graph, factor levels, data types 13 patients on 2 drugs 
 :::
 
 ::: column
-![](images/ohno.jpg){fig-alt="Cartoon figure saying 'Oh no'"}
+![](images/ohno.png){fig-alt="Cartoon figure saying 'Oh no'"}
 :::
 
 ::::
@@ -299,7 +299,7 @@ Whose responsibility is it?
 :::
 
 ::: column
-![](images/ohno.jpg){fig-alt="Cartoon figure saying 'Oh no'"}
+![](images/ohno.png){fig-alt="Cartoon figure saying 'Oh no'"}
 :::
 
 ::::
@@ -336,7 +336,7 @@ Column `time_axis` is not found.
 :::
 
 ::: column
-![](images/ohno.jpg){fig-alt="Cartoon figure saying 'Oh no'"}
+![](images/ohno.png){fig-alt="Cartoon figure saying 'Oh no'"}
 :::
 
 ::::
@@ -368,7 +368,7 @@ Error in openxlsx::addWorksheet(wb, "Analysis by country, subtype and drug") :
 
 ::: {.column width="20%"}
 
-![](images/ohno.jpg){fig-alt="Cartoon figure saying 'Oh no'"}
+![](images/ohno.png){fig-alt="Cartoon figure saying 'Oh no'"}
 
 
 :::
@@ -415,7 +415,7 @@ _Unfortunately, I get the error below. The same error also appears when I only u
 :::
 
 ::: column
-![](images/ohno.jpg){fig-alt="Cartoon figure saying 'Oh no'"}
+![](images/ohno.png){fig-alt="Cartoon figure saying 'Oh no'"}
 :::
 
 ::: aside
