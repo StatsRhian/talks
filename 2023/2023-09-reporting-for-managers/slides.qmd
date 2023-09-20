@@ -1,0 +1,54 @@
+---
+format: statsrhian-revealjs
+---
+
+## Automatic reporting for managers
+
+### Rhian Davies
+
+## About me
+
+# The old way
+
+## Flow
+
+<Diagram here with old method>
+
+## Flow
+
+<Adapted diagram with new code coming in>
+
+
+# Hello quarto 👋
+
+## What is quarto?
+
+![](img/quarto.png){fig-alt="The quarto logo: A circle cut into four quadrants next to the word quarto"}
+
+> An **open-source** scientific and technical **publishing** system
+
+## 
+
+![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.](img/quarto-flow.png){fig-alt="A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto."}
+
+
+# Extras
+
+## Multi-language
+
+-   R
+-   Python
+-   SQL
+
+## Customisable branding
+
+## RAP 
+
+> 17. Embrace modern, open working methods for NHS data analysis by committing to Reproducible Analytical Pipelines (RAP) as the core working practice that must be supported by all platforms and teams; make this a core focus of NHS analyst training.
+
+## Resources
+
+- [quarto.org](https://quarto.org)
+- [Hello Quarto: Share, Collaborate, Teach, Reimagine](https://www.youtube.com/watch?v=p7Hxu4coDl8)
+
+## Thank you
