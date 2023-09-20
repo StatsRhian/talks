@@ -213,7 +213,7 @@ countdown::countdown(minutes = 5)
 
 class: right, middle, inverse
 
-<img style="border-radius: 5%;" src="img/r-book.jpg" width="180px"/>
+<img src="img/r-book-small.png" width="180px" alt="A cartoon of a woman holding a book with 'R' on the cover">
 
 #### [`r fa(name = "github")` @statsRhian](https://github.com/statsRhian)
 #### [`r fa(name = "link")` rhian.rbind.io](https://rhian.rbind.io)  
