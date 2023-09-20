@@ -49,7 +49,7 @@ starting to work for Jumping Rivers. I now work from home in Austria!
 :::
 
 ::: {.column width="40%"}
-![](graphics/Clarissa.png){fig-alt="A cartoon of Clarissa"
+![](images/Clarissa.png){fig-alt="A cartoon of Clarissa"
 fig-align="right" width="350"}
 :::
 :::
@@ -70,12 +70,12 @@ lng = c(-0.6157, -1.1550, -4.0829, -2.5879, -1.6178, 11.4041)
 df = data.frame(names, reason, lat, lng)
 
 location_icons = iconList(
-  Windsor = makeIcon("graphics/describe-clarissa/graphics/windsor.jpg", "graphics/describe-clarissa/graphics/windsor@2x.jpg", 40, 40),
-  Nottingham = makeIcon("graphics/describe-clarissa/graphics/nottingham.jpg", "graphics/describe-clarissa/graphics/nottingham@2x.jpg", 40, 40),
-  Aberystwyth = makeIcon("graphics/describe-clarissa/graphics/aberystwyth.jpg", "graphics/describe-clarissa/graphics/aberystwyth@2x.jpg", 40, 40),
-  Bristol = makeIcon("graphics/describe-clarissa/graphics/bristol.jpg", "graphics/describe-clarissa/graphics/bristol@2x.jpg", 40, 40),
-  Newcastle = makeIcon("graphics/describe-clarissa/graphics/newcastle.jpg", "graphics/describe-clarissa/graphics/newcastle@2x.jpg", 40, 40),
-  Innsbruck = makeIcon("graphics/describe-clarissa/graphics/innsbruck.jpg", "graphics/describe-clarissa/graphics/innsbruck@2x.jpg", 40, 40)
+  Windsor = makeIcon("images/describe-clarissa/images/windsor.jpg", "images/describe-clarissa/images/windsor@2x.jpg", 40, 40),
+  Nottingham = makeIcon("images/describe-clarissa/images/nottingham.jpg", "images/describe-clarissa/images/nottingham@2x.jpg", 40, 40),
+  Aberystwyth = makeIcon("images/describe-clarissa/images/aberystwyth.jpg", "images/describe-clarissa/images/aberystwyth@2x.jpg", 40, 40),
+  Bristol = makeIcon("images/describe-clarissa/images/bristol.jpg", "images/describe-clarissa/images/bristol@2x.jpg", 40, 40),
+  Newcastle = makeIcon("images/describe-clarissa/images/newcastle.jpg", "images/describe-clarissa/images/newcastle@2x.jpg", 40, 40),
+  Innsbruck = makeIcon("images/describe-clarissa/images/innsbruck.jpg", "images/describe-clarissa/images/innsbruck@2x.jpg", 40, 40)
 )
 
 leaflet(df) %>% 
@@ -99,13 +99,13 @@ leaflet(df) %>%
 :::
 
 ::: {.column width="60%"}
-![](graphics/Rhian.jpg){fig-alt="A cartoon of Rhian"}
+![](images/Rhian.png){fig-alt="A cartoon of Rhian"}
 :::
 :::
 
 ## Rhian
 
-![](graphics/rhian-activity.png){fig-alt="An infographic showing various statistics about 2022 activity"
+![](images/rhian-activity.png){fig-alt="An infographic showing various statistics about 2022 activity"
 fig-align="center"}
 
 ## 🚣 Jumping Rivers
@@ -125,7 +125,7 @@ fig-align="center"}
 :::
 
 ::: {.column width="40%"}
-![](graphics/clipboard-robot-transparent.png){fig-alt="A cartoon of a robot with a clipboard."}
+![](images/clipboard-robot-transparent.png){fig-alt="A cartoon of a robot with a clipboard."}
 :::
 :::
 
@@ -145,12 +145,12 @@ fig-align="center"}
 
 -   Exists across all
 
-![](graphics/computer-small-transparent.png){fig-alt="A cartoon of a robot with a clipboard."
+![](images/computer-small-transparent.png){fig-alt="A cartoon of a robot with a clipboard."
 fig-align="center"}
 
 ## 🦄 What is a data scientist?
 
-![](graphics/faces.png){fig-alt="A collection of cartoons of Jumping Rivers employees. Top: Clarissa, Myles, Keith, Russ. Bottom: Nicola, Jack, Rhian, Mandy"
+![](images/faces.png){fig-alt="A collection of cartoons of Jumping Rivers employees. Top: Clarissa, Myles, Keith, Russ. Bottom: Nicola, Jack, Rhian, Mandy"
 width="75%" fig-align="center"}
 
 ::: notes
@@ -279,11 +279,11 @@ countdown::countdown(minutes = 2)
 
 ::: columns
 ::: {.column width="50%"}
-![](graphics/fast_food_wordcloud.png){fig-alt="Wordcloud of common words in fast food answers. Mcdonalds, Subway, Greggs and KFC are largest."}
+![](images/fast_food_wordcloud.png){fig-alt="Wordcloud of common words in fast food answers. Mcdonalds, Subway, Greggs and KFC are largest."}
 :::
 
 ::: {.column width="50%"}
-![](graphics/snack_wordcloud.png){fig-alt="Wordcloud of common words in snack answers. Crisps and chocolate are largest."}
+![](images/snack_wordcloud.png){fig-alt="Wordcloud of common words in snack answers. Crisps and chocolate are largest."}
 :::
 :::
 
@@ -311,15 +311,15 @@ Find some external data and show how we can join it
 
 ## 👀 Examples
 
-![](graphics/fast_food_types.png){width="75%" fig-align="center"}
+![](images/fast_food_types.png){width="75%" fig-align="center"}
 
 ## 👀 Examples
 
-![](graphics/snack_type.png){width="75%" fig-align="center"}
+![](images/snack_type.png){width="75%" fig-align="center"}
 
 ## 👀 Examples
 
-![](graphics/sweetvsavoury.png){width="75%" fig-align="center"}
+![](images/sweetvsavoury.png){width="75%" fig-align="center"}
 
 ## 🍔 What type of fast food?
 
@@ -344,15 +344,15 @@ full_join(responses, type)|>
 
 ## 🧲 Left Join
 
-![](graphics/left-join.gif){fig-align="center"}
+![](images/left-join.gif){fig-align="center"}
 
 ## 🧲 Full Join
 
-![](graphics/full-join.gif){fig-align="center"}
+![](images/full-join.gif){fig-align="center"}
 
 ## 🧲 Inner Join
 
-![](graphics/inner-join.gif){fig-align="center"}
+![](images/inner-join.gif){fig-align="center"}
 
 # Part 3 Visualisation {background-color="#5b868d"}
 
@@ -377,27 +377,27 @@ Show tableau public viz or Tidy Tuesday (variety)
 
 ## 👀 Viz examples
 
-![](graphics/tube_map.png){fig-alt="Map of the London underground"
+![](images/tube_map.png){fig-alt="Map of the London underground"
 fig-align="center"}
 
 ## 👀 Viz examples
 
-![](graphics/football-viz.png){fig-alt="Football match with pundits commentary highlighted."
+![](images/football-viz.png){fig-alt="Football match with pundits commentary highlighted."
 fig-align="center"}
 
 ## 👀 Viz examples
 
-![](graphics/stock-market-crash.png){fig-alt="Plot of 20 and 40 year cycles in the stock market pointing to a low in 2022."
+![](images/stock-market-crash.png){fig-alt="Plot of 20 and 40 year cycles in the stock market pointing to a low in 2022."
 fig-align="center"}
 
 ## 👀 Viz examples
 
-![](graphics/network-graph-star-wars-characters.jpg){fig-alt="Plot of many coloured lined interacting on a black background. There are no axes and there is no text."
+![](images/network-graph-star-wars-characters.png){fig-alt="Plot of many coloured lined interacting on a black background. There are no axes and there is no text."
 fig-align="center"}
 
 ## 🐧 Meet your clients
 
-![](graphics/climate-scientists.png){fig-alt="Poorly edited image of Rhian and Clarissa cartoons with bobble hats on, in front of an icy mountain, with three cartoon penguins between them."
+![](images/climate-scientists.png){fig-alt="Poorly edited image of Rhian and Clarissa cartoons with bobble hats on, in front of an icy mountain, with three cartoon penguins between them."
 fig-align="center"}
 
 ## 📝 Your turn
@@ -456,7 +456,7 @@ countdown::countdown(minutes = 10)
 :::
 
 ::: {.column width="60%"}
-![](graphics/acne.jpg){fig-alt="A cartoon of a woman with acne. The
+![](images/acne.png){fig-alt="A cartoon of a woman with acne. The
 spots on her face are real data points" fig-align="right" width="350"
 caption = "https://monachalabi.com/}
 :::
@@ -468,19 +468,19 @@ Remember to add source
 
 ## 🎨 Bob Ross - Libby Daniells
 
-![](graphics/bob-ross-libby.png){fig-align="center"}
+![](images/bob-ross-libby.png){fig-align="center"}
 
 ## 🎨 Bob Ross - Jared Wilber
 
-![](graphics/bob-ross-jared.png){fig-align="center"}
+![](images/bob-ross-jared.png){fig-align="center"}
 
 ## 🎨 Bob Ross - Ryan Hart
 
-![](graphics/bob-ross-ryan.png){fig-align="center"}
+![](images/bob-ross-ryan.png){fig-align="center"}
 
 ## 🎨 Bob Ross - Nicola Rennie
 
-![](graphics/bob-ross-nicola.png){fig-align="center"}
+![](images/bob-ross-nicola.png){fig-align="center"}
 
 ## 📝 Your turn
 
