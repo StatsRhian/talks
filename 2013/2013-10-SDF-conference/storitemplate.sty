@@ -1,0 +1,48 @@
+\usetheme{Szeged}
+\usecolortheme{beaver}
+\usepackage[absolute,overlay]{textpos}
+\setbeamerfont{title}{size = \large}
+
+%Creates title page
+\defbeamertemplate*{title page}{customized}[1][]
+{
+\begin{textblock*}{100mm}(0\textwidth,0\textheight)
+\includegraphics[width=1.001\paperwidth]{header.pdf}
+\end{textblock*}
+\begin{textblock*}{100mm}(0.025\textwidth,0.7\textheight)
+  \usebeamerfont{title}\inserttitle\par
+  \usebeamerfont{subtitle}\insertsubtitle\par
+  \bigskip
+  \usebeamerfont{author}\insertauthor\par
+  \usebeamerfont{institute}\insertinstitute\par
+  \smallskip
+  \usebeamerfont{date}\insertdate\par
+\end{textblock*}
+
+
+
+%Comment and uncomment accordingly for vertical and horizontal logos
+
+%vertical logos
+ \begin{textblock*}{100mm}(0.97\textwidth,0.7\textheight)
+ \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+ \end{textblock*}
+
+%horizontal logos
+%\begin{textblock*}{100mm}(0.4\textwidth,0.95\textheight)
+%\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+%\end{textblock*}
+}
+
+%adds the stori symbol to each slide
+\addtobeamertemplate{frametitle}{}{
+\begin{textblock*}{100mm} (0.85\paperwidth,0.08\paperheight)
+\includegraphics[height=0.8cm,width=1.8cm]{stori.pdf}
+\end{textblock*}}
+
+
+%gets rid of navigation symbols, this is a personal preference you can keep them if you wish
+\setbeamertemplate{navigation symbols}{}
+
+
+
