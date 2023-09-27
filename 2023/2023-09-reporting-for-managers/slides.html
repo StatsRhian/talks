@@ -447,11 +447,13 @@
 <img data-src="images/ds-4.png" alt="Cartoon of a net capturing a cloud, a robot sweeping up data, a computer with some dashboards and a robot at a laptop typing." class="r-stretch quarto-figure-center"></section>
 <section id="back-to-square-one" class="slide level2">
 <h2>Back to square one</h2>
+<div>
 <ul>
-<li>The data was wrong - can you re-run the analysis?</li>
-<li>Your manager loves it - can you do it for another region?</li>
-<li>It’s next quarter - time to do it all again.</li>
+<li class="fragment">The data was wrong - can you re-run the analysis?</li>
+<li class="fragment">Your manager loves it - can you do it for another region?</li>
+<li class="fragment">Next month - do it all again.</li>
 </ul>
+</div>
 </section>
 <section id="there-must-be-a-better-way" class="title-slide slide level1 center">
 <h1>There must be a better way</h1>
@@ -494,12 +496,15 @@
 </div>
 </section>
 <section id="interweave-text-and-code" class="slide level2">
-<h2>Interweave text and code</h2>
-<h3 id="read-in-the-data">Read in the data</h3>
+<h2>Interweave text and code 🧶</h2>
+<div class="fragment">
+<p><strong>Read in the data</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>filename <span class="ot">=</span> <span class="fu">glue</span>(<span class="st">"NHS Workforce Statistics, {params$month_year} England and Organisation.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<h3 id="clean-the-data">Clean the data</h3>
+</div>
+<div class="fragment">
+<p><strong>Clean the data</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>staff_group <span class="ot">=</span> </span>
 <span id="cb3-2"><a href="#cb3-2"></a>  staff_group <span class="sc">|&gt;</span></span>
@@ -508,9 +513,12 @@
 <span id="cb3-5"><a href="#cb3-5"></a>         <span class="st">`</span><span class="at">HCHS Doctors</span><span class="st">`</span>, <span class="st">`</span><span class="at">Nurses &amp; health visitors</span><span class="st">`</span>,</span>
 <span id="cb3-6"><a href="#cb3-6"></a>         <span class="st">`</span><span class="at">Midwives</span><span class="st">`</span>, <span class="st">`</span><span class="at">Ambulance staff</span><span class="st">`</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<h3 id="add-insight">Add insight</h3>
+</div>
+<div class="fragment">
+<p><strong>Add insight</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>The table below shows the total number of doctors and nurses <span class="cf">for</span> each organisation within <span class="st">`</span><span class="at">r params$ics_name</span><span class="st">`</span>. We can see that the organisation with the most midwives is the <span class="st">`</span><span class="at">r pull(max_midwives, "Organisation name")</span><span class="st">`</span> with <span class="st">`</span><span class="at">r round(max_midwives$Midwives)</span><span class="st">`</span> staff.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="re-run-next-month" class="slide level2">

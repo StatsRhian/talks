@@ -61,9 +61,12 @@ execute:
 
 ## Back to square one
 
+::: {.incremental}
 - The data was wrong - can you re-run the analysis?
 - Your manager loves it - can you do it for another region?
-- It's next quarter - time to do it all again.
+- Next month - do it all again.
+:::
+
 
 # There must be a better way
 
@@ -100,15 +103,19 @@ params:
 ---
 ```
 
-## Interweave text and code
+## Interweave text and code 🧶
 
-### Read in the data
+. . .
+
+__Read in the data__
 
 ```{r}
 filename = glue("NHS Workforce Statistics, {params$month_year} England and Organisation.xlsx")
 ```
 
-### Clean the data
+. . .
+
+ __Clean the data__
 
 ```{r}
 #| code-line-numbers: "3"
@@ -120,7 +127,9 @@ staff_group =
          `Midwives`, `Ambulance staff`) 
 ```
 
-### Add insight
+. . . 
+
+__Add insight__
 ```{r}
 The table below shows the total number of doctors and nurses for each organisation within `r params$ics_name`. We can see that the organisation with the most midwives is the `r pull(max_midwives, "Organisation name")` with `r round(max_midwives$Midwives)` staff.
 ```
