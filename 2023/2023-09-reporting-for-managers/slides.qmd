@@ -1,54 +1,167 @@
 ---
 format: statsrhian-revealjs
+execute:
+    echo: true
+    eval: false
 ---
 
-## Automatic reporting for managers
+## The magic of automatic reporting ✨  {background-image="images/pencil.jpg"}
 
-### Rhian Davies
+### An Introduction
 
-## About me
+#### Rhian Davies
 
-# The old way
+## About Jumping Rivers
 
-## Flow
+::: columns
+::: column
+-   Data science & machine learning
+-   Training courses
+-   Dashboard development and deployment
+-   Infrastructure
+-   Managed Posit services
+:::
 
-<Diagram here with old method>
+::: column
+![](images/office.png){fig-alt="Cartoon of three people working at computers" fig-align="center"}
+:::
+:::
 
-## Flow
+## Meet Maria
 
-<Adapted diagram with new code coming in>
 
+::: columns
+::: {.column width="60%"}
+- Public Health analyst
+- Delivers monthly reports on NHS Workforce statistics
+- Uses Excel to analyse data
+- Uses Word to write branded reports
+:::
+
+::: {.column width="40%"}
+![](images/Georgia.png){fig-alt="Cartoon of a woman smiling"}
+:::
+:::
+
+## Monthly Reports
+
+![](images/ds-1.png){fig-alt="artoon of a net capturing a cloud" fig-align="center"}
+
+## Monthly Reports
+
+![](images/ds-2.png){fig-alt="Cartoon of a net capturing a cloud and a robot sweeping up data" fig-align="center"}
+
+## Monthly Reports
+
+![](images/ds-3.png){fig-alt="Cartoon of a net capturing a cloud, a robot sweeping up data and a computer with some dashboards" fig-align="center"}
+
+## Monthly Reports
+
+![](images/ds-4.png){fig-alt="Cartoon of a net capturing a cloud, a robot sweeping up data, a computer with some dashboards and a robot at a laptop typing." fig-align="center"}
+
+## Back to square one
+
+- The data was wrong - can you re-run the analysis?
+- Your manager loves it - can you do it for another region?
+- It's next quarter - time to do it all again.
+
+# There must be a better way
 
 # Hello quarto 👋
 
 ## What is quarto?
 
-![](img/quarto.png){fig-alt="The quarto logo: A circle cut into four quadrants next to the word quarto"}
+![](images/quarto.jpg){fig-alt="The quarto logo: A circle cut into four quadrants next to the word quarto"}
 
 > An **open-source** scientific and technical **publishing** system
 
 ## 
 
-![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.](img/quarto-flow.png){fig-alt="A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto."}
+![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.](images/quarto-flow.png){fig-alt="A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto."}
 
+## Example report
 
-# Extras
+![](images/ne-april.png)
 
-## Multi-language
+[statsrhian.github.io/example-quarto-report/example-report.html](https://statsrhian.github.io/example-quarto-report/example-report.html)
 
--   R
--   Python
--   SQL
+## Template based-reports
 
-## Customisable branding
+```{r}
+#| code-line-numbers: "1-8|6-8|2-3"
+---
+title: "NHS Workforce Statistics for `r params$ics_name`"
+subtitle: "Data for `r params$month_year`"
+author: "Maria Garcia"
+date: "2023-09-28"
+params:
+  ics_name: "North East and North Cumbria"
+  month_year: "April 2023"
+---
+```
 
-## RAP 
+## Interweave text and code
 
-> 17. Embrace modern, open working methods for NHS data analysis by committing to Reproducible Analytical Pipelines (RAP) as the core working practice that must be supported by all platforms and teams; make this a core focus of NHS analyst training.
+### Read in the data
 
-## Resources
+```{r}
+filename = glue("NHS Workforce Statistics, {params$month_year} England and Organisation.xlsx")
+```
+
+### Clean the data
+
+```{r}
+#| code-line-numbers: "3"
+staff_group = 
+  staff_group |>
+  filter(`ICS name` == params$ics_name) |>
+  select(`Organisation name`, `Total`,
+         `HCHS Doctors`, `Nurses & health visitors`,
+         `Midwives`, `Ambulance staff`) 
+```
+
+### Add insight
+```{r}
+The table below shows the total number of doctors and nurses for each organisation within `r params$ics_name`. We can see that the organisation with the most midwives is the `r pull(max_midwives, "Organisation name")` with `r round(max_midwives$Midwives)` staff.
+```
+
+## Re-run next month
+
+```{r}
+#| code-line-numbers: "8"
+---
+title: "NHS Workforce Statistics for `r params$ics_name`"
+subtitle: "Data for `r params$month_year`"
+author: "Maria Garcia"
+date: "2023-09-28"
+params:
+  ics_name: "North East and North Cumbria"
+  month_year: "May 2023"
+```
+
+##  {background-image="images/ne-may.png"}
+
+## Report a different region
+
+```{r}
+#| code-line-numbers: "7"
+---
+title: "NHS Workforce Statistics for `r params$ics_name`"
+subtitle: "Data for `r params$month_year`"
+author: "Maria Garcia"
+date: "2023-09-28"
+params:
+  ics_name: "Lancashire and South Cumbria"
+  month_year: "May 2023"
+```
+
+##  {background-image="images/nw-may.png"}
+
+## Get started
 
 - [quarto.org](https://quarto.org)
 - [Hello Quarto: Share, Collaborate, Teach, Reimagine](https://www.youtube.com/watch?v=p7Hxu4coDl8)
+- [github.com/StatsRhian/example-quarto-report](https://github.com/StatsRhian/example-quarto-report)
+- Chat to me or Colin
 
-## Thank you
+![](images/qr.svg){fig-align="right"}
