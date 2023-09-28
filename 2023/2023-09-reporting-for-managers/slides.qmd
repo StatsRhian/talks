@@ -1,11 +1,13 @@
 ---
-format: statsrhian-revealjs
+format:
+  jrSlides-revealjs:
+    self-contained: true
 execute:
     echo: true
     eval: false
 ---
 
-## The magic of automatic reporting ✨  {background-image="images/pencil.jpg"}
+## The magic of automatic reporting ✨ 
 
 ### An Introduction
 
@@ -166,11 +168,33 @@ params:
 
 ##  {background-image="images/nw-may.png"}
 
+## Maria is happy
+
+::: columns
+::: {.column width="60%"}
+- More reproducible workflow
+- Fewer mistakes
+- Spends less time formatting the reports manually 
+- Spends more time adding insight
+
+:::
+
+::: {.column width="40%"}
+![](images/Georgia.png){fig-alt="Cartoon of a woman smiling"}
+:::
+:::
+
 ## Get started
-
+::: columns
+::: {.column width="60%"}
 - [quarto.org](https://quarto.org)
-- [Hello Quarto: Share, Collaborate, Teach, Reimagine](https://www.youtube.com/watch?v=p7Hxu4coDl8)
+- [jumpingrivers.com/blog](https://www.jumpingrivers.com/blog)
 - [github.com/StatsRhian/example-quarto-report](https://github.com/StatsRhian/example-quarto-report)
-- Chat to me or Colin
+- Say hello 📨 [hello@jumpingrivers.com](mailto:hello@jumpingrivers.com)
+- [NEDS tonight](https://www.meetup.com/newcastle-upon-tyne-data-science-meetup/) 6pm @ TusPark Newcastle
+:::
 
-![](images/qr.svg){fig-align="right"}
+::: {.column width="40%"}
+![](images/qr.svg){fig-alt="QR code pointing to https://bit.ly/statsrhian-reporting"}
+:::
+:::
