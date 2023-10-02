@@ -39,6 +39,7 @@ Make every talk a blog (and vice-versa)
 - [ ] You don't need shiny to sparkle - an overview of interactivity in R
 - [x] JR blog on [Refactoring Russian Doll Code](https://www.jumpingrivers.com/blog/refactoring-russian-doll-code/)
 - [ ] Using Git in your organisation - what to think about?
+- [ ] Maintainance Look after your biking/paddling kit -> look after your programming kit
 
 
 ## Maths & Stats
