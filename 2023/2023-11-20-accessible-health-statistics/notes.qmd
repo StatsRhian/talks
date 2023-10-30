@@ -4,23 +4,25 @@ author: Rhian Davies
 ---
 
 # Official Statistics and Health: Developing coherent and accessible health statistics: a UK perspective
-_Royal Statistical Society 2020 Conference: Panel Session_
 
 ## About me
 
 * Data Scientist at [Jumping Rivers](https://www.jumpingrivers.com)
-    * Jumping Rivers based in Newcastle, ~7 consultants working remotely
+    * Jumping Rivers based in Newcastle
     * Provides training and consultancy
     * Consultancy is a mix of data analysis, statistical modelling and code development & deployment
     * Many different sectors including official statistics, public health, national utilities, financial etc.
-* Previously Stats PhD in clustering, data consultancy for the rail industry and internal consultancy at Unilever
+    * Public Health challenge communication health statistics to a mixed audience
+* RSS Statistical Ambassador
+    * Supporting journalists
+    * Communicating with the public
 
-## View point
+## My view point
 
 - Understand the users through user personas
 - Offer tailored options
 - Provide open data and code for the curious user
-- Accessiblity (WCAG)
+- Make your work accessiblity (WCAG)
 
 ## Questions
 
