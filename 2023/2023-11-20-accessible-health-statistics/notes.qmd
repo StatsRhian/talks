@@ -47,4 +47,5 @@ author: Rhian Davies
 ## References
 
 - [Writing Alt Text for Data Visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+- [RSS Data Vis Guide](rss.org.uk/datavisguide)
 
