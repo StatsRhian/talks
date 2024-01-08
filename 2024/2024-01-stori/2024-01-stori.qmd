@@ -1,0 +1,259 @@
+---
+author: "Rhian Davies"
+format:
+  statsrhian-revealjs:
+    self-contained: true
+    logo: images/letter-R.png
+    footer: "{{< fa house-user >}} [rhian.rbind.io](rhian.rbind.io) \t  {{< fa brands mastodon >}} {{< fa brands twitter >}} {{< fa brands linkedin >}} [statsrhian](https://fosstodon.org/@statsrhian)"
+---
+
+## Career talk {.pencil-title}
+
+## What's this talk about?
+
+-   My career path
+
+-   My reflections
+
+-   My advice to my former self
+
+## My career so far
+
+::: columns
+::: {.column .center width="25%"}
+<img src="images/stori.png" alt="STOR-i logo" style="border-radius: 50%" width="300," height="300"/>
+:::
+
+::: {.column .center width="25%"}
+<img src="images/as.webp" alt="STOR-i logo" style="border-radius: 50%" width="300," height="300"/>
+:::
+
+::: {.column .center width="25%"}
+<img src="images/drl.png" alt="STOR-i logo" style="border-radius: 50%" width="300," height="300"/>
+:::
+
+::: {.column .center width="25%"}
+![](images/jr.png){fig-align="center" fig-alt="Jumping Rivers logo"}
+:::
+:::
+
+--
+
+## Whats the connection?
+
+::: columns
+::: {.column width="60%"}
+::: incremental
+-   Consultancy
+
+-   Start up / Scale ups
+
+-   Lancaster
+:::
+:::
+
+::: {.column .center width="40%"}
+![](images/coren.jpg){fig-alt="Victoria Coren looks to camera on the set of \"Only Connect\""}
+:::
+
+
+:::
+
+## Working in consultancy
+
+::: columns
+::: {.column width="50%"}
+
+### Pros
+
+- Variety of problems and industries
+
+- Learning new stuff
+
+- Helping passionate people
+
+:::
+
+::: {.column .center width="50%"}
+
+### Cons
+
+-   Being on the clock can be stressful
+
+-   Getting burnt out
+
+-   Wanting to do a great job for the client
+
+:::
+
+:::
+
+::: {.notes}
+- Juliette was so excited about soil
+-   You need to be curious
+:::
+
+
+## Working for a small company
+
+::: columns
+::: {.column width="50%"}
+
+### Pros
+
+-   Get involved in all aspects of the business
+
+-   Team spirit
+
+-   Can build your own role
+
+-   Autonomy and control
+
+:::
+
+::: {.column .center width="50%"}
+
+### Cons
+
+-   Limit to where you can climb
+
+-   Scale up has growing pains
+
+-   Fighting for work can be exahausting
+
+-   Can be unstable
+
+:::
+
+:::
+
+
+::: {.notes}
+    -   ISO9001
+
+    -   Bids
+
+    -   Selling at conference
+
+    -   blog posts
+
+    -   Running conference
+
+    -   Writing social media
+
+    -   Managing
+
+    -   outreach
+    
+    -   leading a team of 8 because I just started doing the role
+    
+    - I could work in the way I wanted to, be flexible, and drive (home working, flexible hours)
+
+:::
+
+
+
+
+# What has helped me
+
+## Personal thoughts          
+
+-   Be bold
+-   Find what makes you special
+-   Connect with your community
+
+## Be bold
+
+-   Coming to Lancaster
+
+-   Appling for jobs which aren't quite right
+
+-   Asking Nicola to join Jumping Rivers
+
+## Find what makes you stand out
+
+- You can't do it all 🦄
+
+- Focus on maximising your strengths
+
+- Then shout about it
+
+::: {.notes}
+
+-   What environments do you shine in? What makes you stand out?
+
+-   What are your strengths?
+
+-   What are your technical skills?
+
+-   I can think on my feet
+
+-   I'm direct / presence / confidence
+
+-   I can quickly find links to connect people / problems
+
+-   Then shout about it
+
+:::
+
+## Use your community
+
+-   It's a small world
+
+-   Communities I get value from
+
+    -   R Ladies / Py-Ladies
+    -   STOR-i & Lancaster
+    -   RSS
+    -   Local data meetups 
+    -   #RStats
+
+::: {.notes}
+
+-   Has to be genuine connection
+
+-   Found all my jobs through twitter
+
+-   There is always someone to chat to at the pub
+
+-   Starting R-Ladies Lancaster
+
+-   NHS interview - knew 2/3rd of the panel
+
+-   Attending lots of meetups - which lead to job opportunities and insight
+
+:::
+
+## Community
+
+::: {.r-stack}
+![](images/polaroid-rstudio.png){.fragment width="400"}
+
+![](images/polaroid-rss.png){.fragment width="400" out-extra="transform: rotate(45deg)"}
+
+![](images/polaroid-rstudio.png){.fragment width="400" height="400"}
+:::
+
+# What's next?
+
+## Why am I leaving
+
+-   Why am I leaving?
+
+    -   I found scale ups hard
+
+    -   I've stopped learning
+
+    -   I want to do a bit more statistics
+    
+    - I got burnt out, and I need a different pace
+
+-   Moving to the NHS is going to be very different
+
+-   I'm a little scared and a little excited
+
+-   Find the data / healthcare communities locally and online
+
+# Questions? {background-color="#5b868d"}
+
+<img src="images/r-book.jpg" style="border-radius: 5%;" width="180px"/>
