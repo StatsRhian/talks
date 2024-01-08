@@ -1,4 +1,5 @@
 ---
+title: "My personal STOR-i"
 author: "Rhian Davies"
 format:
   statsrhian-revealjs:
@@ -7,39 +8,55 @@ format:
     footer: "{{< fa house-user >}} [rhian.rbind.io](rhian.rbind.io) \t  {{< fa brands mastodon >}} {{< fa brands twitter >}} {{< fa brands linkedin >}} [statsrhian](https://fosstodon.org/@statsrhian)"
 ---
 
-## Career talk {.pencil-title}
-
 ## What's this talk about?
 
--   My career path
+<br>
+
+-   My career path so far
 
 -   My reflections
 
--   My advice to my former self
+-   What's worked for me
+
+::: aside
+Disclaimer: These stories are personal to me and may not reflect others'experience. Photos are permitted but only if you get my good side. Batteries not included. Do not eat.
+:::
+
+::: notes
+I want to convince you that some of the people in this room might be invaluable to the your early career.
+:::
 
 ## My career so far
 
+<br>
+
 ::: columns
 ::: {.column .center width="25%"}
-<img src="images/stori.png" alt="STOR-i logo" style="border-radius: 50%" width="300," height="300"/>
+<img src="images/stori.png" alt="STOR-i logo">
 :::
 
 ::: {.column .center width="25%"}
-<img src="images/as.webp" alt="STOR-i logo" style="border-radius: 50%" width="300," height="300"/>
+<img src="images/as.webp" alt="Arctic Shores logo">
 :::
 
 ::: {.column .center width="25%"}
-<img src="images/drl.png" alt="STOR-i logo" style="border-radius: 50%" width="300," height="300"/>
+<img src="images/drl.png" alt="Digital Rail logo">
 :::
 
 ::: {.column .center width="25%"}
-![](images/jr.png){fig-align="center" fig-alt="Jumping Rivers logo"}
+<img src="images/jr.png" alt="Jumping Rivers logo">
 :::
 :::
 
---
+::: notes
+I need to keep this bit brief.
+
+Also - when do I mention NHS? (with Only connect ? image)
+:::
 
 ## Whats the connection?
+
+<br>
 
 ::: columns
 ::: {.column width="60%"}
@@ -48,212 +65,246 @@ format:
 
 -   Start up / Scale ups
 
--   Lancaster
+-   Lancaster (living somewhere nice)
 :::
 :::
 
 ::: {.column .center width="40%"}
-![](images/coren.jpg){fig-alt="Victoria Coren looks to camera on the set of \"Only Connect\""}
+![](images/coren.jpg){fig-alt="Victoria Coren looks to camera on the set of 'Only Connect'"}
+:::
 :::
 
-
-:::
+# My reflections
 
 ## Working in consultancy
 
+<br>
+
 ::: columns
 ::: {.column width="50%"}
+::: fragment
+✅ Variety of problems
 
-### Pros
+✅ Variety of industries
 
-- Variety of problems and industries
+✅ Learning new stuff
 
-- Learning new stuff
-
-- Helping passionate people
-
+✅ Helping passionate people
+:::
 :::
 
-::: {.column .center width="50%"}
+::: {.column width="50%"}
+::: fragment
 
-### Cons
+❌  Billable time stress
 
--   Being on the clock can be stressful
+❌  More time-pressure
 
--   Getting burnt out
+❌  Overly invested in projects
 
--   Wanting to do a great job for the client
-
+❌    Bad projects
+:::
+:::
 :::
 
-:::
-
-::: {.notes}
-- Juliette was so excited about soil
+::: notes
+-   Juliette was so excited about soil
 -   You need to be curious
+-   Being the expert
 :::
-
 
 ## Working for a small company
 
+
+<br>
+
 ::: columns
 ::: {.column width="50%"}
+::: fragment
 
-### Pros
 
--   Get involved in all aspects of the business
 
--   Team spirit
+✅     Scope for impact
 
--   Can build your own role
+✅  Great teams
 
--   Autonomy and control
+✅     Can build your own role
 
+✅  Autonomy  and flexibility
+:::
 :::
 
-::: {.column .center width="50%"}
+::: {.column width="50%"}
+::: fragment
 
-### Cons
+❌   Growing pains
 
--   Limit to where you can climb
+❌  Limited progression
 
--   Scale up has growing pains
+❌   Constant bidding for work 
 
--   Fighting for work can be exahausting
-
--   Can be unstable
-
+❌    Can be unstable
+:::
+:::
 :::
 
-:::
-
-
-::: {.notes}
-    -   ISO9001
-
-    -   Bids
-
-    -   Selling at conference
-
-    -   blog posts
-
-    -   Running conference
-
-    -   Writing social media
-
-    -   Managing
-
-    -   outreach
-    
-    -   leading a team of 8 because I just started doing the role
-    
-    - I could work in the way I wanted to, be flexible, and drive (home working, flexible hours)
+::: notes
+-   ISO9001, bids, client calls, running conference, outreach
+-   leading a team of 8 because I just started doing the role
+- changing management / toolin
+- Key members leaving can have big impact
+- Sales before science
 
 :::
-
-
-
 
 # What has helped me
 
-## Personal thoughts          
+## Be bold 🙋‍♀️
 
--   Be bold
--   Find what makes you special
--   Connect with your community
+<br>
 
-## Be bold
+::: columns
+::: {.column .center width="33%"}
+<img src="images/alex-belton.jpg" alt="Photograph of Alex Belton" width="300," height="300">
+:::
 
+::: {.column .center width="33%"}
+<img src="images/interview.png" alt="Sceenshot of an online meeting with three people smiling" width="300," height="300">
+:::
+
+::: {.column .center width="33%"}
+<img src="images/nicola-rennie.jpg" alt="Photograph of Nicola Rennie" width="300," height="300">
+:::
+:::
+
+> If you don't ask, you don't get
+
+::: {.notes}
 -   Coming to Lancaster
 
 -   Appling for jobs which aren't quite right
 
 -   Asking Nicola to join Jumping Rivers
-
-## Find what makes you stand out
-
-- You can't do it all 🦄
-
-- Focus on maximising your strengths
-
-- Then shout about it
-
-::: {.notes}
-
--   What environments do you shine in? What makes you stand out?
-
--   What are your strengths?
-
--   What are your technical skills?
-
--   I can think on my feet
-
--   I'm direct / presence / confidence
-
--   I can quickly find links to connect people / problems
-
--   Then shout about it
-
 :::
 
-## Use your community
+## Find what makes you stand out 🌠
+
+
+<br>
+
+::: columns
+::: {.column width="60%"}
+-   You can't do it all 🦄
+
+-   Focus on maximising your strengths
+
+-   Then shout about it
+:::
+
+::: {.column .center width="40%"}
+![](images/consultants.jpg){fig-alt="Cartoon of three people collectively thinking"}
+:::
+:::
+
+
+::: notes
+-   What are your technical skills?
+
+-   What are your personal strengths?
+
+-   Sell it (relating to your environment)
+:::
+
+## Use your community 👥
+
+::: columns
+::: {.column width="50%"}
+
+<br>
 
 -   It's a small world
 
--   Communities I get value from
+-   Be curious and helpful
 
-    -   R Ladies / Py-Ladies
-    -   STOR-i & Lancaster
-    -   RSS
-    -   Local data meetups 
-    -   #RStats
+-   Build genuine connections
 
-::: {.notes}
+:::
 
+
+::: {.column width="50%"}
+
+::: r-stack
+
+![](images/polaroid-conferences-rotated.png){.fragment width="500"}
+
+![](images/polaroid-rss-rotated.png){.fragment width="500"}
+
+![](images/polaroid-meetups-rotated.png){.fragment width="500"}
+
+![](images/polaroid-rladies-rotated.png){.fragment width="500"}
+
+![](images/polaroid-rstats-rotated.png){.fragment width="450"}
+
+![](images/polaroid-stori-rotated.png){.fragment width="450"}
+
+
+:::
+
+:::
+
+:::
+
+::: notes
 -   Has to be genuine connection
+    -   Be curious
+    -   Be friendly
+    -   Be helpful where possible
+    -   Stay in touch
 
 -   Found all my jobs through twitter
 
--   There is always someone to chat to at the pub
+-   Attending lots of meetups - which lead to job opportunities and insight
 
--   Starting R-Ladies Lancaster
+-   Start your own?
 
 -   NHS interview - knew 2/3rd of the panel
 
--   Attending lots of meetups - which lead to job opportunities and insight
+-   There is always someone to chat to at the pub
 
 :::
 
-## Community
 
-::: {.r-stack}
-![](images/polaroid-rstudio.png){.fragment width="400"}
+##  What's next? 
 
-![](images/polaroid-rss.png){.fragment width="400" out-extra="transform: rotate(45deg)"}
+::: {.center}
 
-![](images/polaroid-rstudio.png){.fragment width="400" height="400"}
+![](images/only-connect-next.webp ){fig-alt="Victoria Coren from Only Connect sits above three logos, Arctic Shores, Digital Rail and Jumping Rivers. The fourth box is a question mark." height="80%"}
+
 :::
 
-# What's next?
+##  What's next? 
 
-## Why am I leaving
+::: {.center}
 
--   Why am I leaving?
+![](images/only-connect-next-solved.webp ){fig-alt="Same image as previous except the fourth box is now the logo for the Strategy Unit." height="80%"}
 
-    -   I found scale ups hard
+:::
 
-    -   I've stopped learning
 
-    -   I want to do a bit more statistics
-    
-    - I got burnt out, and I need a different pace
+::: {.notes}
 
--   Moving to the NHS is going to be very different
+- I found scale ups hard - and I'm ready for something new
 
--   I'm a little scared and a little excited
+- I want to do more statistics again
 
--   Find the data / healthcare communities locally and online
+- It's scary and exciting
 
-# Questions? {background-color="#5b868d"}
+- I'm going to learn on stats community, and get involved in the UK health data scene
+
+:::
+
+# Questions? {background-color="$theme-yellow"}
+
+Say hi 👋 @statsRhian
 
 <img src="images/r-book.jpg" style="border-radius: 5%;" width="180px"/>
