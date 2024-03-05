@@ -1,0 +1,40 @@
+---
+title: "Cleaner code with CI"
+format: html
+editor: visual
+---
+
+The thing I love most about being a data scientist is working with people. At Jumping Rivers, we all work remotely, but developing packages takes teamwork.
+
+Most data science teams use git to version control their code and store their code remotely on GitHub or GitLab. When they make changes to the code base, they push them up to the repository to merge with others code, and other pull down to work.
+
+## Example
+
+Let's imagine you're building a shiny app, and you decide you want to change the look of the app - colours fonts. You could sit in your coding cave and work away for days, perfecting the colour scheme, and push it a week later. By that time the code had probably changed under your feet! Instead, you could chunk your work into small pieces and push many times a day. This means there is less chance that the code with change under your feet.However, every time you push code up to GitHub - you should test it actually works before you push it. This isn't too much hassle if you push once a week, but if you push many times a day - you don't want to test manually. Every merge must have low cost (time and effort)
+
+## Philosophy
+
+Break your work into small pieces and automate your tests.
+
+- Computer testing faster than humans
+- Less manual testing
+- Make small changes - and push often
+- Make it a habit of multiple merges per day
+
+## Why?
+
+- Get daily constant feedback 🔁
+- Catch bugs early 🐛
+- void the monster commit 👹
+
+### Where do we do this in real life?
+
+We write our teaching booklets in RMarkdown. Our team often edit the notes simultaneously, updating new packages, improving readability, adding images. Every time we change our notes, we automatically test:
+
+- For spelling mistakes and full stops.
+- That our code runs.
+- That it's styled nicely with lintr.
+- That our URLs work.
+- That we are using up-to-date packages.
+
+This habit of chunking work into small pieces, pushing often and testing automatically allows us to develop code together efficiently, and accurately.
