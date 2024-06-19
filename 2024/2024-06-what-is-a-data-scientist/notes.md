@@ -20,7 +20,9 @@ Now I'm helping [build a statistical model to predict demand in hospitals](https
 - Stochastic Monte-Carlo model to handle uncertainty
 - Creates 256 possible futures
 - Results visualised in a R-Shiny app
-- (Working toward) open source 
+- (Working toward) open source
+
+I also spend quite a bit of time talking about the statistics of our model, both with technical and non-technical staff, communicating and explaining how the model works and why the unvertainty is so important.
 
 ## What is a typical day/week as a data scientist for you?
 
