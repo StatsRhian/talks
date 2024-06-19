@@ -51,7 +51,7 @@ Now I'm helping [build a statistical model to predict demand in hospitals](https
 - Conferences
   - [RSS Annual Conference](https://rss.org.uk/training-events/conference-2024/)
   - [NHS-R](https://nhsrcommunity.com/)
-  - [HACA]([https://nhsrcommunity.com](https://haca-conference.nhs.uk/) 
+  - [HACA](https://nhsrcommunity.com](https://haca-conference.nhs.uk) 
   - [useR!](https://events.linuxfoundation.org/user/)
 
 - Slack workspaces
