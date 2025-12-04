@@ -38,7 +38,7 @@ I also spend quite a bit of time talking about the statistics of our model, both
 
 ## How do you keep on top of data science trends?
 
-- Newsletters which I catch up on in [Omnivore](https://omnivore.app/)
+- Newsletters which I catch up on a read later app like [Curio](https://curi.ooo/)
   - [R Weekly](https://rweekly.org/)
   - [RSS DS+AI Section](https://rssdsaisection.substack.com/) 
 
