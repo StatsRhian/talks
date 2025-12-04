@@ -25,7 +25,7 @@ _Health and Care Analytics Conference 2025_
 
 - I've never worked in the NHS "on the ground" so I've not experienced those challenges although I sympathise with them.
 - Focusing on what is within my circle of influence. This morning Steven talked about analysts needing to take initiative. I see lots of places where I can help, but the NHS is huge and it can be overwhelming. That can lead to burnout, which I have experienced. 
-- I have to conciously focus my energy and skills where they have the most impact and protecy my work-life balance.
+- I have to consciously focus my energy and skills where they have the most impact and protect my work-life balance.
 
 ### Something you’re proud of
 
