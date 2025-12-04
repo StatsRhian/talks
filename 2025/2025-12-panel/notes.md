@@ -35,6 +35,8 @@ _Health and Care Analytics Conference 2025_
 
 - The judges were particulary impressed by statistical robustness of the project - both in terms of the methodologies employed and the strong commitment to transparency.
 
+ - I’m especially proud that this award comes from the RSS—an organisation that, like the Strategy Unit, champions open-source working, probabilistic thinking, and delivering public value.
+
 - My team's motto is _Kindness; World domination_. I'm really proud to be part of a kind team. 💙
 
 ## Future analyst
